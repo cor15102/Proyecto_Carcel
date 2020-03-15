@@ -3,7 +3,7 @@
  * Carne:   15102
  * Fecha:   21/02/2020
  * 
- * Descripcion: LibrerÃ­a para configuraciones del I2C
+ * Descripcion: Libreria para configuraciones del I2C
  * 
  */
 
@@ -13,80 +13,77 @@
 
 #define _XTAL_FREQ 4000000
 
-void I2C_blanco(void)        // Modo maestro
+void I2C_Master_Init(const unsigned long c)
 {
-    // Control de registro 1
-    SSPCONbits.WCOL     = 0;    // Write colision detect apagado = SIN COLISION
-    SSPCONbits.SSPOV    = 0;    // No overflow. No hay bit indicador.
-    SSPCONbits.SSPEN    = 1;    // Habilita el puerto serial sincrono. Configura SDA(RC4) y SCL(RC3) como fuente
-    SSPCONbits.CKP      = 0;    // Clock polarity, holds clock low while CPU responds to SSPIF
-    SSPCONbits.SSPM   = 0b1000; // Master mode.   clock = (Fosc/(4*SSPADD + 1))
-    
-    // Control de registro 2
-    SSPCON2 = 0;    // Todos 0
-    
-    // Baud Rate Generator con un clk de 100kHz que es lo estandar
-    long clock = 100000;
-    SSPADD = ((_XTAL_FREQ/(4*clock))-1);
-    
-    // STATUS REGISTER
+    SSPCON = 0b00101000;
+    SSPCON2 = 0;
+    SSPADD = (_XTAL_FREQ/(4*c))-1;
     SSPSTAT = 0;
-    
-    TRISCbits.TRISC3 = 1;   // SCL
-    TRISCbits.TRISC4 = 1;   // SDA
+    TRISCbits.TRISC3 = 1;
+    TRISCbits.TRISC4 = 1;
 }
-
-void Blanco_Espera()
+//*****************************************************************************
+// Función de espera: mientras se esté iniciada una comunicación,
+// esté habilitado una recepción, esté habilitado una parada
+// esté habilitado un reinicio de la comunicación, esté iniciada
+// una comunicación o se este transmitiendo, el IC2 PIC se esperará
+// antes de realizar algún trabajo
+//*****************************************************************************
+void I2C_Master_Wait()
 {
     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
-    /*
-     * FunciÃ³n de espera: 
-     * Mientras se estÃ© iniciada una comunicaciÃ³n,
-     * estÃ© habilitado una recepciÃ³n, estÃ© habilitado una parada
-     * estÃ© habilitado un reinicio de la comunicaciÃ³n, estÃ© iniciada
-     * una comunicaciÃ³n o se este transmitiendo, el IC2 PIC se esperarÃ¡
-     * antes de realizar algÃºn trabajo
-     */
 }
-
-void Blanco_repiteStart()
+//*****************************************************************************
+// Función de inicio de la comunicación I2C PIC
+//*****************************************************************************
+void I2C_Master_Start()
 {
-    Blanco_Espera();
-    SSPCON2bits.RSEN = 1;   // reinicia la comunicacion I2C
+    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
+    SSPCON2bits.SEN = 1;    //inicia la comunicación i2c
 }
-
-void Blanco_Stop()
+//*****************************************************************************
+// Función de reinicio de la comunicación I2C PIC
+//*****************************************************************************
+/*void I2C_Master_RepeatedStart()
 {
-    Blanco_Espera();
-    SSPCON2bits.PEN = 1;    // Detiene la comunicacion I2C
-}
-
-void Blanco_Escribe(unsigned d)
+    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
+    SSPCON2bits.RSEN = 1;   //reinicia la comunicación i2c
+}*/
+//*****************************************************************************
+// Función de parada de la comunicación I2C PIC
+//*****************************************************************************
+void I2C_Master_Stop()
 {
-    Blanco_Espera();
-    SSPBUF = d;         // Buffer se carga con lo que se quiera enviar
+    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
+    SSPCON2bits.PEN = 1;    //detener la comunicación i2c
 }
-
-unsigned short Blanco_lee(unsigned short E)
+//*****************************************************************************
+//Función de transmisión de datos del maestro al esclavo
+//esta función devolverá un 0 si el esclavo a recibido
+//el dato
+//*****************************************************************************
+void I2C_Master_Write(unsigned d)
+{
+    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
+    SSPBUF = d;             
+}
+//*****************************************************************************
+//Función de recepción de datos enviados por el esclavo al maestro
+//esta función es para leer los datos que están en el esclavo
+//*****************************************************************************
+unsigned short I2C_Master_Read(unsigned short a)
 {
     unsigned short temp;
-    
-    Blanco_Espera();
+    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
     SSPCON2bits.RCEN = 1;
-    
-    Blanco_Espera();
+    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
     temp = SSPBUF;
-    
-    Blanco_Espera();
-    if (E == 1)
-    {
+    I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
+    if(a == 1){
         SSPCON2bits.ACKDT = 0;
-        
-    } else
-    {
+    }else{
         SSPCON2bits.ACKDT = 1;
     }
-    
-    SSPCON2bits.ACKEN = 1;  // Inicia la secuencia de acknowledge
-    return temp;            // Regresa el valor leÃ­do
+    SSPCON2bits.ACKEN = 1;          // Iniciar sequencia de Acknowledge
+    return temp;                    // Regresar valor del dato leído
 }

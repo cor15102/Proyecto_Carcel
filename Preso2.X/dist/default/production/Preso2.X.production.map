@@ -3,10 +3,10 @@ Microchip MPLAB XC8 Compiler V2.10 ()
 Linker command line:
 
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
-  -cs -h+dist/default/production\Preso1.X.production.sym \
-  --cmf=dist/default/production\Preso1.X.production.cmf -z -Q16F887 \
-  -oC:\Users\joser\AppData\Local\Temp\sdjc.2 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/Preso1.X.production.map -E1 -ver=XC8 \
+  -cs -h+dist/default/production\Preso2.X.production.sym \
+  --cmf=dist/default/production\Preso2.X.production.cmf -z -Q16F887 \
+  -oC:\Users\joser\AppData\Local\Temp\s8bc.2 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/Preso2.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
   -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
@@ -18,8 +18,8 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\joser\AppData\Local\Temp\sdjc.o \
-  dist/default/production\Preso1.X.production.o 
+  -DENTRY=2 -k C:\Users\joser\AppData\Local\Temp\s8bc.o \
+  dist/default/production\Preso2.X.production.o 
 
 Object code version is 3.11
 
@@ -28,40 +28,42 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\joser\AppData\Local\Temp\sdjc.o
+C:\Users\joser\AppData\Local\Temp\s8bc.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2     400E       0
-dist/default/production\Preso1.X.production.o
-                cinit                                 F        F        C        8       0
+dist/default/production\Preso2.X.production.o
+                cinit                                 F        F        A        8       0
                 intentry                              4        4        8        8       0
-                text6                                1B       1B       97        8       0
-                text5                               1CC      1CC       1A        8       0
-                text4                               19B      19B       31        8       0
-                text3                                B2       B2       63        8       0
-                text2                               165      165       36        8       0
-                text1                               1E6      1E6       13        8       0
-                maintext                            115      115       50        8       0
-                cstackBANK0                          20       20        4       20       1
-                cstackCOMMON                         70       70        6       70       1
-                bssBANK0                             24       24        2       20       1
-                bssCOMMON                            76       76        4       70       1
+                text8                                19       19       88        8       0
+                text7                               137      137       1A        8       0
+                text6                               151      151       18        8       0
+                text5                               194      194        7        8       0
+                text4                               18D      18D        7        8       0
+                text3                                A1       A1       61        8       0
+                text2                               169      169       13        8       0
+                text1                               17C      17C       11        8       0
+                maintext                            102      102       35        8       0
+                cstackCOMMON                         76       76        6       70       1
+                bssCOMMON                            70       70        6       70       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              C        C        3         0
-                cinit                                 F        F        C         0
+                cinit                                 F        F        A         0
                 intentry                              4        4        8         0
                 reset_vec                             0        0        3         0
-                text6                                1B       1B       97         0
-                text5                               1CC      1CC       1A         0
-                text4                               19B      19B       31         0
-                text3                                B2       B2       63         0
-                text2                               165      165       36         0
-                text1                               1E6      1E6       13         0
-                maintext                            115      115       50         0
+                text8                                19       19       88         0
+                text7                               137      137       1A         0
+                text6                               151      151       18         0
+                text5                               194      194        7         0
+                text4                               18D      18D        7         0
+                text3                                A1       A1       61         0
+                text2                               169      169       13         0
+                text1                               17C      17C       11         0
+                maintext                            102      102       35         0
 
         CLASS   STRCODE        
 
@@ -72,12 +74,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        6         1
-                bssCOMMON                            76       76        4         1
+                cstackCOMMON                         76       76        6         1
+                bssCOMMON                            70       70        6         1
 
         CLASS   BANK0          
-                cstackBANK0                          20       20        4         1
-                bssBANK0                             24       24        2         1
 
         CLASS   BANK1          
 
@@ -110,29 +110,28 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  0001F5  0001F9         8       0  CODE        2
-                cstackBANK0                    000020  000006  000026        20       1  BANK0       1
-                cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
+                intentry                       000004  000197  00019B         8       0  CODE        2
+                bssCOMMON                      000070  00000C  00007C        70       1  COMMON      1
                 config                         002007  000002  002009      400E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0026-006F             4A           1
+        BANK0            0020-006F             50           1
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         01F9-1FFF            800
-        COMMON           007A-007D              4           1
+                         019B-1FFF            800
+        COMMON           007C-007D              2           1
         CONST            0003-0003              1           2
-                         01F9-1FFF            100
+                         019B-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         01F9-1FFF            100
+                         019B-1FFF            100
         IDLOC            2000-2003              4           2
-        RAM              0026-006F             4A           1
+        RAM              0020-006F             50           1
                          00A0-00EF             50
                          0110-016F             60
                          0190-01EF             60
@@ -142,31 +141,28 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         01F9-1FFF           1E07
+                         019B-1FFF           1E65
         STRING           0003-0003              1           2
-                         01F9-1FFF            100
+                         019B-1FFF            100
 
                                   Symbol Table
 
-?_leerADC                 cstackCOMMON 0074
-I2C_Negro@address         cstackCOMMON 0074
-_ADCON0                   (abs)        001F
-_ADCON0bits               (abs)        001F
-_ADCON1bits               (abs)        009F
-_ADRESH                   (abs)        001E
+I2C_Negro@address         cstackCOMMON 0079
 _ANSEL                    (abs)        0188
 _ANSELH                   (abs)        0189
-_ANSELbits                (abs)        0188
 _BF                       (abs)        04A0
+_CCP2CON                  (abs)        001D
+_CCP2CONbits              (abs)        001D
+_CCPR2L                   (abs)        001B
 _GIE                      (abs)        005F
-_GO_nDONE                 (abs)        00F9
-_I2C_Negro                text5        01CC
+_I2C_Negro                text7        0137
 _INTCONbits               (abs)        000B
 _OSCCONbits               (abs)        008F
 _PEIE                     (abs)        005E
 _PIE1bits                 (abs)        008C
 _PIR1bits                 (abs)        000C
-_PORTA                    (abs)        0005
+_PORTBbits                (abs)        0006
+_PR2                      (abs)        0092
 _SSPADD                   (abs)        0093
 _SSPBUF                   (abs)        0013
 _SSPCON                   (abs)        0014
@@ -176,9 +172,15 @@ _SSPIE                    (abs)        0463
 _SSPIF                    (abs)        0063
 _SSPSTAT                  (abs)        0094
 _SSPSTATbits              (abs)        0094
-_TRISAbits                (abs)        0085
+_T1CON                    (abs)        0010
+_T1CONbits                (abs)        0010
+_T2CONbits                (abs)        0012
+_TMR1H                    (abs)        000F
+_TMR1L                    (abs)        000E
+_TRISBbits                (abs)        0086
 _TRISC3                   (abs)        043B
 _TRISC4                   (abs)        043C
+_TRISCbits                (abs)        0087
 __CFG_BOR4V$BOR40V        (abs)        0000
 __CFG_BOREN$OFF           (abs)        0000
 __CFG_CP$OFF              (abs)        0000
@@ -196,14 +198,12 @@ __Hbank0                  bank0        0000
 __Hbank1                  bank1        0000
 __Hbank2                  bank2        0000
 __Hbank3                  bank3        0000
-__HbssBANK0               bssBANK0     0000
 __HbssCOMMON              bssCOMMON    0000
-__Hcinit                  cinit        001B
+__Hcinit                  cinit        0019
 __Hclrtext                clrtext      0000
 __Hcode                   code         0000
 __Hcommon                 common       0000
 __Hconfig                 config       2009
-__HcstackBANK0            cstackBANK0  0000
 __HcstackCOMMON           cstackCOMMON 0000
 __Heeprom_data            eeprom_data  0000
 __Hend_init               end_init     000F
@@ -220,7 +220,7 @@ __Hsfr1                   sfr1         0000
 __Hsfr2                   sfr2         0000
 __Hsfr3                   sfr3         0000
 __Hspace_0                (abs)        2009
-__Hspace_1                (abs)        007A
+__Hspace_1                (abs)        007C
 __Hspace_2                (abs)        0000
 __Hspace_3                (abs)        0000
 __Hstack                  stack        0000
@@ -231,14 +231,12 @@ __Lbank0                  bank0        0000
 __Lbank1                  bank1        0000
 __Lbank2                  bank2        0000
 __Lbank3                  bank3        0000
-__LbssBANK0               bssBANK0     0000
 __LbssCOMMON              bssCOMMON    0000
 __Lcinit                  cinit        000F
 __Lclrtext                clrtext      0000
 __Lcode                   code         0000
 __Lcommon                 common       0000
 __Lconfig                 config       2007
-__LcstackBANK0            cstackBANK0  0000
 __LcstackCOMMON           cstackCOMMON 0000
 __Leeprom_data            eeprom_data  0000
 __Lend_init               end_init     000C
@@ -262,7 +260,7 @@ __Lstack                  stack        0000
 __Lstrings                strings      0000
 __Ltext                   text         0000
 __S0                      (abs)        2009
-__S1                      (abs)        007A
+__S1                      (abs)        007C
 __S2                      (abs)        0000
 __S3                      (abs)        0000
 ___int_sp                 stack        0000
@@ -270,49 +268,54 @@ ___latbits                (abs)        0002
 ___sp                     stack        0000
 ___stackhi                (abs)        0000
 ___stacklo                (abs)        0000
-__end_of_I2C_Negro        text5        01E6
-__end_of__initialization  cinit        0017
-__end_of_iniciarADC       text4        01CC
-__end_of_iniciarOSC       text3        0115
-__end_of_isr              text6        00B2
-__end_of_leerADC          text2        019B
-__end_of_main             maintext     0165
-__end_of_setup            text1        01F9
+__end_of_I2C_Negro        text7        0151
+__end_of__initialization  cinit        0015
+__end_of_cronometro       text6        0169
+__end_of_g0               text5        019B
+__end_of_g90              text4        0194
+__end_of_iniciarOSC       text3        0102
+__end_of_iniciarPWM       text2        017C
+__end_of_isr              text8        00A1
+__end_of_main             maintext     0137
+__end_of_setup            text1        018D
 __initialization          cinit        000F
-__pbssBANK0               bssBANK0     0024
-__pbssCOMMON              bssCOMMON    0076
-__pcstackBANK0            cstackBANK0  0020
-__pcstackCOMMON           cstackCOMMON 0070
+__pbssCOMMON              bssCOMMON    0070
+__pcstackCOMMON           cstackCOMMON 0076
 __pintentry               intentry     0004
-__pmaintext               maintext     0115
-__ptext1                  text1        01E6
-__ptext2                  text2        0165
-__ptext3                  text3        00B2
-__ptext4                  text4        019B
-__ptext5                  text5        01CC
-__ptext6                  text6        001B
+__pmaintext               maintext     0102
+__ptext1                  text1        017C
+__ptext2                  text2        0169
+__ptext3                  text3        00A1
+__ptext4                  text4        018D
+__ptext5                  text5        0194
+__ptext6                  text6        0151
+__ptext7                  text7        0137
+__ptext8                  text8        0019
 __size_of_I2C_Negro       (abs)        0000
-__size_of_iniciarADC      (abs)        0000
+__size_of_cronometro      (abs)        0000
+__size_of_g0              (abs)        0000
+__size_of_g90             (abs)        0000
 __size_of_iniciarOSC      (abs)        0000
+__size_of_iniciarPWM      (abs)        0000
 __size_of_isr             (abs)        0000
-__size_of_leerADC         (abs)        0000
 __size_of_main            (abs)        0000
 __size_of_setup           (abs)        0000
-_humo                     bssCOMMON    0078
-_iniciarADC               text4        019B
-_iniciarOSC               text3        00B2
-_isr                      text6        001B
-_leerADC                  text2        0165
-_luz                      bssCOMMON    0079
-_main                     maintext     0115
-_setup                    text1        01E6
-_x                        bssCOMMON    0076
-_y                        bssBANK0     0024
-_z                        bssCOMMON    0077
+_cronometro               text6        0151
+_g0                       text5        0194
+_g90                      text4        018D
+_iniciarOSC               text3        00A1
+_iniciarPWM               text2        0169
+_isr                      text8        0019
+_main                     maintext     0102
+_setup                    text1        017C
+_tiempoH                  bssCOMMON    0074
+_tiempoL                  bssCOMMON    0075
+_x                        bssCOMMON    0071
+_y                        bssCOMMON    0070
+_z                        bssCOMMON    0073
 btemp                     (abs)        007E
-end_of_initialization     cinit        0017
-iniciarADC@conv           cstackCOMMON 0074
-iniciarOSC@frec           cstackBANK0  0020
+end_of_initialization     cinit        0015
+iniciarOSC@frec           cstackCOMMON 007B
 interrupt_function        intentry     0004
 intlevel0                 functab      0000
 intlevel1                 functab      0000
@@ -320,7 +323,6 @@ intlevel2                 functab      0000
 intlevel3                 functab      0000
 intlevel4                 functab      0000
 intlevel5                 functab      0000
-leerADC@channel           cstackBANK0  0022
 reset_vec                 reset_vec    0000
 saved_w                   (abs)        007E
 start                     init         000C
@@ -332,7 +334,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 128 in file "Reo1.c"
+		line 142 in file "Reo2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -348,15 +350,17 @@ FUNCTION INFORMATION:
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
       Params:         0       0       0       0       0
       Locals:         0       0       0       0       0
-      Temps:          0       1       0       0       0
-      Totals:         0       1       0       0       0
-Total ram usage:        1 bytes
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
  Hardware stack levels required when called:    2
  This function calls:
 		_I2C_Negro
-		_iniciarADC
+		_cronometro
+		_g0
+		_g90
 		_iniciarOSC
-		_leerADC
+		_iniciarPWM
 		_setup
  This function is called by:
 		Startup code after reset
@@ -365,7 +369,7 @@ Total ram usage:        1 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 110 in file "Reo1.c"
+		line 126 in file "Reo2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -373,7 +377,7 @@ Total ram usage:        1 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		status,2
+		wreg, status,2
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -393,15 +397,15 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _leerADC *****************
+ *************** function _iniciarPWM *****************
  Defined at:
-		line 128 in file "./ADC.h"
+		line 7 in file "./PWM.h"
  Parameters:    Size  Location     Type
-  channel         1    wreg     unsigned char 
+		None
  Auto vars:     Size  Location     Type
-  channel         1    2[BANK0 ] unsigned char 
+		None
  Return value:  Size  Location     Type
-                  2    4[COMMON] unsigned int 
+                  1    wreg      void 
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -409,11 +413,11 @@ Total ram usage:        0 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         2       0       0       0       0
-      Locals:         0       1       0       0       0
-      Temps:          0       2       0       0       0
-      Totals:         2       3       0       0       0
-Total ram usage:        5 bytes
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
  This function calls:
@@ -429,7 +433,7 @@ Total ram usage:        5 bytes
  Parameters:    Size  Location     Type
   frec            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  frec            1    0[BANK0 ] unsigned char 
+  frec            1    5[COMMON] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -440,9 +444,9 @@ Total ram usage:        5 bytes
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
       Params:         0       0       0       0       0
-      Locals:         0       1       0       0       0
+      Locals:         1       0       0       0       0
       Temps:          2       0       0       0       0
-      Totals:         2       1       0       0       0
+      Totals:         3       0       0       0       0
 Total ram usage:        3 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
@@ -453,27 +457,87 @@ Total ram usage:        3 bytes
  This function uses a non-reentrant model
 
 
- *************** function _iniciarADC *****************
+ *************** function _g90 *****************
  Defined at:
-		line 12 in file "./ADC.h"
+		line 35 in file "./PWM.h"
  Parameters:    Size  Location     Type
-  conv            2    4[COMMON] int 
+		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0
+		wreg
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         2       0       0       0       0
+      Params:         0       0       0       0       0
       Locals:         0       0       0       0       0
       Temps:          0       0       0       0       0
-      Totals:         2       0       0       0       0
-Total ram usage:        2 bytes
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _g0 *****************
+ Defined at:
+		line 27 in file "./PWM.h"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          0       0       0       0       0
+      Totals:         0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _cronometro *****************
+ Defined at:
+		line 106 in file "Reo2.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          1       0       0       0       0
+      Totals:         1       0       0       0       0
+Total ram usage:        1 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
  This function calls:
@@ -489,7 +553,7 @@ Total ram usage:        2 bytes
  Parameters:    Size  Location     Type
   address         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  address         1    4[COMMON] unsigned char 
+  address         1    3[COMMON] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -515,7 +579,7 @@ Total ram usage:        1 bytes
 
  *************** function _isr *****************
  Defined at:
-		line 48 in file "Reo1.c"
+		line 51 in file "Reo2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -531,9 +595,9 @@ Total ram usage:        1 bytes
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
       Params:         0       0       0       0       0
       Locals:         0       0       0       0       0
-      Temps:          4       0       0       0       0
-      Totals:         4       0       0       0       0
-Total ram usage:        4 bytes
+      Temps:          3       0       0       0       0
+      Totals:         3       0       0       0       0
+Total ram usage:        3 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
@@ -546,31 +610,33 @@ Total ram usage:        4 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-./ADC.h
-		_leerADC       		CODE           	0165	0000	55
-		_iniciarADC    		CODE           	019B	0000	50
+./PWM.h
+		_g0            		CODE           	0194	0000	8
+		_iniciarPWM    		CODE           	0169	0000	20
+		_g90           		CODE           	018D	0000	8
 
-./ADC.h estimated size: 105
-
-Reo1.c
-		_main          		CODE           	0115	0000	81
-		_isr           		CODE           	001B	0000	152
-		_setup         		CODE           	01E6	0000	20
-
-Reo1.c estimated size: 253
+./PWM.h estimated size: 36
 
 shared
-		__initialization		CODE           	000F	0000	9
+		__initialization		CODE           	000F	0000	7
 
-shared estimated size: 9
+shared estimated size: 7
+
+Reo2.c
+		_main          		CODE           	0102	0000	54
+		_isr           		CODE           	0019	0000	137
+		_setup         		CODE           	017C	0000	18
+		_cronometro    		CODE           	0151	0000	25
+
+Reo2.c estimated size: 234
 
 ./I2Cesclavo.h
-		_I2C_Negro     		CODE           	01CC	0000	27
+		_I2C_Negro     		CODE           	0137	0000	27
 
 ./I2Cesclavo.h estimated size: 27
 
 ./Oscilador.h
-		_iniciarOSC    		CODE           	00B2	0000	100
+		_iniciarOSC    		CODE           	00A1	0000	98
 
-./Oscilador.h estimated size: 100
+./Oscilador.h estimated size: 98
 

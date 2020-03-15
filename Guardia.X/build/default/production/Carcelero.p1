@@ -1,19 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"856 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 856:     struct {
-[s S30 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S30 . SSPM CKP SSPEN SSPOV WCOL ]
-"863
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 863:     struct {
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . SSPM0 SSPM1 SSPM2 SSPM3 ]
-"855
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 855: typedef union {
-[u S29 `S30 1 `S31 1 ]
-[n S29 . . . ]
-"870
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 870: extern volatile SSPCONbits_t SSPCONbits __attribute__((address(0x014)));
-[v _SSPCONbits `VS29 ~T0 @X0 0 e@20 ]
+"850 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 850: extern volatile unsigned char SSPCON __attribute__((address(0x014)));
+[v _SSPCON `Vuc ~T0 @X0 0 e@20 ]
 "1979
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1979: extern volatile unsigned char SSPCON2 __attribute__((address(0x091)));
 [v _SSPCON2 `Vuc ~T0 @X0 0 e@145 ]
@@ -81,15 +69,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1882
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1882: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
 [v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
+"172
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 172:     struct {
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"171
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 171: typedef union {
+[u S5 `S6 1 ]
+[n S5 . . ]
+"183
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
+[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
 "3387
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "3449
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"1416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1422
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1422:     struct {
+[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S53 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"1421
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1421: typedef union {
+[u S52 `S53 1 ]
+[n S52 . . ]
+"1433
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
+[v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
 "1478
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"166
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 [p mainexit ]
 "13 Carcelero.c
 [p x FOSC = INTRC_NOCLKOUT ]
@@ -350,193 +366,178 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "16 ./I2Cmaestro.h
-[; ;./I2Cmaestro.h: 16: void I2C_blanco(void)
-[v _I2C_blanco `(v ~T0 @X0 1 ef ]
+[; ;./I2Cmaestro.h: 16: void I2C_Master_Init(const unsigned long c)
+[v _I2C_Master_Init `(v ~T0 @X0 1 ef1`Cul ]
 "17
 [; ;./I2Cmaestro.h: 17: {
 {
-[e :U _I2C_blanco ]
+[e :U _I2C_Master_Init ]
+"16
+[; ;./I2Cmaestro.h: 16: void I2C_Master_Init(const unsigned long c)
+[v _c `Cul ~T0 @X0 1 r1 ]
+"17
+[; ;./I2Cmaestro.h: 17: {
 [f ]
+"18
+[; ;./I2Cmaestro.h: 18:     SSPCON = 0b00101000;
+[e = _SSPCON -> -> 40 `i `uc ]
 "19
-[; ;./I2Cmaestro.h: 19:     SSPCONbits.WCOL = 0;
-[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
-"20
-[; ;./I2Cmaestro.h: 20:     SSPCONbits.SSPOV = 0;
-[e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
-"21
-[; ;./I2Cmaestro.h: 21:     SSPCONbits.SSPEN = 1;
-[e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
-"22
-[; ;./I2Cmaestro.h: 22:     SSPCONbits.CKP = 0;
-[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
-"23
-[; ;./I2Cmaestro.h: 23:     SSPCONbits.SSPM = 0b1000;
-[e = . . _SSPCONbits 0 0 -> -> 8 `i `uc ]
-"26
-[; ;./I2Cmaestro.h: 26:     SSPCON2 = 0;
+[; ;./I2Cmaestro.h: 19:     SSPCON2 = 0;
 [e = _SSPCON2 -> -> 0 `i `uc ]
-"29
-[; ;./I2Cmaestro.h: 29:     long clock = 100000;
-[v _clock `l ~T0 @X0 1 a ]
-[e = _clock -> 100000 `l ]
-"30
-[; ;./I2Cmaestro.h: 30:     SSPADD = ((4000000/(4*clock))-1);
-[e = _SSPADD -> - / -> 4000000 `l * -> -> 4 `i `l _clock -> -> 1 `i `l `uc ]
-"33
-[; ;./I2Cmaestro.h: 33:     SSPSTAT = 0;
+"20
+[; ;./I2Cmaestro.h: 20:     SSPADD = (4000000/(4*c))-1;
+[e = _SSPADD -> - / -> -> 4000000 `l `ul * -> -> -> 4 `i `l `ul _c -> -> -> 1 `i `l `ul `uc ]
+"21
+[; ;./I2Cmaestro.h: 21:     SSPSTAT = 0;
 [e = _SSPSTAT -> -> 0 `i `uc ]
-"35
-[; ;./I2Cmaestro.h: 35:     TRISCbits.TRISC3 = 1;
+"22
+[; ;./I2Cmaestro.h: 22:     TRISCbits.TRISC3 = 1;
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-"36
-[; ;./I2Cmaestro.h: 36:     TRISCbits.TRISC4 = 1;
+"23
+[; ;./I2Cmaestro.h: 23:     TRISCbits.TRISC4 = 1;
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"37
-[; ;./I2Cmaestro.h: 37: }
+"24
+[; ;./I2Cmaestro.h: 24: }
 [e :UE 139 ]
 }
-"39
-[; ;./I2Cmaestro.h: 39: void Blanco_Espera()
-[v _Blanco_Espera `(v ~T0 @X0 1 ef ]
-"40
-[; ;./I2Cmaestro.h: 40: {
+"32
+[; ;./I2Cmaestro.h: 32: void I2C_Master_Wait()
+[v _I2C_Master_Wait `(v ~T0 @X0 1 ef ]
+"33
+[; ;./I2Cmaestro.h: 33: {
 {
-[e :U _Blanco_Espera ]
+[e :U _I2C_Master_Wait ]
 [f ]
-"41
-[; ;./I2Cmaestro.h: 41:     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+"34
+[; ;./I2Cmaestro.h: 34:     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
 [e $U 141  ]
 [e :U 142 ]
 [e :U 141 ]
 [e $ || != & -> _SSPSTAT `i -> 4 `i -> 0 `i != & -> _SSPCON2 `i -> 31 `i -> 0 `i 142  ]
 [e :U 143 ]
-"50
-[; ;./I2Cmaestro.h: 50: }
+"35
+[; ;./I2Cmaestro.h: 35: }
 [e :UE 140 ]
 }
-"52
-[; ;./I2Cmaestro.h: 52: void Blanco_repiteStart()
-[v _Blanco_repiteStart `(v ~T0 @X0 1 ef ]
-"53
-[; ;./I2Cmaestro.h: 53: {
+"39
+[; ;./I2Cmaestro.h: 39: void I2C_Master_Start()
+[v _I2C_Master_Start `(v ~T0 @X0 1 ef ]
+"40
+[; ;./I2Cmaestro.h: 40: {
 {
-[e :U _Blanco_repiteStart ]
+[e :U _I2C_Master_Start ]
 [f ]
-"54
-[; ;./I2Cmaestro.h: 54:     Blanco_Espera();
-[e ( _Blanco_Espera ..  ]
-"55
-[; ;./I2Cmaestro.h: 55:     SSPCON2bits.RSEN = 1;
-[e = . . _SSPCON2bits 0 1 -> -> 1 `i `uc ]
-"56
-[; ;./I2Cmaestro.h: 56: }
+"41
+[; ;./I2Cmaestro.h: 41:     I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"42
+[; ;./I2Cmaestro.h: 42:     SSPCON2bits.SEN = 1;
+[e = . . _SSPCON2bits 0 0 -> -> 1 `i `uc ]
+"43
+[; ;./I2Cmaestro.h: 43: }
 [e :UE 144 ]
 }
-"58
-[; ;./I2Cmaestro.h: 58: void Blanco_Stop()
-[v _Blanco_Stop `(v ~T0 @X0 1 ef ]
-"59
-[; ;./I2Cmaestro.h: 59: {
+"55
+[; ;./I2Cmaestro.h: 55: void I2C_Master_Stop()
+[v _I2C_Master_Stop `(v ~T0 @X0 1 ef ]
+"56
+[; ;./I2Cmaestro.h: 56: {
 {
-[e :U _Blanco_Stop ]
+[e :U _I2C_Master_Stop ]
 [f ]
-"60
-[; ;./I2Cmaestro.h: 60:     Blanco_Espera();
-[e ( _Blanco_Espera ..  ]
-"61
-[; ;./I2Cmaestro.h: 61:     SSPCON2bits.PEN = 1;
+"57
+[; ;./I2Cmaestro.h: 57:     I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
+"58
+[; ;./I2Cmaestro.h: 58:     SSPCON2bits.PEN = 1;
 [e = . . _SSPCON2bits 0 2 -> -> 1 `i `uc ]
-"62
-[; ;./I2Cmaestro.h: 62: }
+"59
+[; ;./I2Cmaestro.h: 59: }
 [e :UE 145 ]
 }
-"64
-[; ;./I2Cmaestro.h: 64: void Blanco_Escribe(unsigned d)
-[v _Blanco_Escribe `(v ~T0 @X0 1 ef1`ui ]
 "65
-[; ;./I2Cmaestro.h: 65: {
-{
-[e :U _Blanco_Escribe ]
-"64
-[; ;./I2Cmaestro.h: 64: void Blanco_Escribe(unsigned d)
-[v _d `ui ~T0 @X0 1 r1 ]
-"65
-[; ;./I2Cmaestro.h: 65: {
-[f ]
+[; ;./I2Cmaestro.h: 65: void I2C_Master_Write(unsigned d)
+[v _I2C_Master_Write `(v ~T0 @X0 1 ef1`ui ]
 "66
-[; ;./I2Cmaestro.h: 66:     Blanco_Espera();
-[e ( _Blanco_Espera ..  ]
+[; ;./I2Cmaestro.h: 66: {
+{
+[e :U _I2C_Master_Write ]
+"65
+[; ;./I2Cmaestro.h: 65: void I2C_Master_Write(unsigned d)
+[v _d `ui ~T0 @X0 1 r1 ]
+"66
+[; ;./I2Cmaestro.h: 66: {
+[f ]
 "67
-[; ;./I2Cmaestro.h: 67:     SSPBUF = d;
-[e = _SSPBUF -> _d `uc ]
+[; ;./I2Cmaestro.h: 67:     I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
 "68
-[; ;./I2Cmaestro.h: 68: }
+[; ;./I2Cmaestro.h: 68:     SSPBUF = d;
+[e = _SSPBUF -> _d `uc ]
+"69
+[; ;./I2Cmaestro.h: 69: }
 [e :UE 146 ]
 }
-"70
-[; ;./I2Cmaestro.h: 70: unsigned short Blanco_lee(unsigned short E)
-[v _Blanco_lee `(us ~T0 @X0 1 ef1`us ]
-"71
-[; ;./I2Cmaestro.h: 71: {
-{
-[e :U _Blanco_lee ]
-"70
-[; ;./I2Cmaestro.h: 70: unsigned short Blanco_lee(unsigned short E)
-[v _E `us ~T0 @X0 1 r1 ]
-"71
-[; ;./I2Cmaestro.h: 71: {
-[f ]
-"72
-[; ;./I2Cmaestro.h: 72:     unsigned short temp;
-[v _temp `us ~T0 @X0 1 a ]
 "74
-[; ;./I2Cmaestro.h: 74:     Blanco_Espera();
-[e ( _Blanco_Espera ..  ]
+[; ;./I2Cmaestro.h: 74: unsigned short I2C_Master_Read(unsigned short a)
+[v _I2C_Master_Read `(us ~T0 @X0 1 ef1`us ]
 "75
-[; ;./I2Cmaestro.h: 75:     SSPCON2bits.RCEN = 1;
-[e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
+[; ;./I2Cmaestro.h: 75: {
+{
+[e :U _I2C_Master_Read ]
+"74
+[; ;./I2Cmaestro.h: 74: unsigned short I2C_Master_Read(unsigned short a)
+[v _a `us ~T0 @X0 1 r1 ]
+"75
+[; ;./I2Cmaestro.h: 75: {
+[f ]
+"76
+[; ;./I2Cmaestro.h: 76:     unsigned short temp;
+[v _temp `us ~T0 @X0 1 a ]
 "77
-[; ;./I2Cmaestro.h: 77:     Blanco_Espera();
-[e ( _Blanco_Espera ..  ]
+[; ;./I2Cmaestro.h: 77:     I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
 "78
-[; ;./I2Cmaestro.h: 78:     temp = SSPBUF;
-[e = _temp -> _SSPBUF `us ]
+[; ;./I2Cmaestro.h: 78:     SSPCON2bits.RCEN = 1;
+[e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
+"79
+[; ;./I2Cmaestro.h: 79:     I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
 "80
-[; ;./I2Cmaestro.h: 80:     Blanco_Espera();
-[e ( _Blanco_Espera ..  ]
+[; ;./I2Cmaestro.h: 80:     temp = SSPBUF;
+[e = _temp -> _SSPBUF `us ]
 "81
-[; ;./I2Cmaestro.h: 81:     if (E == 1)
-[e $ ! == -> _E `ui -> -> 1 `i `ui 148  ]
+[; ;./I2Cmaestro.h: 81:     I2C_Master_Wait();
+[e ( _I2C_Master_Wait ..  ]
 "82
-[; ;./I2Cmaestro.h: 82:     {
+[; ;./I2Cmaestro.h: 82:     if(a == 1){
+[e $ ! == -> _a `ui -> -> 1 `i `ui 148  ]
 {
 "83
 [; ;./I2Cmaestro.h: 83:         SSPCON2bits.ACKDT = 0;
 [e = . . _SSPCON2bits 0 5 -> -> 0 `i `uc ]
-"85
-[; ;./I2Cmaestro.h: 85:     } else
+"84
+[; ;./I2Cmaestro.h: 84:     }else{
 }
 [e $U 149  ]
 [e :U 148 ]
-"86
-[; ;./I2Cmaestro.h: 86:     {
 {
-"87
-[; ;./I2Cmaestro.h: 87:         SSPCON2bits.ACKDT = 1;
+"85
+[; ;./I2Cmaestro.h: 85:         SSPCON2bits.ACKDT = 1;
 [e = . . _SSPCON2bits 0 5 -> -> 1 `i `uc ]
-"88
-[; ;./I2Cmaestro.h: 88:     }
+"86
+[; ;./I2Cmaestro.h: 86:     }
 }
 [e :U 149 ]
-"90
-[; ;./I2Cmaestro.h: 90:     SSPCON2bits.ACKEN = 1;
+"87
+[; ;./I2Cmaestro.h: 87:     SSPCON2bits.ACKEN = 1;
 [e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
-"91
-[; ;./I2Cmaestro.h: 91:     return temp;
+"88
+[; ;./I2Cmaestro.h: 88:     return temp;
 [e ) _temp ]
 [e $UE 147  ]
-"92
-[; ;./I2Cmaestro.h: 92: }
+"89
+[; ;./I2Cmaestro.h: 89: }
 [e :UE 147 ]
 }
 "16 ./LCD.h
@@ -902,46 +903,582 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Oscilador.h: 48: }
 [e :UE 163 ]
 }
-"44 Carcelero.c
-[; ;Carcelero.c: 44: void setup()
+"47 Carcelero.c
+[; ;Carcelero.c: 47: uint8_t MQ2, Fotor, LM35;
+[v _MQ2 `uc ~T0 @X0 1 e ]
+[v _Fotor `uc ~T0 @X0 1 e ]
+[v _LM35 `uc ~T0 @X0 1 e ]
+"48
+[; ;Carcelero.c: 48: int Humo,Luz,Tiempo;
+[v _Humo `i ~T0 @X0 1 e ]
+[v _Luz `i ~T0 @X0 1 e ]
+[v _Tiempo `i ~T0 @X0 1 e ]
+"49
+[; ;Carcelero.c: 49: double Tempe;
+[v _Tempe `d ~T0 @X0 1 e ]
+"50
+[; ;Carcelero.c: 50: int x,x1,x2,x3;
+[v _x `i ~T0 @X0 1 e ]
+[v _x1 `i ~T0 @X0 1 e ]
+[v _x2 `i ~T0 @X0 1 e ]
+[v _x3 `i ~T0 @X0 1 e ]
+"51
+[; ;Carcelero.c: 51: int y,y1,y2,y3;
+[v _y `i ~T0 @X0 1 e ]
+[v _y1 `i ~T0 @X0 1 e ]
+[v _y2 `i ~T0 @X0 1 e ]
+[v _y3 `i ~T0 @X0 1 e ]
+"52
+[; ;Carcelero.c: 52: int z,z1,z2,z3,z4;
+[v _z `i ~T0 @X0 1 e ]
+[v _z1 `i ~T0 @X0 1 e ]
+[v _z2 `i ~T0 @X0 1 e ]
+[v _z3 `i ~T0 @X0 1 e ]
+[v _z4 `i ~T0 @X0 1 e ]
+"53
+[; ;Carcelero.c: 53: int estado1, estado2, posicion;
+[v _estado1 `i ~T0 @X0 1 e ]
+[v _estado2 `i ~T0 @X0 1 e ]
+[v _posicion `i ~T0 @X0 1 e ]
+"56
+[; ;Carcelero.c: 56: const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+[v _a `Cuc ~T0 @X0 -> 10 `i e ]
+[i _a
+:U ..
+-> -> 48 `ui `uc
+-> -> 49 `ui `uc
+-> -> 50 `ui `uc
+-> -> 51 `ui `uc
+-> -> 52 `ui `uc
+-> -> 53 `ui `uc
+-> -> 54 `ui `uc
+-> -> 55 `ui `uc
+-> -> 56 `ui `uc
+-> -> 57 `ui `uc
+..
+]
+"59
+[; ;Carcelero.c: 59: void conversion()
+[v _conversion `(v ~T0 @X0 1 ef ]
+"60
+[; ;Carcelero.c: 60: {
+{
+[e :U _conversion ]
+[f ]
+"61
+[; ;Carcelero.c: 61:     Humo = (MQ2*1);
+[e = _Humo * -> _MQ2 `i -> 1 `i ]
+"62
+[; ;Carcelero.c: 62:     x = Humo/100;
+[e = _x / _Humo -> 100 `i ]
+"63
+[; ;Carcelero.c: 63:     x1 = Humo%100;
+[e = _x1 % _Humo -> 100 `i ]
+"64
+[; ;Carcelero.c: 64:     x2 = x1/10;
+[e = _x2 / _x1 -> 10 `i ]
+"65
+[; ;Carcelero.c: 65:     x3 = x1%10;
+[e = _x3 % _x1 -> 10 `i ]
+"67
+[; ;Carcelero.c: 67:     Luz = (Fotor*1);
+[e = _Luz * -> _Fotor `i -> 1 `i ]
+"68
+[; ;Carcelero.c: 68:     y = Luz/100;
+[e = _y / _Luz -> 100 `i ]
+"69
+[; ;Carcelero.c: 69:     y1 = Luz%100;
+[e = _y1 % _Luz -> 100 `i ]
+"70
+[; ;Carcelero.c: 70:     y2 = y1/10;
+[e = _y2 / _y1 -> 10 `i ]
+"71
+[; ;Carcelero.c: 71:     y3 = y1%10;
+[e = _y3 % _y1 -> 10 `i ]
+"73
+[; ;Carcelero.c: 73:     Tempe = (LM35*5.0)/255;
+[e = _Tempe / * -> -> _LM35 `i `d .5.0 -> -> 255 `i `d ]
+"74
+[; ;Carcelero.c: 74:     z = Tempe*100;
+[e = _z -> * _Tempe -> -> 100 `i `d `i ]
+"75
+[; ;Carcelero.c: 75:     z1 = z/100;
+[e = _z1 / _z -> 100 `i ]
+"76
+[; ;Carcelero.c: 76:     z2 = z%100;
+[e = _z2 % _z -> 100 `i ]
+"77
+[; ;Carcelero.c: 77:     z3 = z2/10;
+[e = _z3 / _z2 -> 10 `i ]
+"78
+[; ;Carcelero.c: 78:     z4 = z2%10;
+[e = _z4 % _z2 -> 10 `i ]
+"87
+[; ;Carcelero.c: 87:  }
+[e :UE 175 ]
+}
+"89
+[; ;Carcelero.c: 89: void on_off()
+[v _on_off `(v ~T0 @X0 1 ef ]
+"90
+[; ;Carcelero.c: 90: {
+{
+[e :U _on_off ]
+[f ]
+"91
+[; ;Carcelero.c: 91:     if (Humo > 100)
+[e $ ! > _Humo -> 100 `i 177  ]
+"92
+[; ;Carcelero.c: 92:     {
+{
+"93
+[; ;Carcelero.c: 93:         colocar(1,2);
+[e ( _colocar (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"94
+[; ;Carcelero.c: 94:         imprimir("   ");
+[e ( _imprimir (1 :s 1C ]
+"95
+[; ;Carcelero.c: 95:         colocar(1,2);
+[e ( _colocar (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"96
+[; ;Carcelero.c: 96:         imprimir("ON");
+[e ( _imprimir (1 :s 2C ]
+"98
+[; ;Carcelero.c: 98:         PORTAbits.RA3 = 1;
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+"99
+[; ;Carcelero.c: 99:     }
+}
+[e $U 178  ]
+"100
+[; ;Carcelero.c: 100:     else
+[e :U 177 ]
+"101
+[; ;Carcelero.c: 101:     {
+{
+"102
+[; ;Carcelero.c: 102:         colocar(1,2);
+[e ( _colocar (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"103
+[; ;Carcelero.c: 103:         imprimir("  ");
+[e ( _imprimir (1 :s 3C ]
+"104
+[; ;Carcelero.c: 104:         colocar(1,2);
+[e ( _colocar (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"105
+[; ;Carcelero.c: 105:         imprimir("OFF");
+[e ( _imprimir (1 :s 4C ]
+"107
+[; ;Carcelero.c: 107:         PORTAbits.RA3 = 0;
+[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
+"108
+[; ;Carcelero.c: 108:     }
+}
+[e :U 178 ]
+"111
+[; ;Carcelero.c: 111:     if (Luz > 50)
+[e $ ! > _Luz -> 50 `i 179  ]
+"112
+[; ;Carcelero.c: 112:     {
+{
+"113
+[; ;Carcelero.c: 113:         colocar(6,2);
+[e ( _colocar (2 , -> -> 6 `i `uc -> -> 2 `i `uc ]
+"114
+[; ;Carcelero.c: 114:         imprimir("  ");
+[e ( _imprimir (1 :s 5C ]
+"115
+[; ;Carcelero.c: 115:         colocar(6,2);
+[e ( _colocar (2 , -> -> 6 `i `uc -> -> 2 `i `uc ]
+"116
+[; ;Carcelero.c: 116:         imprimir("OFF");
+[e ( _imprimir (1 :s 6C ]
+"118
+[; ;Carcelero.c: 118:         PORTAbits.RA4 = 0;
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+"119
+[; ;Carcelero.c: 119:     }
+}
+[e $U 180  ]
+"120
+[; ;Carcelero.c: 120:     else
+[e :U 179 ]
+"121
+[; ;Carcelero.c: 121:     {
+{
+"122
+[; ;Carcelero.c: 122:         colocar(6,2);
+[e ( _colocar (2 , -> -> 6 `i `uc -> -> 2 `i `uc ]
+"123
+[; ;Carcelero.c: 123:         imprimir("   ");
+[e ( _imprimir (1 :s 7C ]
+"124
+[; ;Carcelero.c: 124:         colocar(6,2);
+[e ( _colocar (2 , -> -> 6 `i `uc -> -> 2 `i `uc ]
+"125
+[; ;Carcelero.c: 125:         imprimir("ON");
+[e ( _imprimir (1 :s 8C ]
+"127
+[; ;Carcelero.c: 127:         PORTAbits.RA4 = 1;
+[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+"128
+[; ;Carcelero.c: 128:     }
+}
+[e :U 180 ]
+"130
+[; ;Carcelero.c: 130:     if (Tempe > 30)
+[e $ ! > _Tempe -> -> 30 `i `d 181  ]
+"131
+[; ;Carcelero.c: 131:     {
+{
+"132
+[; ;Carcelero.c: 132:         colocar(10,2);
+[e ( _colocar (2 , -> -> 10 `i `uc -> -> 2 `i `uc ]
+"133
+[; ;Carcelero.c: 133:         imprimir("   ");
+[e ( _imprimir (1 :s 9C ]
+"134
+[; ;Carcelero.c: 134:         colocar(10,2);
+[e ( _colocar (2 , -> -> 10 `i `uc -> -> 2 `i `uc ]
+"135
+[; ;Carcelero.c: 135:         imprimir("ON");
+[e ( _imprimir (1 :s 10C ]
+"137
+[; ;Carcelero.c: 137:         PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+"138
+[; ;Carcelero.c: 138:     }
+}
+[e $U 182  ]
+"139
+[; ;Carcelero.c: 139:     else
+[e :U 181 ]
+"140
+[; ;Carcelero.c: 140:     {
+{
+"141
+[; ;Carcelero.c: 141:         colocar(10,2);
+[e ( _colocar (2 , -> -> 10 `i `uc -> -> 2 `i `uc ]
+"142
+[; ;Carcelero.c: 142:         imprimir("   ");
+[e ( _imprimir (1 :s 11C ]
+"143
+[; ;Carcelero.c: 143:         colocar(10,2);
+[e ( _colocar (2 , -> -> 10 `i `uc -> -> 2 `i `uc ]
+"144
+[; ;Carcelero.c: 144:         imprimir("OFF");
+[e ( _imprimir (1 :s 12C ]
+"146
+[; ;Carcelero.c: 146:         PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+"147
+[; ;Carcelero.c: 147:     }
+}
+[e :U 182 ]
+"148
+[; ;Carcelero.c: 148: }
+[e :UE 176 ]
+}
+"150
+[; ;Carcelero.c: 150: void celdas()
+[v _celdas `(v ~T0 @X0 1 ef ]
+"151
+[; ;Carcelero.c: 151: {
+{
+[e :U _celdas ]
+[f ]
+"152
+[; ;Carcelero.c: 152:     if (PORTAbits.RA0 == 1 && estado1 == 0)
+[e $ ! && == -> . . _PORTAbits 0 0 `i -> 1 `i == _estado1 -> 0 `i 184  ]
+"153
+[; ;Carcelero.c: 153:     {
+{
+"154
+[; ;Carcelero.c: 154:         posicion = 90;
+[e = _posicion -> 90 `i ]
+"155
+[; ;Carcelero.c: 155:         estado1 = 1;
+[e = _estado1 -> 1 `i ]
+"156
+[; ;Carcelero.c: 156:         PORTAbits.RA5 = 1;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+"157
+[; ;Carcelero.c: 157:     }
+}
+[e $U 185  ]
+"158
+[; ;Carcelero.c: 158:     else if (PORTAbits.RA0 == 0 && estado1 == 1)
+[e :U 184 ]
+[e $ ! && == -> . . _PORTAbits 0 0 `i -> 0 `i == _estado1 -> 1 `i 186  ]
+"159
+[; ;Carcelero.c: 159:     {
+{
+"160
+[; ;Carcelero.c: 160:         estado1 = 0;
+[e = _estado1 -> 0 `i ]
+"161
+[; ;Carcelero.c: 161:     }
+}
+[e :U 186 ]
+[e :U 185 ]
+"163
+[; ;Carcelero.c: 163:     if (PORTAbits.RA1 == 1 && estado2 == 0)
+[e $ ! && == -> . . _PORTAbits 0 1 `i -> 1 `i == _estado2 -> 0 `i 187  ]
+"164
+[; ;Carcelero.c: 164:     {
+{
+"165
+[; ;Carcelero.c: 165:         posicion = 0;
+[e = _posicion -> 0 `i ]
+"166
+[; ;Carcelero.c: 166:         estado2 = 1;
+[e = _estado2 -> 1 `i ]
+"167
+[; ;Carcelero.c: 167:         PORTAbits.RA5 = 0;
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+"168
+[; ;Carcelero.c: 168:     }
+}
+[e $U 188  ]
+"169
+[; ;Carcelero.c: 169:     else if (PORTAbits.RA0 == 0 && estado2 == 1)
+[e :U 187 ]
+[e $ ! && == -> . . _PORTAbits 0 0 `i -> 0 `i == _estado2 -> 1 `i 189  ]
+"170
+[; ;Carcelero.c: 170:     {
+{
+"171
+[; ;Carcelero.c: 171:         estado2 = 0;
+[e = _estado2 -> 0 `i ]
+"172
+[; ;Carcelero.c: 172:     }
+}
+[e :U 189 ]
+[e :U 188 ]
+"173
+[; ;Carcelero.c: 173: }
+[e :UE 183 ]
+}
+"175
+[; ;Carcelero.c: 175: void setup()
 [v _setup `(v ~T0 @X0 1 ef ]
-"45
-[; ;Carcelero.c: 45: {
+"176
+[; ;Carcelero.c: 176: {
 {
 [e :U _setup ]
 [f ]
-"46
-[; ;Carcelero.c: 46:     ANSEL = 0;
+"177
+[; ;Carcelero.c: 177:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"47
-[; ;Carcelero.c: 47:     ANSELH = 0;
+"178
+[; ;Carcelero.c: 178:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"49
-[; ;Carcelero.c: 49:     TRISB = 0;
+"180
+[; ;Carcelero.c: 180:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
+"181
+[; ;Carcelero.c: 181:     TRISAbits.TRISA0 = 1;
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+"182
+[; ;Carcelero.c: 182:     TRISAbits.TRISA1 = 1;
+[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
+"183
+[; ;Carcelero.c: 183:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"50
-[; ;Carcelero.c: 50: }
-[e :UE 175 ]
+"185
+[; ;Carcelero.c: 185:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"186
+[; ;Carcelero.c: 186:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"187
+[; ;Carcelero.c: 187: }
+[e :UE 190 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"52
-[; ;Carcelero.c: 52: void main(void)
+"189
+[; ;Carcelero.c: 189: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"53
-[; ;Carcelero.c: 53: {
+"190
+[; ;Carcelero.c: 190: {
 {
 [e :U _main ]
 [f ]
-"54
-[; ;Carcelero.c: 54:     iniciarOSC(6);
+"191
+[; ;Carcelero.c: 191:     iniciarOSC(6);
 [e ( _iniciarOSC (1 -> -> 6 `i `uc ]
-"56
-[; ;Carcelero.c: 56:     setup();
+"193
+[; ;Carcelero.c: 193:     setup();
 [e ( _setup ..  ]
-"58
-[; ;Carcelero.c: 58:     return;
-[e $UE 176  ]
-"59
-[; ;Carcelero.c: 59: }
-[e :UE 176 ]
+"195
+[; ;Carcelero.c: 195:     I2C_Master_Init(100000);
+[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
+"197
+[; ;Carcelero.c: 197:     iniciarLCD();
+[e ( _iniciarLCD ..  ]
+"199
+[; ;Carcelero.c: 199:     borrarv();
+[e ( _borrarv ..  ]
+"201
+[; ;Carcelero.c: 201:     colocar(1,1);
+[e ( _colocar (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"202
+[; ;Carcelero.c: 202:     imprimir("Humo");
+[e ( _imprimir (1 :s 13C ]
+"204
+[; ;Carcelero.c: 204:     colocar(6,1);
+[e ( _colocar (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
+"205
+[; ;Carcelero.c: 205:     imprimir("Luz");
+[e ( _imprimir (1 :s 14C ]
+"207
+[; ;Carcelero.c: 207:     colocar(10,1);
+[e ( _colocar (2 , -> -> 10 `i `uc -> -> 1 `i `uc ]
+"208
+[; ;Carcelero.c: 208:     imprimir("Temp");
+[e ( _imprimir (1 :s 15C ]
+"210
+[; ;Carcelero.c: 210:     while(1)
+[e :U 193 ]
+"211
+[; ;Carcelero.c: 211:     {
+{
+"214
+[; ;Carcelero.c: 214:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"215
+[; ;Carcelero.c: 215:         I2C_Master_Write(0x20);
+[e ( _I2C_Master_Write (1 -> -> 32 `i `ui ]
+"216
+[; ;Carcelero.c: 216:         I2C_Master_Write(2);
+[e ( _I2C_Master_Write (1 -> -> 2 `i `ui ]
+"217
+[; ;Carcelero.c: 217:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"218
+[; ;Carcelero.c: 218:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"221
+[; ;Carcelero.c: 221:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"222
+[; ;Carcelero.c: 222:         I2C_Master_Write(0x21);
+[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
+"223
+[; ;Carcelero.c: 223:         MQ2 = I2C_Master_Read(0);
+[e = _MQ2 -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"224
+[; ;Carcelero.c: 224:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"225
+[; ;Carcelero.c: 225:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"229
+[; ;Carcelero.c: 229:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"230
+[; ;Carcelero.c: 230:         I2C_Master_Write(0x20);
+[e ( _I2C_Master_Write (1 -> -> 32 `i `ui ]
+"231
+[; ;Carcelero.c: 231:         I2C_Master_Write(1);
+[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+"232
+[; ;Carcelero.c: 232:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"233
+[; ;Carcelero.c: 233:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"236
+[; ;Carcelero.c: 236:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"237
+[; ;Carcelero.c: 237:         I2C_Master_Write(0x21);
+[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
+"238
+[; ;Carcelero.c: 238:         Fotor = I2C_Master_Read(0);
+[e = _Fotor -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"239
+[; ;Carcelero.c: 239:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"240
+[; ;Carcelero.c: 240:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"244
+[; ;Carcelero.c: 244:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"245
+[; ;Carcelero.c: 245:         I2C_Master_Write(0x20);
+[e ( _I2C_Master_Write (1 -> -> 32 `i `ui ]
+"246
+[; ;Carcelero.c: 246:         I2C_Master_Write(3);
+[e ( _I2C_Master_Write (1 -> -> 3 `i `ui ]
+"247
+[; ;Carcelero.c: 247:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"248
+[; ;Carcelero.c: 248:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"251
+[; ;Carcelero.c: 251:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"252
+[; ;Carcelero.c: 252:         I2C_Master_Write(0x21);
+[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
+"253
+[; ;Carcelero.c: 253:         LM35 = I2C_Master_Read(0);
+[e = _LM35 -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"254
+[; ;Carcelero.c: 254:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"255
+[; ;Carcelero.c: 255:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"259
+[; ;Carcelero.c: 259:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"260
+[; ;Carcelero.c: 260:         I2C_Master_Write(0x40);
+[e ( _I2C_Master_Write (1 -> -> 64 `i `ui ]
+"261
+[; ;Carcelero.c: 261:         I2C_Master_Write(posicion);
+[e ( _I2C_Master_Write (1 -> _posicion `ui ]
+"262
+[; ;Carcelero.c: 262:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"263
+[; ;Carcelero.c: 263:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"265
+[; ;Carcelero.c: 265:         conversion();
+[e ( _conversion ..  ]
+"283
+[; ;Carcelero.c: 283:         on_off();
+[e ( _on_off ..  ]
+"285
+[; ;Carcelero.c: 285:         celdas();
+[e ( _celdas ..  ]
+"286
+[; ;Carcelero.c: 286:     }
 }
+[e :U 192 ]
+[e $U 193  ]
+[e :U 194 ]
+"287
+[; ;Carcelero.c: 287: }
+[e :UE 191 ]
+}
+[a 14C 76 117 122 0 ]
+[a 15C 84 101 109 112 0 ]
+[a 13C 72 117 109 111 0 ]
+[a 2C 79 78 0 ]
+[a 8C 79 78 0 ]
+[a 10C 79 78 0 ]
+[a 4C 79 70 70 0 ]
+[a 6C 79 70 70 0 ]
+[a 12C 79 70 70 0 ]
+[a 1C 32 32 32 0 ]
+[a 7C 32 32 32 0 ]
+[a 9C 32 32 32 0 ]
+[a 11C 32 32 32 0 ]
+[a 3C 32 32 0 ]
+[a 5C 32 32 0 ]

@@ -31,9 +31,6 @@
 
 #define _XTAL_FREQ 4000000
 
-#define Trigger PORTDbits.RD0
-#define Echo PORTDbits.RD1
-
 // =============================================================================
 //                  Declaramos las funciones a utilizar
 void setup();
@@ -42,12 +39,10 @@ void cronometro();
 // =============================================================================
 //                  Declaramos las variables globales a usar
 
-uint8_t luz, humo;  // Variables en las que guardamos lo leido
+uint8_t luz, humo, tempe;  // Variables en las que guardamos lo leido
 uint8_t z;          // Limpia los datos inservibles del buffer de I2C
 uint8_t dato;       // Como diputado en el congreso: no hace nada y ocupa espacio
-uint8_t x;          // Variable que compara las peticiones del maestro.
-
-uint8_t tiempoL, tiempoH;   // Guardamos el tiempo del TIMER1
+uint8_t x,y;        // Variable que compara las peticiones del maestro.
 
 // =============================================================================
 void __interrupt() isr(void)
@@ -56,7 +51,7 @@ void __interrupt() isr(void)
     if (PIR1bits.ADIF == 1)     // Interrupcion del ADC
     {
         PIR1bits.ADIF = 0;      // Limpio bandera
-        __delay_ms(1);
+        __delay_ms(2);
     }
     // =========================================================================
     if(PIR1bits.SSPIF == 1)     // Maestro se comunica con el esclavo 
@@ -78,7 +73,7 @@ void __interrupt() isr(void)
             PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
-            x = SSPBUF;                 // Guardar en el "x" el valor recibido
+            y = SSPBUF;                 // Guardar en el "x" el valor recibido
             __delay_us(250);
         }
         
@@ -108,17 +103,7 @@ void __interrupt() isr(void)
             {
                 z = SSPBUF;             // Lo que tiene el buffer lo guardamos para descartarlo
                 BF = 0;                 // Limpiamos bandera
-                SSPBUF = tiempoL;          // El valor del HUMO lo cargamos al Buffer
-                SSPCONbits.CKP = 1;     // Habilitamos reloj
-                __delay_us(250);
-                while(SSPSTATbits.BF);  // Esperamos a que se envien los datos
-            }
-            
-            else if (x == 4)
-            {
-                z = SSPBUF;             // Lo que tiene el buffer lo guardamos para descartarlo
-                BF = 0;                 // Limpiamos bandera
-                SSPBUF = tiempoH;          // El valor del HUMO lo cargamos al Buffer
+                SSPBUF = tempe;          // El valor del HUMO lo cargamos al Buffer
                 SSPCONbits.CKP = 1;     // Habilitamos reloj
                 __delay_us(250);
                 while(SSPSTATbits.BF);  // Esperamos a que se envien los datos
@@ -139,55 +124,17 @@ void setup()
     
     ANSELbits.ANS0 = 1;     // Sensor de luz: entrada analógica.
     ANSELbits.ANS1 = 1;     // Sensor de humo: entrada analógica.
+    ANSELbits.ANS2 = 1;     // Sensor de temperatura: entrada analógica.
     
     TRISAbits.TRISA0 = 1;   // Sensor de luz: entrada analógica.
     TRISAbits.TRISA1 = 1;   // Sensor de humo: entrada analógica.
-    
-    
-    TRISDbits.TRISD0 = 0;   // Trigger ultrasonico
-    TRISDbits.TRISD1 = 1;   // Echo ultrasonico
+    TRISAbits.TRISA2 = 1;   // Sensor de temperatura: entrada analógica.
     
     PORTA = 0;  // Limpiamos puertos
-    PORTD = 0;
     
     INTCONbits.GIE = 1;     // Activamos todas las interrupciones
     INTCONbits.PEIE = 1;    // Interrupcion periferica habilitada
     PIE1bits.ADIE = 1;      // Habilita la interrupcion del ADC
-    PIE1bits.TMR1IE = 1;    // Habilitamos la interrupcion del Timer1
-    
-    T1CON = 0x10;           // COnfiguracion del timer 1
-}
-
-// =============================================================================
-//        Funcion para medir el tiempo de regreso de las ondas ultrasonicas
-// =============================================================================
-void cronometro(void)
-{
-    TMR1L = 0;  // Reiniciamos 
-    TMR1H = 0;  // el cronometro
-        
-    Trigger = 1;
-    __delay_us(10);
-    Trigger = 0;        // Envio de pulso para activar el sensor ultrasonico
-    
-    while(!Echo);       // Esperamos que el sensor nos regrese el pulso
-    
-    T1CONbits.TMR1ON = 1;   // Encendemos el timer1
-    while(Echo);            // Esperamos a que el pulso baje
-    T1CONbits.TMR1ON = 0;   // Apagamos el timer
-    
-    tiempoL = TMR1L;        // Guardamos los 8 bits del TMR1 low
-    tiempoH =  (TMR1H<<8);  // Guardamos los 2 bits sobrantes
-    // Estos tiempos se iran al master para que él los sume
-    
-    
-    // Esto lo hara el maestro
-    /*distancia = (tiempo/5.882) + 1;     // 34,000 = velocidad del sonido en cm
-    
-    x  = distancia/100;  // Obtenemos la centena
-    x1 = distancia%100;  // Obtenemos el residuo para la decima y unidad
-    x2 = x1/10;     // Obtenemos la decena
-    x3 = x1%10;     // Obtenemos la unidad*/
 }
 
 void main(void) 
@@ -203,13 +150,15 @@ void main(void)
     while(1)
     {
         ADCON0bits.CHS = 0b0000;    // CHANNEL AN0 = RA0
-        luz = leerADC(0);          // Guardamos en pot1 el ADDRESS del ADC
-        __delay_ms(1);
+        luz = leerADC(0);          // Guardamos en luz el ADDRESS del ADC
+        __delay_ms(2);
         
         ADCON0bits.CHS = 0b0001;    // CHANNEL AN1 = RA1
-        humo = leerADC(0);          // Guardamos en pot2 el ADDRESS del ADC
-        __delay_ms(1);
+        humo = leerADC(0);          // Guardamos en humo el ADDRESS del ADC
+        __delay_ms(2);
         
-        cronometro();
+        ADCON0bits.CHS = 0b0010;    // CHANNEL AN2 = RA2
+        tempe = leerADC(0);         // Guardamos en tempe el ADDRESS del ADC
+        __delay_ms(2);
     }
 }

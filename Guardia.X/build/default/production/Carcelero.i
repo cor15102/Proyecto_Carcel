@@ -2758,73 +2758,67 @@ typedef uint16_t uintptr_t;
 
 
 
-void I2C_blanco(void)
+void I2C_Master_Init(const unsigned long c)
 {
-
-    SSPCONbits.WCOL = 0;
-    SSPCONbits.SSPOV = 0;
-    SSPCONbits.SSPEN = 1;
-    SSPCONbits.CKP = 0;
-    SSPCONbits.SSPM = 0b1000;
-
-
+    SSPCON = 0b00101000;
     SSPCON2 = 0;
-
-
-    long clock = 100000;
-    SSPADD = ((4000000/(4*clock))-1);
-
-
+    SSPADD = (4000000/(4*c))-1;
     SSPSTAT = 0;
-
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
 }
 
-void Blanco_Espera()
+
+
+
+
+
+
+void I2C_Master_Wait()
 {
     while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
-# 50 "./I2Cmaestro.h"
 }
 
-void Blanco_repiteStart()
-{
-    Blanco_Espera();
-    SSPCON2bits.RSEN = 1;
-}
 
-void Blanco_Stop()
+
+void I2C_Master_Start()
 {
-    Blanco_Espera();
+    I2C_Master_Wait();
+    SSPCON2bits.SEN = 1;
+}
+# 55 "./I2Cmaestro.h"
+void I2C_Master_Stop()
+{
+    I2C_Master_Wait();
     SSPCON2bits.PEN = 1;
 }
 
-void Blanco_Escribe(unsigned d)
+
+
+
+
+void I2C_Master_Write(unsigned d)
 {
-    Blanco_Espera();
+    I2C_Master_Wait();
     SSPBUF = d;
 }
 
-unsigned short Blanco_lee(unsigned short E)
+
+
+
+unsigned short I2C_Master_Read(unsigned short a)
 {
     unsigned short temp;
-
-    Blanco_Espera();
+    I2C_Master_Wait();
     SSPCON2bits.RCEN = 1;
-
-    Blanco_Espera();
+    I2C_Master_Wait();
     temp = SSPBUF;
-
-    Blanco_Espera();
-    if (E == 1)
-    {
+    I2C_Master_Wait();
+    if(a == 1){
         SSPCON2bits.ACKDT = 0;
-
-    } else
-    {
+    }else{
         SSPCON2bits.ACKDT = 1;
     }
-
     SSPCON2bits.ACKEN = 1;
     return temp;
 }
@@ -2971,13 +2965,143 @@ void iniciarOSC(uint8_t frec)
 
 
 void setup();
+void conversion();
+void on_off();
+void celdas();
+
+uint8_t MQ2, Fotor, LM35;
+int Humo,Luz,Tiempo;
+double Tempe;
+int x,x1,x2,x3;
+int y,y1,y2,y3;
+int z,z1,z2,z3,z4;
+int estado1, estado2, posicion;
+
+
+const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+
+
+void conversion()
+{
+    Humo = (MQ2*1);
+    x = Humo/100;
+    x1 = Humo%100;
+    x2 = x1/10;
+    x3 = x1%10;
+
+    Luz = (Fotor*1);
+    y = Luz/100;
+    y1 = Luz%100;
+    y2 = y1/10;
+    y3 = y1%10;
+
+    Tempe = (LM35*5.0)/255;
+    z = Tempe*100;
+    z1 = z/100;
+    z2 = z%100;
+    z3 = z2/10;
+    z4 = z2%10;
+# 87 "Carcelero.c"
+ }
+
+void on_off()
+{
+    if (Humo > 100)
+    {
+        colocar(1,2);
+        imprimir("   ");
+        colocar(1,2);
+        imprimir("ON");
+
+        PORTAbits.RA3 = 1;
+    }
+    else
+    {
+        colocar(1,2);
+        imprimir("  ");
+        colocar(1,2);
+        imprimir("OFF");
+
+        PORTAbits.RA3 = 0;
+    }
+
+
+    if (Luz > 50)
+    {
+        colocar(6,2);
+        imprimir("  ");
+        colocar(6,2);
+        imprimir("OFF");
+
+        PORTAbits.RA4 = 0;
+    }
+    else
+    {
+        colocar(6,2);
+        imprimir("   ");
+        colocar(6,2);
+        imprimir("ON");
+
+        PORTAbits.RA4 = 1;
+    }
+
+    if (Tempe > 30)
+    {
+        colocar(10,2);
+        imprimir("   ");
+        colocar(10,2);
+        imprimir("ON");
+
+        PORTAbits.RA2 = 1;
+    }
+    else
+    {
+        colocar(10,2);
+        imprimir("   ");
+        colocar(10,2);
+        imprimir("OFF");
+
+        PORTAbits.RA2 = 1;
+    }
+}
+
+void celdas()
+{
+    if (PORTAbits.RA0 == 1 && estado1 == 0)
+    {
+        posicion = 90;
+        estado1 = 1;
+        PORTAbits.RA5 = 1;
+    }
+    else if (PORTAbits.RA0 == 0 && estado1 == 1)
+    {
+        estado1 = 0;
+    }
+
+    if (PORTAbits.RA1 == 1 && estado2 == 0)
+    {
+        posicion = 0;
+        estado2 = 1;
+        PORTAbits.RA5 = 0;
+    }
+    else if (PORTAbits.RA0 == 0 && estado2 == 1)
+    {
+        estado2 = 0;
+    }
+}
 
 void setup()
 {
     ANSEL = 0;
     ANSELH = 0;
 
+    TRISA = 0;
+    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA1 = 1;
     TRISB = 0;
+
+    PORTA = 0;
+    PORTB = 0;
 }
 
 void main(void)
@@ -2986,5 +3110,80 @@ void main(void)
 
     setup();
 
-    return;
+    I2C_Master_Init(100000);
+
+    iniciarLCD();
+
+    borrarv();
+
+    colocar(1,1);
+    imprimir("Humo");
+
+    colocar(6,1);
+    imprimir("Luz");
+
+    colocar(10,1);
+    imprimir("Temp");
+
+    while(1)
+    {
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x20);
+        I2C_Master_Write(2);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x21);
+        MQ2 = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x20);
+        I2C_Master_Write(1);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x21);
+        Fotor = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x20);
+        I2C_Master_Write(3);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x21);
+        LM35 = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x40);
+        I2C_Master_Write(posicion);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+        conversion();
+# 283 "Carcelero.c"
+        on_off();
+
+        celdas();
+    }
 }
