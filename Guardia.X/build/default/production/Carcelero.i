@@ -2868,6 +2868,8 @@ void borrarv(void)
 {
     comando(0);
     comando(1);
+
+    comando(0x0C);
 }
 
 void colocar(const char x,const char y)
@@ -2964,6 +2966,10 @@ void iniciarOSC(uint8_t frec)
 
 
 
+
+
+
+
 void setup();
 void conversion();
 void on_off();
@@ -3001,26 +3007,26 @@ void conversion()
     z2 = z%100;
     z3 = z2/10;
     z4 = z2%10;
-# 87 "Carcelero.c"
+# 91 "Carcelero.c"
  }
 
 void on_off()
 {
     if (Humo > 100)
     {
-        colocar(1,2);
-        imprimir("   ");
-        colocar(1,2);
-        imprimir("ON");
+
+
+
+
 
         PORTAbits.RA3 = 1;
     }
-    else
+    else if (Humo < 100)
     {
-        colocar(1,2);
-        imprimir("  ");
-        colocar(1,2);
-        imprimir("OFF");
+
+
+
+
 
         PORTAbits.RA3 = 0;
     }
@@ -3028,38 +3034,38 @@ void on_off()
 
     if (Luz > 50)
     {
-        colocar(6,2);
-        imprimir("  ");
-        colocar(6,2);
-        imprimir("OFF");
+
+
+
+
 
         PORTAbits.RA4 = 0;
     }
-    else
+    else if (Luz < 50)
     {
-        colocar(6,2);
-        imprimir("   ");
-        colocar(6,2);
-        imprimir("ON");
+
+
+
+
 
         PORTAbits.RA4 = 1;
     }
 
     if (Tempe > 30)
     {
-        colocar(10,2);
-        imprimir("   ");
-        colocar(10,2);
-        imprimir("ON");
+
+
+
+
 
         PORTAbits.RA2 = 1;
     }
-    else
+    else if (Tempe < 30)
     {
-        colocar(10,2);
-        imprimir("   ");
-        colocar(10,2);
-        imprimir("OFF");
+
+
+
+
 
         PORTAbits.RA2 = 1;
     }
@@ -3067,6 +3073,8 @@ void on_off()
 
 void celdas()
 {
+    posicion = 0;
+
     if (PORTAbits.RA0 == 1 && estado1 == 0)
     {
         posicion = 90;
@@ -3098,10 +3106,15 @@ void setup()
     TRISA = 0;
     TRISAbits.TRISA0 = 1;
     TRISAbits.TRISA1 = 1;
+
     TRISB = 0;
+
+    TRISDbits.TRISD6 = 0;
+    TRISDbits.TRISD7 = 0;
 
     PORTA = 0;
     PORTB = 0;
+    PORTC = 0;
 }
 
 void main(void)
@@ -3116,6 +3129,8 @@ void main(void)
 
     borrarv();
 
+    _delay((unsigned long)((2000)*(4000000/4000.0)));
+
     colocar(1,1);
     imprimir("Humo");
 
@@ -3127,63 +3142,25 @@ void main(void)
 
     while(1)
     {
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x20);
-        I2C_Master_Write(2);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x21);
-        MQ2 = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x20);
-        I2C_Master_Write(1);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
+# 234 "Carcelero.c"
         I2C_Master_Start();
         I2C_Master_Write(0x21);
         Fotor = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x20);
-        I2C_Master_Write(3);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x21);
-        LM35 = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x40);
-        I2C_Master_Write(posicion);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
+        _delay((unsigned long)((200)*(4000000/4000.0)));
+# 279 "Carcelero.c"
         conversion();
-# 283 "Carcelero.c"
+# 289 "Carcelero.c"
+        colocar(6,2);
+        mostrar(a[y]);
+        colocar(7,2);
+        mostrar(a[y2]);
+        colocar(8,2);
+        mostrar(a[y3]);
+        _delay((unsigned long)((2)*(4000000/4000.0)));
+
         on_off();
 
-        celdas();
+
     }
 }

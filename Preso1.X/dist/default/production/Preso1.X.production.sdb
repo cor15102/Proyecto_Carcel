@@ -19,11 +19,11 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"48 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X\Reo1.c
+"47 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X\Reo1.c
 [v _isr isr `II(v  1 e 1 0 ]
-"110
+"119
 [v _setup setup `(v  1 e 1 0 ]
-"128
+"139
 [v _main main `(v  1 e 1 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -227,23 +227,21 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"42 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X\Reo1.c
+"41 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X\Reo1.c
 [v _luz luz `uc  1 e 1 0 ]
-[v _humo humo `uc  1 e 1 0 ]
-"43
+"42
 [v _z z `uc  1 e 1 0 ]
-"45
+"44
 [v _x x `uc  1 e 1 0 ]
-[v _y y `uc  1 e 1 0 ]
-"128
+"139
 [v _main main `(v  1 e 1 0 ]
 {
-"148
+"165
 } 0
-"110
+"119
 [v _setup setup `(v  1 e 1 0 ]
 {
-"126
+"137
 } 0
 "128 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X/ADC.h
 [v _leerADC leerADC `(ui  1 e 2 0 ]
@@ -251,7 +249,7 @@
 [v leerADC@channel channel `uc  1 a 1 wreg ]
 [v leerADC@channel channel `uc  1 a 1 wreg ]
 "130
-[v leerADC@channel channel `uc  1 a 1 2 ]
+[v leerADC@channel channel `uc  1 a 1 4 ]
 "145
 } 0
 "5 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X/Oscilador.h
@@ -259,13 +257,13 @@
 {
 [v iniciarOSC@frec frec `uc  1 a 1 wreg ]
 [v iniciarOSC@frec frec `uc  1 a 1 wreg ]
-[v iniciarOSC@frec frec `uc  1 a 1 0 ]
+[v iniciarOSC@frec frec `uc  1 a 1 4 ]
 "48
 } 0
 "12 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X/ADC.h
 [v _iniciarADC iniciarADC `(v  1 e 1 0 ]
 {
-[v iniciarADC@conv conv `i  1 p 2 4 ]
+[v iniciarADC@conv conv `i  1 p 2 0 ]
 "121
 } 0
 "18 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X/I2Cesclavo.h
@@ -277,8 +275,8 @@
 [v I2C_Negro@address address `uc  1 a 1 4 ]
 "30
 } 0
-"48 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X\Reo1.c
+"47 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso1.X\Reo1.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"105
+"114
 } 0

@@ -55,6 +55,8 @@ void borrarv(void)
 {
     comando(0);
     comando(1);
+    
+    comando(0x0C);  // Apagamos Cursor
 }
 
 void colocar(const char x,const char y)

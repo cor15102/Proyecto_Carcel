@@ -2868,12 +2868,12 @@ void iniciarOSC(uint8_t frec)
 
 
 void setup();
-void cronometro();
+
 
 uint8_t tiempoL, tiempoH;
 uint8_t z;
 uint8_t dato;
-uint8_t x,y;
+uint8_t x;
 
 void __attribute__((picinterrupt(("")))) isr(void)
 {
@@ -2899,7 +2899,7 @@ void __attribute__((picinterrupt(("")))) isr(void)
             PIR1bits.SSPIF = 0;
             SSPCONbits.CKP = 1;
             while(!SSPSTATbits.BF);
-            y = SSPBUF;
+            x = SSPBUF;
             _delay((unsigned long)((250)*(125000/4000000.0)));
         }
 
@@ -2929,27 +2929,7 @@ void __attribute__((picinterrupt(("")))) isr(void)
         PIR1bits.SSPIF = 0;
     }
 }
-
-void cronometro(void)
-{
-    TMR1L = 0;
-    TMR1H = 0;
-
-    PORTBbits.RB0 = 1;
-    _delay((unsigned long)((10)*(125000/4000000.0)));
-    PORTBbits.RB0 = 0;
-
-    while(!PORTBbits.RB2);
-
-    T1CONbits.TMR1ON = 1;
-    while(PORTBbits.RB2);
-    T1CONbits.TMR1ON = 0;
-
-    tiempoL = TMR1L;
-    tiempoH = (TMR1H<<8);
-
-}
-
+# 126 "Reo2.c"
 void setup()
 {
     ANSEL = 0;
@@ -2978,16 +2958,18 @@ void main(void)
 
     g0();
 
+    _delay((unsigned long)((1000)*(125000/4000.0)));
+
     while(1)
     {
-        cronometro();
 
-        if (y == 0)
+
+        if (x == 0)
         {
             g90();
         }
 
-        else if (y == 90)
+        else if (x == 90)
         {
             g0();
         }

@@ -167,42 +167,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3641 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3641: extern volatile __bit BF __attribute__((address(0x4A0)));
 [v _BF `Vb ~T0 @X0 0 e@1184 ]
-"657
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 657: extern volatile unsigned char TMR1L __attribute__((address(0x00E)));
-[v _TMR1L `Vuc ~T0 @X0 0 e@14 ]
-"664
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 664: extern volatile unsigned char TMR1H __attribute__((address(0x00F)));
-[v _TMR1H `Vuc ~T0 @X0 0 e@15 ]
-"234
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 234:     struct {
-[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"233
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 233: typedef union {
-[u S7 `S8 1 ]
-[n S7 . . ]
-"245
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
-[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
-"677
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 677:     struct {
-[s S23 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S23 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS TMR1GE T1GINV ]
-"686
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 686:     struct {
-[s S24 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S24 . . T1INSYNC . T1CKPS0 T1CKPS1 . T1GIV ]
-"695
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 695:     struct {
-[s S25 :2 `uc 1 :1 `uc 1 ]
-[n S25 . . T1SYNC ]
-"676
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 676: typedef union {
-[u S22 `S23 1 `S24 1 `S25 1 ]
-[n S22 . . . . ]
-"700
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 700: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x010)));
-[v _T1CONbits `VS22 ~T0 @X0 0 e@16 ]
 "3387
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
@@ -763,9 +727,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Reo2.c: 48: uint8_t dato;
 [v _dato `uc ~T0 @X0 1 e ]
 "49
-[; ;Reo2.c: 49: uint8_t x,y;
+[; ;Reo2.c: 49: uint8_t x;
 [v _x `uc ~T0 @X0 1 e ]
-[v _y `uc ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
 "51
 [; ;Reo2.c: 51: void __attribute__((picinterrupt(("")))) isr(void)
@@ -829,8 +792,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 160  ]
 [e :U 161 ]
 "75
-[; ;Reo2.c: 75:             y = SSPBUF;
-[e = _y _SSPBUF ]
+[; ;Reo2.c: 75:             x = SSPBUF;
+[e = _x _SSPBUF ]
 "76
 [; ;Reo2.c: 76:             _delay((unsigned long)((250)*(125000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 125000 `l `d .4000000.0 `ul ]
@@ -927,59 +890,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Reo2.c: 104: }
 [e :UE 155 ]
 }
-"106
-[; ;Reo2.c: 106: void cronometro(void)
-[v _cronometro `(v ~T0 @X0 1 ef ]
-"107
-[; ;Reo2.c: 107: {
-{
-[e :U _cronometro ]
-[f ]
-"108
-[; ;Reo2.c: 108:     TMR1L = 0;
-[e = _TMR1L -> -> 0 `i `uc ]
-"109
-[; ;Reo2.c: 109:     TMR1H = 0;
-[e = _TMR1H -> -> 0 `i `uc ]
-"111
-[; ;Reo2.c: 111:     PORTBbits.RB0 = 1;
-[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"112
-[; ;Reo2.c: 112:     _delay((unsigned long)((10)*(125000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 125000 `l `d .4000000.0 `ul ]
-"113
-[; ;Reo2.c: 113:     PORTBbits.RB0 = 0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"115
-[; ;Reo2.c: 115:     while(!PORTBbits.RB2);
-[e $U 174  ]
-[e :U 175 ]
-[e :U 174 ]
-[e $ ! != -> . . _PORTBbits 0 2 `i -> 0 `i 175  ]
-[e :U 176 ]
-"117
-[; ;Reo2.c: 117:     T1CONbits.TMR1ON = 1;
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-"118
-[; ;Reo2.c: 118:     while(PORTBbits.RB2);
-[e $U 177  ]
-[e :U 178 ]
-[e :U 177 ]
-[e $ != -> . . _PORTBbits 0 2 `i -> 0 `i 178  ]
-[e :U 179 ]
-"119
-[; ;Reo2.c: 119:     T1CONbits.TMR1ON = 0;
-[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-"121
-[; ;Reo2.c: 121:     tiempoL = TMR1L;
-[e = _tiempoL _TMR1L ]
-"122
-[; ;Reo2.c: 122:     tiempoH = (TMR1H<<8);
-[e = _tiempoH -> << -> _TMR1H `i -> 8 `i `uc ]
-"124
-[; ;Reo2.c: 124: }
-[e :UE 173 ]
-}
 "126
 [; ;Reo2.c: 126: void setup()
 [v _setup `(v ~T0 @X0 1 ef ]
@@ -1017,7 +927,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _T1CON -> -> 16 `i `uc ]
 "140
 [; ;Reo2.c: 140: }
-[e :UE 180 ]
+[e :UE 173 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
 "142
@@ -1044,49 +954,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Reo2.c: 152:     g0();
 [e ( _g0 ..  ]
 "154
-[; ;Reo2.c: 154:     while(1)
-[e :U 183 ]
-"155
-[; ;Reo2.c: 155:     {
-{
+[; ;Reo2.c: 154:     _delay((unsigned long)((1000)*(125000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 125000 `l `d .4000.0 `ul ]
 "156
-[; ;Reo2.c: 156:         cronometro();
-[e ( _cronometro ..  ]
-"158
-[; ;Reo2.c: 158:         if (y == 0)
-[e $ ! == -> _y `i -> 0 `i 185  ]
-"159
-[; ;Reo2.c: 159:         {
+[; ;Reo2.c: 156:     while(1)
+[e :U 176 ]
+"157
+[; ;Reo2.c: 157:     {
 {
 "160
-[; ;Reo2.c: 160:             g90();
-[e ( _g90 ..  ]
+[; ;Reo2.c: 160:         if (x == 0)
+[e $ ! == -> _x `i -> 0 `i 178  ]
 "161
-[; ;Reo2.c: 161:         }
-}
-[e $U 186  ]
-"163
-[; ;Reo2.c: 163:         else if (y == 90)
-[e :U 185 ]
-[e $ ! == -> _y `i -> 90 `i 187  ]
-"164
-[; ;Reo2.c: 164:         {
+[; ;Reo2.c: 161:         {
 {
+"162
+[; ;Reo2.c: 162:             g90();
+[e ( _g90 ..  ]
+"163
+[; ;Reo2.c: 163:         }
+}
+[e $U 179  ]
 "165
-[; ;Reo2.c: 165:             g0();
-[e ( _g0 ..  ]
+[; ;Reo2.c: 165:         else if (x == 90)
+[e :U 178 ]
+[e $ ! == -> _x `i -> 90 `i 180  ]
 "166
-[; ;Reo2.c: 166:         }
-}
-[e :U 187 ]
-[e :U 186 ]
+[; ;Reo2.c: 166:         {
+{
 "167
-[; ;Reo2.c: 167:     }
-}
-[e :U 182 ]
-[e $U 183  ]
-[e :U 184 ]
+[; ;Reo2.c: 167:             g0();
+[e ( _g0 ..  ]
 "168
-[; ;Reo2.c: 168: }
-[e :UE 181 ]
+[; ;Reo2.c: 168:         }
+}
+[e :U 180 ]
+[e :U 179 ]
+"169
+[; ;Reo2.c: 169:     }
+}
+[e :U 175 ]
+[e $U 176  ]
+[e :U 177 ]
+"170
+[; ;Reo2.c: 170: }
+[e :UE 174 ]
 }

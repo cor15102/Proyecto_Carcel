@@ -2901,15 +2901,14 @@ void iniciarOSC(uint8_t frec)
 
 
 void setup();
-void cronometro();
 
 
 
 
-uint8_t luz, humo;
+uint8_t luz, humo, tempe;
 uint8_t z;
 uint8_t dato;
-uint8_t x,y;
+uint8_t x;
 
 
 void __attribute__((picinterrupt(("")))) isr(void)
@@ -2940,31 +2939,21 @@ void __attribute__((picinterrupt(("")))) isr(void)
             PIR1bits.SSPIF = 0;
             SSPCONbits.CKP = 1;
             while(!SSPSTATbits.BF);
-            y = SSPBUF;
+            x = SSPBUF;
             _delay((unsigned long)((250)*(4000000/4000000.0)));
         }
 
         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW)
         {
-            if (x == 1)
-            {
+
+
                 z = SSPBUF;
                 BF = 0;
                 SSPBUF = luz;
                 SSPCONbits.CKP = 1;
                 _delay((unsigned long)((250)*(4000000/4000000.0)));
                 while(SSPSTATbits.BF);
-            }
-
-            else if (x == 2)
-            {
-                z = SSPBUF;
-                BF = 0;
-                SSPBUF = humo;
-                SSPCONbits.CKP = 1;
-                _delay((unsigned long)((250)*(4000000/4000000.0)));
-                while(SSPSTATbits.BF);
-            }
+# 110 "Reo1.c"
         }
 
         PIR1bits.SSPIF = 0;
@@ -2982,8 +2971,10 @@ void setup()
     ANSELbits.ANS0 = 1;
     ANSELbits.ANS1 = 1;
 
+
     TRISAbits.TRISA0 = 1;
     TRISAbits.TRISA1 = 1;
+
 
     PORTA = 0;
 
@@ -3002,14 +2993,13 @@ void main(void)
 
     I2C_Negro(0x20);
 
+
+
     while(1)
     {
         ADCON0bits.CHS = 0b0000;
         luz = leerADC(0);
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-
-        ADCON0bits.CHS = 0b0001;
-        humo = leerADC(0);
-        _delay((unsigned long)((1)*(4000000/4000.0)));
+        _delay((unsigned long)((2)*(4000000/4000.0)));
+# 164 "Reo1.c"
     }
 }

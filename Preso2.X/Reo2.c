@@ -41,12 +41,12 @@
 #define Echo PORTBbits.RB2
 
 void setup();
-void cronometro();
+//void cronometro();
 
 uint8_t tiempoL, tiempoH;   // Guardamos el tiempo del TIMER1
 uint8_t z;          // Limpia los datos inservibles del buffer de I2C
 uint8_t dato;       // Como diputado en el congreso: no hace nada y ocupa espacio
-uint8_t x,y;          // Variable que compara las peticiones del maestro.
+uint8_t x;          // Variable que compara las peticiones del maestro.
 
 void __interrupt() isr(void)
 {
@@ -72,7 +72,7 @@ void __interrupt() isr(void)
             PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
-            y = SSPBUF;                 // Guardar en el "x" el valor recibido
+            x = SSPBUF;                 // Guardar en el "x" el valor recibido
             __delay_us(250);
         }
         
@@ -103,7 +103,7 @@ void __interrupt() isr(void)
     }
 }
 
-void cronometro(void)
+/*void cronometro(void)
 {
     TMR1L = 0;  // Reiniciamos 
     TMR1H = 0;  // el cronometro
@@ -121,7 +121,7 @@ void cronometro(void)
     tiempoL = TMR1L;        // Guardamos los 8 bits del TMR1 low
     tiempoH =  (TMR1H<<8);  // Guardamos los 2 bits sobrantes
     // Estos tiempos se iran al master para que él los sume
-}
+}*/
 
 void setup()
 {
@@ -151,16 +151,18 @@ void main(void)
     
     g0();
     
+    __delay_ms(1000);   // Esperamos a que todo se configure
+    
     while(1)
     {
-        cronometro();
+        //cronometro();
         
-        if (y == 0)
+        if (x == 0)
         {
             g90();
         }
         
-        else if (y == 90)
+        else if (x == 90)
         {
             g0();
         }
