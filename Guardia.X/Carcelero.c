@@ -46,13 +46,46 @@
 void setup();
 void luces();
 void celda();
+void ultrasonico();
 
-uint8_t Luz;
-int y,y1,y2,y3;
-uint8_t grados;
+uint8_t Luz;        // Variable donde se guarda lo que el PIC1 nos envia.
+int y,y1,y2,y3;     // Variables para almacenar la centena, la decena y la unidad de la luz.
+uint8_t grados;     // Variable para conocer el estado de las celdas.
+//uint8_t Tiempo;     // Variable para guardar el tiempo del sensor ultrasonico.
+uint8_t Distancia;  // Variable que guarda la conversion de tiempo a distancia.
+int z,z1,z2,z3;     // Variables para almacenar la centena, la decena y la unidad de la distancia
 
 // Arreglo con caracteres para imprimir en la LCD
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+
+void ultrasonico()
+{
+    z  = Distancia/10;
+    z1 = Distancia%10;
+//    z2 = z1/10;
+//    z3 = z1%10;
+    
+    colocar(4,1);
+    mostrar(a[z]);
+    colocar(5,1);
+    mostrar(a[z1]);
+//    colocar(6,1);
+//    mostrar(a[z3]);
+    
+    if (Distancia < 20)
+    {
+        colocar(1,2);
+        imprimir("ALERTA");
+        PORTAbits.RA3 = 1;
+    }
+    
+    else
+    {
+        colocar(1,2);
+        imprimir("      ");
+        PORTAbits.RA3 = 0;
+    }
+}
 
 void luces()
 {
@@ -61,33 +94,33 @@ void luces()
     y2 = y1/10;         //Primer decimal del fotoresustor 
     y3 = y1%10;         //Segunod decimal del fotoresistor
     
-    colocar(7,2);
+    colocar(10,2);
     mostrar(a[y]);
-    colocar(8,2);
+    colocar(11,2);
     mostrar(a[y2]);
-    colocar(9,2);
+    colocar(12,2);
     mostrar(a[y3]);
     
     if (Luz < 50)
     {
-        colocar(11,2);
+        colocar(14,2);
         imprimir("   ");
-        colocar(11,1);
+        colocar(14,1);
         imprimir("ON");
         PORTAbits.RA2 = 1;
     }
     
     else
     {
-        colocar(11,1);
+        colocar(14,1);
         imprimir("   ");
-        colocar(11,2);
+        colocar(14,2);
         imprimir("OFF");
         PORTAbits.RA2 = 0;
     }
 }
 
-void celda()
+/*void celda()
 {
     if (grados == 0)
     {
@@ -110,7 +143,7 @@ void celda()
         colocar(1,2);
         imprimir("OPEN");
     }
-}
+}*/
 
 void setup()
 {
@@ -142,20 +175,23 @@ void main(void)
     
     I2C_Master_Init(100000);
     
-    colocar(1,1);
-    imprimir("Celda");
+//    colocar(1,1);
+//    imprimir("Celda");
     
-    colocar(7,1);
+    colocar(10,1);
     imprimir("Luz");
+    
+    colocar(1,1);
+    imprimir("X:");
     
     while(1)
     {
-        // Recibo el estado de la puerta: abierta(90°) o cerrada(0°)
-        I2C_Master_Start();             // Iniciamos comunicacion 
-        I2C_Master_Write(0x21);         // Llamamos al PIC1 y le indicamos que lo vamos a leer
-        grados = I2C_Master_Read(0);    // Guardamos en grados la posicion del servo.
-        I2C_Master_Stop();              // Detenemos I2C. No mas lectura del PIC1
-        __delay_ms(100);
+        // Recibo el estado de la puerta: abierta(90°) o cerrada(0°). PIC2 = REO2
+//        I2C_Master_Start();             // Iniciamos comunicacion 
+//        I2C_Master_Write(0x21);         // Llamamos al PIC1 y le indicamos que lo vamos a leer
+//        grados = I2C_Master_Read(0);    // Guardamos en grados la posicion del servo.
+//        I2C_Master_Stop();              // Detenemos I2C. No mas lectura del PIC1
+//        __delay_ms(100);
         
         // Recibo el valor del sensor de LUZ. PIC1 = REO1
         I2C_Master_Start();         // Iniciamos comunicacion
@@ -164,7 +200,15 @@ void main(void)
         I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC2
         __delay_ms(100);
         
+        // Recibo el tiempo del sensor ultrasonico. PIC3 = REO3
+        I2C_Master_Start();         // Iniciamos comunicacion
+        I2C_Master_Write(0x31);     // Llamamos al REO1 y le indicamos que lo leeremos
+        Distancia = I2C_Master_Read(0);   // Guardamos en luz el valor del ADC enviado por el PIC1
+        I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC2
+        __delay_ms(100);
+        
         luces();
-        celda();
+        //celda();
+        ultrasonico();
     }
 }

@@ -2973,13 +2973,46 @@ void iniciarOSC(uint8_t frec)
 void setup();
 void luces();
 void celda();
+void ultrasonico();
 
 uint8_t Luz;
 int y,y1,y2,y3;
 uint8_t grados;
 
+uint8_t Distancia;
+int z,z1,z2,z3;
+
 
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+
+void ultrasonico()
+{
+    z = Distancia/10;
+    z1 = Distancia%10;
+
+
+
+    colocar(4,1);
+    mostrar(a[z]);
+    colocar(5,1);
+    mostrar(a[z1]);
+
+
+
+    if (Distancia < 20)
+    {
+        colocar(1,2);
+        imprimir("ALERTA");
+        PORTAbits.RA3 = 1;
+    }
+
+    else
+    {
+        colocar(1,2);
+        imprimir("      ");
+        PORTAbits.RA3 = 0;
+    }
+}
 
 void luces()
 {
@@ -2988,57 +3021,32 @@ void luces()
     y2 = y1/10;
     y3 = y1%10;
 
-    colocar(7,2);
+    colocar(10,2);
     mostrar(a[y]);
-    colocar(8,2);
+    colocar(11,2);
     mostrar(a[y2]);
-    colocar(9,2);
+    colocar(12,2);
     mostrar(a[y3]);
 
     if (Luz < 50)
     {
-        colocar(11,2);
+        colocar(14,2);
         imprimir("   ");
-        colocar(11,1);
+        colocar(14,1);
         imprimir("ON");
         PORTAbits.RA2 = 1;
     }
 
     else
     {
-        colocar(11,1);
+        colocar(14,1);
         imprimir("   ");
-        colocar(11,2);
+        colocar(14,2);
         imprimir("OFF");
         PORTAbits.RA2 = 0;
     }
 }
-
-void celda()
-{
-    if (grados == 0)
-    {
-        colocar(1,2);
-        imprimir("     ");
-
-        PORTAbits.RA1 = 0;
-
-        colocar(1,2);
-        imprimir("CLOSE");
-    }
-
-    else if (grados == 90)
-    {
-        colocar(1,2);
-        imprimir("     ");
-
-        PORTAbits.RA1 = 1;
-
-        colocar(1,2);
-        imprimir("OPEN");
-    }
-}
-
+# 148 "Carcelero.c"
 void setup()
 {
     ANSEL = 0;
@@ -3069,29 +3077,33 @@ void main(void)
 
     I2C_Master_Init(100000);
 
-    colocar(1,1);
-    imprimir("Celda");
 
-    colocar(7,1);
+
+
+    colocar(10,1);
     imprimir("Luz");
+
+    colocar(1,1);
+    imprimir("X:");
 
     while(1)
     {
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x21);
-        grados = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
+# 197 "Carcelero.c"
         I2C_Master_Start();
         I2C_Master_Write(0x11);
         Luz = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((100)*(4000000/4000.0)));
 
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x31);
+        Distancia = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
         luces();
-        celda();
+
+        ultrasonico();
     }
 }

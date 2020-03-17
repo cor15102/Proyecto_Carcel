@@ -2751,7 +2751,7 @@ extern int printf(const char *, ...);
 
 # 1 "./I2Cesclavo.h" 1
 # 18 "./I2Cesclavo.h"
-void I2C_Negro(uint8_t address)
+void I2C_Esclavo(uint8_t address)
 {
     SSPADD = address;
     SSPCON = 0x36;
@@ -2955,7 +2955,7 @@ void main (void)
 
     setup();
 
-    I2C_Negro(0x20);
+    I2C_Esclavo(0x20);
 
     iniciarPWM();
 

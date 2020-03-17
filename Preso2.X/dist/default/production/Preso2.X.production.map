@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\Preso2.X.production.sym \
   --cmf=dist/default/production\Preso2.X.production.cmf -z -Q16F887 \
-  -oC:\Users\joser\AppData\Local\Temp\s5ls.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\joser\AppData\Local\Temp\s9q4.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Preso2.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\joser\AppData\Local\Temp\s5ls.o \
+  -DENTRY=2 -k C:\Users\joser\AppData\Local\Temp\s9q4.o \
   dist/default/production\Preso2.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\joser\AppData\Local\Temp\s5ls.o
+C:\Users\joser\AppData\Local\Temp\s9q4.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2     400E       0
@@ -147,7 +147,7 @@ UNUSED ADDRESS RANGES
 
                                   Symbol Table
 
-I2C_Negro@address         cstackCOMMON 0079
+I2C_Esclavo@address       cstackCOMMON 0079
 _ANSEL                    (abs)        0188
 _ANSELH                   (abs)        0189
 _BF                       (abs)        04A0
@@ -156,7 +156,7 @@ _CCP2CONbits              (abs)        001D
 _CCPR2L                   (abs)        001B
 _E                        bssCOMMON    0075
 _GIE                      (abs)        005F
-_I2C_Negro                text7        0144
+_I2C_Esclavo              text7        0144
 _OPEN_CLOSE               text4        00DF
 _OSCCONbits               (abs)        008F
 _PEIE                     (abs)        005E
@@ -266,7 +266,7 @@ ___latbits                (abs)        0002
 ___sp                     stack        0000
 ___stackhi                (abs)        0000
 ___stacklo                (abs)        0000
-__end_of_I2C_Negro        text7        015E
+__end_of_I2C_Esclavo      text7        015E
 __end_of_OPEN_CLOSE       text4        011F
 __end_of__initialization  cinit        0015
 __end_of_g0               text6        018C
@@ -289,7 +289,7 @@ __ptext5                  text5        017E
 __ptext6                  text6        0185
 __ptext7                  text7        0144
 __ptext8                  text8        0019
-__size_of_I2C_Negro       (abs)        0000
+__size_of_I2C_Esclavo     (abs)        0000
 __size_of_OPEN_CLOSE      (abs)        0000
 __size_of_g0              (abs)        0000
 __size_of_g90             (abs)        0000
@@ -351,7 +351,7 @@ FUNCTION INFORMATION:
 Total ram usage:        0 bytes
  Hardware stack levels required when called:    3
  This function calls:
-		_I2C_Negro
+		_I2C_Esclavo
 		_OPEN_CLOSE
 		_g0
 		_iniciarOSC
@@ -544,7 +544,7 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _I2C_Negro *****************
+ *************** function _I2C_Esclavo *****************
  Defined at:
 		line 18 in file "./I2Cesclavo.h"
  Parameters:    Size  Location     Type
@@ -628,7 +628,7 @@ Reo2.c
 Reo2.c estimated size: 219
 
 ./I2Cesclavo.h
-		_I2C_Negro     		CODE           	0144	0000	27
+		_I2C_Esclavo   		CODE           	0144	0000	27
 
 ./I2Cesclavo.h estimated size: 27
 

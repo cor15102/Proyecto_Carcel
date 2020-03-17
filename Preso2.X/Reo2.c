@@ -38,8 +38,6 @@
 #include "Oscilador.h"
 
 #define _XTAL_FREQ 1000000
-#define Trigger PORTBbits.RB0
-#define Echo PORTBbits.RB2
 
 void setup();
 void OPEN_CLOSE();
@@ -138,7 +136,7 @@ void main (void)
     
     setup();            // Configuramos puertos
     
-    I2C_Negro(0x20);    // Esclavo con direccion 0x40
+    I2C_Esclavo(0x20);    // Esclavo con direccion 0x40
     
     iniciarPWM();
     

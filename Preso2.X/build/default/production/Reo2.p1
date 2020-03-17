@@ -461,14 +461,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "18 ./I2Cesclavo.h
-[; ;./I2Cesclavo.h: 18: void I2C_Negro(uint8_t address)
-[v _I2C_Negro `(v ~T0 @X0 1 ef1`uc ]
+[; ;./I2Cesclavo.h: 18: void I2C_Esclavo(uint8_t address)
+[v _I2C_Esclavo `(v ~T0 @X0 1 ef1`uc ]
 "19
 [; ;./I2Cesclavo.h: 19: {
 {
-[e :U _I2C_Negro ]
+[e :U _I2C_Esclavo ]
 "18
-[; ;./I2Cesclavo.h: 18: void I2C_Negro(uint8_t address)
+[; ;./I2Cesclavo.h: 18: void I2C_Esclavo(uint8_t address)
 [v _address `uc ~T0 @X0 1 r1 ]
 "19
 [; ;./I2Cesclavo.h: 19: {
@@ -959,8 +959,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Reo2.c: 139:     setup();
 [e ( _setup ..  ]
 "141
-[; ;Reo2.c: 141:     I2C_Negro(0x20);
-[e ( _I2C_Negro (1 -> -> 32 `i `uc ]
+[; ;Reo2.c: 141:     I2C_Esclavo(0x20);
+[e ( _I2C_Esclavo (1 -> -> 32 `i `uc ]
 "143
 [; ;Reo2.c: 143:     iniciarPWM();
 [e ( _iniciarPWM ..  ]

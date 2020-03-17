@@ -117,7 +117,7 @@ void main(void)
     
     iniciarADC(2,0);    // Configuramos ADC para lectura de luz y humo
     
-    I2C_Negro(0x10);    // Este sera un esclavo con direccion 0x10
+    I2C_Esclavo(0x10);    // Este sera un esclavo con direccion 0x10
     
     while(1)
     {

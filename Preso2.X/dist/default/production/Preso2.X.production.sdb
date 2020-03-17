@@ -4,7 +4,7 @@
 [d chip 16F887 ]
 [d frameptr 0 ]
 "18 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso2.X/I2Cesclavo.h
-[v _I2C_Negro I2C_Negro `(v  1 e 1 0 ]
+[v _I2C_Esclavo I2C_Esclavo `(v  1 e 1 0 ]
 "5 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso2.X/Oscilador.h
 [v _iniciarOSC iniciarOSC `(v  1 e 1 0 ]
 "15 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso2.X/PWM.h
@@ -261,12 +261,12 @@
 "36
 } 0
 "18 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso2.X/I2Cesclavo.h
-[v _I2C_Negro I2C_Negro `(v  1 e 1 0 ]
+[v _I2C_Esclavo I2C_Esclavo `(v  1 e 1 0 ]
 {
-[v I2C_Negro@address address `uc  1 a 1 wreg ]
-[v I2C_Negro@address address `uc  1 a 1 wreg ]
+[v I2C_Esclavo@address address `uc  1 a 1 wreg ]
+[v I2C_Esclavo@address address `uc  1 a 1 wreg ]
 "20
-[v I2C_Negro@address address `uc  1 a 1 3 ]
+[v I2C_Esclavo@address address `uc  1 a 1 3 ]
 "30
 } 0
 "54 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso2.X\Reo2.c

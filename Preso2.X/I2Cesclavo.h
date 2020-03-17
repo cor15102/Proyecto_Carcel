@@ -15,7 +15,7 @@
 //*****************************************************************************
 // Función para inicializar I2C Esclavo
 //*****************************************************************************
-void I2C_Negro(uint8_t address)
+void I2C_Esclavo(uint8_t address)
 { 
     SSPADD = address;
     SSPCON = 0x36;      // 0b00110110
