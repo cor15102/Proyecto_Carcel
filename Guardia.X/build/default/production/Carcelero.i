@@ -2971,130 +2971,71 @@ void iniciarOSC(uint8_t frec)
 
 
 void setup();
-void conversion();
-void on_off();
-void celdas();
+void luces();
+void celda();
 
-uint8_t MQ2, Fotor, LM35;
-int Humo,Luz,Tiempo;
-double Tempe;
-int x,x1,x2,x3;
+uint8_t Luz;
 int y,y1,y2,y3;
-int z,z1,z2,z3,z4;
-int estado1, estado2, posicion;
+uint8_t grados;
 
 
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
 
-
-void conversion()
+void luces()
 {
-    Humo = (MQ2*1);
-    x = Humo/100;
-    x1 = Humo%100;
-    x2 = x1/10;
-    x3 = x1%10;
-
-    Luz = (Fotor*1);
     y = Luz/100;
     y1 = Luz%100;
     y2 = y1/10;
     y3 = y1%10;
 
-    Tempe = (LM35*5.0)/255;
-    z = Tempe*100;
-    z1 = z/100;
-    z2 = z%100;
-    z3 = z2/10;
-    z4 = z2%10;
-# 91 "Carcelero.c"
- }
+    colocar(7,2);
+    mostrar(a[y]);
+    colocar(8,2);
+    mostrar(a[y2]);
+    colocar(9,2);
+    mostrar(a[y3]);
 
-void on_off()
-{
-    if (Humo > 100)
+    if (Luz < 50)
     {
-
-
-
-
-
-        PORTAbits.RA3 = 1;
-    }
-    else if (Humo < 100)
-    {
-
-
-
-
-
-        PORTAbits.RA3 = 0;
-    }
-
-
-    if (Luz > 50)
-    {
-
-
-
-
-
-        PORTAbits.RA4 = 0;
-    }
-    else if (Luz < 50)
-    {
-
-
-
-
-
-        PORTAbits.RA4 = 1;
-    }
-
-    if (Tempe > 30)
-    {
-
-
-
-
-
+        colocar(11,2);
+        imprimir("   ");
+        colocar(11,1);
+        imprimir("ON");
         PORTAbits.RA2 = 1;
     }
-    else if (Tempe < 30)
+
+    else
     {
-
-
-
-
-
-        PORTAbits.RA2 = 1;
+        colocar(11,1);
+        imprimir("   ");
+        colocar(11,2);
+        imprimir("OFF");
+        PORTAbits.RA2 = 0;
     }
 }
 
-void celdas()
+void celda()
 {
-    posicion = 0;
+    if (grados == 0)
+    {
+        colocar(1,2);
+        imprimir("     ");
 
-    if (PORTAbits.RA0 == 1 && estado1 == 0)
-    {
-        posicion = 90;
-        estado1 = 1;
-        PORTAbits.RA5 = 1;
-    }
-    else if (PORTAbits.RA0 == 0 && estado1 == 1)
-    {
-        estado1 = 0;
+        PORTAbits.RA1 = 0;
+
+        colocar(1,2);
+        imprimir("CLOSE");
     }
 
-    if (PORTAbits.RA1 == 1 && estado2 == 0)
+    else if (grados == 90)
     {
-        posicion = 0;
-        estado2 = 1;
-        PORTAbits.RA5 = 0;
-    }
-    else if (PORTAbits.RA0 == 0 && estado2 == 1)
-    {
-        estado2 = 0;
+        colocar(1,2);
+        imprimir("     ");
+
+        PORTAbits.RA1 = 1;
+
+        colocar(1,2);
+        imprimir("OPEN");
     }
 }
 
@@ -3104,10 +3045,8 @@ void setup()
     ANSELH = 0;
 
     TRISA = 0;
-    TRISAbits.TRISA0 = 1;
-    TRISAbits.TRISA1 = 1;
-
     TRISB = 0;
+    TRISC = 0;
 
     TRISDbits.TRISD6 = 0;
     TRISDbits.TRISD7 = 0;
@@ -3115,6 +3054,7 @@ void setup()
     PORTA = 0;
     PORTB = 0;
     PORTC = 0;
+    PORTD = 0;
 }
 
 void main(void)
@@ -3123,44 +3063,35 @@ void main(void)
 
     setup();
 
-    I2C_Master_Init(100000);
-
     iniciarLCD();
 
     borrarv();
 
-    _delay((unsigned long)((2000)*(4000000/4000.0)));
+    I2C_Master_Init(100000);
 
     colocar(1,1);
-    imprimir("Humo");
+    imprimir("Celda");
 
-    colocar(6,1);
+    colocar(7,1);
     imprimir("Luz");
-
-    colocar(10,1);
-    imprimir("Temp");
 
     while(1)
     {
-# 234 "Carcelero.c"
+
         I2C_Master_Start();
         I2C_Master_Write(0x21);
-        Fotor = I2C_Master_Read(0);
+        grados = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((200)*(4000000/4000.0)));
-# 279 "Carcelero.c"
-        conversion();
-# 289 "Carcelero.c"
-        colocar(6,2);
-        mostrar(a[y]);
-        colocar(7,2);
-        mostrar(a[y2]);
-        colocar(8,2);
-        mostrar(a[y3]);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-
-        on_off();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
 
 
+        I2C_Master_Start();
+        I2C_Master_Write(0x11);
+        Luz = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+        luces();
+        celda();
     }
 }

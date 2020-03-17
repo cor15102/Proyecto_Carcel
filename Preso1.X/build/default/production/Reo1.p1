@@ -481,7 +481,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x FOSC = INTRC_NOCLKOUT ]
 "12
 [; ;./ADC.h: 12: 
-[v _iniciarADC `(v ~T0 @X0 1 ef1`i ]
+[v _iniciarADC `(v ~T0 @X0 1 ef2`i`i ]
 "13
 [; ;./ADC.h: 13:         case 2:
 {
@@ -489,6 +489,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12
 [; ;./ADC.h: 12: 
 [v _conv `i ~T0 @X0 1 r1 ]
+[v _ch `i ~T0 @X0 1 r2 ]
 "13
 [; ;./ADC.h: 13:         case 2:
 [f ]
@@ -511,22 +512,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ADC.h: 24:     }
 [e :U 143 ]
 "25
+[; ;./ADC.h: 25: 
 [e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
 "26
+[; ;./ADC.h: 26: 
 [e $U 140  ]
 "28
+[; ;./ADC.h: 28: 
 [e :U 144 ]
 "29
+[; ;./ADC.h: 29:     switch(ch)
 [e = . . _ADCON0bits 0 3 -> -> 2 `i `uc ]
 "30
+[; ;./ADC.h: 30:     {
 [e $U 140  ]
 "32
+[; ;./ADC.h: 32:             ADCON0bits.CHS = 0b0000;
 [e :U 145 ]
 "33
+[; ;./ADC.h: 33:             break;
 [e = . . _ADCON0bits 0 3 -> -> 3 `i `uc ]
 "34
+[; ;./ADC.h: 34: 
 [e $U 140  ]
 "35
+[; ;./ADC.h: 35:         case 1:
 }
 [e $U 140  ]
 [e :U 141 ]
@@ -535,86 +545,252 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 144
  145 ]
 [e :U 140 ]
+"40
+[; ;./ADC.h: 40:             ADCON0bits.CHS = 0b0010;
+[e $U 147  ]
+"41
+[; ;./ADC.h: 41:             break;
+{
+"42
+[; ;./ADC.h: 42: 
+[e :U 148 ]
+"43
+[; ;./ADC.h: 43:         case 3:
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+"44
+[; ;./ADC.h: 44:             ADCON0bits.CHS = 0b0011;
+[e $U 146  ]
+"46
+[; ;./ADC.h: 46: 
+[e :U 149 ]
+"47
+[; ;./ADC.h: 47:         case 4:
+[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
+"48
+[; ;./ADC.h: 48:             ADCON0bits.CHS = 0b0100;
+[e $U 146  ]
+"50
+[; ;./ADC.h: 50: 
+[e :U 150 ]
+"51
+[; ;./ADC.h: 51:         case 5:
+[e = . . _ADCON0bits 0 2 -> -> 2 `i `uc ]
+"52
+[; ;./ADC.h: 52:             ADCON0bits.CHS = 0b0101;
+[e $U 146  ]
+"54
+[; ;./ADC.h: 54: 
+[e :U 151 ]
+"55
+[; ;./ADC.h: 55:         case 6:
+[e = . . _ADCON0bits 0 2 -> -> 3 `i `uc ]
+"56
+[; ;./ADC.h: 56:             ADCON0bits.CHS = 0b0110;
+[e $U 146  ]
+"58
+[; ;./ADC.h: 58: 
+[e :U 152 ]
+"59
+[; ;./ADC.h: 59:         case 7:
+[e = . . _ADCON0bits 0 2 -> -> 4 `i `uc ]
+"60
+[; ;./ADC.h: 60:             ADCON0bits.CHS = 0b0111;
+[e $U 146  ]
+"62
+[; ;./ADC.h: 62: 
+[e :U 153 ]
+"63
+[; ;./ADC.h: 63:         case 8:
+[e = . . _ADCON0bits 0 2 -> -> 5 `i `uc ]
+"64
+[; ;./ADC.h: 64:             ADCON0bits.CHS = 0b1000;
+[e $U 146  ]
+"66
+[; ;./ADC.h: 66: 
+[e :U 154 ]
+"67
+[; ;./ADC.h: 67:         case 9:
+[e = . . _ADCON0bits 0 2 -> -> 6 `i `uc ]
+"68
+[; ;./ADC.h: 68:             ADCON0bits.CHS = 0b1001;
+[e $U 146  ]
+"70
+[; ;./ADC.h: 70: 
+[e :U 155 ]
+"71
+[; ;./ADC.h: 71:         case 10:
+[e = . . _ADCON0bits 0 2 -> -> 7 `i `uc ]
+"72
+[; ;./ADC.h: 72:             ADCON0bits.CHS = 0b1010;
+[e $U 146  ]
+"74
+[; ;./ADC.h: 74: 
+[e :U 156 ]
+"75
+[; ;./ADC.h: 75:         case 11:
+[e = . . _ADCON0bits 0 2 -> -> 8 `i `uc ]
+"76
+[; ;./ADC.h: 76:             ADCON0bits.CHS = 0b1011;
+[e $U 146  ]
+"78
+[; ;./ADC.h: 78: 
+[e :U 157 ]
+"79
+[; ;./ADC.h: 79:         case 12:
+[e = . . _ADCON0bits 0 2 -> -> 9 `i `uc ]
+"80
+[; ;./ADC.h: 80:             ADCON0bits.CHS = 0b1100;
+[e $U 146  ]
+"82
+[; ;./ADC.h: 82: 
+[e :U 158 ]
+"83
+[; ;./ADC.h: 83:         case 13:
+[e = . . _ADCON0bits 0 2 -> -> 10 `i `uc ]
+"84
+[; ;./ADC.h: 84:             ADCON0bits.CHS = 0b1101;
+[e $U 146  ]
+"86
+[; ;./ADC.h: 86: 
+[e :U 159 ]
+"87
+[; ;./ADC.h: 87:         case 14:
+[e = . . _ADCON0bits 0 2 -> -> 11 `i `uc ]
+"88
+[; ;./ADC.h: 88:             ADCON0bits.CHS = 0b1110;
+[e $U 146  ]
+"90
+[; ;./ADC.h: 90: 
+[e :U 160 ]
+"91
+[; ;./ADC.h: 91:         case 15:
+[e = . . _ADCON0bits 0 2 -> -> 12 `i `uc ]
+"92
+[; ;./ADC.h: 92:             ADCON0bits.CHS = 0b1111;
+[e $U 146  ]
+"94
+[; ;./ADC.h: 94: 
+[e :U 161 ]
+"95
+[; ;./ADC.h: 95:         default:
+[e = . . _ADCON0bits 0 2 -> -> 13 `i `uc ]
+"96
+[; ;./ADC.h: 96:             ADCON0bits.CHS = 0b0000;
+[e $U 146  ]
+"98
+[; ;./ADC.h: 98: 
+[e :U 162 ]
+"99
+[; ;./ADC.h: 99:     }
+[e = . . _ADCON0bits 0 2 -> -> 14 `i `uc ]
+"100
+[; ;./ADC.h: 100: 
+[e $U 146  ]
+"102
+[; ;./ADC.h: 102: 
+[e :U 163 ]
+"103
+[; ;./ADC.h: 103:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 2 -> -> 15 `i `uc ]
+"104
+[; ;./ADC.h: 104: 
+[e $U 146  ]
+"106
+[; ;./ADC.h: 106: 
+[e :U 164 ]
+"107
+[; ;./ADC.h: 107:     ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+"108
+[; ;./ADC.h: 108: 
+[e $U 146  ]
+"110
+[; ;./ADC.h: 110: }
+}
+[e $U 146  ]
+[e :U 147 ]
+[e [\ _ch , $ -> 0 `i 148
+ , $ -> 1 `i 149
+ , $ -> 2 `i 150
+ , $ -> 3 `i 151
+ , $ -> 4 `i 152
+ , $ -> 5 `i 153
+ , $ -> 6 `i 154
+ , $ -> 7 `i 155
+ , $ -> 8 `i 156
+ , $ -> 9 `i 157
+ , $ -> 10 `i 158
+ , $ -> 11 `i 159
+ , $ -> 12 `i 160
+ , $ -> 13 `i 161
+ , $ -> 14 `i 162
+ , $ -> 15 `i 163
+ 164 ]
+[e :U 146 ]
 "112
-[; ;./ADC.h: 112:     ADCON0bits.GO_DONE = 1;
+[; ;./ADC.h: 112: 
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
 "114
-[; ;./ADC.h: 114:     ADCON0bits.ADON = 1;
+[; ;./ADC.h: 114: 
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
 "116
-[; ;./ADC.h: 116:     ADCON1bits.ADFM = 0;
+[; ;./ADC.h: 116: 
 [e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
 "118
-[; ;./ADC.h: 118:     ADCON1bits.VCFG1 = 0;
+[; ;./ADC.h: 118: {
 [e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
 "120
-[; ;./ADC.h: 120:     ADCON1bits.VCFG0 = 0;
+[; ;./ADC.h: 120:     {
 [e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
 "121
-[; ;./ADC.h: 121: }
+[; ;./ADC.h: 121:         return 0;
 [e :UE 139 ]
 }
 "128
-[; ;./ADC.h: 128: unsigned int leerADC(unsigned char channel)
+[; ;./ADC.h: 128: 
 [v _leerADC `(ui ~T0 @X0 1 ef1`uc ]
 "129
-[; ;./ADC.h: 129: {
+[; ;./ADC.h: 129:     while(GO_nDONE);
 {
 [e :U _leerADC ]
 "128
-[; ;./ADC.h: 128: unsigned int leerADC(unsigned char channel)
+[; ;./ADC.h: 128: 
 [v _channel `uc ~T0 @X0 1 r1 ]
 "129
-[; ;./ADC.h: 129: {
+[; ;./ADC.h: 129:     while(GO_nDONE);
 [f ]
 "130
-[; ;./ADC.h: 130:     if(channel > 7)
-[e $ ! > -> _channel `i -> 7 `i 147  ]
+[; ;./ADC.h: 130: 
+[e $ ! > -> _channel `i -> 7 `i 166  ]
 "131
-[; ;./ADC.h: 131:     {
+[; ;./ADC.h: 131:     return (ADRESH);
 {
 "132
-[; ;./ADC.h: 132:         return 0;
+[; ;./ADC.h: 132: }
 [e ) -> -> 0 `i `ui ]
-[e $UE 146  ]
+[e $UE 165  ]
 "133
-[; ;./ADC.h: 133:     }
 }
-[e :U 147 ]
+[e :U 166 ]
 "135
-[; ;./ADC.h: 135:     ADCON0 &= 0xC5;
 [e =& _ADCON0 -> -> 197 `i `Vuc ]
 "136
-[; ;./ADC.h: 136:     ADCON0 |= channel<<3;
 [e =| _ADCON0 -> << -> _channel `i -> 3 `i `Vuc ]
 "137
-[; ;./ADC.h: 137:     _delay((unsigned long)((2)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "138
-[; ;./ADC.h: 138:     GO_nDONE = 1;
 [e = _GO_nDONE -> -> 1 `i `b ]
 "140
-[; ;./ADC.h: 140:     while(GO_nDONE)
-[e $U 148  ]
-[e :U 149 ]
-"141
-[; ;./ADC.h: 141:     {
-{
+[e $U 167  ]
+[e :U 168 ]
+[e :U 167 ]
+[e $ _GO_nDONE 168  ]
+[e :U 169 ]
 "142
-[; ;./ADC.h: 142:     }
-}
-[e :U 148 ]
-"140
-[; ;./ADC.h: 140:     while(GO_nDONE)
-[e $ _GO_nDONE 149  ]
-[e :U 150 ]
-"144
-[; ;./ADC.h: 144:     return (ADRESH);
 [e ) -> _ADRESH `ui ]
-[e $UE 146  ]
-"145
-[; ;./ADC.h: 145: }
-[e :UE 146 ]
+[e $UE 165  ]
+"143
+[e :UE 165 ]
 }
 "18 ./I2Cesclavo.h
 [; ;./I2Cesclavo.h: 18: void I2C_Negro(uint8_t address)
@@ -661,7 +837,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SSPIE -> -> 1 `i `b ]
 "30
 [; ;./I2Cesclavo.h: 30: }
-[e :UE 151 ]
+[e :UE 170 ]
 }
 "5 ./Oscilador.h
 [; ;./Oscilador.h: 5: void iniciarOSC(uint8_t frec)
@@ -678,118 +854,116 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "7
 [; ;./Oscilador.h: 7:     switch(frec)
-[e $U 154  ]
+[e $U 173  ]
 "8
 [; ;./Oscilador.h: 8:     {
 {
 "9
 [; ;./Oscilador.h: 9:         case 0:
-[e :U 155 ]
+[e :U 174 ]
 "10
 [; ;./Oscilador.h: 10:             OSCCONbits.IRCF = 0b000;
 [e = . . _OSCCONbits 0 4 -> -> 0 `i `uc ]
 "11
 [; ;./Oscilador.h: 11:             break;
-[e $U 153  ]
+[e $U 172  ]
 "13
 [; ;./Oscilador.h: 13:         case 1:
-[e :U 156 ]
+[e :U 175 ]
 "14
 [; ;./Oscilador.h: 14:             OSCCONbits.IRCF = 0b001;
 [e = . . _OSCCONbits 0 4 -> -> 1 `i `uc ]
 "15
 [; ;./Oscilador.h: 15:             break;
-[e $U 153  ]
+[e $U 172  ]
 "17
 [; ;./Oscilador.h: 17:         case 2:
-[e :U 157 ]
+[e :U 176 ]
 "18
 [; ;./Oscilador.h: 18:             OSCCONbits.IRCF = 0b010;
 [e = . . _OSCCONbits 0 4 -> -> 2 `i `uc ]
 "19
 [; ;./Oscilador.h: 19:             break;
-[e $U 153  ]
+[e $U 172  ]
 "21
 [; ;./Oscilador.h: 21:         case 3:
-[e :U 158 ]
+[e :U 177 ]
 "22
 [; ;./Oscilador.h: 22:             OSCCONbits.IRCF = 0b001;
 [e = . . _OSCCONbits 0 4 -> -> 1 `i `uc ]
 "23
 [; ;./Oscilador.h: 23:             break;
-[e $U 153  ]
+[e $U 172  ]
 "25
 [; ;./Oscilador.h: 25:         case 4:
-[e :U 159 ]
+[e :U 178 ]
 "26
 [; ;./Oscilador.h: 26:             OSCCONbits.IRCF = 0b100;
 [e = . . _OSCCONbits 0 4 -> -> 4 `i `uc ]
 "27
 [; ;./Oscilador.h: 27:             break;
-[e $U 153  ]
+[e $U 172  ]
 "29
 [; ;./Oscilador.h: 29:         case 5:
-[e :U 160 ]
+[e :U 179 ]
 "30
 [; ;./Oscilador.h: 30:             OSCCONbits.IRCF = 0b101;
 [e = . . _OSCCONbits 0 4 -> -> 5 `i `uc ]
 "31
 [; ;./Oscilador.h: 31:             break;
-[e $U 153  ]
+[e $U 172  ]
 "33
 [; ;./Oscilador.h: 33:         case 6:
-[e :U 161 ]
+[e :U 180 ]
 "34
 [; ;./Oscilador.h: 34:             OSCCONbits.IRCF = 0b110;
 [e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
 "35
 [; ;./Oscilador.h: 35:             break;
-[e $U 153  ]
+[e $U 172  ]
 "37
 [; ;./Oscilador.h: 37:         case 7:
-[e :U 162 ]
+[e :U 181 ]
 "38
 [; ;./Oscilador.h: 38:             OSCCONbits.IRCF = 0b111;
 [e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
 "39
 [; ;./Oscilador.h: 39:             break;
-[e $U 153  ]
+[e $U 172  ]
 "41
 [; ;./Oscilador.h: 41:         default:
-[e :U 163 ]
+[e :U 182 ]
 "42
 [; ;./Oscilador.h: 42:             OSCCONbits.IRCF = 0b110;
 [e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
 "43
 [; ;./Oscilador.h: 43:             break;
-[e $U 153  ]
+[e $U 172  ]
 "45
 [; ;./Oscilador.h: 45:     }
 }
-[e $U 153  ]
-[e :U 154 ]
-[e [\ -> _frec `i , $ -> 0 `i 155
- , $ -> 1 `i 156
- , $ -> 2 `i 157
- , $ -> 3 `i 158
- , $ -> 4 `i 159
- , $ -> 5 `i 160
- , $ -> 6 `i 161
- , $ -> 7 `i 162
- 163 ]
-[e :U 153 ]
+[e $U 172  ]
+[e :U 173 ]
+[e [\ -> _frec `i , $ -> 0 `i 174
+ , $ -> 1 `i 175
+ , $ -> 2 `i 176
+ , $ -> 3 `i 177
+ , $ -> 4 `i 178
+ , $ -> 5 `i 179
+ , $ -> 6 `i 180
+ , $ -> 7 `i 181
+ 182 ]
+[e :U 172 ]
 "47
 [; ;./Oscilador.h: 47:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
 "48
 [; ;./Oscilador.h: 48: }
-[e :UE 152 ]
+[e :UE 171 ]
 }
 "41 Reo1.c
-[; ;Reo1.c: 41: uint8_t luz, humo, tempe;
+[; ;Reo1.c: 41: uint8_t luz;
 [v _luz `uc ~T0 @X0 1 e ]
-[v _humo `uc ~T0 @X0 1 e ]
-[v _tempe `uc ~T0 @X0 1 e ]
 "42
 [; ;Reo1.c: 42: uint8_t z;
 [v _z `uc ~T0 @X0 1 e ]
@@ -810,7 +984,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "50
 [; ;Reo1.c: 50:     if (PIR1bits.ADIF == 1)
-[e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 165  ]
+[e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 184  ]
 "51
 [; ;Reo1.c: 51:     {
 {
@@ -823,10 +997,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54
 [; ;Reo1.c: 54:     }
 }
-[e :U 165 ]
+[e :U 184 ]
 "56
 [; ;Reo1.c: 56:     if(PIR1bits.SSPIF == 1)
-[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 166  ]
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 185  ]
 "57
 [; ;Reo1.c: 57:     {
 {
@@ -835,7 +1009,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
 "60
 [; ;Reo1.c: 60:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL))
-[e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 167  ]
+[e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 186  ]
 "61
 [; ;Reo1.c: 61:         {
 {
@@ -854,10 +1028,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "66
 [; ;Reo1.c: 66:         }
 }
-[e :U 167 ]
+[e :U 186 ]
 "68
 [; ;Reo1.c: 68:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
-[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 168  ]
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 187  ]
 "69
 [; ;Reo1.c: 69:         {
 {
@@ -872,11 +1046,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
 "74
 [; ;Reo1.c: 74:             while(!SSPSTATbits.BF);
-[e $U 169  ]
-[e :U 170 ]
-[e :U 169 ]
-[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 170  ]
-[e :U 171 ]
+[e $U 188  ]
+[e :U 189 ]
+[e :U 188 ]
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 189  ]
+[e :U 190 ]
 "75
 [; ;Reo1.c: 75:             x = SSPBUF;
 [e = _x _SSPBUF ]
@@ -886,137 +1060,128 @@ Version 4.0 HI-TECH Software Intermediate Code
 "77
 [; ;Reo1.c: 77:         }
 }
-[e $U 172  ]
+[e $U 191  ]
 "79
 [; ;Reo1.c: 79:         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW)
-[e :U 168 ]
-[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 173  ]
+[e :U 187 ]
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 192  ]
 "80
 [; ;Reo1.c: 80:         {
 {
-"83
-[; ;Reo1.c: 83:                 z = SSPBUF;
+"81
+[; ;Reo1.c: 81:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"84
-[; ;Reo1.c: 84:                 BF = 0;
+"82
+[; ;Reo1.c: 82:             BF = 0;
 [e = _BF -> -> 0 `i `b ]
-"85
-[; ;Reo1.c: 85:                 SSPBUF = luz;
+"83
+[; ;Reo1.c: 83:             SSPBUF = luz;
 [e = _SSPBUF _luz ]
-"86
-[; ;Reo1.c: 86:                 SSPCONbits.CKP = 1;
+"84
+[; ;Reo1.c: 84:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"87
-[; ;Reo1.c: 87:                 _delay((unsigned long)((250)*(4000000/4000000.0)));
+"85
+[; ;Reo1.c: 85:             _delay((unsigned long)((250)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"88
-[; ;Reo1.c: 88:                 while(SSPSTATbits.BF);
-[e $U 174  ]
-[e :U 175 ]
-[e :U 174 ]
-[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 175  ]
-[e :U 176 ]
-"110
-[; ;Reo1.c: 110:         }
+"86
+[; ;Reo1.c: 86:             while(SSPSTATbits.BF);
+[e $U 193  ]
+[e :U 194 ]
+[e :U 193 ]
+[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 194  ]
+[e :U 195 ]
+"87
+[; ;Reo1.c: 87:         }
 }
-[e :U 173 ]
-[e :U 172 ]
-"112
-[; ;Reo1.c: 112:         PIR1bits.SSPIF = 0;
+[e :U 192 ]
+[e :U 191 ]
+"89
+[; ;Reo1.c: 89:         PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"113
-[; ;Reo1.c: 113:     }
+"90
+[; ;Reo1.c: 90:     }
 }
-[e :U 166 ]
-"114
-[; ;Reo1.c: 114: }
-[e :UE 164 ]
+[e :U 185 ]
+"91
+[; ;Reo1.c: 91: }
+[e :UE 183 ]
 }
-"119
-[; ;Reo1.c: 119: void setup()
+"96
+[; ;Reo1.c: 96: void setup()
 [v _setup `(v ~T0 @X0 1 ef ]
-"120
-[; ;Reo1.c: 120: {
+"97
+[; ;Reo1.c: 97: {
 {
 [e :U _setup ]
 [f ]
-"121
-[; ;Reo1.c: 121:     ANSEL = 0;
+"98
+[; ;Reo1.c: 98:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"122
-[; ;Reo1.c: 122:     ANSELH = 0;
+"99
+[; ;Reo1.c: 99:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"124
-[; ;Reo1.c: 124:     ANSELbits.ANS0 = 1;
+"101
+[; ;Reo1.c: 101:     ANSELbits.ANS0 = 1;
 [e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-"125
-[; ;Reo1.c: 125:     ANSELbits.ANS1 = 1;
-[e = . . _ANSELbits 0 1 -> -> 1 `i `uc ]
-"128
-[; ;Reo1.c: 128:     TRISAbits.TRISA0 = 1;
+"103
+[; ;Reo1.c: 103:     TRISAbits.TRISA0 = 1;
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-"129
-[; ;Reo1.c: 129:     TRISAbits.TRISA1 = 1;
-[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
-"132
-[; ;Reo1.c: 132:     PORTA = 0;
+"105
+[; ;Reo1.c: 105:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"134
-[; ;Reo1.c: 134:     INTCONbits.GIE = 1;
+"107
+[; ;Reo1.c: 107:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"135
-[; ;Reo1.c: 135:     INTCONbits.PEIE = 1;
+"108
+[; ;Reo1.c: 108:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"136
-[; ;Reo1.c: 136:     PIE1bits.ADIE = 1;
+"109
+[; ;Reo1.c: 109:     PIE1bits.ADIE = 1;
 [e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"137
-[; ;Reo1.c: 137: }
-[e :UE 177 ]
+"110
+[; ;Reo1.c: 110: }
+[e :UE 196 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"139
-[; ;Reo1.c: 139: void main(void)
+"112
+[; ;Reo1.c: 112: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"140
-[; ;Reo1.c: 140: {
+"113
+[; ;Reo1.c: 113: {
 {
 [e :U _main ]
 [f ]
-"141
-[; ;Reo1.c: 141:     iniciarOSC(6);
+"114
+[; ;Reo1.c: 114:     iniciarOSC(6);
 [e ( _iniciarOSC (1 -> -> 6 `i `uc ]
-"143
-[; ;Reo1.c: 143:     setup();
+"116
+[; ;Reo1.c: 116:     setup();
 [e ( _setup ..  ]
-"145
-[; ;Reo1.c: 145:     iniciarADC(2);
-[e ( _iniciarADC (1 -> 2 `i ]
-"147
-[; ;Reo1.c: 147:     I2C_Negro(0x20);
-[e ( _I2C_Negro (1 -> -> 32 `i `uc ]
-"151
-[; ;Reo1.c: 151:     while(1)
-[e :U 180 ]
-"152
-[; ;Reo1.c: 152:     {
+"118
+[; ;Reo1.c: 118:     iniciarADC(2,0);
+[e ( _iniciarADC (2 , -> 2 `i -> 0 `i ]
+"120
+[; ;Reo1.c: 120:     I2C_Negro(0x10);
+[e ( _I2C_Negro (1 -> -> 16 `i `uc ]
+"122
+[; ;Reo1.c: 122:     while(1)
+[e :U 199 ]
+"123
+[; ;Reo1.c: 123:     {
 {
-"153
-[; ;Reo1.c: 153:         ADCON0bits.CHS = 0b0000;
-[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
-"154
-[; ;Reo1.c: 154:         luz = leerADC(0);
+"124
+[; ;Reo1.c: 124:         luz = leerADC(0);
 [e = _luz -> ( _leerADC (1 -> -> 0 `i `uc `uc ]
-"155
-[; ;Reo1.c: 155:         _delay((unsigned long)((2)*(4000000/4000.0)));
+"125
+[; ;Reo1.c: 125:         _delay((unsigned long)((2)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"164
-[; ;Reo1.c: 164:     }
+"126
+[; ;Reo1.c: 126:     }
 }
-[e :U 179 ]
-[e $U 180  ]
-[e :U 181 ]
-"165
-[; ;Reo1.c: 165: }
-[e :UE 178 ]
+[e :U 198 ]
+[e $U 199  ]
+[e :U 200 ]
+"127
+[; ;Reo1.c: 127: }
+[e :UE 197 ]
 }

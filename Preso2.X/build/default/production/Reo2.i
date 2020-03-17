@@ -2748,6 +2748,7 @@ extern int printf(const char *, ...);
 # 33 "Reo2.c" 2
 
 
+
 # 1 "./I2Cesclavo.h" 1
 # 18 "./I2Cesclavo.h"
 void I2C_Negro(uint8_t address)
@@ -2763,30 +2764,20 @@ void I2C_Negro(uint8_t address)
     SSPIF = 0;
     SSPIE = 1;
 }
-# 35 "Reo2.c" 2
+# 36 "Reo2.c" 2
 
 # 1 "./PWM.h" 1
-
-
-
-
-
-
+# 15 "./PWM.h"
 void iniciarPWM()
 {
 
-
-
-
-
     TRISCbits.TRISC1 = 1;
-
-    PR2 = 154;
+    PR2 = 200;
     CCP2CON = 0b00001100;
 
 
     PIR1bits.TMR2IF = 0;
-    T2CONbits.T2CKPS = 0b01;
+    T2CONbits.T2CKPS = 0b10;
     T2CONbits.TMR2ON = 1;
     TRISCbits.TRISC1 = 0;
 
@@ -2795,19 +2786,19 @@ void iniciarPWM()
 void g0(void)
 {
 
-    CCP2CONbits.DC2B1 = 0;
+    CCP2CONbits.DC2B1 = 1;
     CCP2CONbits.DC2B0 = 1;
-    CCPR2L = 0b00000101;
+    CCPR2L = 0b00000011;
 }
 
 void g90(void)
 {
 
-    CCP2CONbits.DC2B1 = 1;
-    CCP2CONbits.DC2B0 = 1;
-    CCPR2L = 0b00001011;
+    CCP2CONbits.DC2B1 = 0;
+    CCP2CONbits.DC2B0 = 0;
+    CCPR2L = 0b00011001;
 }
-# 36 "Reo2.c" 2
+# 37 "Reo2.c" 2
 
 # 1 "./Oscilador.h" 1
 
@@ -2860,7 +2851,7 @@ void iniciarOSC(uint8_t frec)
 
     OSCCONbits.SCS = 1;
 }
-# 37 "Reo2.c" 2
+# 38 "Reo2.c" 2
 
 
 
@@ -2868,20 +2859,24 @@ void iniciarOSC(uint8_t frec)
 
 
 void setup();
+void OPEN_CLOSE();
+
+uint8_t E, basura;
+uint8_t estado1, estado2;
+uint8_t z, dato;
 
 
-uint8_t tiempoL, tiempoH;
-uint8_t z;
-uint8_t dato;
-uint8_t x;
+
 
 void __attribute__((picinterrupt(("")))) isr(void)
 {
 
 
 
+
     if(PIR1bits.SSPIF == 1)
     {
+
         SSPCONbits.CKP = 0;
 
         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL))
@@ -2894,84 +2889,81 @@ void __attribute__((picinterrupt(("")))) isr(void)
 
         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
         {
-
             z = SSPBUF;
             PIR1bits.SSPIF = 0;
             SSPCONbits.CKP = 1;
             while(!SSPSTATbits.BF);
-            x = SSPBUF;
-            _delay((unsigned long)((250)*(125000/4000000.0)));
+            basura = SSPBUF;
+            _delay((unsigned long)((250)*(1000000/4000000.0)));
+
         }
 
         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW)
         {
-            if (x == 5)
-            {
-                z = SSPBUF;
-                BF = 0;
-                SSPBUF = tiempoL;
-                SSPCONbits.CKP = 1;
-                _delay((unsigned long)((250)*(125000/4000000.0)));
-                while(SSPSTATbits.BF);
-            }
-
-            else if (x == 6)
-            {
-                z = SSPBUF;
-                BF = 0;
-                SSPBUF = tiempoH;
-                SSPCONbits.CKP = 1;
-                _delay((unsigned long)((250)*(125000/4000000.0)));
-                while(SSPSTATbits.BF);
-            }
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = E;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(1000000/4000000.0)));
+            while(SSPSTATbits.BF);
         }
 
         PIR1bits.SSPIF = 0;
     }
 }
-# 126 "Reo2.c"
+
+void OPEN_CLOSE()
+{
+    if (PORTBbits.RB7 == 1 && estado1 == 0)
+    {
+        E = 90;
+        g90();
+        estado1 = 1;
+    }
+    else if (PORTBbits.RB7 == 0 && estado1 == 1)
+    {
+        estado1 = 0;
+    }
+
+    if (PORTBbits.RB5 == 1 && estado2 == 0)
+    {
+        E = 0;
+        g0();
+        estado2 = 1;
+    }
+    else if (PORTBbits.RB5 == 0 && estado2 == 1)
+    {
+        estado2 = 0;
+    }
+}
+
 void setup()
 {
     ANSEL = 0;
     ANSELH = 0;
 
-    TRISBbits.TRISB0 = 0;
-    TRISBbits.TRISB2 = 1;
+    TRISBbits.TRISB7 = 1;
+    TRISBbits.TRISB5 = 1;
 
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    PIE1bits.ADIE = 1;
-    PIE1bits.TMR1IE = 1;
-
-    T1CON = 0x10;
+    PORTB = 0;
+    PORTC = 0;
 }
 
-void main(void)
+void main (void)
 {
-    iniciarOSC(6);
+    iniciarOSC(4);
 
     setup();
 
+    I2C_Negro(0x20);
+
     iniciarPWM();
 
-    I2C_Negro(0x40);
-
+    E = 0;
     g0();
-
-    _delay((unsigned long)((1000)*(125000/4000.0)));
 
     while(1)
     {
-
-
-        if (x == 0)
-        {
-            g90();
-        }
-
-        else if (x == 90)
-        {
-            g0();
-        }
+        OPEN_CLOSE();
     }
 }

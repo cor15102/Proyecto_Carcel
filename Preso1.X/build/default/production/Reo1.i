@@ -2764,7 +2764,7 @@ typedef uint16_t uintptr_t;
 #pragma config FOSC = INTRC_NOCLKOUT
 
 
-void iniciarADC(int conv)
+void iniciarADC(int conv, int ch)
 {
 
 
@@ -2788,7 +2788,82 @@ void iniciarADC(int conv)
             ADCON0bits.ADCS = 0b11;
             break;
     }
-# 112 "./ADC.h"
+
+
+
+
+    switch(ch)
+    {
+        case 0:
+            ADCON0bits.CHS = 0b0000;
+            break;
+
+        case 1:
+            ADCON0bits.CHS = 0b0001;
+            break;
+
+        case 2:
+            ADCON0bits.CHS = 0b0010;
+            break;
+
+        case 3:
+            ADCON0bits.CHS = 0b0011;
+            break;
+
+        case 4:
+            ADCON0bits.CHS = 0b0100;
+            break;
+
+        case 5:
+            ADCON0bits.CHS = 0b0101;
+            break;
+
+        case 6:
+            ADCON0bits.CHS = 0b0110;
+            break;
+
+        case 7:
+            ADCON0bits.CHS = 0b0111;
+            break;
+
+        case 8:
+            ADCON0bits.CHS = 0b1000;
+            break;
+
+        case 9:
+            ADCON0bits.CHS = 0b1001;
+            break;
+
+        case 10:
+            ADCON0bits.CHS = 0b1010;
+            break;
+
+        case 11:
+            ADCON0bits.CHS = 0b1011;
+            break;
+
+        case 12:
+            ADCON0bits.CHS = 0b1100;
+            break;
+
+        case 13:
+            ADCON0bits.CHS = 0b1101;
+            break;
+
+        case 14:
+            ADCON0bits.CHS = 0b1110;
+            break;
+
+        case 15:
+            ADCON0bits.CHS = 0b1111;
+            break;
+
+        default:
+            ADCON0bits.CHS = 0b0000;
+            break;
+
+    }
+
     ADCON0bits.GO_DONE = 1;
 
     ADCON0bits.ADON = 1;
@@ -2817,9 +2892,7 @@ unsigned int leerADC(unsigned char channel)
     _delay((unsigned long)((2)*(4000000/4000.0)));
     GO_nDONE = 1;
 
-    while(GO_nDONE)
-    {
-    }
+    while(GO_nDONE);
 
     return (ADRESH);
 }
@@ -2905,7 +2978,7 @@ void setup();
 
 
 
-uint8_t luz, humo, tempe;
+uint8_t luz;
 uint8_t z;
 uint8_t dato;
 uint8_t x;
@@ -2945,15 +3018,12 @@ void __attribute__((picinterrupt(("")))) isr(void)
 
         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW)
         {
-
-
-                z = SSPBUF;
-                BF = 0;
-                SSPBUF = luz;
-                SSPCONbits.CKP = 1;
-                _delay((unsigned long)((250)*(4000000/4000000.0)));
-                while(SSPSTATbits.BF);
-# 110 "Reo1.c"
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = luz;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(4000000/4000000.0)));
+            while(SSPSTATbits.BF);
         }
 
         PIR1bits.SSPIF = 0;
@@ -2969,12 +3039,8 @@ void setup()
     ANSELH = 0;
 
     ANSELbits.ANS0 = 1;
-    ANSELbits.ANS1 = 1;
-
 
     TRISAbits.TRISA0 = 1;
-    TRISAbits.TRISA1 = 1;
-
 
     PORTA = 0;
 
@@ -2989,17 +3055,13 @@ void main(void)
 
     setup();
 
-    iniciarADC(2);
+    iniciarADC(2,0);
 
-    I2C_Negro(0x20);
-
-
+    I2C_Negro(0x10);
 
     while(1)
     {
-        ADCON0bits.CHS = 0b0000;
         luz = leerADC(0);
         _delay((unsigned long)((2)*(4000000/4000.0)));
-# 164 "Reo1.c"
     }
 }

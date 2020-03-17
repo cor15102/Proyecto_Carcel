@@ -38,7 +38,7 @@ void setup();
 // =============================================================================
 //                  Declaramos las variables globales a usar
 
-uint8_t luz, humo, tempe;  // Variables en las que guardamos lo leido
+uint8_t luz;  // Variables en las que guardamos lo leido
 uint8_t z;          // Limpia los datos inservibles del buffer de I2C
 uint8_t dato;       // Como diputado en el congreso: no hace nada y ocupa espacio
 uint8_t x;        // Variable que compara las peticiones del maestro.
@@ -78,35 +78,12 @@ void __interrupt() isr(void)
         
         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW)     // Envio de datos > Esclavo a Maestro
         {
-            //if (x == 1)
-            //{
-                z = SSPBUF;             // Lo que tiene el buffer lo guardamos para descartarlo
-                BF = 0;                 // Limpiamos bandera
-                SSPBUF = luz;           // El valor del sensor de LUZ lo cargamos al Buffer
-                SSPCONbits.CKP = 1;     // Habilitamos reloj
-                __delay_us(250);
-                while(SSPSTATbits.BF);  // Esperamos a que se envien los datos
-            //}
-            
-            /*else if (x == 2)
-            {
-                z = SSPBUF;             // Lo que tiene el buffer lo guardamos para descartarlo
-                BF = 0;                 // Limpiamos bandera
-                SSPBUF = humo;          // El valor del HUMO lo cargamos al Buffer
-                SSPCONbits.CKP = 1;     // Habilitamos reloj
-                __delay_us(250);
-                while(SSPSTATbits.BF);  // Esperamos a que se envien los datos
-            }
-            
-            else if (x == 3)
-            {
-                z = SSPBUF;             // Lo que tiene el buffer lo guardamos para descartarlo
-                BF = 0;                 // Limpiamos bandera
-                SSPBUF = tempe;         // La temperatura lo cargamos al Buffer
-                SSPCONbits.CKP = 1;     // Habilitamos reloj
-                __delay_us(250);
-                while(SSPSTATbits.BF);  // Esperamos a que se envien los datos
-            }*/
+            z = SSPBUF;             // Lo que tiene el buffer lo guardamos para descartarlo
+            BF = 0;                 // Limpiamos bandera
+            SSPBUF = luz;           // El valor del sensor de LUZ lo cargamos al Buffer
+            SSPCONbits.CKP = 1;     // Habilitamos reloj
+            __delay_us(250);
+            while(SSPSTATbits.BF);  // Esperamos a que se envien los datos
         }
        
         PIR1bits.SSPIF = 0;
@@ -122,12 +99,8 @@ void setup()
     ANSELH = 0;
     
     ANSELbits.ANS0 = 1;     // Sensor de luz: entrada analógica.
-    ANSELbits.ANS1 = 1;     // Sensor de humo: entrada analógica.
-    //ANSELbits.ANS2 = 1;     // Sensor de temperatura: entrada analógica.
     
     TRISAbits.TRISA0 = 1;   // Sensor de luz: entrada analógica.
-    TRISAbits.TRISA1 = 1;   // Sensor de humo: entrada analógica.
-    //TRISAbits.TRISA2 = 1;   // Sensor de temperatura: entrada analógica.
     
     PORTA = 0;  // Limpiamos puertos
     
@@ -138,28 +111,17 @@ void setup()
 
 void main(void) 
 {
-    iniciarOSC(6);  // Frecuencia de PIC a 4MHz
+    iniciarOSC(6);      // Frecuencia de PIC a 4MHz
     
-    setup();        // COnfiguramos puertos y registros
+    setup();            // COnfiguramos puertos y registros
     
-    iniciarADC(2);  // Configuramos ADC para lectura de luz y humo
+    iniciarADC(2,0);    // Configuramos ADC para lectura de luz y humo
     
-    I2C_Negro(0x20);    // Este sera un esclavo con direccion 0x20
-    
-    __delay_ms(1000);   // Esperamos a que todo se configure
+    I2C_Negro(0x10);    // Este sera un esclavo con direccion 0x10
     
     while(1)
     {
-        ADCON0bits.CHS = 0b0000;    // CHANNEL AN0 = RA0
-        luz = leerADC(0);          // Guardamos en luz el ADDRESS del ADC
+        luz = leerADC(0);
         __delay_ms(2);
-        
-        /*ADCON0bits.CHS = 0b0001;    // CHANNEL AN1 = RA1
-        humo = leerADC(0);          // Guardamos en humo el ADDRESS del ADC
-        __delay_ms(2);*/
-        
-        /*ADCON0bits.CHS = 0b0010;    // CHANNEL AN2 = RA2
-        tempe = leerADC(0);         // Guardamos en tempe el ADDRESS del ADC
-        __delay_ms(2);*/
     }
 }

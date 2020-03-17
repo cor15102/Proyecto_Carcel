@@ -9,7 +9,7 @@
 #pragma config FOSC = INTRC_NOCLKOUT    // Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #define _XTAL_FREQ 4000000
 
-void iniciarADC(int conv) //int ch)
+void iniciarADC(int conv, int ch)
 {
     // ===============================================
     // Comparador para elegir ADC clock source
@@ -37,7 +37,7 @@ void iniciarADC(int conv) //int ch)
     // ===============================================
     // Para seleccionar el canal(puerto) de lectura.
     // ===============================================
-    /*switch(ch)
+    switch(ch)
     {
         case 0:
             ADCON0bits.CHS = 0b0000;    // CHANNEL AN0 = RA0
@@ -107,7 +107,7 @@ void iniciarADC(int conv) //int ch)
             ADCON0bits.CHS = 0b0000;    // CHANNEL AN0
             break;
             
-    }*/
+    }
     
     ADCON0bits.GO_DONE = 1;     // Estado de conversion: 1 habilitado, 0 dehabilitado.
     
@@ -137,9 +137,7 @@ unsigned int leerADC(unsigned char channel)
     __delay_ms(2);              // Martes 4 de febrero de 2020.
     GO_nDONE = 1;
     
-    while(GO_nDONE)
-    {
-    }
+    while(GO_nDONE);
 
     return (ADRESH); //<<8)+ADRESL
 }

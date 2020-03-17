@@ -167,6 +167,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3641 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3641: extern volatile __bit BF __attribute__((address(0x4A0)));
 [v _BF `Vb ~T0 @X0 0 e@1184 ]
+"234
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 234:     struct {
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"233
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 233: typedef union {
+[u S7 `S8 1 ]
+[n S7 . . ]
+"245
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
+[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
 "3387
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
@@ -184,35 +195,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1495
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1495: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x086)));
 [v _TRISBbits `VS54 ~T0 @X0 0 e@134 ]
-"465
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 465:     struct {
-[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
-"475
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 475:     struct {
-[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S17 . . TMR0IF . TMR0IE ]
-"464
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 464: typedef union {
-[u S15 `S16 1 `S17 1 ]
-[n S15 . . . ]
-"482
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"1708
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1708:     struct {
-[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S63 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
-"1707
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1707: typedef union {
-[u S62 `S63 1 ]
-[n S62 . . ]
-"1718
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1718: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
-[v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
-"671
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 671: extern volatile unsigned char T1CON __attribute__((address(0x010)));
-[v _T1CON `Vuc ~T0 @X0 0 e@16 ]
+"228
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 [p mainexit ]
 "13 Reo2.c
 [p x FOSC = INTRC_NOCLKOUT ]
@@ -519,79 +507,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./I2Cesclavo.h: 30: }
 [e :UE 139 ]
 }
-"7 ./PWM.h
-[; ;./PWM.h: 7: void iniciarPWM()
+"15 ./PWM.h
+[; ;./PWM.h: 15: void iniciarPWM()
 [v _iniciarPWM `(v ~T0 @X0 1 ef ]
-"8
-[; ;./PWM.h: 8: {
+"16
+[; ;./PWM.h: 16: {
 {
 [e :U _iniciarPWM ]
 [f ]
-"14
-[; ;./PWM.h: 14:     TRISCbits.TRISC1 = 1;
+"18
+[; ;./PWM.h: 18:     TRISCbits.TRISC1 = 1;
 [e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
-"16
-[; ;./PWM.h: 16:     PR2 = 154;
-[e = _PR2 -> -> 154 `i `uc ]
-"17
-[; ;./PWM.h: 17:     CCP2CON = 0b00001100;
-[e = _CCP2CON -> -> 12 `i `uc ]
+"19
+[; ;./PWM.h: 19:     PR2 = 200;
+[e = _PR2 -> -> 200 `i `uc ]
 "20
-[; ;./PWM.h: 20:     PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"21
-[; ;./PWM.h: 21:     T2CONbits.T2CKPS = 0b01;
-[e = . . _T2CONbits 0 0 -> -> 1 `i `uc ]
-"22
-[; ;./PWM.h: 22:     T2CONbits.TMR2ON = 1;
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+[; ;./PWM.h: 20:     CCP2CON = 0b00001100;
+[e = _CCP2CON -> -> 12 `i `uc ]
 "23
-[; ;./PWM.h: 23:     TRISCbits.TRISC1 = 0;
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;./PWM.h: 23:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"24
+[; ;./PWM.h: 24:     T2CONbits.T2CKPS = 0b10;
+[e = . . _T2CONbits 0 0 -> -> 2 `i `uc ]
 "25
-[; ;./PWM.h: 25: }
+[; ;./PWM.h: 25:     T2CONbits.TMR2ON = 1;
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+"26
+[; ;./PWM.h: 26:     TRISCbits.TRISC1 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+"28
+[; ;./PWM.h: 28: }
 [e :UE 140 ]
 }
-"27
-[; ;./PWM.h: 27: void g0(void)
+"30
+[; ;./PWM.h: 30: void g0(void)
 [v _g0 `(v ~T0 @X0 1 ef ]
-"28
-[; ;./PWM.h: 28: {
+"31
+[; ;./PWM.h: 31: {
 {
 [e :U _g0 ]
 [f ]
-"30
-[; ;./PWM.h: 30:     CCP2CONbits.DC2B1 = 0;
-[e = . . _CCP2CONbits 0 2 -> -> 0 `i `uc ]
-"31
-[; ;./PWM.h: 31:     CCP2CONbits.DC2B0 = 1;
-[e = . . _CCP2CONbits 0 1 -> -> 1 `i `uc ]
-"32
-[; ;./PWM.h: 32:     CCPR2L = 0b00000101;
-[e = _CCPR2L -> -> 5 `i `uc ]
 "33
-[; ;./PWM.h: 33: }
+[; ;./PWM.h: 33:     CCP2CONbits.DC2B1 = 1;
+[e = . . _CCP2CONbits 0 2 -> -> 1 `i `uc ]
+"34
+[; ;./PWM.h: 34:     CCP2CONbits.DC2B0 = 1;
+[e = . . _CCP2CONbits 0 1 -> -> 1 `i `uc ]
+"35
+[; ;./PWM.h: 35:     CCPR2L = 0b00000011;
+[e = _CCPR2L -> -> 3 `i `uc ]
+"36
+[; ;./PWM.h: 36: }
 [e :UE 141 ]
 }
-"35
-[; ;./PWM.h: 35: void g90(void)
+"38
+[; ;./PWM.h: 38: void g90(void)
 [v _g90 `(v ~T0 @X0 1 ef ]
-"36
-[; ;./PWM.h: 36: {
+"39
+[; ;./PWM.h: 39: {
 {
 [e :U _g90 ]
 [f ]
-"38
-[; ;./PWM.h: 38:     CCP2CONbits.DC2B1 = 1;
-[e = . . _CCP2CONbits 0 2 -> -> 1 `i `uc ]
-"39
-[; ;./PWM.h: 39:     CCP2CONbits.DC2B0 = 1;
-[e = . . _CCP2CONbits 0 1 -> -> 1 `i `uc ]
-"40
-[; ;./PWM.h: 40:     CCPR2L = 0b00001011;
-[e = _CCPR2L -> -> 11 `i `uc ]
 "41
-[; ;./PWM.h: 41: }
+[; ;./PWM.h: 41:     CCP2CONbits.DC2B1 = 0;
+[e = . . _CCP2CONbits 0 2 -> -> 0 `i `uc ]
+"42
+[; ;./PWM.h: 42:     CCP2CONbits.DC2B0 = 0;
+[e = . . _CCP2CONbits 0 1 -> -> 0 `i `uc ]
+"43
+[; ;./PWM.h: 43:     CCPR2L = 0b00011001;
+[e = _CCPR2L -> -> 25 `i `uc ]
+"44
+[; ;./PWM.h: 44: }
 [e :UE 142 ]
 }
 "5 ./Oscilador.h
@@ -716,287 +704,288 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Oscilador.h: 48: }
 [e :UE 143 ]
 }
-"46 Reo2.c
-[; ;Reo2.c: 46: uint8_t tiempoL, tiempoH;
-[v _tiempoL `uc ~T0 @X0 1 e ]
-[v _tiempoH `uc ~T0 @X0 1 e ]
-"47
-[; ;Reo2.c: 47: uint8_t z;
-[v _z `uc ~T0 @X0 1 e ]
+"47 Reo2.c
+[; ;Reo2.c: 47: uint8_t E, basura;
+[v _E `uc ~T0 @X0 1 e ]
+[v _basura `uc ~T0 @X0 1 e ]
 "48
-[; ;Reo2.c: 48: uint8_t dato;
-[v _dato `uc ~T0 @X0 1 e ]
+[; ;Reo2.c: 48: uint8_t estado1, estado2;
+[v _estado1 `uc ~T0 @X0 1 e ]
+[v _estado2 `uc ~T0 @X0 1 e ]
 "49
-[; ;Reo2.c: 49: uint8_t x;
-[v _x `uc ~T0 @X0 1 e ]
+[; ;Reo2.c: 49: uint8_t z, dato;
+[v _z `uc ~T0 @X0 1 e ]
+[v _dato `uc ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"51
-[; ;Reo2.c: 51: void __attribute__((picinterrupt(("")))) isr(void)
+"54
+[; ;Reo2.c: 54: void __attribute__((picinterrupt(("")))) isr(void)
 [v _isr `(v ~T1 @X0 1 ef ]
-"52
-[; ;Reo2.c: 52: {
+"55
+[; ;Reo2.c: 55: {
 {
 [e :U _isr ]
 [f ]
-"56
-[; ;Reo2.c: 56:     if(PIR1bits.SSPIF == 1)
-[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 156  ]
-"57
-[; ;Reo2.c: 57:     {
-{
-"58
-[; ;Reo2.c: 58:         SSPCONbits.CKP = 0;
-[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
 "60
-[; ;Reo2.c: 60:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL))
-[e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 157  ]
+[; ;Reo2.c: 60:     if(PIR1bits.SSPIF == 1)
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 156  ]
 "61
-[; ;Reo2.c: 61:         {
+[; ;Reo2.c: 61:     {
 {
-"62
-[; ;Reo2.c: 62:             z = SSPBUF;
-[e = _z _SSPBUF ]
 "63
-[; ;Reo2.c: 63:             SSPCONbits.SSPOV = 0;
-[e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
-"64
-[; ;Reo2.c: 64:             SSPCONbits.WCOL = 0;
-[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
+[; ;Reo2.c: 63:         SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
 "65
-[; ;Reo2.c: 65:             SSPCONbits.CKP = 1;
-[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+[; ;Reo2.c: 65:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL))
+[e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 157  ]
 "66
-[; ;Reo2.c: 66:         }
+[; ;Reo2.c: 66:         {
+{
+"67
+[; ;Reo2.c: 67:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"68
+[; ;Reo2.c: 68:             SSPCONbits.SSPOV = 0;
+[e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
+"69
+[; ;Reo2.c: 69:             SSPCONbits.WCOL = 0;
+[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
+"70
+[; ;Reo2.c: 70:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"71
+[; ;Reo2.c: 71:         }
 }
 [e :U 157 ]
-"68
-[; ;Reo2.c: 68:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
-[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 158  ]
-"69
-[; ;Reo2.c: 69:         {
-{
-"71
-[; ;Reo2.c: 71:             z = SSPBUF;
-[e = _z _SSPBUF ]
-"72
-[; ;Reo2.c: 72:             PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "73
-[; ;Reo2.c: 73:             SSPCONbits.CKP = 1;
-[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+[; ;Reo2.c: 73:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 158  ]
 "74
-[; ;Reo2.c: 74:             while(!SSPSTATbits.BF);
+[; ;Reo2.c: 74:         {
+{
+"75
+[; ;Reo2.c: 75:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"76
+[; ;Reo2.c: 76:             PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"77
+[; ;Reo2.c: 77:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"78
+[; ;Reo2.c: 78:             while(!SSPSTATbits.BF);
 [e $U 159  ]
 [e :U 160 ]
 [e :U 159 ]
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 160  ]
 [e :U 161 ]
-"75
-[; ;Reo2.c: 75:             x = SSPBUF;
-[e = _x _SSPBUF ]
-"76
-[; ;Reo2.c: 76:             _delay((unsigned long)((250)*(125000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 125000 `l `d .4000000.0 `ul ]
-"77
-[; ;Reo2.c: 77:         }
+"79
+[; ;Reo2.c: 79:             basura = SSPBUF;
+[e = _basura _SSPBUF ]
+"80
+[; ;Reo2.c: 80:             _delay((unsigned long)((250)*(1000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
+"82
+[; ;Reo2.c: 82:         }
 }
 [e $U 162  ]
-"79
-[; ;Reo2.c: 79:         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW)
+"84
+[; ;Reo2.c: 84:         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW)
 [e :U 158 ]
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 163  ]
-"80
-[; ;Reo2.c: 80:         {
-{
-"81
-[; ;Reo2.c: 81:             if (x == 5)
-[e $ ! == -> _x `i -> 5 `i 164  ]
-"82
-[; ;Reo2.c: 82:             {
-{
-"83
-[; ;Reo2.c: 83:                 z = SSPBUF;
-[e = _z _SSPBUF ]
-"84
-[; ;Reo2.c: 84:                 BF = 0;
-[e = _BF -> -> 0 `i `b ]
 "85
-[; ;Reo2.c: 85:                 SSPBUF = tiempoL;
-[e = _SSPBUF _tiempoL ]
-"86
-[; ;Reo2.c: 86:                 SSPCONbits.CKP = 1;
-[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"87
-[; ;Reo2.c: 87:                 _delay((unsigned long)((250)*(125000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 125000 `l `d .4000000.0 `ul ]
-"88
-[; ;Reo2.c: 88:                 while(SSPSTATbits.BF);
-[e $U 165  ]
-[e :U 166 ]
-[e :U 165 ]
-[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 166  ]
-[e :U 167 ]
-"89
-[; ;Reo2.c: 89:             }
-}
-[e $U 168  ]
-"91
-[; ;Reo2.c: 91:             else if (x == 6)
-[e :U 164 ]
-[e $ ! == -> _x `i -> 6 `i 169  ]
-"92
-[; ;Reo2.c: 92:             {
+[; ;Reo2.c: 85:         {
 {
-"93
-[; ;Reo2.c: 93:                 z = SSPBUF;
+"86
+[; ;Reo2.c: 86:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"94
-[; ;Reo2.c: 94:                 BF = 0;
+"87
+[; ;Reo2.c: 87:             BF = 0;
 [e = _BF -> -> 0 `i `b ]
-"95
-[; ;Reo2.c: 95:                 SSPBUF = tiempoH;
-[e = _SSPBUF _tiempoH ]
-"96
-[; ;Reo2.c: 96:                 SSPCONbits.CKP = 1;
+"88
+[; ;Reo2.c: 88:             SSPBUF = E;
+[e = _SSPBUF _E ]
+"89
+[; ;Reo2.c: 89:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"97
-[; ;Reo2.c: 97:                 _delay((unsigned long)((250)*(125000/4000000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 125000 `l `d .4000000.0 `ul ]
-"98
-[; ;Reo2.c: 98:                 while(SSPSTATbits.BF);
-[e $U 170  ]
-[e :U 171 ]
-[e :U 170 ]
-[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 171  ]
-[e :U 172 ]
-"99
-[; ;Reo2.c: 99:             }
-}
-[e :U 169 ]
-[e :U 168 ]
-"100
-[; ;Reo2.c: 100:         }
+"90
+[; ;Reo2.c: 90:             _delay((unsigned long)((250)*(1000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
+"91
+[; ;Reo2.c: 91:             while(SSPSTATbits.BF);
+[e $U 164  ]
+[e :U 165 ]
+[e :U 164 ]
+[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 165  ]
+[e :U 166 ]
+"92
+[; ;Reo2.c: 92:         }
 }
 [e :U 163 ]
 [e :U 162 ]
-"102
-[; ;Reo2.c: 102:         PIR1bits.SSPIF = 0;
+"94
+[; ;Reo2.c: 94:         PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"103
-[; ;Reo2.c: 103:     }
+"95
+[; ;Reo2.c: 95:     }
 }
 [e :U 156 ]
-"104
-[; ;Reo2.c: 104: }
+"96
+[; ;Reo2.c: 96: }
 [e :UE 155 ]
 }
-"126
-[; ;Reo2.c: 126: void setup()
+"98
+[; ;Reo2.c: 98: void OPEN_CLOSE()
+[v _OPEN_CLOSE `(v ~T0 @X0 1 ef ]
+"99
+[; ;Reo2.c: 99: {
+{
+[e :U _OPEN_CLOSE ]
+[f ]
+"100
+[; ;Reo2.c: 100:     if (PORTBbits.RB7 == 1 && estado1 == 0)
+[e $ ! && == -> . . _PORTBbits 0 7 `i -> 1 `i == -> _estado1 `i -> 0 `i 168  ]
+"101
+[; ;Reo2.c: 101:     {
+{
+"102
+[; ;Reo2.c: 102:         E = 90;
+[e = _E -> -> 90 `i `uc ]
+"103
+[; ;Reo2.c: 103:         g90();
+[e ( _g90 ..  ]
+"104
+[; ;Reo2.c: 104:         estado1 = 1;
+[e = _estado1 -> -> 1 `i `uc ]
+"105
+[; ;Reo2.c: 105:     }
+}
+[e $U 169  ]
+"106
+[; ;Reo2.c: 106:     else if (PORTBbits.RB7 == 0 && estado1 == 1)
+[e :U 168 ]
+[e $ ! && == -> . . _PORTBbits 0 7 `i -> 0 `i == -> _estado1 `i -> 1 `i 170  ]
+"107
+[; ;Reo2.c: 107:     {
+{
+"108
+[; ;Reo2.c: 108:         estado1 = 0;
+[e = _estado1 -> -> 0 `i `uc ]
+"109
+[; ;Reo2.c: 109:     }
+}
+[e :U 170 ]
+[e :U 169 ]
+"111
+[; ;Reo2.c: 111:     if (PORTBbits.RB5 == 1 && estado2 == 0)
+[e $ ! && == -> . . _PORTBbits 0 5 `i -> 1 `i == -> _estado2 `i -> 0 `i 171  ]
+"112
+[; ;Reo2.c: 112:     {
+{
+"113
+[; ;Reo2.c: 113:         E = 0;
+[e = _E -> -> 0 `i `uc ]
+"114
+[; ;Reo2.c: 114:         g0();
+[e ( _g0 ..  ]
+"115
+[; ;Reo2.c: 115:         estado2 = 1;
+[e = _estado2 -> -> 1 `i `uc ]
+"116
+[; ;Reo2.c: 116:     }
+}
+[e $U 172  ]
+"117
+[; ;Reo2.c: 117:     else if (PORTBbits.RB5 == 0 && estado2 == 1)
+[e :U 171 ]
+[e $ ! && == -> . . _PORTBbits 0 5 `i -> 0 `i == -> _estado2 `i -> 1 `i 173  ]
+"118
+[; ;Reo2.c: 118:     {
+{
+"119
+[; ;Reo2.c: 119:         estado2 = 0;
+[e = _estado2 -> -> 0 `i `uc ]
+"120
+[; ;Reo2.c: 120:     }
+}
+[e :U 173 ]
+[e :U 172 ]
+"121
+[; ;Reo2.c: 121: }
+[e :UE 167 ]
+}
+"123
+[; ;Reo2.c: 123: void setup()
 [v _setup `(v ~T0 @X0 1 ef ]
-"127
-[; ;Reo2.c: 127: {
+"124
+[; ;Reo2.c: 124: {
 {
 [e :U _setup ]
 [f ]
-"128
-[; ;Reo2.c: 128:     ANSEL = 0;
+"125
+[; ;Reo2.c: 125:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"129
-[; ;Reo2.c: 129:     ANSELH = 0;
+"126
+[; ;Reo2.c: 126:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
+"128
+[; ;Reo2.c: 128:     TRISBbits.TRISB7 = 1;
+[e = . . _TRISBbits 0 7 -> -> 1 `i `uc ]
+"129
+[; ;Reo2.c: 129:     TRISBbits.TRISB5 = 1;
+[e = . . _TRISBbits 0 5 -> -> 1 `i `uc ]
 "131
-[; ;Reo2.c: 131:     TRISBbits.TRISB0 = 0;
-[e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
+[; ;Reo2.c: 131:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "132
-[; ;Reo2.c: 132:     TRISBbits.TRISB2 = 1;
-[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
-"134
-[; ;Reo2.c: 134:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"135
-[; ;Reo2.c: 135:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"136
-[; ;Reo2.c: 136:     PIE1bits.ADIE = 1;
-[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"137
-[; ;Reo2.c: 137:     PIE1bits.TMR1IE = 1;
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-"139
-[; ;Reo2.c: 139:     T1CON = 0x10;
-[e = _T1CON -> -> 16 `i `uc ]
-"140
-[; ;Reo2.c: 140: }
-[e :UE 173 ]
+[; ;Reo2.c: 132:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"133
+[; ;Reo2.c: 133: }
+[e :UE 174 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"142
-[; ;Reo2.c: 142: void main(void)
+"135
+[; ;Reo2.c: 135: void main (void)
 [v _main `(v ~T0 @X0 1 ef ]
-"143
-[; ;Reo2.c: 143: {
+"136
+[; ;Reo2.c: 136: {
 {
 [e :U _main ]
 [f ]
-"144
-[; ;Reo2.c: 144:     iniciarOSC(6);
-[e ( _iniciarOSC (1 -> -> 6 `i `uc ]
-"146
-[; ;Reo2.c: 146:     setup();
+"137
+[; ;Reo2.c: 137:     iniciarOSC(4);
+[e ( _iniciarOSC (1 -> -> 4 `i `uc ]
+"139
+[; ;Reo2.c: 139:     setup();
 [e ( _setup ..  ]
-"148
-[; ;Reo2.c: 148:     iniciarPWM();
+"141
+[; ;Reo2.c: 141:     I2C_Negro(0x20);
+[e ( _I2C_Negro (1 -> -> 32 `i `uc ]
+"143
+[; ;Reo2.c: 143:     iniciarPWM();
 [e ( _iniciarPWM ..  ]
-"150
-[; ;Reo2.c: 150:     I2C_Negro(0x40);
-[e ( _I2C_Negro (1 -> -> 64 `i `uc ]
-"152
-[; ;Reo2.c: 152:     g0();
+"145
+[; ;Reo2.c: 145:     E = 0;
+[e = _E -> -> 0 `i `uc ]
+"146
+[; ;Reo2.c: 146:     g0();
 [e ( _g0 ..  ]
-"154
-[; ;Reo2.c: 154:     _delay((unsigned long)((1000)*(125000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 125000 `l `d .4000.0 `ul ]
-"156
-[; ;Reo2.c: 156:     while(1)
-[e :U 176 ]
-"157
-[; ;Reo2.c: 157:     {
-{
-"160
-[; ;Reo2.c: 160:         if (x == 0)
-[e $ ! == -> _x `i -> 0 `i 178  ]
-"161
-[; ;Reo2.c: 161:         {
-{
-"162
-[; ;Reo2.c: 162:             g90();
-[e ( _g90 ..  ]
-"163
-[; ;Reo2.c: 163:         }
-}
-[e $U 179  ]
-"165
-[; ;Reo2.c: 165:         else if (x == 90)
-[e :U 178 ]
-[e $ ! == -> _x `i -> 90 `i 180  ]
-"166
-[; ;Reo2.c: 166:         {
-{
-"167
-[; ;Reo2.c: 167:             g0();
-[e ( _g0 ..  ]
-"168
-[; ;Reo2.c: 168:         }
-}
-[e :U 180 ]
-[e :U 179 ]
-"169
-[; ;Reo2.c: 169:     }
-}
-[e :U 175 ]
-[e $U 176  ]
+"148
+[; ;Reo2.c: 148:     while(1)
 [e :U 177 ]
-"170
-[; ;Reo2.c: 170: }
-[e :UE 174 ]
+"149
+[; ;Reo2.c: 149:     {
+{
+"150
+[; ;Reo2.c: 150:         OPEN_CLOSE();
+[e ( _OPEN_CLOSE ..  ]
+"151
+[; ;Reo2.c: 151:     }
+}
+[e :U 176 ]
+[e $U 177  ]
+[e :U 178 ]
+"152
+[; ;Reo2.c: 152: }
+[e :UE 175 ]
 }

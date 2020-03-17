@@ -32,30 +32,35 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <pic16f887.h>
+
 #include "I2Cesclavo.h"
 #include "PWM.h"
 #include "Oscilador.h"
 
-#define _XTAL_FREQ 125000
+#define _XTAL_FREQ 1000000
 #define Trigger PORTBbits.RB0
 #define Echo PORTBbits.RB2
 
 void setup();
-//void cronometro();
+void OPEN_CLOSE();
 
-uint8_t tiempoL, tiempoH;   // Guardamos el tiempo del TIMER1
-uint8_t z;          // Limpia los datos inservibles del buffer de I2C
-uint8_t dato;       // Como diputado en el congreso: no hace nada y ocupa espacio
-uint8_t x;          // Variable que compara las peticiones del maestro.
+uint8_t E, basura;
+uint8_t estado1, estado2;
+uint8_t z, dato;
 
+// =============================================================================
+//                      Funcion de interrupciones
+// =============================================================================
 void __interrupt() isr(void)
 {
     // =========================================================================
-    //                          Comunicacion I2C
+    // Interrupcion para comunicacion I2C
     // =========================================================================
-    if(PIR1bits.SSPIF == 1)     // Maestro se comunica con el esclavo 
+   
+    if(PIR1bits.SSPIF == 1)
     {
-        SSPCONbits.CKP = 0;     // Apagamos el reloj de I2C
+
+        SSPCONbits.CKP = 0;
        
         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL))    // En caso de colisiones y errores, resetea I2C
         {
@@ -64,107 +69,84 @@ void __interrupt() isr(void)
             SSPCONbits.WCOL = 0;        // Clear the collision bit
             SSPCONbits.CKP = 1;         // Enables SCL (Clock)
         }
-    // =========================================================================
+
         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)      // Recepcion de datos
-        {   
-            // Esuchamos lo que el patron ordene
+        {
             z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
             PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
-            x = SSPBUF;                 // Guardar en el "x" el valor recibido
+            basura = SSPBUF;            // Maestro no nos enviará nada, pero si el buffer se llena lo limpiamos
             __delay_us(250);
+            
         }
         
         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW)     // Envio de datos > Esclavo a Maestro
         {
-            if (x == 5)
-            {
-                z = SSPBUF;             // Lo que tiene el buffer lo guardamos para descartarlo
-                BF = 0;                 // Limpiamos bandera
-                SSPBUF = tiempoL;       // El valor del sensor de LUZ lo cargamos al Buffer
-                SSPCONbits.CKP = 1;     // Habilitamos reloj
-                __delay_us(250);
-                while(SSPSTATbits.BF);  // Esperamos a que se envien los datos
-            }
-            
-            else if (x == 6)
-            {
-                z = SSPBUF;             // Lo que tiene el buffer lo guardamos para descartarlo
-                BF = 0;                 // Limpiamos bandera
-                SSPBUF = tiempoH;       // El valor del HUMO lo cargamos al Buffer
-                SSPCONbits.CKP = 1;     // Habilitamos reloj
-                __delay_us(250);
-                while(SSPSTATbits.BF);  // Esperamos a que se envien los datos
-            }
+            z = SSPBUF;             // Lo que tiene el buffer lo guardamos para descartarlo
+            BF = 0;                 // Limpiamos bandera
+            SSPBUF = E;             // Enviamos al maestro el estado de la puerta
+            SSPCONbits.CKP = 1;     // Habilitamos reloj
+            __delay_us(250);
+            while(SSPSTATbits.BF);  // Esperamos a que se envien los datos
         }
        
         PIR1bits.SSPIF = 0;
     }
 }
 
-/*void cronometro(void)
+void OPEN_CLOSE()
 {
-    TMR1L = 0;  // Reiniciamos 
-    TMR1H = 0;  // el cronometro
+    if (PORTBbits.RB7 == 1 && estado1 == 0)
+    {
+        E = 90;
+        g90();
+        estado1 = 1;
+    }
+    else if (PORTBbits.RB7 == 0 && estado1 == 1)
+    {
+        estado1 = 0;
+    }
     
-    Trigger = 1;
-    __delay_us(10);
-    Trigger = 0;        // Envio de pulso para activar el sensor ultrasonico
-    
-    while(!Echo);       // Esperamos que el sensor nos regrese el pulso
-    
-    T1CONbits.TMR1ON = 1;   // Encendemos el timer1
-    while(Echo);            // Esperamos a que el pulso baje
-    T1CONbits.TMR1ON = 0;   // Apagamos el timer
-    
-    tiempoL = TMR1L;        // Guardamos los 8 bits del TMR1 low
-    tiempoH =  (TMR1H<<8);  // Guardamos los 2 bits sobrantes
-    // Estos tiempos se iran al master para que él los sume
-}*/
+    if (PORTBbits.RB5 == 1 && estado2 == 0)
+    {
+        E = 0;
+        g0();
+        estado2 = 1;
+    }
+    else if (PORTBbits.RB5 == 0 && estado2 == 1)
+    {
+        estado2 = 0;
+    }
+}
 
 void setup()
 {
-    ANSEL = 0;
-    ANSELH = 0;
+    ANSEL  = 0;
+    ANSELH = 0;     //Todos los puertos digitales
     
-    TRISBbits.TRISB0 = 0;   // Trigger ultrasonico
-    TRISBbits.TRISB2 = 1;   // Echo ultrasonico
+    TRISBbits.TRISB7 = 1; // Boton abrir
+    TRISBbits.TRISB5 = 1; // Boton cerrar
     
-    INTCONbits.GIE = 1;     // Activamos todas las interrupciones
-    INTCONbits.PEIE = 1;    // Interrupcion periferica habilitada
-    PIE1bits.ADIE = 1;      // Habilita la interrupcion del ADC
-    PIE1bits.TMR1IE = 1;    // Habilitamos la interrupcion del Timer1
-    
-    T1CON = 0x10;           // COnfiguracion del timer 1
+    PORTB = 0;      // Limpiamos el puerto
+    PORTC = 0;
 }
 
-void main(void) 
+void main (void)
 {
-    iniciarOSC(6);
+    iniciarOSC(4);      // Fosc = 1MHz
     
-    setup();
+    setup();            // Configuramos puertos
+    
+    I2C_Negro(0x20);    // Esclavo con direccion 0x40
     
     iniciarPWM();
     
-    I2C_Negro(0x40);
-    
+    E = 0;  // Inicializo la variable indicadora
     g0();
-    
-    __delay_ms(1000);   // Esperamos a que todo se configure
     
     while(1)
     {
-        //cronometro();
-        
-        if (x == 0)
-        {
-            g90();
-        }
-        
-        else if (x == 90)
-        {
-            g0();
-        }
+        OPEN_CLOSE();
     }
 }

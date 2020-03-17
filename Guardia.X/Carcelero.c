@@ -44,150 +44,82 @@
 #define EN PORTDbits.RD7
 
 void setup();
-void conversion();
-void on_off();
-void celdas();
+void luces();
+void celda();
 
-uint8_t MQ2, Fotor, LM35;           // Variables que guardan lo leido de los esclavos
-int Humo,Luz,Tiempo;
-double Tempe;
-int x,x1,x2,x3;          // Variables para obtener los enteros y decimales
+uint8_t Luz;
 int y,y1,y2,y3;
-int z,z1,z2,z3,z4;
-int estado1, estado2, posicion;
+uint8_t grados;
 
 // Arreglo con caracteres para imprimir en la LCD
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
 
-// ------------------ Funcion para mapear valores del ADC ------------------- //
-void conversion()                   // Convertir valores para desplegar en LCD 
+void luces()
 {
-    Humo = (MQ2*1);     //Voltaje del Sensor MQ2
-    x  = Humo/100;      //Valor del entero del sensor MQ2
-    x1 = Humo%100;      //Valor de los decimales del sensor MQ2
-    x2 = x1/10;         //Primer decimal del sensor MQ2
-    x3 = x1%10;         //Segundo decimal del sensor MQ2
-    
-    Luz = (Fotor*1);    //Voltaje del fotoresistor
     y  = Luz/100;       //Valor del entero del fotoresistor
     y1 = Luz%100;       //Valor de los decimales del fotoresistor
     y2 = y1/10;         //Primer decimal del fotoresustor 
     y3 = y1%10;         //Segunod decimal del fotoresistor
     
-    Tempe = (LM35*5.0)/255;  
-    z  = Tempe*100;
-    z1 = z/100;
-    z2 = z%100;
-    z3 = z2/10;
-    z4 = z2%10;
+    colocar(7,2);
+    mostrar(a[y]);
+    colocar(8,2);
+    mostrar(a[y2]);
+    colocar(9,2);
+    mostrar(a[y3]);
     
-    // Esto lo hara el maestro
-    /*distancia = (Tiempo/5.882) + 1;     // 34,000 = velocidad del sonido en cm
-    
-    x  = distancia/100;  // Obtenemos la centena
-    x1 = distancia%100;  // Obtenemos el residuo para la decima y unidad
-    x2 = x1/10;     // Obtenemos la decena
-    x3 = x1%10;     // Obtenemos la unidad*/
- }
-
-void on_off()   // Indicarcion de encedido o apagado en LCD
-{
-    if (Humo > 100)   // Para verificar sensor de Humo
+    if (Luz < 50)
     {
-//        colocar(1,2);
-//        imprimir("   ");   // Borro palabra OFF en LCD
-//        colocar(1,2);
-//        imprimir("ON");    // Imprimo ON en LCD
-        
-        PORTAbits.RA3 = 1;  // Encendemos ventilador de humo
-    }
-    else if (Humo < 100)
-    {
-//        colocar(1,2);
-//        imprimir("  ");     // Borro palabra ON en LCD
-//        colocar(1,2);
-//        imprimir("OFF");    // Imprimo la palabra OFF en LCD
-        
-        PORTAbits.RA3 = 0;  // Apagamos ventilador de humo
+        colocar(11,2);
+        imprimir("   ");
+        colocar(11,1);
+        imprimir("ON");
+        PORTAbits.RA2 = 1;
     }
     
-// =============================================================================    
-    if (Luz > 50)             // Para verificar sensor de Luz
+    else
     {
-//        colocar(6,2);
-//        imprimir("  ");     // Borro palabra ON en LCD
-//        colocar(6,2);
-//        imprimir("OFF");    // Imprimo la palabra OFF en LCD
-        
-        PORTAbits.RA4 = 0;  // Apagamos Luces 
-    }
-    else if (Luz < 50)
-    {
-//        colocar(6,2);
-//        imprimir("   ");    // Borro palabra OFF en LCD
-//        colocar(6,2);
-//        imprimir("ON");     // Imprimo palabra ON en LCD
-        
-        PORTAbits.RA4 = 1;  // Enciendo luces de noche. 
-    }
-    
-    if (Tempe > 30)
-    {
-//        colocar(10,2);
-//        imprimir("   ");    // Borro palabra OFF
-//        colocar(10,2);
-//        imprimir("ON");     // Imprimo palabra ON en LCD
-        
-        PORTAbits.RA2 = 1;  // Encendemos ventilador en cuarto de control. 
-    }
-    else if (Tempe < 30)
-    {
-//        colocar(10,2);
-//        imprimir("   ");    // Borro palabra ON
-//        colocar(10,2);
-//        imprimir("OFF");    // Imprimo OFF en LCD
-        
-        PORTAbits.RA2 = 1;  // Apagamos ventilador en cuarto de control.
+        colocar(11,1);
+        imprimir("   ");
+        colocar(11,2);
+        imprimir("OFF");
+        PORTAbits.RA2 = 0;
     }
 }
 
-void celdas()
+void celda()
 {
-    posicion = 0;
-    
-    if (PORTAbits.RA0 == 1 && estado1 == 0)
+    if (grados == 0)
     {
-        posicion = 90;
-        estado1  = 1;
-        PORTAbits.RA5 = 1;
-    }
-    else if (PORTAbits.RA0 == 0 && estado1 == 1)
-    {
-        estado1 = 0;
+        colocar(1,2);
+        imprimir("     ");
+        
+        PORTAbits.RA1 = 0; // LED apagado si la puerta está cerrada
+        
+        colocar(1,2);
+        imprimir("CLOSE");
     }
     
-    if (PORTAbits.RA1 == 1 && estado2 == 0)
+    else if (grados == 90)
     {
-        posicion = 0;
-        estado2  = 1;
-        PORTAbits.RA5 = 0;
-    }
-    else if (PORTAbits.RA0 == 0 && estado2 == 1)
-    {
-        estado2 = 0;
+        colocar(1,2);
+        imprimir("     ");
+        
+        PORTAbits.RA1 = 1; // LED encendido si la puerta está abierta
+
+        colocar(1,2);
+        imprimir("OPEN");
     }
 }
 
 void setup()
 {
-    ANSEL = 0;
+    ANSEL  = 0;
     ANSELH = 0;
     
     TRISA = 0;
-    TRISAbits.TRISA0 = 1;   // Boton abrir celda
-    TRISAbits.TRISA1 = 1;   // Boton cerrar celda
-    
-    TRISB = 0;      // LCD
+    TRISB = 0;
+    TRISC = 0;
     
     TRISDbits.TRISD6 = 0;   // RS
     TRISDbits.TRISD7 = 0;   // EN
@@ -195,107 +127,44 @@ void setup()
     PORTA = 0;
     PORTB = 0;
     PORTC = 0;
+    PORTD = 0;
 }
 
-void main(void) 
+void main(void)
 {
-    iniciarOSC(6);  // Frecuencia de 4MHz
+    iniciarOSC(6);  // Fosc = 4MHz
     
-    setup();        // Configuramos puertos
+    setup();
     
-    I2C_Master_Init(100000);   // Configuramos el PIC como maestro
+    iniciarLCD();
     
-    iniciarLCD();   // Iniciamos LCD
+    borrarv();
     
-    borrarv();      // Limpio pantalla
-    
-    __delay_ms(2000);   // Esperamos a que todo cargue
+    I2C_Master_Init(100000);
     
     colocar(1,1);
-    imprimir("Humo");
+    imprimir("Celda");
     
-    colocar(6,1);
+    colocar(7,1);
     imprimir("Luz");
-    
-    colocar(10,1);
-    imprimir("Temp");
     
     while(1)
     {
-        // =====================================================================
-        // Solicito valor del sensor de LUZ
-//        I2C_Master_Start();         // Iniciamos comunicacion 
-//        I2C_Master_Write(0x20);     // Llamamos al REO1 y le enviamos 1 dato
-//        I2C_Master_Write(0x01);     // Solicitamos el valor del sensor de LUZ
-//        I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC1
-//        __delay_ms(200);
+        // Recibo el estado de la puerta: abierta(90°) o cerrada(0°)
+        I2C_Master_Start();             // Iniciamos comunicacion 
+        I2C_Master_Write(0x21);         // Llamamos al PIC1 y le indicamos que lo vamos a leer
+        grados = I2C_Master_Read(0);    // Guardamos en grados la posicion del servo.
+        I2C_Master_Stop();              // Detenemos I2C. No mas lectura del PIC1
+        __delay_ms(100);
         
-        // Recibo el valor del sensor de LUZ 
+        // Recibo el valor del sensor de LUZ. PIC1 = REO1
         I2C_Master_Start();         // Iniciamos comunicacion
-        I2C_Master_Write(0x21);     // Llamamos al REO1 y le indicamos que lo leeremos
-        Fotor = I2C_Master_Read(0); // Guardamos en la variable "Fotor" lo que nos manda el PIC2 (8bits)
+        I2C_Master_Write(0x11);     // Llamamos al REO1 y le indicamos que lo leeremos
+        Luz = I2C_Master_Read(0);   // Guardamos en luz el valor del ADC enviado por el PIC1
         I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC2
-        __delay_ms(200);
+        __delay_ms(100);
         
-        /*// =====================================================================
-        // Solicito valor del sensor de humo       
-        I2C_Master_Start();         // Iniciamos comunicacion 
-        I2C_Master_Write(0x20);     // Llamamos al PIC1 y le indicamos que lo vamos a leer
-        I2C_Master_Write(2);        // Solicitamos el valor del sensor de HUMO
-        I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC1
-        __delay_ms(200);
-        
-        // Recibo el valor del sensor de humo
-        I2C_Master_Start();         // Iniciamos comunicacion 
-        I2C_Master_Write(0x21);     // Llamamos al PIC1 y le indicamos que lo vamos a leer
-        MQ2 = I2C_Master_Read(0);   // Guardamos en variable "MQ2" lo que nos manda el PIC (8bits)
-        I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC1
-        __delay_ms(200);
-
-        
-        // =====================================================================
-        // Solicito valor del sensor de temperatura       
-        I2C_Master_Start();         // Iniciamos comunicacion 
-        I2C_Master_Write(0x20);     // Llamamos al PIC1 y le indicamos que lo vamos a leer
-        I2C_Master_Write(3);        // Solicitamos el valor del sensor de HUMO
-        I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC1
-        __delay_ms(200);
-        
-        // Recibo el valor del sensor de temperatura
-        I2C_Master_Start();         // Iniciamos comunicacion 
-        I2C_Master_Write(0x21);     // Llamamos al PIC1 y le indicamos que lo vamos a leer
-        LM35 = I2C_Master_Read(0);  // Guardamos en variable "LM35" lo que nos manda el PIC (8bits)
-        I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC1
-        __delay_ms(200);
-        
-        // =====================================================================
-        // Envio posicion para abrir/cerrar las celdas       
-        I2C_Master_Start();         // Iniciamos comunicacion 
-        I2C_Master_Write(0x40);     // Llamamos al PIC1 y le indicamos que lo vamos a leer
-        I2C_Master_Write(posicion); // Solicitamos el valor del sensor de HUMO
-        I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC1
-        __delay_ms(200);*/
-        
-        conversion();       // Convierto los valores recibidos para imprimir en LCD
-     
-//        colocar(1,2);       // Colocamos cursor en posición 
-//        mostrar(a[x]);     // Imprime valor entero. 
-//        colocar(2,2);       // Colocamos cursor en posición 
-//        mostrar(a[x2]);     // Imprime primer decimal del sensor MQ2
-//        colocar(3,2);       // Colocamos cursor en posición 
-//        mostrar(a[x3]);     // Imprime segundo decimal del sensor MQ2
-//        __delay_ms(2);      // Delay para ejecutar siguiente instrucción
-//        
-        colocar(6,2);       // Colocamos cursor en posición 
-        mostrar(a[y]);      // Imprime valor entero. 
-        colocar(7,2);      // Colocamos cursor en posición 
-        mostrar(a[y2]);     // Imprime primer decimal del sensor Luz
-        colocar(8,2);      // Colocamos cursor en posición 
-        mostrar(a[y3]);     // Imprime segundo decimal del sensor Luz
-        __delay_ms(2);      // Delay para ejecutar siguiente instrucción
-        
-        on_off();
-        
-        //celdas();
+        luces();
+        celda();
     }
 }
