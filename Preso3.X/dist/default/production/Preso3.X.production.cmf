@@ -28,7 +28,7 @@ cstackBANK0 BANK0 1 20 20 43 1
 intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 63 63 5 1
 bssCOMMON COMMON 1 78 78 3 1
-$C:\Users\joser\AppData\Local\Temp\sps.o
+$C:\Users\joser\AppData\Local\Temp\s798.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -78,21 +78,21 @@ STRING 731-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Preso3.X.production.o
-F cinit CODE >496:C:\Users\joser\AppData\Local\Temp\sps.s
-F cinit CODE >499:C:\Users\joser\AppData\Local\Temp\sps.s
-F cinit CODE >528:C:\Users\joser\AppData\Local\Temp\sps.s
-10 cinit CODE >529:C:\Users\joser\AppData\Local\Temp\sps.s
-11 cinit CODE >530:C:\Users\joser\AppData\Local\Temp\sps.s
-12 cinit CODE >533:C:\Users\joser\AppData\Local\Temp\sps.s
-13 cinit CODE >534:C:\Users\joser\AppData\Local\Temp\sps.s
-14 cinit CODE >535:C:\Users\joser\AppData\Local\Temp\sps.s
-15 cinit CODE >536:C:\Users\joser\AppData\Local\Temp\sps.s
-16 cinit CODE >537:C:\Users\joser\AppData\Local\Temp\sps.s
-17 cinit CODE >538:C:\Users\joser\AppData\Local\Temp\sps.s
-18 cinit CODE >539:C:\Users\joser\AppData\Local\Temp\sps.s
-19 cinit CODE >545:C:\Users\joser\AppData\Local\Temp\sps.s
-19 cinit CODE >547:C:\Users\joser\AppData\Local\Temp\sps.s
-1A cinit CODE >548:C:\Users\joser\AppData\Local\Temp\sps.s
+F cinit CODE >496:C:\Users\joser\AppData\Local\Temp\s798.s
+F cinit CODE >499:C:\Users\joser\AppData\Local\Temp\s798.s
+F cinit CODE >528:C:\Users\joser\AppData\Local\Temp\s798.s
+10 cinit CODE >529:C:\Users\joser\AppData\Local\Temp\s798.s
+11 cinit CODE >530:C:\Users\joser\AppData\Local\Temp\s798.s
+12 cinit CODE >533:C:\Users\joser\AppData\Local\Temp\s798.s
+13 cinit CODE >534:C:\Users\joser\AppData\Local\Temp\s798.s
+14 cinit CODE >535:C:\Users\joser\AppData\Local\Temp\s798.s
+15 cinit CODE >536:C:\Users\joser\AppData\Local\Temp\s798.s
+16 cinit CODE >537:C:\Users\joser\AppData\Local\Temp\s798.s
+17 cinit CODE >538:C:\Users\joser\AppData\Local\Temp\s798.s
+18 cinit CODE >539:C:\Users\joser\AppData\Local\Temp\s798.s
+19 cinit CODE >545:C:\Users\joser\AppData\Local\Temp\s798.s
+19 cinit CODE >547:C:\Users\joser\AppData\Local\Temp\s798.s
+1A cinit CODE >548:C:\Users\joser\AppData\Local\Temp\s798.s
 4 intentry CODE >52:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso3.X\Reo3.c
 62B text9 CODE >52:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso3.X\Reo3.c
 62B text9 CODE >58:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Preso3.X\Reo3.c
@@ -463,10 +463,10 @@ _T1CONbits 10 0 ABS 0 - dist/default/production\Preso3.X.production.o
 _BF 4A0 0 ABS 0 - dist/default/production\Preso3.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\Preso3.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\sps.o
+___sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\s798.o
 _main DDE 0 CODE 0 maintext dist/default/production\Preso3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Preso3.X.production.o
-start 18 0 CODE 0 init C:\Users\joser\AppData\Local\Temp\sps.o
+start 18 0 CODE 0 init C:\Users\joser\AppData\Local\Temp\s798.o
 __size_of___fladd 0 0 ABS 0 - dist/default/production\Preso3.X.production.o
 __size_of___fldiv 0 0 ABS 0 - dist/default/production\Preso3.X.production.o
 __size_of___fltol 0 0 ABS 0 - dist/default/production\Preso3.X.production.o
@@ -475,12 +475,12 @@ __size_of_main 0 0 ABS 0 - dist/default/production\Preso3.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
 iniciarOSC@frec 75 0 COMMON 1 cstackCOMMON dist/default/production\Preso3.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\sps.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\sps.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\sps.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\sps.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\sps.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\sps.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s798.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s798.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s798.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s798.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s798.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s798.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 I2C_Esclavo@address 73 0 COMMON 1 cstackCOMMON dist/default/production\Preso3.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Preso3.X.production.o
@@ -497,8 +497,8 @@ ___fldiv@sign 3B 0 BANK0 1 cstackBANK0 dist/default/production\Preso3.X.producti
 __end_of___fladd 54A 0 CODE 0 text7 dist/default/production\Preso3.X.production.o
 __end_of___fldiv 904 0 CODE 0 text6 dist/default/production\Preso3.X.production.o
 __end_of___fltol B74 0 CODE 0 text5 dist/default/production\Preso3.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\sps.o
-___stacklo 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\sps.o
+___stackhi 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\s798.o
+___stacklo 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\s798.o
 ___fladd@a 48 0 BANK0 1 cstackBANK0 dist/default/production\Preso3.X.production.o
 ___fladd@b 44 0 BANK0 1 cstackBANK0 dist/default/production\Preso3.X.production.o
 ___fldiv@a 2A 0 BANK0 1 cstackBANK0 dist/default/production\Preso3.X.production.o
@@ -515,7 +515,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Preso3.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Preso3.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Preso3.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\Preso3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\sps.o
+___int_sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\s798.o
 _cronometro B74 0 CODE 0 text3 dist/default/production\Preso3.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -571,7 +571,7 @@ __end_of_cronometro C56 0 CODE 0 text3 dist/default/production\Preso3.X.producti
 ___xxtofl 904 0 CODE 0 text4 dist/default/production\Preso3.X.production.o
 __end_of_isr D1C 0 CODE 0 text9 dist/default/production\Preso3.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\joser\AppData\Local\Temp\sps.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\joser\AppData\Local\Temp\s798.o
 __end_of___xxtofl A7C 0 CODE 0 text4 dist/default/production\Preso3.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 ___fladd@signs 54 0 BANK0 1 cstackBANK0 dist/default/production\Preso3.X.production.o

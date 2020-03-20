@@ -3086,9 +3086,19 @@ void main(void)
     colocar(1,1);
     imprimir("X:");
 
+    colocar(30,1);
+    imprimir("Hola");
+
     while(1)
     {
-# 197 "Carcelero.c"
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x21);
+        grados = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
+
         I2C_Master_Start();
         I2C_Master_Write(0x11);
         Luz = I2C_Master_Read(0);

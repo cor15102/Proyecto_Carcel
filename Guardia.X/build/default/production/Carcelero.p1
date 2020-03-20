@@ -1195,58 +1195,80 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Carcelero.c: 185:     imprimir("X:");
 [e ( _imprimir (1 :s 8C ]
 "187
-[; ;Carcelero.c: 187:     while(1)
-[e :U 184 ]
+[; ;Carcelero.c: 187:     colocar(30,1);
+[e ( _colocar (2 , -> -> 30 `i `uc -> -> 1 `i `uc ]
 "188
-[; ;Carcelero.c: 188:     {
+[; ;Carcelero.c: 188:     imprimir("Hola");
+[e ( _imprimir (1 :s 9C ]
+"190
+[; ;Carcelero.c: 190:     while(1)
+[e :U 184 ]
+"191
+[; ;Carcelero.c: 191:     {
 {
+"193
+[; ;Carcelero.c: 193:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"194
+[; ;Carcelero.c: 194:         I2C_Master_Write(0x21);
+[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
+"195
+[; ;Carcelero.c: 195:         grados = I2C_Master_Read(0);
+[e = _grados -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"196
+[; ;Carcelero.c: 196:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "197
-[; ;Carcelero.c: 197:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"198
-[; ;Carcelero.c: 198:         I2C_Master_Write(0x11);
-[e ( _I2C_Master_Write (1 -> -> 17 `i `ui ]
-"199
-[; ;Carcelero.c: 199:         Luz = I2C_Master_Read(0);
-[e = _Luz -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;Carcelero.c: 197:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "200
-[; ;Carcelero.c: 200:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"201
-[; ;Carcelero.c: 201:         _delay((unsigned long)((100)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"204
-[; ;Carcelero.c: 204:         I2C_Master_Start();
+[; ;Carcelero.c: 200:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"205
-[; ;Carcelero.c: 205:         I2C_Master_Write(0x31);
-[e ( _I2C_Master_Write (1 -> -> 49 `i `ui ]
-"206
-[; ;Carcelero.c: 206:         Distancia = I2C_Master_Read(0);
-[e = _Distancia -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"207
-[; ;Carcelero.c: 207:         I2C_Master_Stop();
+"201
+[; ;Carcelero.c: 201:         I2C_Master_Write(0x11);
+[e ( _I2C_Master_Write (1 -> -> 17 `i `ui ]
+"202
+[; ;Carcelero.c: 202:         Luz = I2C_Master_Read(0);
+[e = _Luz -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"203
+[; ;Carcelero.c: 203:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"208
-[; ;Carcelero.c: 208:         _delay((unsigned long)((100)*(4000000/4000.0)));
+"204
+[; ;Carcelero.c: 204:         _delay((unsigned long)((100)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"207
+[; ;Carcelero.c: 207:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"208
+[; ;Carcelero.c: 208:         I2C_Master_Write(0x31);
+[e ( _I2C_Master_Write (1 -> -> 49 `i `ui ]
+"209
+[; ;Carcelero.c: 209:         Distancia = I2C_Master_Read(0);
+[e = _Distancia -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
 "210
-[; ;Carcelero.c: 210:         luces();
-[e ( _luces ..  ]
-"212
-[; ;Carcelero.c: 212:         ultrasonico();
-[e ( _ultrasonico ..  ]
+[; ;Carcelero.c: 210:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"211
+[; ;Carcelero.c: 211:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "213
-[; ;Carcelero.c: 213:     }
+[; ;Carcelero.c: 213:         luces();
+[e ( _luces ..  ]
+"215
+[; ;Carcelero.c: 215:         ultrasonico();
+[e ( _ultrasonico ..  ]
+"216
+[; ;Carcelero.c: 216:     }
 }
 [e :U 183 ]
 [e $U 184  ]
 [e :U 185 ]
-"214
-[; ;Carcelero.c: 214: }
+"217
+[; ;Carcelero.c: 217: }
 [e :UE 182 ]
 }
 [a 7C 76 117 122 0 ]
+[a 9C 72 111 108 97 0 ]
 [a 4C 79 78 0 ]
 [a 6C 79 70 70 0 ]
 [a 1C 65 76 69 82 84 65 0 ]

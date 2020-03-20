@@ -184,14 +184,17 @@ void main(void)
     colocar(1,1);
     imprimir("X:");
     
+    colocar(30,1);
+    imprimir("Hola");
+    
     while(1)
     {
         // Recibo el estado de la puerta: abierta(90°) o cerrada(0°). PIC2 = REO2
-//        I2C_Master_Start();             // Iniciamos comunicacion 
-//        I2C_Master_Write(0x21);         // Llamamos al PIC1 y le indicamos que lo vamos a leer
-//        grados = I2C_Master_Read(0);    // Guardamos en grados la posicion del servo.
-//        I2C_Master_Stop();              // Detenemos I2C. No mas lectura del PIC1
-//        __delay_ms(100);
+        I2C_Master_Start();             // Iniciamos comunicacion 
+        I2C_Master_Write(0x21);         // Llamamos al PIC1 y le indicamos que lo vamos a leer
+        grados = I2C_Master_Read(0);    // Guardamos en grados la posicion del servo.
+        I2C_Master_Stop();              // Detenemos I2C. No mas lectura del PIC1
+        __delay_ms(100);
         
         // Recibo el valor del sensor de LUZ. PIC1 = REO1
         I2C_Master_Start();         // Iniciamos comunicacion

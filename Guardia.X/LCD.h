@@ -95,3 +95,15 @@ void mostrar(const char t)
     __delay_ms(2);
     EN = 0;
 }
+
+void shift()
+{
+    // 0b00011100
+    // Desplazamiento del visualizador
+    // A la izquierda
+    RS = 0; 
+    LCDP = 0b00011000;
+    EN = 1;
+    __delay_ms(1);
+    EN = 0;
+}
