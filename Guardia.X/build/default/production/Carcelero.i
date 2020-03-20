@@ -2908,6 +2908,18 @@ void mostrar(const char t)
     _delay((unsigned long)((2)*(4000000/4000.0)));
     PORTDbits.RD7 = 0;
 }
+
+void shift()
+{
+
+
+
+    PORTDbits.RD6 = 0;
+    PORTB = 0b00011000;
+    PORTDbits.RD7 = 1;
+    _delay((unsigned long)((1)*(4000000/4000.0)));
+    PORTDbits.RD7 = 0;
+}
 # 37 "Carcelero.c" 2
 
 # 1 "./Oscilador.h" 1
@@ -2980,7 +2992,7 @@ int y,y1,y2,y3;
 uint8_t grados;
 
 uint8_t Distancia;
-int z,z1,z2,z3;
+int z,z1;
 
 
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
@@ -2990,25 +3002,21 @@ void ultrasonico()
     z = Distancia/10;
     z1 = Distancia%10;
 
-
-
-    colocar(4,1);
+    colocar(10,1);
     mostrar(a[z]);
-    colocar(5,1);
+    colocar(11,1);
     mostrar(a[z1]);
 
-
-
-    if (Distancia < 20)
+    if (Distancia < 15)
     {
-        colocar(1,2);
+        colocar(8,2);
         imprimir("ALERTA");
         PORTAbits.RA3 = 1;
     }
 
     else
     {
-        colocar(1,2);
+        colocar(8,2);
         imprimir("      ");
         PORTAbits.RA3 = 0;
     }
@@ -3021,32 +3029,57 @@ void luces()
     y2 = y1/10;
     y3 = y1%10;
 
-    colocar(10,2);
+    colocar(1,2);
     mostrar(a[y]);
-    colocar(11,2);
+    colocar(2,2);
     mostrar(a[y2]);
-    colocar(12,2);
+    colocar(3,2);
     mostrar(a[y3]);
 
     if (Luz < 50)
     {
-        colocar(14,2);
+        colocar(4,2);
         imprimir("   ");
-        colocar(14,1);
+        colocar(5,1);
         imprimir("ON");
         PORTAbits.RA2 = 1;
     }
 
     else
     {
-        colocar(14,1);
-        imprimir("   ");
-        colocar(14,2);
+        colocar(5,1);
+        imprimir("  ");
+        colocar(4,2);
         imprimir("OFF");
         PORTAbits.RA2 = 0;
     }
 }
-# 148 "Carcelero.c"
+
+void celda()
+{
+    if (grados == 0)
+    {
+        colocar(38,2);
+        imprimir(" ");
+
+        PORTAbits.RA1 = 0;
+
+        colocar(39,2);
+        imprimir("-");
+    }
+
+    else if (grados == 90)
+    {
+        colocar(39,2);
+        imprimir(" ");
+
+        PORTAbits.RA1 = 1;
+
+        colocar(38,2);
+        imprimir("+");
+    }
+}
+
 void setup()
 {
     ANSEL = 0;
@@ -3077,31 +3110,48 @@ void main(void)
 
     I2C_Master_Init(100000);
 
-
-
-
-    colocar(10,1);
-    imprimir("Luz");
-
     colocar(1,1);
-    imprimir("X:");
+    imprimir("Luz:");
 
-    colocar(30,1);
-    imprimir("Hola");
+    colocar(8,1);
+    imprimir("X:");
+    colocar(12,1);
+    imprimir("cm");
+
+    colocar(15,1);
+    imprimir("Humo:");
+
+    colocar(24,1);
+    imprimir("Tem:");
+    colocar(26,2);
+    mostrar(0xDF);
+    colocar(27,2);
+    imprimir("C");
+
+    colocar(29,1);
+    imprimir("Hora:");
+    colocar(31,2);
+    imprimir(":");
+
+    colocar(35,1);
+    imprimir("PP");
+
+    colocar(38,1);
+    imprimir("CC");
 
     while(1)
     {
 
         I2C_Master_Start();
-        I2C_Master_Write(0x21);
-        grados = I2C_Master_Read(0);
+        I2C_Master_Write(0x11);
+        Luz = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((100)*(4000000/4000.0)));
 
 
         I2C_Master_Start();
-        I2C_Master_Write(0x11);
-        Luz = I2C_Master_Read(0);
+        I2C_Master_Write(0x21);
+        grados = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((100)*(4000000/4000.0)));
 
@@ -3113,7 +3163,9 @@ void main(void)
         _delay((unsigned long)((100)*(4000000/4000.0)));
 
         luces();
-
+        celda();
         ultrasonico();
+        shift();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
     }
 }
