@@ -47,16 +47,47 @@ void setup();
 void luces();
 void celda();
 void ultrasonico();
+void Humo();
 
 uint8_t Luz;        // Variable donde se guarda lo que el PIC1 nos envia.
 int y,y1,y2,y3;     // Variables para almacenar la centena, la decena y la unidad de la luz.
 uint8_t grados;     // Variable para conocer el estado de las celdas.
-//uint8_t Tiempo;     // Variable para guardar el tiempo del sensor ultrasonico.
 uint8_t Distancia;  // Variable que guarda la conversion de tiempo a distancia.
 int z,z1;     // Variables para almacenar la centena, la decena y la unidad de la distancia
+uint8_t Humo;
+int w,w1,w2,w3;
 
 // Arreglo con caracteres para imprimir en la LCD
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+
+void Humo()
+{
+    w  = Humo/100;
+    w1 = Humo%100;
+    w2 = w1/10;
+    w3 = w1%10;
+    
+    colocar(20,1);
+    mostrar(a[w]);
+    colocar(21,1);
+    mostrar(a[w2]);
+    colocar(22,1);
+    mostrar(a[w3]);
+    
+    if (Humo > 100)
+    {
+        colocar(16,2);
+        imprimir("ALERTA");
+        PORTAbits.RA4 = 1;
+    }
+    
+    else
+    {
+        colocar(16,2);
+        imprimir("      ");
+        PORTAbits.RA4 = 0;
+    }
+}
 
 void ultrasonico()
 {
@@ -223,10 +254,16 @@ void main(void)
         I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC2
         __delay_ms(100);
         
+        // Recibo el valor del sensor de humo. PIC4 = Reo4
+        I2C_Master_Start();         // Iniciamos comunicacion
+        I2C_Master_Write(0x41);     // Llamamos al REO1 y le indicamos que lo leeremos
+        Humo = I2C_Master_Read(0);   // Guardamos en luz el valor del ADC enviado por el PIC1
+        I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC2
+        __delay_ms(100);
+        
         luces();
         celda();
         ultrasonico();
         shift();
-        __delay_ms(100);
     }
 }
