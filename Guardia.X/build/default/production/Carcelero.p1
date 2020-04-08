@@ -942,17 +942,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Oscilador.h: 48: }
 [e :UE 164 ]
 }
-"51 Carcelero.c
-[; ;Carcelero.c: 51: uint8_t Luz;
+"52 Carcelero.c
+[; ;Carcelero.c: 52: uint8_t Luz;
 [v _Luz `uc ~T0 @X0 1 e ]
-"52
-[; ;Carcelero.c: 52: int y,y1,y2,y3;
+"53
+[; ;Carcelero.c: 53: int y,y1,y2,y3;
 [v _y `i ~T0 @X0 1 e ]
 [v _y1 `i ~T0 @X0 1 e ]
 [v _y2 `i ~T0 @X0 1 e ]
 [v _y3 `i ~T0 @X0 1 e ]
-"53
-[; ;Carcelero.c: 53: uint8_t grados;
+"54
+[; ;Carcelero.c: 54: uint8_t grados;
 [v _grados `uc ~T0 @X0 1 e ]
 "55
 [; ;Carcelero.c: 55: uint8_t Distancia;
@@ -961,8 +961,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Carcelero.c: 56: int z,z1;
 [v _z `i ~T0 @X0 1 e ]
 [v _z1 `i ~T0 @X0 1 e ]
-"59
-[; ;Carcelero.c: 59: const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+"57
+[; ;Carcelero.c: 57: uint8_t Humo;
+[v _Humo `uc ~T0 @X0 1 e ]
+"58
+[; ;Carcelero.c: 58: int w,w1,w2,w3;
+[v _w `i ~T0 @X0 1 e ]
+[v _w1 `i ~T0 @X0 1 e ]
+[v _w2 `i ~T0 @X0 1 e ]
+[v _w3 `i ~T0 @X0 1 e ]
+"61
+[; ;Carcelero.c: 61: const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
 [v _a `Cuc ~T0 @X0 -> 10 `i e ]
 [i _a
 :U ..
@@ -978,133 +987,127 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 57 `ui `uc
 ..
 ]
-"61
-[; ;Carcelero.c: 61: void ultrasonico()
+"63
+[; ;Carcelero.c: 63: void humo()
+[v _humo `(v ~T0 @X0 1 ef ]
+"64
+[; ;Carcelero.c: 64: {
+{
+[e :U _humo ]
+[f ]
+"65
+[; ;Carcelero.c: 65:     w = Humo/100;
+[e = _w / -> _Humo `i -> 100 `i ]
+"66
+[; ;Carcelero.c: 66:     w1 = Humo%100;
+[e = _w1 % -> _Humo `i -> 100 `i ]
+"67
+[; ;Carcelero.c: 67:     w2 = w1/10;
+[e = _w2 / _w1 -> 10 `i ]
+"68
+[; ;Carcelero.c: 68:     w3 = w1%10;
+[e = _w3 % _w1 -> 10 `i ]
+"70
+[; ;Carcelero.c: 70:     colocar(20,1);
+[e ( _colocar (2 , -> -> 20 `i `uc -> -> 1 `i `uc ]
+"71
+[; ;Carcelero.c: 71:     mostrar(a[w]);
+[e ( _mostrar (1 *U + &U _a * -> -> _w `ui `ux -> -> # *U &U _a `ui `ux ]
+"72
+[; ;Carcelero.c: 72:     colocar(21,1);
+[e ( _colocar (2 , -> -> 21 `i `uc -> -> 1 `i `uc ]
+"73
+[; ;Carcelero.c: 73:     mostrar(a[w2]);
+[e ( _mostrar (1 *U + &U _a * -> -> _w2 `ui `ux -> -> # *U &U _a `ui `ux ]
+"74
+[; ;Carcelero.c: 74:     colocar(22,1);
+[e ( _colocar (2 , -> -> 22 `i `uc -> -> 1 `i `uc ]
+"75
+[; ;Carcelero.c: 75:     mostrar(a[w3]);
+[e ( _mostrar (1 *U + &U _a * -> -> _w3 `ui `ux -> -> # *U &U _a `ui `ux ]
+"77
+[; ;Carcelero.c: 77:     if (Humo > 50)
+[e $ ! > -> _Humo `i -> 50 `i 177  ]
+"78
+[; ;Carcelero.c: 78:     {
+{
+"79
+[; ;Carcelero.c: 79:         colocar(16,2);
+[e ( _colocar (2 , -> -> 16 `i `uc -> -> 2 `i `uc ]
+"80
+[; ;Carcelero.c: 80:         imprimir("ALERTA");
+[e ( _imprimir (1 :s 1C ]
+"81
+[; ;Carcelero.c: 81:         PORTAbits.RA4 = 1;
+[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+"82
+[; ;Carcelero.c: 82:     }
+}
+[e $U 178  ]
+"84
+[; ;Carcelero.c: 84:     else
+[e :U 177 ]
+"85
+[; ;Carcelero.c: 85:     {
+{
+"86
+[; ;Carcelero.c: 86:         colocar(16,2);
+[e ( _colocar (2 , -> -> 16 `i `uc -> -> 2 `i `uc ]
+"87
+[; ;Carcelero.c: 87:         imprimir("      ");
+[e ( _imprimir (1 :s 2C ]
+"88
+[; ;Carcelero.c: 88:         PORTAbits.RA4 = 0;
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+"89
+[; ;Carcelero.c: 89:     }
+}
+[e :U 178 ]
+"90
+[; ;Carcelero.c: 90: }
+[e :UE 176 ]
+}
+"92
+[; ;Carcelero.c: 92: void ultrasonico()
 [v _ultrasonico `(v ~T0 @X0 1 ef ]
-"62
-[; ;Carcelero.c: 62: {
+"93
+[; ;Carcelero.c: 93: {
 {
 [e :U _ultrasonico ]
 [f ]
-"63
-[; ;Carcelero.c: 63:     z = Distancia/10;
-[e = _z / -> _Distancia `i -> 10 `i ]
-"64
-[; ;Carcelero.c: 64:     z1 = Distancia%10;
-[e = _z1 % -> _Distancia `i -> 10 `i ]
-"66
-[; ;Carcelero.c: 66:     colocar(10,1);
-[e ( _colocar (2 , -> -> 10 `i `uc -> -> 1 `i `uc ]
-"67
-[; ;Carcelero.c: 67:     mostrar(a[z]);
-[e ( _mostrar (1 *U + &U _a * -> -> _z `ui `ux -> -> # *U &U _a `ui `ux ]
-"68
-[; ;Carcelero.c: 68:     colocar(11,1);
-[e ( _colocar (2 , -> -> 11 `i `uc -> -> 1 `i `uc ]
-"69
-[; ;Carcelero.c: 69:     mostrar(a[z1]);
-[e ( _mostrar (1 *U + &U _a * -> -> _z1 `ui `ux -> -> # *U &U _a `ui `ux ]
-"71
-[; ;Carcelero.c: 71:     if (Distancia < 15)
-[e $ ! < -> _Distancia `i -> 15 `i 177  ]
-"72
-[; ;Carcelero.c: 72:     {
-{
-"73
-[; ;Carcelero.c: 73:         colocar(8,2);
-[e ( _colocar (2 , -> -> 8 `i `uc -> -> 2 `i `uc ]
-"74
-[; ;Carcelero.c: 74:         imprimir("ALERTA");
-[e ( _imprimir (1 :s 1C ]
-"75
-[; ;Carcelero.c: 75:         PORTAbits.RA3 = 1;
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-"76
-[; ;Carcelero.c: 76:     }
-}
-[e $U 178  ]
-"78
-[; ;Carcelero.c: 78:     else
-[e :U 177 ]
-"79
-[; ;Carcelero.c: 79:     {
-{
-"80
-[; ;Carcelero.c: 80:         colocar(8,2);
-[e ( _colocar (2 , -> -> 8 `i `uc -> -> 2 `i `uc ]
-"81
-[; ;Carcelero.c: 81:         imprimir("      ");
-[e ( _imprimir (1 :s 2C ]
-"82
-[; ;Carcelero.c: 82:         PORTAbits.RA3 = 0;
-[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
-"83
-[; ;Carcelero.c: 83:     }
-}
-[e :U 178 ]
-"84
-[; ;Carcelero.c: 84: }
-[e :UE 176 ]
-}
-"86
-[; ;Carcelero.c: 86: void luces()
-[v _luces `(v ~T0 @X0 1 ef ]
-"87
-[; ;Carcelero.c: 87: {
-{
-[e :U _luces ]
-[f ]
-"88
-[; ;Carcelero.c: 88:     y = Luz/100;
-[e = _y / -> _Luz `i -> 100 `i ]
-"89
-[; ;Carcelero.c: 89:     y1 = Luz%100;
-[e = _y1 % -> _Luz `i -> 100 `i ]
-"90
-[; ;Carcelero.c: 90:     y2 = y1/10;
-[e = _y2 / _y1 -> 10 `i ]
-"91
-[; ;Carcelero.c: 91:     y3 = y1%10;
-[e = _y3 % _y1 -> 10 `i ]
-"93
-[; ;Carcelero.c: 93:     colocar(1,2);
-[e ( _colocar (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
 "94
-[; ;Carcelero.c: 94:     mostrar(a[y]);
-[e ( _mostrar (1 *U + &U _a * -> -> _y `ui `ux -> -> # *U &U _a `ui `ux ]
+[; ;Carcelero.c: 94:     z = Distancia/10;
+[e = _z / -> _Distancia `i -> 10 `i ]
 "95
-[; ;Carcelero.c: 95:     colocar(2,2);
-[e ( _colocar (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
-"96
-[; ;Carcelero.c: 96:     mostrar(a[y2]);
-[e ( _mostrar (1 *U + &U _a * -> -> _y2 `ui `ux -> -> # *U &U _a `ui `ux ]
+[; ;Carcelero.c: 95:     z1 = Distancia%10;
+[e = _z1 % -> _Distancia `i -> 10 `i ]
 "97
-[; ;Carcelero.c: 97:     colocar(3,2);
-[e ( _colocar (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+[; ;Carcelero.c: 97:     colocar(10,1);
+[e ( _colocar (2 , -> -> 10 `i `uc -> -> 1 `i `uc ]
 "98
-[; ;Carcelero.c: 98:     mostrar(a[y3]);
-[e ( _mostrar (1 *U + &U _a * -> -> _y3 `ui `ux -> -> # *U &U _a `ui `ux ]
+[; ;Carcelero.c: 98:     mostrar(a[z]);
+[e ( _mostrar (1 *U + &U _a * -> -> _z `ui `ux -> -> # *U &U _a `ui `ux ]
+"99
+[; ;Carcelero.c: 99:     colocar(11,1);
+[e ( _colocar (2 , -> -> 11 `i `uc -> -> 1 `i `uc ]
 "100
-[; ;Carcelero.c: 100:     if (Luz < 50)
-[e $ ! < -> _Luz `i -> 50 `i 180  ]
-"101
-[; ;Carcelero.c: 101:     {
-{
+[; ;Carcelero.c: 100:     mostrar(a[z1]);
+[e ( _mostrar (1 *U + &U _a * -> -> _z1 `ui `ux -> -> # *U &U _a `ui `ux ]
 "102
-[; ;Carcelero.c: 102:         colocar(4,2);
-[e ( _colocar (2 , -> -> 4 `i `uc -> -> 2 `i `uc ]
+[; ;Carcelero.c: 102:     if (Distancia < 15)
+[e $ ! < -> _Distancia `i -> 15 `i 180  ]
 "103
-[; ;Carcelero.c: 103:         imprimir("   ");
-[e ( _imprimir (1 :s 3C ]
+[; ;Carcelero.c: 103:     {
+{
 "104
-[; ;Carcelero.c: 104:         colocar(5,1);
-[e ( _colocar (2 , -> -> 5 `i `uc -> -> 1 `i `uc ]
+[; ;Carcelero.c: 104:         colocar(8,2);
+[e ( _colocar (2 , -> -> 8 `i `uc -> -> 2 `i `uc ]
 "105
-[; ;Carcelero.c: 105:         imprimir("ON");
-[e ( _imprimir (1 :s 4C ]
+[; ;Carcelero.c: 105:         imprimir("ALERTA");
+[e ( _imprimir (1 :s 3C ]
 "106
-[; ;Carcelero.c: 106:         PORTAbits.RA2 = 1;
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;Carcelero.c: 106:         PORTAbits.RA3 = 1;
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
 "107
 [; ;Carcelero.c: 107:     }
 }
@@ -1116,320 +1119,423 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Carcelero.c: 110:     {
 {
 "111
-[; ;Carcelero.c: 111:         colocar(5,1);
-[e ( _colocar (2 , -> -> 5 `i `uc -> -> 1 `i `uc ]
+[; ;Carcelero.c: 111:         colocar(8,2);
+[e ( _colocar (2 , -> -> 8 `i `uc -> -> 2 `i `uc ]
 "112
-[; ;Carcelero.c: 112:         imprimir("  ");
-[e ( _imprimir (1 :s 5C ]
+[; ;Carcelero.c: 112:         imprimir("      ");
+[e ( _imprimir (1 :s 4C ]
 "113
-[; ;Carcelero.c: 113:         colocar(4,2);
-[e ( _colocar (2 , -> -> 4 `i `uc -> -> 2 `i `uc ]
+[; ;Carcelero.c: 113:         PORTAbits.RA3 = 0;
+[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
 "114
-[; ;Carcelero.c: 114:         imprimir("OFF");
-[e ( _imprimir (1 :s 6C ]
-"115
-[; ;Carcelero.c: 115:         PORTAbits.RA2 = 0;
-[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
-"116
-[; ;Carcelero.c: 116:     }
+[; ;Carcelero.c: 114:     }
 }
 [e :U 181 ]
-"117
-[; ;Carcelero.c: 117: }
+"115
+[; ;Carcelero.c: 115: }
 [e :UE 179 ]
 }
+"117
+[; ;Carcelero.c: 117: void luces()
+[v _luces `(v ~T0 @X0 1 ef ]
+"118
+[; ;Carcelero.c: 118: {
+{
+[e :U _luces ]
+[f ]
 "119
-[; ;Carcelero.c: 119: void celda()
-[v _celda `(v ~T0 @X0 1 ef ]
+[; ;Carcelero.c: 119:     y = Luz/100;
+[e = _y / -> _Luz `i -> 100 `i ]
 "120
-[; ;Carcelero.c: 120: {
+[; ;Carcelero.c: 120:     y1 = Luz%100;
+[e = _y1 % -> _Luz `i -> 100 `i ]
+"121
+[; ;Carcelero.c: 121:     y2 = y1/10;
+[e = _y2 / _y1 -> 10 `i ]
+"122
+[; ;Carcelero.c: 122:     y3 = y1%10;
+[e = _y3 % _y1 -> 10 `i ]
+"124
+[; ;Carcelero.c: 124:     colocar(1,2);
+[e ( _colocar (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"125
+[; ;Carcelero.c: 125:     mostrar(a[y]);
+[e ( _mostrar (1 *U + &U _a * -> -> _y `ui `ux -> -> # *U &U _a `ui `ux ]
+"126
+[; ;Carcelero.c: 126:     colocar(2,2);
+[e ( _colocar (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
+"127
+[; ;Carcelero.c: 127:     mostrar(a[y2]);
+[e ( _mostrar (1 *U + &U _a * -> -> _y2 `ui `ux -> -> # *U &U _a `ui `ux ]
+"128
+[; ;Carcelero.c: 128:     colocar(3,2);
+[e ( _colocar (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+"129
+[; ;Carcelero.c: 129:     mostrar(a[y3]);
+[e ( _mostrar (1 *U + &U _a * -> -> _y3 `ui `ux -> -> # *U &U _a `ui `ux ]
+"131
+[; ;Carcelero.c: 131:     if (Luz < 50)
+[e $ ! < -> _Luz `i -> 50 `i 183  ]
+"132
+[; ;Carcelero.c: 132:     {
+{
+"133
+[; ;Carcelero.c: 133:         colocar(4,2);
+[e ( _colocar (2 , -> -> 4 `i `uc -> -> 2 `i `uc ]
+"134
+[; ;Carcelero.c: 134:         imprimir("   ");
+[e ( _imprimir (1 :s 5C ]
+"135
+[; ;Carcelero.c: 135:         colocar(5,1);
+[e ( _colocar (2 , -> -> 5 `i `uc -> -> 1 `i `uc ]
+"136
+[; ;Carcelero.c: 136:         imprimir("ON");
+[e ( _imprimir (1 :s 6C ]
+"137
+[; ;Carcelero.c: 137:         PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+"138
+[; ;Carcelero.c: 138:     }
+}
+[e $U 184  ]
+"140
+[; ;Carcelero.c: 140:     else
+[e :U 183 ]
+"141
+[; ;Carcelero.c: 141:     {
+{
+"142
+[; ;Carcelero.c: 142:         colocar(5,1);
+[e ( _colocar (2 , -> -> 5 `i `uc -> -> 1 `i `uc ]
+"143
+[; ;Carcelero.c: 143:         imprimir("  ");
+[e ( _imprimir (1 :s 7C ]
+"144
+[; ;Carcelero.c: 144:         colocar(4,2);
+[e ( _colocar (2 , -> -> 4 `i `uc -> -> 2 `i `uc ]
+"145
+[; ;Carcelero.c: 145:         imprimir("OFF");
+[e ( _imprimir (1 :s 8C ]
+"146
+[; ;Carcelero.c: 146:         PORTAbits.RA2 = 0;
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+"147
+[; ;Carcelero.c: 147:     }
+}
+[e :U 184 ]
+"148
+[; ;Carcelero.c: 148: }
+[e :UE 182 ]
+}
+"150
+[; ;Carcelero.c: 150: void celda()
+[v _celda `(v ~T0 @X0 1 ef ]
+"151
+[; ;Carcelero.c: 151: {
 {
 [e :U _celda ]
 [f ]
-"121
-[; ;Carcelero.c: 121:     if (grados == 0)
-[e $ ! == -> _grados `i -> 0 `i 183  ]
-"122
-[; ;Carcelero.c: 122:     {
+"152
+[; ;Carcelero.c: 152:     if (grados == 0)
+[e $ ! == -> _grados `i -> 0 `i 186  ]
+"153
+[; ;Carcelero.c: 153:     {
 {
-"123
-[; ;Carcelero.c: 123:         colocar(38,2);
+"154
+[; ;Carcelero.c: 154:         colocar(38,2);
 [e ( _colocar (2 , -> -> 38 `i `uc -> -> 2 `i `uc ]
-"124
-[; ;Carcelero.c: 124:         imprimir(" ");
-[e ( _imprimir (1 :s 7C ]
-"126
-[; ;Carcelero.c: 126:         PORTAbits.RA1 = 0;
-[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
-"128
-[; ;Carcelero.c: 128:         colocar(39,2);
-[e ( _colocar (2 , -> -> 39 `i `uc -> -> 2 `i `uc ]
-"129
-[; ;Carcelero.c: 129:         imprimir("-");
-[e ( _imprimir (1 :s 8C ]
-"130
-[; ;Carcelero.c: 130:     }
-}
-[e $U 184  ]
-"132
-[; ;Carcelero.c: 132:     else if (grados == 90)
-[e :U 183 ]
-[e $ ! == -> _grados `i -> 90 `i 185  ]
-"133
-[; ;Carcelero.c: 133:     {
-{
-"134
-[; ;Carcelero.c: 134:         colocar(39,2);
-[e ( _colocar (2 , -> -> 39 `i `uc -> -> 2 `i `uc ]
-"135
-[; ;Carcelero.c: 135:         imprimir(" ");
+"155
+[; ;Carcelero.c: 155:         imprimir(" ");
 [e ( _imprimir (1 :s 9C ]
-"137
-[; ;Carcelero.c: 137:         PORTAbits.RA1 = 1;
-[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
-"139
-[; ;Carcelero.c: 139:         colocar(38,2);
-[e ( _colocar (2 , -> -> 38 `i `uc -> -> 2 `i `uc ]
-"140
-[; ;Carcelero.c: 140:         imprimir("+");
+"157
+[; ;Carcelero.c: 157:         PORTAbits.RA1 = 0;
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
+"159
+[; ;Carcelero.c: 159:         colocar(39,2);
+[e ( _colocar (2 , -> -> 39 `i `uc -> -> 2 `i `uc ]
+"160
+[; ;Carcelero.c: 160:         imprimir("-");
 [e ( _imprimir (1 :s 10C ]
-"141
-[; ;Carcelero.c: 141:     }
+"161
+[; ;Carcelero.c: 161:     }
 }
-[e :U 185 ]
-[e :U 184 ]
-"142
-[; ;Carcelero.c: 142: }
-[e :UE 182 ]
+[e $U 187  ]
+"163
+[; ;Carcelero.c: 163:     else if (grados == 90)
+[e :U 186 ]
+[e $ ! == -> _grados `i -> 90 `i 188  ]
+"164
+[; ;Carcelero.c: 164:     {
+{
+"165
+[; ;Carcelero.c: 165:         colocar(39,2);
+[e ( _colocar (2 , -> -> 39 `i `uc -> -> 2 `i `uc ]
+"166
+[; ;Carcelero.c: 166:         imprimir(" ");
+[e ( _imprimir (1 :s 11C ]
+"168
+[; ;Carcelero.c: 168:         PORTAbits.RA1 = 1;
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+"170
+[; ;Carcelero.c: 170:         colocar(38,2);
+[e ( _colocar (2 , -> -> 38 `i `uc -> -> 2 `i `uc ]
+"171
+[; ;Carcelero.c: 171:         imprimir("+");
+[e ( _imprimir (1 :s 12C ]
+"172
+[; ;Carcelero.c: 172:     }
 }
-"144
-[; ;Carcelero.c: 144: void setup()
+[e :U 188 ]
+[e :U 187 ]
+"173
+[; ;Carcelero.c: 173: }
+[e :UE 185 ]
+}
+"175
+[; ;Carcelero.c: 175: void setup()
 [v _setup `(v ~T0 @X0 1 ef ]
-"145
-[; ;Carcelero.c: 145: {
+"176
+[; ;Carcelero.c: 176: {
 {
 [e :U _setup ]
 [f ]
-"146
-[; ;Carcelero.c: 146:     ANSEL = 0;
+"177
+[; ;Carcelero.c: 177:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"147
-[; ;Carcelero.c: 147:     ANSELH = 0;
+"178
+[; ;Carcelero.c: 178:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"149
-[; ;Carcelero.c: 149:     TRISA = 0;
+"180
+[; ;Carcelero.c: 180:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"150
-[; ;Carcelero.c: 150:     TRISB = 0;
+"181
+[; ;Carcelero.c: 181:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"151
-[; ;Carcelero.c: 151:     TRISC = 0;
+"182
+[; ;Carcelero.c: 182:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"153
-[; ;Carcelero.c: 153:     TRISDbits.TRISD6 = 0;
+"184
+[; ;Carcelero.c: 184:     TRISDbits.TRISD6 = 0;
 [e = . . _TRISDbits 0 6 -> -> 0 `i `uc ]
-"154
-[; ;Carcelero.c: 154:     TRISDbits.TRISD7 = 0;
+"185
+[; ;Carcelero.c: 185:     TRISDbits.TRISD7 = 0;
 [e = . . _TRISDbits 0 7 -> -> 0 `i `uc ]
-"156
-[; ;Carcelero.c: 156:     PORTA = 0;
+"187
+[; ;Carcelero.c: 187:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"157
-[; ;Carcelero.c: 157:     PORTB = 0;
+"188
+[; ;Carcelero.c: 188:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"158
-[; ;Carcelero.c: 158:     PORTC = 0;
+"189
+[; ;Carcelero.c: 189:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"159
-[; ;Carcelero.c: 159:     PORTD = 0;
+"190
+[; ;Carcelero.c: 190:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"160
-[; ;Carcelero.c: 160: }
-[e :UE 186 ]
+"191
+[; ;Carcelero.c: 191: }
+[e :UE 189 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"162
-[; ;Carcelero.c: 162: void main(void)
+"193
+[; ;Carcelero.c: 193: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"163
-[; ;Carcelero.c: 163: {
+"194
+[; ;Carcelero.c: 194: {
 {
 [e :U _main ]
 [f ]
-"164
-[; ;Carcelero.c: 164:     iniciarOSC(6);
-[e ( _iniciarOSC (1 -> -> 6 `i `uc ]
-"166
-[; ;Carcelero.c: 166:     setup();
-[e ( _setup ..  ]
-"168
-[; ;Carcelero.c: 168:     iniciarLCD();
-[e ( _iniciarLCD ..  ]
-"170
-[; ;Carcelero.c: 170:     borrarv();
-[e ( _borrarv ..  ]
-"172
-[; ;Carcelero.c: 172:     I2C_Master_Init(100000);
-[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"174
-[; ;Carcelero.c: 174:     colocar(1,1);
-[e ( _colocar (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"175
-[; ;Carcelero.c: 175:     imprimir("Luz:");
-[e ( _imprimir (1 :s 11C ]
-"177
-[; ;Carcelero.c: 177:     colocar(8,1);
-[e ( _colocar (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
-"178
-[; ;Carcelero.c: 178:     imprimir("X:");
-[e ( _imprimir (1 :s 12C ]
-"179
-[; ;Carcelero.c: 179:     colocar(12,1);
-[e ( _colocar (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
-"180
-[; ;Carcelero.c: 180:     imprimir("cm");
-[e ( _imprimir (1 :s 13C ]
-"182
-[; ;Carcelero.c: 182:     colocar(15,1);
-[e ( _colocar (2 , -> -> 15 `i `uc -> -> 1 `i `uc ]
-"183
-[; ;Carcelero.c: 183:     imprimir("Humo:");
-[e ( _imprimir (1 :s 14C ]
-"185
-[; ;Carcelero.c: 185:     colocar(24,1);
-[e ( _colocar (2 , -> -> 24 `i `uc -> -> 1 `i `uc ]
-"186
-[; ;Carcelero.c: 186:     imprimir("Tem:");
-[e ( _imprimir (1 :s 15C ]
-"187
-[; ;Carcelero.c: 187:     colocar(26,2);
-[e ( _colocar (2 , -> -> 26 `i `uc -> -> 2 `i `uc ]
-"188
-[; ;Carcelero.c: 188:     mostrar(0xDF);
-[e ( _mostrar (1 -> -> 223 `i `uc ]
-"189
-[; ;Carcelero.c: 189:     colocar(27,2);
-[e ( _colocar (2 , -> -> 27 `i `uc -> -> 2 `i `uc ]
-"190
-[; ;Carcelero.c: 190:     imprimir("C");
-[e ( _imprimir (1 :s 16C ]
-"192
-[; ;Carcelero.c: 192:     colocar(29,1);
-[e ( _colocar (2 , -> -> 29 `i `uc -> -> 1 `i `uc ]
-"193
-[; ;Carcelero.c: 193:     imprimir("Hora:");
-[e ( _imprimir (1 :s 17C ]
-"194
-[; ;Carcelero.c: 194:     colocar(31,2);
-[e ( _colocar (2 , -> -> 31 `i `uc -> -> 2 `i `uc ]
 "195
-[; ;Carcelero.c: 195:     imprimir(":");
-[e ( _imprimir (1 :s 18C ]
+[; ;Carcelero.c: 195:     iniciarOSC(6);
+[e ( _iniciarOSC (1 -> -> 6 `i `uc ]
 "197
-[; ;Carcelero.c: 197:     colocar(35,1);
-[e ( _colocar (2 , -> -> 35 `i `uc -> -> 1 `i `uc ]
-"198
-[; ;Carcelero.c: 198:     imprimir("PP");
-[e ( _imprimir (1 :s 19C ]
-"200
-[; ;Carcelero.c: 200:     colocar(38,1);
-[e ( _colocar (2 , -> -> 38 `i `uc -> -> 1 `i `uc ]
+[; ;Carcelero.c: 197:     setup();
+[e ( _setup ..  ]
+"199
+[; ;Carcelero.c: 199:     iniciarLCD();
+[e ( _iniciarLCD ..  ]
 "201
-[; ;Carcelero.c: 201:     imprimir("CC");
-[e ( _imprimir (1 :s 20C ]
+[; ;Carcelero.c: 201:     borrarv();
+[e ( _borrarv ..  ]
 "203
-[; ;Carcelero.c: 203:     while(1)
-[e :U 189 ]
-"204
-[; ;Carcelero.c: 204:     {
-{
+[; ;Carcelero.c: 203:     I2C_Master_Init(100000);
+[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
+"205
+[; ;Carcelero.c: 205:     colocar(1,1);
+[e ( _colocar (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "206
-[; ;Carcelero.c: 206:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"207
-[; ;Carcelero.c: 207:         I2C_Master_Write(0x11);
-[e ( _I2C_Master_Write (1 -> -> 17 `i `ui ]
+[; ;Carcelero.c: 206:     imprimir("Luz:");
+[e ( _imprimir (1 :s 13C ]
 "208
-[; ;Carcelero.c: 208:         Luz = I2C_Master_Read(0);
-[e = _Luz -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;Carcelero.c: 208:     colocar(8,1);
+[e ( _colocar (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
 "209
-[; ;Carcelero.c: 209:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;Carcelero.c: 209:     imprimir("X:");
+[e ( _imprimir (1 :s 14C ]
 "210
-[; ;Carcelero.c: 210:         _delay((unsigned long)((100)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Carcelero.c: 210:     colocar(12,1);
+[e ( _colocar (2 , -> -> 12 `i `uc -> -> 1 `i `uc ]
+"211
+[; ;Carcelero.c: 211:     imprimir("cm");
+[e ( _imprimir (1 :s 15C ]
 "213
-[; ;Carcelero.c: 213:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;Carcelero.c: 213:     colocar(15,1);
+[e ( _colocar (2 , -> -> 15 `i `uc -> -> 1 `i `uc ]
 "214
-[; ;Carcelero.c: 214:         I2C_Master_Write(0x21);
-[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
-"215
-[; ;Carcelero.c: 215:         grados = I2C_Master_Read(0);
-[e = _grados -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;Carcelero.c: 214:     imprimir("Humo:");
+[e ( _imprimir (1 :s 16C ]
 "216
-[; ;Carcelero.c: 216:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;Carcelero.c: 216:     colocar(24,1);
+[e ( _colocar (2 , -> -> 24 `i `uc -> -> 1 `i `uc ]
 "217
-[; ;Carcelero.c: 217:         _delay((unsigned long)((100)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Carcelero.c: 217:     imprimir("Tem:");
+[e ( _imprimir (1 :s 17C ]
+"218
+[; ;Carcelero.c: 218:     colocar(26,2);
+[e ( _colocar (2 , -> -> 26 `i `uc -> -> 2 `i `uc ]
+"219
+[; ;Carcelero.c: 219:     mostrar(0xDF);
+[e ( _mostrar (1 -> -> 223 `i `uc ]
 "220
-[; ;Carcelero.c: 220:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;Carcelero.c: 220:     colocar(27,2);
+[e ( _colocar (2 , -> -> 27 `i `uc -> -> 2 `i `uc ]
 "221
-[; ;Carcelero.c: 221:         I2C_Master_Write(0x31);
-[e ( _I2C_Master_Write (1 -> -> 49 `i `ui ]
-"222
-[; ;Carcelero.c: 222:         Distancia = I2C_Master_Read(0);
-[e = _Distancia -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;Carcelero.c: 221:     imprimir("C");
+[e ( _imprimir (1 :s 18C ]
 "223
-[; ;Carcelero.c: 223:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;Carcelero.c: 223:     colocar(29,1);
+[e ( _colocar (2 , -> -> 29 `i `uc -> -> 1 `i `uc ]
 "224
-[; ;Carcelero.c: 224:         _delay((unsigned long)((100)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Carcelero.c: 224:     imprimir("Hora:");
+[e ( _imprimir (1 :s 19C ]
+"225
+[; ;Carcelero.c: 225:     colocar(31,2);
+[e ( _colocar (2 , -> -> 31 `i `uc -> -> 2 `i `uc ]
 "226
-[; ;Carcelero.c: 226:         luces();
-[e ( _luces ..  ]
-"227
-[; ;Carcelero.c: 227:         celda();
-[e ( _celda ..  ]
+[; ;Carcelero.c: 226:     imprimir(":");
+[e ( _imprimir (1 :s 20C ]
 "228
-[; ;Carcelero.c: 228:         ultrasonico();
-[e ( _ultrasonico ..  ]
+[; ;Carcelero.c: 228:     colocar(35,1);
+[e ( _colocar (2 , -> -> 35 `i `uc -> -> 1 `i `uc ]
 "229
-[; ;Carcelero.c: 229:         shift();
-[e ( _shift ..  ]
-"230
-[; ;Carcelero.c: 230:         _delay((unsigned long)((100)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Carcelero.c: 229:     imprimir("PP");
+[e ( _imprimir (1 :s 21C ]
 "231
-[; ;Carcelero.c: 231:     }
-}
-[e :U 188 ]
-[e $U 189  ]
-[e :U 190 ]
+[; ;Carcelero.c: 231:     colocar(38,1);
+[e ( _colocar (2 , -> -> 38 `i `uc -> -> 1 `i `uc ]
 "232
-[; ;Carcelero.c: 232: }
-[e :UE 187 ]
+[; ;Carcelero.c: 232:     imprimir("CC");
+[e ( _imprimir (1 :s 22C ]
+"234
+[; ;Carcelero.c: 234:     while(1)
+[e :U 192 ]
+"235
+[; ;Carcelero.c: 235:     {
+{
+"237
+[; ;Carcelero.c: 237:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"238
+[; ;Carcelero.c: 238:         I2C_Master_Write(0x11);
+[e ( _I2C_Master_Write (1 -> -> 17 `i `ui ]
+"239
+[; ;Carcelero.c: 239:         Luz = I2C_Master_Read(0);
+[e = _Luz -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"240
+[; ;Carcelero.c: 240:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"241
+[; ;Carcelero.c: 241:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"244
+[; ;Carcelero.c: 244:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"245
+[; ;Carcelero.c: 245:         I2C_Master_Write(0x21);
+[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
+"246
+[; ;Carcelero.c: 246:         grados = I2C_Master_Read(0);
+[e = _grados -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"247
+[; ;Carcelero.c: 247:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"248
+[; ;Carcelero.c: 248:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"251
+[; ;Carcelero.c: 251:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"252
+[; ;Carcelero.c: 252:         I2C_Master_Write(0x31);
+[e ( _I2C_Master_Write (1 -> -> 49 `i `ui ]
+"253
+[; ;Carcelero.c: 253:         Distancia = I2C_Master_Read(0);
+[e = _Distancia -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"254
+[; ;Carcelero.c: 254:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"255
+[; ;Carcelero.c: 255:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"258
+[; ;Carcelero.c: 258:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"259
+[; ;Carcelero.c: 259:         I2C_Master_Write(0x41);
+[e ( _I2C_Master_Write (1 -> -> 65 `i `ui ]
+"260
+[; ;Carcelero.c: 260:         Humo = I2C_Master_Read(0);
+[e = _Humo -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"261
+[; ;Carcelero.c: 261:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"262
+[; ;Carcelero.c: 262:         _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"264
+[; ;Carcelero.c: 264:         luces();
+[e ( _luces ..  ]
+"265
+[; ;Carcelero.c: 265:         celda();
+[e ( _celda ..  ]
+"266
+[; ;Carcelero.c: 266:         ultrasonico();
+[e ( _ultrasonico ..  ]
+"267
+[; ;Carcelero.c: 267:         humo();
+[e ( _humo ..  ]
+"268
+[; ;Carcelero.c: 268:         shift();
+[e ( _shift ..  ]
+"269
+[; ;Carcelero.c: 269:     }
 }
-[a 13C 99 109 0 ]
-[a 19C 80 80 0 ]
-[a 4C 79 78 0 ]
-[a 6C 79 70 70 0 ]
-[a 20C 67 67 0 ]
-[a 16C 67 0 ]
+[e :U 191 ]
+[e $U 192  ]
+[e :U 193 ]
+"270
+[; ;Carcelero.c: 270: }
+[e :UE 190 ]
+}
+[a 15C 99 109 0 ]
+[a 21C 80 80 0 ]
+[a 6C 79 78 0 ]
+[a 8C 79 70 70 0 ]
+[a 22C 67 67 0 ]
+[a 18C 67 0 ]
 [a 1C 65 76 69 82 84 65 0 ]
-[a 11C 76 117 122 58 0 ]
-[a 14C 72 117 109 111 58 0 ]
-[a 15C 84 101 109 58 0 ]
-[a 17C 72 111 114 97 58 0 ]
-[a 12C 88 58 0 ]
-[a 18C 58 0 ]
-[a 8C 45 0 ]
-[a 10C 43 0 ]
+[a 3C 65 76 69 82 84 65 0 ]
+[a 13C 76 117 122 58 0 ]
+[a 16C 72 117 109 111 58 0 ]
+[a 17C 84 101 109 58 0 ]
+[a 19C 72 111 114 97 58 0 ]
+[a 14C 88 58 0 ]
+[a 20C 58 0 ]
+[a 10C 45 0 ]
+[a 12C 43 0 ]
 [a 2C 32 32 32 32 32 32 0 ]
-[a 3C 32 32 32 0 ]
-[a 5C 32 32 0 ]
-[a 7C 32 0 ]
+[a 4C 32 32 32 32 32 32 0 ]
+[a 5C 32 32 32 0 ]
+[a 7C 32 32 0 ]
 [a 9C 32 0 ]
+[a 11C 32 0 ]

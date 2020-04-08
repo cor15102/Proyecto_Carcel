@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"16 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X/I2Cmaestro.h
+"16 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
 "32
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
@@ -15,7 +15,7 @@
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 "74
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
-"16 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X/LCD.h
+"16 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
 [v _comando comando `(v  1 e 1 0 ]
 "25
 [v _iniciarLCD iniciarLCD `(v  1 e 1 0 ]
@@ -29,7 +29,7 @@
 [v _mostrar mostrar `(v  1 e 1 0 ]
 "99
 [v _shift shift `(v  1 e 1 0 ]
-"5 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X/Oscilador.h
+"5 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
 [v _iniciarOSC iniciarOSC `(v  1 e 1 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
@@ -45,15 +45,17 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"61 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X\Carcelero.c
+"63 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+[v _humo humo `(v  1 e 1 0 ]
+"92
 [v _ultrasonico ultrasonico `(v  1 e 1 0 ]
-"86
+"117
 [v _luces luces `(v  1 e 1 0 ]
-"119
+"150
 [v _celda celda `(v  1 e 1 0 ]
-"144
+"175
 [v _setup setup `(v  1 e 1 0 ]
-"162
+"193
 [v _main main `(v  1 e 1 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -157,48 +159,73 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"51 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X\Carcelero.c
+"52 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 [v _Luz Luz `uc  1 e 1 0 ]
-"52
+"53
 [v _y y `i  1 e 2 0 ]
 [v _y1 y1 `i  1 e 2 0 ]
 [v _y2 y2 `i  1 e 2 0 ]
 [v _y3 y3 `i  1 e 2 0 ]
-"53
+"54
 [v _grados grados `uc  1 e 1 0 ]
 "55
 [v _Distancia Distancia `uc  1 e 1 0 ]
 "56
 [v _z z `i  1 e 2 0 ]
 [v _z1 z1 `i  1 e 2 0 ]
-"59
+"57
+[v _Humo Humo `uc  1 e 1 0 ]
+"58
+[v _w w `i  1 e 2 0 ]
+[v _w1 w1 `i  1 e 2 0 ]
+[v _w2 w2 `i  1 e 2 0 ]
+[v _w3 w3 `i  1 e 2 0 ]
+"61
 [v _a a `DC[10]uc  1 e 10 0 ]
-"162
+"193
 [v _main main `(v  1 e 1 0 ]
 {
-"232
+"270
 } 0
-"61
+"92
 [v _ultrasonico ultrasonico `(v  1 e 1 0 ]
 {
-"84
+"115
 } 0
-"99 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X/LCD.h
+"99 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
 [v _shift shift `(v  1 e 1 0 ]
 {
 "109
 } 0
-"144 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X\Carcelero.c
+"175 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"160
+"191
 } 0
-"86
+"117
 [v _luces luces `(v  1 e 1 0 ]
 {
-"117
+"148
 } 0
-"90 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X/LCD.h
+"5 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+[v _iniciarOSC iniciarOSC `(v  1 e 1 0 ]
+{
+[v iniciarOSC@frec frec `uc  1 a 1 wreg ]
+[v iniciarOSC@frec frec `uc  1 a 1 wreg ]
+[v iniciarOSC@frec frec `uc  1 a 1 2 ]
+"48
+} 0
+"25 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+[v _iniciarLCD iniciarLCD `(v  1 e 1 0 ]
+{
+"52
+} 0
+"63 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+[v _humo humo `(v  1 e 1 0 ]
+{
+"90
+} 0
+"90 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
 [v _mostrar mostrar `(v  1 e 1 0 ]
 {
 [v mostrar@t t `DCuc  1 a 1 wreg ]
@@ -231,25 +258,12 @@
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"5 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X/Oscilador.h
-[v _iniciarOSC iniciarOSC `(v  1 e 1 0 ]
-{
-[v iniciarOSC@frec frec `uc  1 a 1 wreg ]
-[v iniciarOSC@frec frec `uc  1 a 1 wreg ]
-[v iniciarOSC@frec frec `uc  1 a 1 2 ]
-"48
-} 0
-"25 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X/LCD.h
-[v _iniciarLCD iniciarLCD `(v  1 e 1 0 ]
-{
-"52
-} 0
-"119 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X\Carcelero.c
+"150 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 [v _celda celda `(v  1 e 1 0 ]
 {
-"142
+"173
 } 0
-"78 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X/LCD.h
+"78 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
 [v _imprimir imprimir `(v  1 e 1 0 ]
 {
 [v imprimir@texto texto `*.24DCuc  1 a 1 wreg ]
@@ -288,7 +302,7 @@
 [v comando@x x `DCuc  1 a 1 2 ]
 "23
 } 0
-"65 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto\Carcel\Guardia.X/I2Cmaestro.h
+"65 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 {
 [v I2C_Master_Write@d d `ui  1 p 2 0 ]

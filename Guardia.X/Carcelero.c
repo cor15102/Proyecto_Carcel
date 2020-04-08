@@ -47,7 +47,7 @@ void setup();
 void luces();
 void celda();
 void ultrasonico();
-void Humo();
+void humo();
 
 uint8_t Luz;        // Variable donde se guarda lo que el PIC1 nos envia.
 int y,y1,y2,y3;     // Variables para almacenar la centena, la decena y la unidad de la luz.
@@ -60,7 +60,7 @@ int w,w1,w2,w3;
 // Arreglo con caracteres para imprimir en la LCD
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
 
-void Humo()
+void humo()
 {
     w  = Humo/100;
     w1 = Humo%100;
@@ -74,7 +74,7 @@ void Humo()
     colocar(22,1);
     mostrar(a[w3]);
     
-    if (Humo > 100)
+    if (Humo > 50)
     {
         colocar(16,2);
         imprimir("ALERTA");
@@ -264,6 +264,7 @@ void main(void)
         luces();
         celda();
         ultrasonico();
+        humo();
         shift();
     }
 }

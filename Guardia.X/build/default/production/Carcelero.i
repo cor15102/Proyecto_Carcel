@@ -2986,16 +2986,47 @@ void setup();
 void luces();
 void celda();
 void ultrasonico();
+void humo();
 
 uint8_t Luz;
 int y,y1,y2,y3;
 uint8_t grados;
-
 uint8_t Distancia;
 int z,z1;
+uint8_t Humo;
+int w,w1,w2,w3;
 
 
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+
+void humo()
+{
+    w = Humo/100;
+    w1 = Humo%100;
+    w2 = w1/10;
+    w3 = w1%10;
+
+    colocar(20,1);
+    mostrar(a[w]);
+    colocar(21,1);
+    mostrar(a[w2]);
+    colocar(22,1);
+    mostrar(a[w3]);
+
+    if (Humo > 50)
+    {
+        colocar(16,2);
+        imprimir("ALERTA");
+        PORTAbits.RA4 = 1;
+    }
+
+    else
+    {
+        colocar(16,2);
+        imprimir("      ");
+        PORTAbits.RA4 = 0;
+    }
+}
 
 void ultrasonico()
 {
@@ -3162,10 +3193,17 @@ void main(void)
         I2C_Master_Stop();
         _delay((unsigned long)((100)*(4000000/4000.0)));
 
+
+        I2C_Master_Start();
+        I2C_Master_Write(0x41);
+        Humo = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+
         luces();
         celda();
         ultrasonico();
+        humo();
         shift();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
     }
 }
