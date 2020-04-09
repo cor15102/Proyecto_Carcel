@@ -1,4 +1,4 @@
-# 1 "Carcelero.c"
+# 1 "Reo5.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,14 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Carcelero.c" 2
-# 13 "Carcelero.c"
+# 1 "Reo5.c" 2
+
+
+
+
+
+
+
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -19,11 +25,8 @@
 #pragma config FCMEN = OFF
 #pragma config LVP = OFF
 
-
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-
-
 
 
 
@@ -2511,7 +2514,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 31 "Carcelero.c" 2
+# 23 "Reo5.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2610,7 +2613,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 32 "Carcelero.c" 2
+# 24 "Reo5.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2745,182 +2748,172 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 33 "Carcelero.c" 2
+# 25 "Reo5.c" 2
 
 
 
-# 1 "./I2Cmaestro.h" 1
-# 11 "./I2Cmaestro.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 11 "./I2Cmaestro.h" 2
-
+# 1 "./ADC.h" 1
 
 
 
 
-void I2C_Master_Init(const unsigned long c)
+
+
+
+
+#pragma config FOSC = INTRC_NOCLKOUT
+
+
+void iniciarADC(int conv, int ch)
 {
-    SSPCON = 0b00101000;
-    SSPCON2 = 0;
-    SSPADD = (4000000/(4*c))-1;
-    SSPSTAT = 0;
-    TRISCbits.TRISC3 = 1;
-    TRISCbits.TRISC4 = 1;
-}
 
 
 
 
-
-
-
-void I2C_Master_Wait()
-{
-    while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
-}
-
-
-
-void I2C_Master_Start()
-{
-    I2C_Master_Wait();
-    SSPCON2bits.SEN = 1;
-}
-# 55 "./I2Cmaestro.h"
-void I2C_Master_Stop()
-{
-    I2C_Master_Wait();
-    SSPCON2bits.PEN = 1;
-}
-
-
-
-
-
-void I2C_Master_Write(unsigned d)
-{
-    I2C_Master_Wait();
-    SSPBUF = d;
-}
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a)
-{
-    unsigned short temp;
-    I2C_Master_Wait();
-    SSPCON2bits.RCEN = 1;
-    I2C_Master_Wait();
-    temp = SSPBUF;
-    I2C_Master_Wait();
-    if(a == 1){
-        SSPCON2bits.ACKDT = 0;
-    }else{
-        SSPCON2bits.ACKDT = 1;
-    }
-    SSPCON2bits.ACKEN = 1;
-    return temp;
-}
-# 36 "Carcelero.c" 2
-
-# 1 "./LCD.h" 1
-# 16 "./LCD.h"
-void comando(const char x)
-{
-    PORTDbits.RD6 = 0;
-    PORTB = x;
-    PORTDbits.RD7 = 1;
-    _delay((unsigned long)((4)*(4000000/4000.0)));
-    PORTDbits.RD7 = 0;
-}
-
-void iniciarLCD(void)
-{
-    PORTDbits.RD6 = 0;
-
-    comando(0);
-
-    _delay((unsigned long)((15)*(4000000/4000.0)));
-
-    comando(0x30);
-    _delay((unsigned long)((4)*(4000000/4000.0)));
-
-    comando(0x30);
-    _delay((unsigned long)((160)*(4000000/4000000.0)));
-
-    comando(0x30);
-    _delay((unsigned long)((160)*(4000000/4000000.0)));
-
-    comando(0x38);
-
-    comando(0x10);
-
-    comando(0x01);
-
-    comando(0x06);
-
-    comando(0x0F);
-
-}
-
-void borrarv(void)
-{
-    comando(0);
-    comando(1);
-
-    comando(0x0C);
-}
-
-void colocar(const char x,const char y)
-{
-    char temp;
-
-    if (y == 1)
+    switch(conv)
     {
-        temp = 0x80 + x - 1;
-        comando(temp);
+        case 1:
+            ADCON0bits.ADCS = 0b00;
+            break;
+
+        case 2:
+            ADCON0bits.ADCS = 0b01;
+            break;
+
+        case 3:
+            ADCON0bits.ADCS = 0b10;
+            break;
+
+        default:
+            ADCON0bits.ADCS = 0b11;
+            break;
     }
-    else if (y == 2)
+
+
+
+
+    switch(ch)
     {
-        temp = 0xC0 + x - 1;
-        comando(temp);
+        case 0:
+            ADCON0bits.CHS = 0b0000;
+            break;
+
+        case 1:
+            ADCON0bits.CHS = 0b0001;
+            break;
+
+        case 2:
+            ADCON0bits.CHS = 0b0010;
+            break;
+
+        case 3:
+            ADCON0bits.CHS = 0b0011;
+            break;
+
+        case 4:
+            ADCON0bits.CHS = 0b0100;
+            break;
+
+        case 5:
+            ADCON0bits.CHS = 0b0101;
+            break;
+
+        case 6:
+            ADCON0bits.CHS = 0b0110;
+            break;
+
+        case 7:
+            ADCON0bits.CHS = 0b0111;
+            break;
+
+        case 8:
+            ADCON0bits.CHS = 0b1000;
+            break;
+
+        case 9:
+            ADCON0bits.CHS = 0b1001;
+            break;
+
+        case 10:
+            ADCON0bits.CHS = 0b1010;
+            break;
+
+        case 11:
+            ADCON0bits.CHS = 0b1011;
+            break;
+
+        case 12:
+            ADCON0bits.CHS = 0b1100;
+            break;
+
+        case 13:
+            ADCON0bits.CHS = 0b1101;
+            break;
+
+        case 14:
+            ADCON0bits.CHS = 0b1110;
+            break;
+
+        case 15:
+            ADCON0bits.CHS = 0b1111;
+            break;
+
+        default:
+            ADCON0bits.CHS = 0b0000;
+            break;
+
     }
+
+    ADCON0bits.GO_DONE = 1;
+
+    ADCON0bits.ADON = 1;
+
+    ADCON1bits.ADFM = 0;
+
+    ADCON1bits.VCFG1 = 0;
+
+    ADCON1bits.VCFG0 = 0;
 }
 
-void imprimir(const char *texto)
-{
-    for(int i = 0; texto[i] != '\0'; i++)
-    {
-        PORTDbits.RD6 = 1;
-        PORTB = texto[i];
-        PORTDbits.RD7 = 1;
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        PORTDbits.RD7 = 0;
-    }
-}
 
-void mostrar(const char t)
+
+
+
+
+unsigned int leerADC(unsigned char channel)
 {
-    PORTDbits.RD6 = 1;
-    PORTB = t;
-    PORTDbits.RD7 = 1;
+    if(channel > 7)
+    {
+        return 0;
+    }
+
+    ADCON0 &= 0xC5;
+    ADCON0 |= channel<<3;
     _delay((unsigned long)((2)*(4000000/4000.0)));
-    PORTDbits.RD7 = 0;
-}
+    GO_nDONE = 1;
 
-void shift()
+    while(GO_nDONE);
+
+    return (ADRESH);
+}
+# 28 "Reo5.c" 2
+
+# 1 "./I2Cesclavo.h" 1
+# 18 "./I2Cesclavo.h"
+void I2C_Esclavo(uint8_t address)
 {
-
-
-
-    PORTDbits.RD6 = 0;
-    PORTB = 0b00011000;
-    PORTDbits.RD7 = 1;
-    _delay((unsigned long)((1)*(4000000/4000.0)));
-    PORTDbits.RD7 = 0;
+    SSPADD = address;
+    SSPCON = 0x36;
+    SSPSTAT = 0x80;
+    SSPCON2 = 0x01;
+    TRISC3 = 1;
+    TRISC4 = 1;
+    GIE = 1;
+    PEIE = 1;
+    SSPIF = 0;
+    SSPIE = 1;
 }
-# 37 "Carcelero.c" 2
+# 29 "Reo5.c" 2
 
 # 1 "./Oscilador.h" 1
 
@@ -2973,36 +2966,7 @@ void iniciarOSC(uint8_t frec)
 
     OSCCONbits.SCS = 1;
 }
-# 38 "Carcelero.c" 2
-
-# 1 "./UART.h" 1
-# 13 "./UART.h"
-void iniciarUART(void)
-{
-    TXSTAbits.TXEN = 1;
-    TXSTAbits.SYNC = 0;
-    RCSTAbits.SPEN = 1;
-    TXSTAbits.TX9 = 0;
-    RCSTAbits.CREN = 1;
-
-    SPBRG = 25;
-    SPBRGH = 0;
-    BAUDCTLbits.BRG16 = 0;
-    TXSTAbits.BRGH = 1;
-}
-# 63 "./UART.h"
-void UARTmostrar(double x)
-{
-    while (TXSTAbits.TRMT == 0)
-    {
-
-    }
-
-    TXREG = x;
-}
-# 39 "Carcelero.c" 2
-
-
+# 30 "Reo5.c" 2
 
 
 
@@ -3010,176 +2974,79 @@ void UARTmostrar(double x)
 
 
 void setup();
-void luces();
-void celda();
-void ultrasonico();
-void humo();
-void temperatura();
-
-uint8_t Luz;
-int y,y1,y2,y3;
-uint8_t grados;
-uint8_t Distancia;
-int z,z1;
-uint8_t Humo;
-int w,w1,w2,w3;
-uint8_t Temp, calor;
-int t,t1,t2;
 
 
-const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
 
-void temperatura()
+
+uint8_t temperatura;
+uint8_t z;
+uint8_t dato;
+uint8_t x;
+
+
+void __attribute__((picinterrupt(("")))) isr(void)
 {
-    calor = (5.0*Temp)/255;
 
-    t = calor/10;
-    t1 = calor%10;
-
-    colocar(24,2);
-    mostrar(a[t]);
-    colocar(25,2);
-    mostrar(a[t1]);
-
-    if (calor > 30)
+    if (PIR1bits.ADIF == 1)
     {
-        PORTAbits.RA5 = 1;
+        PIR1bits.ADIF = 0;
+        _delay((unsigned long)((2)*(4000000/4000.0)));
     }
 
-    else
+    if(PIR1bits.SSPIF == 1)
     {
-        PORTAbits.RA5 = 0;
+        SSPCONbits.CKP = 0;
+
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL))
+        {
+            z = SSPBUF;
+            SSPCONbits.SSPOV = 0;
+            SSPCONbits.WCOL = 0;
+            SSPCONbits.CKP = 1;
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
+        {
+
+            z = SSPBUF;
+            PIR1bits.SSPIF = 0;
+            SSPCONbits.CKP = 1;
+            while(!SSPSTATbits.BF);
+            x = SSPBUF;
+            _delay((unsigned long)((250)*(4000000/4000000.0)));
+        }
+
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW)
+        {
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = temperatura;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(4000000/4000000.0)));
+            while(SSPSTATbits.BF);
+        }
+
+        PIR1bits.SSPIF = 0;
     }
 }
 
-void humo()
-{
-    w = Humo/100;
-    w1 = Humo%100;
-    w2 = w1/10;
-    w3 = w1%10;
 
-    colocar(20,1);
-    mostrar(a[w]);
-    colocar(21,1);
-    mostrar(a[w2]);
-    colocar(22,1);
-    mostrar(a[w3]);
 
-    if (Humo > 50)
-    {
-        colocar(16,2);
-        imprimir("ALERTA");
-        PORTAbits.RA4 = 1;
-    }
-
-    else
-    {
-        colocar(16,2);
-        imprimir("      ");
-        PORTAbits.RA4 = 0;
-    }
-}
-
-void ultrasonico()
-{
-    z = Distancia/10;
-    z1 = Distancia%10;
-
-    colocar(10,1);
-    mostrar(a[z]);
-    colocar(11,1);
-    mostrar(a[z1]);
-
-    if (Distancia < 15)
-    {
-        colocar(8,2);
-        imprimir("ALERTA");
-        PORTAbits.RA3 = 1;
-    }
-
-    else
-    {
-        colocar(8,2);
-        imprimir("      ");
-        PORTAbits.RA3 = 0;
-    }
-}
-
-void luces()
-{
-    y = Luz/100;
-    y1 = Luz%100;
-    y2 = y1/10;
-    y3 = y1%10;
-
-    colocar(1,2);
-    mostrar(a[y]);
-    colocar(2,2);
-    mostrar(a[y2]);
-    colocar(3,2);
-    mostrar(a[y3]);
-
-    if (Luz < 50)
-    {
-        colocar(4,2);
-        imprimir("   ");
-        colocar(5,1);
-        imprimir("ON");
-        PORTAbits.RA2 = 1;
-    }
-
-    else
-    {
-        colocar(5,1);
-        imprimir("  ");
-        colocar(4,2);
-        imprimir("OFF");
-        PORTAbits.RA2 = 0;
-    }
-}
-
-void celda()
-{
-    if (grados == 0)
-    {
-        colocar(38,2);
-        imprimir(" ");
-
-        PORTAbits.RA1 = 0;
-
-        colocar(39,2);
-        imprimir("-");
-    }
-
-    else if (grados == 90)
-    {
-        colocar(39,2);
-        imprimir(" ");
-
-        PORTAbits.RA1 = 1;
-
-        colocar(38,2);
-        imprimir("+");
-    }
-}
 
 void setup()
 {
     ANSEL = 0;
     ANSELH = 0;
 
-    TRISA = 0;
-    TRISB = 0;
-    TRISC = 0;
+    ANSELbits.ANS0 = 1;
 
-    TRISDbits.TRISD6 = 0;
-    TRISDbits.TRISD7 = 0;
+    TRISAbits.TRISA0 = 1;
 
     PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
+
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.ADIE = 1;
 }
 
 void main(void)
@@ -3188,96 +3055,13 @@ void main(void)
 
     setup();
 
-    iniciarLCD();
+    iniciarADC(2,0);
 
-    borrarv();
-
-    iniciarUART();
-
-    I2C_Master_Init(100000);
-
-    colocar(1,1);
-    imprimir("Luz:");
-
-    colocar(8,1);
-    imprimir("X:");
-    colocar(12,1);
-    imprimir("cm");
-
-    colocar(15,1);
-    imprimir("Humo:");
-
-    colocar(24,1);
-    imprimir("Tem:");
-    colocar(26,2);
-    mostrar(0xDF);
-    colocar(27,2);
-    imprimir("C");
-
-    colocar(29,1);
-    imprimir("Hora:");
-    colocar(31,2);
-    imprimir(":");
-
-    colocar(35,1);
-    imprimir("PP");
-
-    colocar(38,1);
-    imprimir("CC");
+    I2C_Esclavo(0x50);
 
     while(1)
     {
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x11);
-        Luz = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x21);
-        grados = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x31);
-        Distancia = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x41);
-        Humo = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x51);
-        Temp = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-        luces();
-        celda();
-        ultrasonico();
-        humo();
-        temperatura();
-        shift();
-
-        UARTmostrar(Humo);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(Distancia);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(Luz);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(grados);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(calor);
+        temperatura = leerADC(0);
         _delay((unsigned long)((2)*(4000000/4000.0)));
     }
 }

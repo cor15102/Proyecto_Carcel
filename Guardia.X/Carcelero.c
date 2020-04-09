@@ -36,6 +36,7 @@
 #include "I2Cmaestro.h"
 #include "LCD.h"
 #include "Oscilador.h"
+#include "UART.h"
 
 #define _XTAL_FREQ 4000000
 
@@ -48,17 +49,43 @@ void luces();
 void celda();
 void ultrasonico();
 void humo();
+void temperatura();
 
 uint8_t Luz;        // Variable donde se guarda lo que el PIC1 nos envia.
 int y,y1,y2,y3;     // Variables para almacenar la centena, la decena y la unidad de la luz.
 uint8_t grados;     // Variable para conocer el estado de las celdas.
 uint8_t Distancia;  // Variable que guarda la conversion de tiempo a distancia.
-int z,z1;     // Variables para almacenar la centena, la decena y la unidad de la distancia
-uint8_t Humo;
-int w,w1,w2,w3;
+int z,z1;           // Variables para almacenar la centena, la decena y la unidad de la distancia
+uint8_t Humo;       // Variable donde almacenamos la distancia enviada por el PIC3
+int w,w1,w2,w3;     // Variables para almacenar la centena, la decena y la unidad del humo
+uint8_t Temp, calor;// Variables donde almaceno la temperatura (8bits) y lo mapeo de 0 a 99°C
+int t,t1,t2;
 
 // Arreglo con caracteres para imprimir en la LCD
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+
+void temperatura()
+{
+    calor = (5.0*Temp)/255;
+    
+    t  = calor/10;       //Valor del entero del fotoresistor
+    t1 = calor%10;       //Valor de los decimales del fotoresistor
+    
+    colocar(24,2);
+    mostrar(a[t]);
+    colocar(25,2);
+    mostrar(a[t1]);
+    
+    if (calor > 30)
+    {
+        PORTAbits.RA5 = 1;  // Si la temperatura es mayor a 30°C, encendemos ventilador
+    }
+    
+    else
+    {
+        PORTAbits.RA5 = 0; // Temperatura menor a 30°C apaga el ventilador
+    }
+}
 
 void humo()
 {
@@ -200,6 +227,8 @@ void main(void)
     
     borrarv();
     
+    iniciarUART();
+    
     I2C_Master_Init(100000);
     
     colocar(1,1);
@@ -261,10 +290,29 @@ void main(void)
         I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC2
         __delay_ms(100);
         
+        // Recibo el valor del sensor de temperatura. PIC5 = Reo5
+        I2C_Master_Start();         // Iniciamos comunicacion
+        I2C_Master_Write(0x51);     // Llamamos al REO1 y le indicamos que lo leeremos
+        Temp = I2C_Master_Read(0);  // Guardamos en luz el valor del ADC enviado por el PIC1
+        I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC2
+        __delay_ms(100);
+        
         luces();
         celda();
         ultrasonico();
         humo();
+        temperatura();
         shift();
+        
+        UARTmostrar(Humo);
+        __delay_ms(2);
+        UARTmostrar(Distancia);
+        __delay_ms(2);
+        UARTmostrar(Luz);
+        __delay_ms(2);
+        UARTmostrar(grados);
+        __delay_ms(2);
+        UARTmostrar(calor);
+        __delay_ms(2);
     }
 }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\Guardia.X.production.hex">
+  <executable name="dist/default/production\Preso5.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>
-      <used>4201</used>
-      <free>3991</free>
+      <used>567</used>
+      <free>7625</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>368</length>
-      <used>120</used>
-      <free>248</free>
+      <used>18</used>
+      <free>350</free>
     </memory>
   </executable>
 </project>

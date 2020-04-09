@@ -1,4 +1,4 @@
-# 1 "Carcelero.c"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Carcelero.c" 2
-# 13 "Carcelero.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2511,773 +2491,176 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 31 "Carcelero.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 
 
 
 
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdarg.h" 1 3
-
-
-
-
-
-
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-struct __prbuf
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
 {
- char * ptr;
- void (* func)(char);
-};
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 2 3
-
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-# 32 "Carcelero.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
-
-
-
-
-
-
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 33 "Carcelero.c" 2
-
-
-
-# 1 "./I2Cmaestro.h" 1
-# 11 "./I2Cmaestro.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 11 "./I2Cmaestro.h" 2
-
-
-
-
-
-void I2C_Master_Init(const unsigned long c)
-{
-    SSPCON = 0b00101000;
-    SSPCON2 = 0;
-    SSPADD = (4000000/(4*c))-1;
-    SSPSTAT = 0;
-    TRISCbits.TRISC3 = 1;
-    TRISCbits.TRISC4 = 1;
+ volatile unsigned char *cp = to;
+
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)from;
+ while(size--) {
+  while (EECON1bits.WR) continue;
+
+  EECON1 &= 0x7F;
+
+  EECON1bits.RD = 1;
+  *cp++ = EEDATA;
+  ++EEADR;
+ }
+# 36 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
 
-
-
-
-
-
-
-void I2C_Master_Wait()
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
 {
-    while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+ const unsigned char *ptr =from;
+
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)to - 1U;
+
+ EECON1 &= 0x7F;
+
+ while(size--) {
+  while (EECON1bits.WR) {
+   continue;
+  }
+  EEDATA = *ptr++;
+  ++EEADR;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  INTCONbits.GIE = 0;
+  EECON1bits.WREN = 1;
+  EECON2 = 0x55;
+  EECON2 = 0xAA;
+  EECON1bits.WR = 1;
+  EECON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
+  }
+ }
+# 101 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
 
-
-
-void I2C_Master_Start()
+unsigned char
+__eetoc(__eeprom void *addr)
 {
-    I2C_Master_Wait();
-    SSPCON2bits.SEN = 1;
-}
-# 55 "./I2Cmaestro.h"
-void I2C_Master_Stop()
-{
-    I2C_Master_Wait();
-    SSPCON2bits.PEN = 1;
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
 }
 
-
-
-
-
-void I2C_Master_Write(unsigned d)
+unsigned int
+__eetoi(__eeprom void *addr)
 {
-    I2C_Master_Wait();
-    SSPBUF = d;
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
 }
 
-
-
-
-unsigned short I2C_Master_Read(unsigned short a)
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
 {
-    unsigned short temp;
-    I2C_Master_Wait();
-    SSPCON2bits.RCEN = 1;
-    I2C_Master_Wait();
-    temp = SSPBUF;
-    I2C_Master_Wait();
-    if(a == 1){
-        SSPCON2bits.ACKDT = 0;
-    }else{
-        SSPCON2bits.ACKDT = 1;
-    }
-    SSPCON2bits.ACKEN = 1;
-    return temp;
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
 }
-# 36 "Carcelero.c" 2
+#pragma warning pop
 
-# 1 "./LCD.h" 1
-# 16 "./LCD.h"
-void comando(const char x)
+unsigned long
+__eetol(__eeprom void *addr)
 {
-    PORTDbits.RD6 = 0;
-    PORTB = x;
-    PORTDbits.RD7 = 1;
-    _delay((unsigned long)((4)*(4000000/4000.0)));
-    PORTDbits.RD7 = 0;
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
 }
 
-void iniciarLCD(void)
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
 {
-    PORTDbits.RD6 = 0;
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
+}
+#pragma warning pop
 
-    comando(0);
-
-    _delay((unsigned long)((15)*(4000000/4000.0)));
-
-    comando(0x30);
-    _delay((unsigned long)((4)*(4000000/4000.0)));
-
-    comando(0x30);
-    _delay((unsigned long)((160)*(4000000/4000000.0)));
-
-    comando(0x30);
-    _delay((unsigned long)((160)*(4000000/4000000.0)));
-
-    comando(0x38);
-
-    comando(0x10);
-
-    comando(0x01);
-
-    comando(0x06);
-
-    comando(0x0F);
-
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
 }
 
-void borrarv(void)
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
 {
-    comando(0);
-    comando(1);
-
-    comando(0x0C);
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
 }
 
-void colocar(const char x,const char y)
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
 {
-    char temp;
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
 
-    if (y == 1)
-    {
-        temp = 0x80 + x - 1;
-        comando(temp);
-    }
-    else if (y == 2)
-    {
-        temp = 0xC0 + x - 1;
-        comando(temp);
-    }
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }
 
-void imprimir(const char *texto)
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
 {
-    for(int i = 0; texto[i] != '\0'; i++)
-    {
-        PORTDbits.RD6 = 1;
-        PORTB = texto[i];
-        PORTDbits.RD7 = 1;
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        PORTDbits.RD7 = 0;
-    }
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
+}
+#pragma warning pop
+
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
 }
 
-void mostrar(const char t)
+double
+__eetofl(__eeprom void *addr)
 {
-    PORTDbits.RD6 = 1;
-    PORTB = t;
-    PORTDbits.RD7 = 1;
-    _delay((unsigned long)((2)*(4000000/4000.0)));
-    PORTDbits.RD7 = 0;
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
 }
 
-void shift()
+float
+__fttoee(__eeprom void *addr, float data)
 {
-
-
-
-    PORTDbits.RD6 = 0;
-    PORTB = 0b00011000;
-    PORTDbits.RD7 = 1;
-    _delay((unsigned long)((1)*(4000000/4000.0)));
-    PORTDbits.RD7 = 0;
-}
-# 37 "Carcelero.c" 2
-
-# 1 "./Oscilador.h" 1
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 2 "./Oscilador.h" 2
-
-
-
-void iniciarOSC(uint8_t frec)
-{
-    switch(frec)
-    {
-        case 0:
-            OSCCONbits.IRCF = 0b000;
-            break;
-
-        case 1:
-            OSCCONbits.IRCF = 0b001;
-            break;
-
-        case 2:
-            OSCCONbits.IRCF = 0b010;
-            break;
-
-        case 3:
-            OSCCONbits.IRCF = 0b001;
-            break;
-
-        case 4:
-            OSCCONbits.IRCF = 0b100;
-            break;
-
-        case 5:
-            OSCCONbits.IRCF = 0b101;
-            break;
-
-        case 6:
-            OSCCONbits.IRCF = 0b110;
-            break;
-
-        case 7:
-            OSCCONbits.IRCF = 0b111;
-            break;
-
-        default:
-            OSCCONbits.IRCF = 0b110;
-            break;
-
-    }
-
-    OSCCONbits.SCS = 1;
-}
-# 38 "Carcelero.c" 2
-
-# 1 "./UART.h" 1
-# 13 "./UART.h"
-void iniciarUART(void)
-{
-    TXSTAbits.TXEN = 1;
-    TXSTAbits.SYNC = 0;
-    RCSTAbits.SPEN = 1;
-    TXSTAbits.TX9 = 0;
-    RCSTAbits.CREN = 1;
-
-    SPBRG = 25;
-    SPBRGH = 0;
-    BAUDCTLbits.BRG16 = 0;
-    TXSTAbits.BRGH = 1;
-}
-# 63 "./UART.h"
-void UARTmostrar(double x)
-{
-    while (TXSTAbits.TRMT == 0)
-    {
-
-    }
-
-    TXREG = x;
-}
-# 39 "Carcelero.c" 2
-
-
-
-
-
-
-
-
-void setup();
-void luces();
-void celda();
-void ultrasonico();
-void humo();
-void temperatura();
-
-uint8_t Luz;
-int y,y1,y2,y3;
-uint8_t grados;
-uint8_t Distancia;
-int z,z1;
-uint8_t Humo;
-int w,w1,w2,w3;
-uint8_t Temp, calor;
-int t,t1,t2;
-
-
-const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
-
-void temperatura()
-{
-    calor = (5.0*Temp)/255;
-
-    t = calor/10;
-    t1 = calor%10;
-
-    colocar(24,2);
-    mostrar(a[t]);
-    colocar(25,2);
-    mostrar(a[t1]);
-
-    if (calor > 30)
-    {
-        PORTAbits.RA5 = 1;
-    }
-
-    else
-    {
-        PORTAbits.RA5 = 0;
-    }
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
 }
 
-void humo()
+double
+__fltoee(__eeprom void *addr, double data)
 {
-    w = Humo/100;
-    w1 = Humo%100;
-    w2 = w1/10;
-    w3 = w1%10;
-
-    colocar(20,1);
-    mostrar(a[w]);
-    colocar(21,1);
-    mostrar(a[w2]);
-    colocar(22,1);
-    mostrar(a[w3]);
-
-    if (Humo > 50)
-    {
-        colocar(16,2);
-        imprimir("ALERTA");
-        PORTAbits.RA4 = 1;
-    }
-
-    else
-    {
-        colocar(16,2);
-        imprimir("      ");
-        PORTAbits.RA4 = 0;
-    }
-}
-
-void ultrasonico()
-{
-    z = Distancia/10;
-    z1 = Distancia%10;
-
-    colocar(10,1);
-    mostrar(a[z]);
-    colocar(11,1);
-    mostrar(a[z1]);
-
-    if (Distancia < 15)
-    {
-        colocar(8,2);
-        imprimir("ALERTA");
-        PORTAbits.RA3 = 1;
-    }
-
-    else
-    {
-        colocar(8,2);
-        imprimir("      ");
-        PORTAbits.RA3 = 0;
-    }
-}
-
-void luces()
-{
-    y = Luz/100;
-    y1 = Luz%100;
-    y2 = y1/10;
-    y3 = y1%10;
-
-    colocar(1,2);
-    mostrar(a[y]);
-    colocar(2,2);
-    mostrar(a[y2]);
-    colocar(3,2);
-    mostrar(a[y3]);
-
-    if (Luz < 50)
-    {
-        colocar(4,2);
-        imprimir("   ");
-        colocar(5,1);
-        imprimir("ON");
-        PORTAbits.RA2 = 1;
-    }
-
-    else
-    {
-        colocar(5,1);
-        imprimir("  ");
-        colocar(4,2);
-        imprimir("OFF");
-        PORTAbits.RA2 = 0;
-    }
-}
-
-void celda()
-{
-    if (grados == 0)
-    {
-        colocar(38,2);
-        imprimir(" ");
-
-        PORTAbits.RA1 = 0;
-
-        colocar(39,2);
-        imprimir("-");
-    }
-
-    else if (grados == 90)
-    {
-        colocar(39,2);
-        imprimir(" ");
-
-        PORTAbits.RA1 = 1;
-
-        colocar(38,2);
-        imprimir("+");
-    }
-}
-
-void setup()
-{
-    ANSEL = 0;
-    ANSELH = 0;
-
-    TRISA = 0;
-    TRISB = 0;
-    TRISC = 0;
-
-    TRISDbits.TRISD6 = 0;
-    TRISDbits.TRISD7 = 0;
-
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-}
-
-void main(void)
-{
-    iniciarOSC(6);
-
-    setup();
-
-    iniciarLCD();
-
-    borrarv();
-
-    iniciarUART();
-
-    I2C_Master_Init(100000);
-
-    colocar(1,1);
-    imprimir("Luz:");
-
-    colocar(8,1);
-    imprimir("X:");
-    colocar(12,1);
-    imprimir("cm");
-
-    colocar(15,1);
-    imprimir("Humo:");
-
-    colocar(24,1);
-    imprimir("Tem:");
-    colocar(26,2);
-    mostrar(0xDF);
-    colocar(27,2);
-    imprimir("C");
-
-    colocar(29,1);
-    imprimir("Hora:");
-    colocar(31,2);
-    imprimir(":");
-
-    colocar(35,1);
-    imprimir("PP");
-
-    colocar(38,1);
-    imprimir("CC");
-
-    while(1)
-    {
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x11);
-        Luz = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x21);
-        grados = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x31);
-        Distancia = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x41);
-        Humo = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x51);
-        Temp = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((100)*(4000000/4000.0)));
-
-        luces();
-        celda();
-        ultrasonico();
-        humo();
-        temperatura();
-        shift();
-
-        UARTmostrar(Humo);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(Distancia);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(Luz);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(grados);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(calor);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-    }
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }

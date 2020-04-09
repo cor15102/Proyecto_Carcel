@@ -1,0 +1,283 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"12 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X/ADC.h
+[v _iniciarADC iniciarADC `(v  1 e 1 0 ]
+"128
+[v _leerADC leerADC `(ui  1 e 2 0 ]
+"18 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X/I2Cesclavo.h
+[v _I2C_Esclavo I2C_Esclavo `(v  1 e 1 0 ]
+"5 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X/Oscilador.h
+[v _iniciarOSC iniciarOSC `(v  1 e 1 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"47 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X\Reo5.c
+[v _isr isr `II(v  1 e 1 0 ]
+"96
+[v _setup setup `(v  1 e 1 0 ]
+"112
+[v _main main `(v  1 e 1 0 ]
+"166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S309 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S318 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S323 . 1 `S309 1 . 1 0 `S318 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES323  1 e 1 @11 ]
+[s S128 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"553
+[u S136 . 1 `S128 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES136  1 e 1 @12 ]
+"843
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"850
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+[s S147 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"870
+[s S153 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S158 . 1 `S147 1 . 1 0 `S153 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES158  1 e 1 @20 ]
+"1238
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1245
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S22 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1276
+[s S27 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S36 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S39 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S42 . 1 `S22 1 . 1 0 `S27 1 . 1 0 `S36 1 . 1 0 `S39 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES42  1 e 1 @31 ]
+[s S287 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"1433
+[u S296 . 1 `S287 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES296  1 e 1 @133 ]
+[s S341 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S349 . 1 `S341 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES349  1 e 1 @140 ]
+[s S102 . 1 `uc 1 SCS 1 0 :1:0 
+`uc 1 LTS 1 0 :1:1 
+`uc 1 HTS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+]
+"1882
+[s S108 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S113 . 1 `S102 1 . 1 0 `S108 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES113  1 e 1 @143 ]
+"1979
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"2048
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"2177
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+[s S174 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"2231
+[s S183 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S188 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S194 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S199 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S204 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S209 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S214 . 1 `S174 1 . 1 0 `S183 1 . 1 0 `S188 1 . 1 0 `S194 1 . 1 0 `S199 1 . 1 0 `S204 1 . 1 0 `S209 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES214  1 e 1 @148 ]
+[s S68 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2991
+[u S74 . 1 `S68 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES74  1 e 1 @159 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+[s S266 . 1 `uc 1 ANS0 1 0 :1:0 
+`uc 1 ANS1 1 0 :1:1 
+`uc 1 ANS2 1 0 :1:2 
+`uc 1 ANS3 1 0 :1:3 
+`uc 1 ANS4 1 0 :1:4 
+`uc 1 ANS5 1 0 :1:5 
+`uc 1 ANS6 1 0 :1:6 
+`uc 1 ANS7 1 0 :1:7 
+]
+"3404
+[u S275 . 1 `S266 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES275  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"3641
+[v _BF BF `VEb  1 e 0 @1184 ]
+"3896
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"3905
+[v _GO_nDONE GO_nDONE `VEb  1 e 0 @249 ]
+"4040
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"4274
+[v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
+"4277
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"4457
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"4460
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"41 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X\Reo5.c
+[v _temperatura temperatura `uc  1 e 1 0 ]
+"42
+[v _z z `uc  1 e 1 0 ]
+"44
+[v _x x `uc  1 e 1 0 ]
+"112
+[v _main main `(v  1 e 1 0 ]
+{
+"127
+} 0
+"96
+[v _setup setup `(v  1 e 1 0 ]
+{
+"110
+} 0
+"128 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X/ADC.h
+[v _leerADC leerADC `(ui  1 e 2 0 ]
+{
+[v leerADC@channel channel `uc  1 a 1 wreg ]
+[v leerADC@channel channel `uc  1 a 1 wreg ]
+"130
+[v leerADC@channel channel `uc  1 a 1 2 ]
+"143
+} 0
+"5 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X/Oscilador.h
+[v _iniciarOSC iniciarOSC `(v  1 e 1 0 ]
+{
+[v iniciarOSC@frec frec `uc  1 a 1 wreg ]
+[v iniciarOSC@frec frec `uc  1 a 1 wreg ]
+[v iniciarOSC@frec frec `uc  1 a 1 0 ]
+"48
+} 0
+"12 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X/ADC.h
+[v _iniciarADC iniciarADC `(v  1 e 1 0 ]
+{
+[v iniciarADC@conv conv `i  1 p 2 0 ]
+[v iniciarADC@ch ch `i  1 p 2 2 ]
+"121
+} 0
+"18 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X/I2Cesclavo.h
+[v _I2C_Esclavo I2C_Esclavo `(v  1 e 1 0 ]
+{
+[v I2C_Esclavo@address address `uc  1 a 1 wreg ]
+[v I2C_Esclavo@address address `uc  1 a 1 wreg ]
+"20
+[v I2C_Esclavo@address address `uc  1 a 1 4 ]
+"30
+} 0
+"47 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Preso5.X\Reo5.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"91
+} 0
