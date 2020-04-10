@@ -14,7 +14,7 @@ void iniciarUART(void)
 {
     TXSTAbits.TXEN = 1;     // Habilita el circuito transmisor
     TXSTAbits.SYNC = 0;     // Modo asincrono
-    RCSTAbits.SPEN = 1;     // Habilita el EUSART y configura automaticamente TX/CK como salida
+    RCSTAbits.SPEN = 1;     // Habilita y configura TX/CK como puertos seriales.
     TXSTAbits.TX9 = 0;      // 8 bits
     RCSTAbits.CREN = 1;     // Habilita la recepcion continua de datos.
     
@@ -60,7 +60,7 @@ void UARTprint(char *data)
     }
 }*/
 
-void UARTmostrar(double x)
+void UARTmostrar(int x)
 {
     while (TXSTAbits.TRMT == 0)
     {

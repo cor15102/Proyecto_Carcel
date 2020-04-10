@@ -59,22 +59,26 @@ int z,z1;           // Variables para almacenar la centena, la decena y la unida
 uint8_t Humo;       // Variable donde almacenamos la distancia enviada por el PIC3
 int w,w1,w2,w3;     // Variables para almacenar la centena, la decena y la unidad del humo
 uint8_t Temp, calor;// Variables donde almaceno la temperatura (8bits) y lo mapeo de 0 a 99°C
-int t,t1,t2;
+int t,t1,t2,t3;
+int i;
 
 // Arreglo con caracteres para imprimir en la LCD
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+int b[5] = {0,0,0,0,0};    // 0.Celda  1.luz  2.distancia  3.humo  4. temperatura
 
 void temperatura()
 {
-    calor = (5.0*Temp)/255;
+    calor = (500.0*Temp)/255;
     
-    t  = calor/10;       //Valor del entero del fotoresistor
-    t1 = calor%10;       //Valor de los decimales del fotoresistor
+    t  = calor/100;       //Valor del entero del fotoresistor
+    t1 = calor%100;       //Valor de los decimales del fotoresistor
+    t2 = t1/10;
+    t3 = t1%10;
     
     colocar(24,2);
-    mostrar(a[t]);
+    mostrar(a[t2]);
     colocar(25,2);
-    mostrar(a[t1]);
+    mostrar(a[t3]);
     
     if (calor > 30)
     {
@@ -85,6 +89,8 @@ void temperatura()
     {
         PORTAbits.RA5 = 0; // Temperatura menor a 30°C apaga el ventilador
     }
+    
+    b[4] = calor;
 }
 
 void humo()
@@ -114,6 +120,8 @@ void humo()
         imprimir("      ");
         PORTAbits.RA4 = 0;
     }
+    
+    b[3] = Humo;
 }
 
 void ultrasonico()
@@ -139,10 +147,13 @@ void ultrasonico()
         imprimir("      ");
         PORTAbits.RA3 = 0;
     }
+    
+    b[2] = Distancia;
 }
 
 void luces()
 {
+    
     y  = Luz/100;       //Valor del entero del fotoresistor
     y1 = Luz%100;       //Valor de los decimales del fotoresistor
     y2 = y1/10;         //Primer decimal del fotoresustor 
@@ -172,6 +183,8 @@ void luces()
         imprimir("OFF");
         PORTAbits.RA2 = 0;
     }
+    
+    b[1] = Luz;
 }
 
 void celda()
@@ -197,6 +210,8 @@ void celda()
         colocar(38,2);
         imprimir("+");
     }
+    
+    b[0] = grados;
 }
 
 void setup()
@@ -207,6 +222,8 @@ void setup()
     TRISA = 0;
     TRISB = 0;
     TRISC = 0;
+    
+    TRISCbits.TRISC6 = 1;
     
     TRISDbits.TRISD6 = 0;   // RS
     TRISDbits.TRISD7 = 0;   // EN
@@ -226,8 +243,6 @@ void main(void)
     iniciarLCD();
     
     borrarv();
-    
-    iniciarUART();
     
     I2C_Master_Init(100000);
     
@@ -259,6 +274,10 @@ void main(void)
     
     colocar(38,1);
     imprimir("CC");
+    
+    iniciarUART();
+    
+    i = 0;
     
     while(1)
     {
@@ -304,15 +323,15 @@ void main(void)
         temperatura();
         shift();
         
-        UARTmostrar(Humo);
-        __delay_ms(2);
-        UARTmostrar(Distancia);
-        __delay_ms(2);
-        UARTmostrar(Luz);
-        __delay_ms(2);
-        UARTmostrar(grados);
-        __delay_ms(2);
-        UARTmostrar(calor);
-        __delay_ms(2);
+        UARTmostrar(i);
+        __delay_ms(10);
+        UARTmostrar(b[i]);
+        __delay_ms(10);
+        i++;
+            
+        if (i == 5)
+        {
+            i = 0;
+        }
     }
 }

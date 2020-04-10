@@ -2991,7 +2991,7 @@ void iniciarUART(void)
     TXSTAbits.BRGH = 1;
 }
 # 63 "./UART.h"
-void UARTmostrar(double x)
+void UARTmostrar(int x)
 {
     while (TXSTAbits.TRMT == 0)
     {
@@ -3024,22 +3024,26 @@ int z,z1;
 uint8_t Humo;
 int w,w1,w2,w3;
 uint8_t Temp, calor;
-int t,t1,t2;
+int t,t1,t2,t3;
+int i;
 
 
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+int b[5] = {0,0,0,0,0};
 
 void temperatura()
 {
-    calor = (5.0*Temp)/255;
+    calor = (500.0*Temp)/255;
 
-    t = calor/10;
-    t1 = calor%10;
+    t = calor/100;
+    t1 = calor%100;
+    t2 = t1/10;
+    t3 = t1%10;
 
     colocar(24,2);
-    mostrar(a[t]);
+    mostrar(a[t2]);
     colocar(25,2);
-    mostrar(a[t1]);
+    mostrar(a[t3]);
 
     if (calor > 30)
     {
@@ -3050,6 +3054,8 @@ void temperatura()
     {
         PORTAbits.RA5 = 0;
     }
+
+    b[4] = calor;
 }
 
 void humo()
@@ -3079,6 +3085,8 @@ void humo()
         imprimir("      ");
         PORTAbits.RA4 = 0;
     }
+
+    b[3] = Humo;
 }
 
 void ultrasonico()
@@ -3104,10 +3112,13 @@ void ultrasonico()
         imprimir("      ");
         PORTAbits.RA3 = 0;
     }
+
+    b[2] = Distancia;
 }
 
 void luces()
 {
+
     y = Luz/100;
     y1 = Luz%100;
     y2 = y1/10;
@@ -3137,6 +3148,8 @@ void luces()
         imprimir("OFF");
         PORTAbits.RA2 = 0;
     }
+
+    b[1] = Luz;
 }
 
 void celda()
@@ -3162,6 +3175,8 @@ void celda()
         colocar(38,2);
         imprimir("+");
     }
+
+    b[0] = grados;
 }
 
 void setup()
@@ -3172,6 +3187,8 @@ void setup()
     TRISA = 0;
     TRISB = 0;
     TRISC = 0;
+
+    TRISCbits.TRISC6 = 1;
 
     TRISDbits.TRISD6 = 0;
     TRISDbits.TRISD7 = 0;
@@ -3191,8 +3208,6 @@ void main(void)
     iniciarLCD();
 
     borrarv();
-
-    iniciarUART();
 
     I2C_Master_Init(100000);
 
@@ -3224,6 +3239,10 @@ void main(void)
 
     colocar(38,1);
     imprimir("CC");
+
+    iniciarUART();
+
+    i = 0;
 
     while(1)
     {
@@ -3269,15 +3288,15 @@ void main(void)
         temperatura();
         shift();
 
-        UARTmostrar(Humo);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(Distancia);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(Luz);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(grados);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
-        UARTmostrar(calor);
-        _delay((unsigned long)((2)*(4000000/4000.0)));
+        UARTmostrar(i);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
+        UARTmostrar(b[i]);
+        _delay((unsigned long)((10)*(4000000/4000.0)));
+        i++;
+
+        if (i == 5)
+        {
+            i = 0;
+        }
     }
 }
