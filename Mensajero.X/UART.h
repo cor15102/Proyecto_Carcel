@@ -24,7 +24,7 @@ void iniciarUART(void)
     TXSTAbits.BRGH = 1;     // Segun pagina 165, tabla #1, frecuencia de 4MHz, Baud Rate = 9,600 y SPBRG = 25.
 }
 
-/*uint8_t UARTrecibir(void)
+uint8_t UARTrecibir(void)
 {
     while(PIR1bits.RCIF == 0)
     {
@@ -58,7 +58,7 @@ void UARTprint(char *data)
     {
         UARTenviar(data[i++]);
     }
-}*/
+}
 
 void UARTenvINT(int x)
 {

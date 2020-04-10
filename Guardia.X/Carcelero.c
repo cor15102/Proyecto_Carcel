@@ -327,11 +327,11 @@ void main(void)
         shift();
         
         // Envia el valor del contador i
-        UARTmostrar(i);
+        UARTenvINT(i);
         __delay_ms(10);
         
         // Envia los valores del arreglo b[], que son los valores de los sensores
-        UARTmostrar(b[i]);
+        UARTenvINT(b[i]);
         __delay_ms(10);
         
         // Incremento del contador

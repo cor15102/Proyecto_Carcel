@@ -1,0 +1,400 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\joser\AppData\Local\Temp\s16c.o
+end_init CODE 0 0 0 3 2
+config CONFIG 0 2007 2007 2 2
+$dist/default/production\Mensajero.X.production.o
+cinit CODE 0 7F6 7F6 A 2
+text1 CODE 0 61F 61F 19 2
+text2 CODE 0 65A 65A 61 2
+text3 CODE 0 6BB 6BB 13B 2
+text4 CODE 0 5FD 5FD E 2
+text5 CODE 0 638 638 22 2
+text6 CODE 0 5F1 5F1 C 2
+text7 CODE 0 5E6 5E6 B 2
+maintext CODE 0 60B 60B 14 2
+cstackCOMMON COMMON 1 76 76 6 1
+strings STRING 0 3 3 B 2
+bssCOMMON COMMON 1 70 70 6 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 20-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 20-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST E-5E5 2
+CONST 800-1FFF 2
+ENTRY E-5E5 2
+ENTRY 800-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE E-5E5 2
+CODE 800-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+COMMON 7C-7D 1
+EEDATA 2100-21FF 2
+STRCODE E-5E5 2
+STRCODE 800-1FFF 2
+STRING E-5E5 2
+STRING 800-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\Mensajero.X.production.o
+7F6 cinit CODE >488:C:\Users\joser\AppData\Local\Temp\s16c.s
+7F6 cinit CODE >491:C:\Users\joser\AppData\Local\Temp\s16c.s
+7F6 cinit CODE >517:C:\Users\joser\AppData\Local\Temp\s16c.s
+7F7 cinit CODE >518:C:\Users\joser\AppData\Local\Temp\s16c.s
+7F8 cinit CODE >519:C:\Users\joser\AppData\Local\Temp\s16c.s
+7F9 cinit CODE >520:C:\Users\joser\AppData\Local\Temp\s16c.s
+7FA cinit CODE >521:C:\Users\joser\AppData\Local\Temp\s16c.s
+7FB cinit CODE >522:C:\Users\joser\AppData\Local\Temp\s16c.s
+7FC cinit CODE >528:C:\Users\joser\AppData\Local\Temp\s16c.s
+7FC cinit CODE >530:C:\Users\joser\AppData\Local\Temp\s16c.s
+7FD cinit CODE >531:C:\Users\joser\AppData\Local\Temp\s16c.s
+5E6 text7 CODE >63:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5E6 text7 CODE >65:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5E6 text7 CODE >68:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5EC text7 CODE >70:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5F0 text7 CODE >71:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5F1 text6 CODE >43:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5F2 text6 CODE >45:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5F2 text6 CODE >48:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5F8 text6 CODE >50:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5FC text6 CODE >51:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+638 text5 CODE >53:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+639 text5 CODE >55:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+63A text5 CODE >57:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+63B text5 CODE >59:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+64C text5 CODE >57:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+659 text5 CODE >61:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5FD text4 CODE >27:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5FD text4 CODE >29:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+5FD text4 CODE >32:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+603 text4 CODE >34:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+607 text4 CODE >36:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+608 text4 CODE >37:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+609 text4 CODE >40:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+60A text4 CODE >41:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+6BB text3 CODE >41:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+6BB text3 CODE >43:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+6C3 text3 CODE >44:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+6CC text3 CODE >46:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+6CD text3 CODE >49:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+6D5 text3 CODE >50:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+6DE text3 CODE >51:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+6EA text3 CODE >52:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+6F3 text3 CODE >53:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+6FF text3 CODE >54:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+708 text3 CODE >55:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+709 text3 CODE >58:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+711 text3 CODE >59:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+71A text3 CODE >60:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+726 text3 CODE >61:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+72F text3 CODE >62:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+73C text3 CODE >67:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+744 text3 CODE >68:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+74D text3 CODE >69:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+759 text3 CODE >70:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+762 text3 CODE >71:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+76F text3 CODE >76:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+777 text3 CODE >77:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+780 text3 CODE >78:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+78C text3 CODE >79:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+795 text3 CODE >80:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+7A2 text3 CODE >85:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+7AA text3 CODE >86:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+7B3 text3 CODE >87:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+7BF text3 CODE >88:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+7C8 text3 CODE >89:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+7D5 text3 CODE >94:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+7DB text3 CODE >95:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+7DC text3 CODE >96:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+7F5 text3 CODE >97:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+65A text2 CODE >5:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+65B text2 CODE >7:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+65C text2 CODE >10:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+660 text2 CODE >11:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+661 text2 CODE >14:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+667 text2 CODE >15:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+668 text2 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+66E text2 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+66F text2 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+675 text2 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+676 text2 CODE >26:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+67C text2 CODE >27:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+67D text2 CODE >30:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+683 text2 CODE >31:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+684 text2 CODE >34:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+68A text2 CODE >35:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+68B text2 CODE >38:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+68F text2 CODE >39:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+690 text2 CODE >42:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+696 text2 CODE >43:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+697 text2 CODE >45:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+6B9 text2 CODE >47:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+6BA text2 CODE >48:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/Oscilador.h
+61F text1 CODE >13:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+61F text1 CODE >15:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+622 text1 CODE >16:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+623 text1 CODE >17:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+626 text1 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+629 text1 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+62C text1 CODE >21:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+630 text1 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+631 text1 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+634 text1 CODE >24:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+637 text1 CODE >25:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X/UART.h
+60B maintext CODE >99:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+60B maintext CODE >101:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+611 maintext CODE >103:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+616 maintext CODE >107:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Mensajero.X\Datos.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_x 75 0 COMMON 1 bssCOMMON dist/default/production\Mensajero.X.production.o
+___latbits 2 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+UARTprint@data 78 0 COMMON 1 cstackCOMMON dist/default/production\Mensajero.X.production.o
+__Hspace_0 2009 0 ABS 0 - -
+__Hspace_1 7C 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Hstrings 0 0 ABS 0 strings -
+___sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\s16c.o
+_dist 72 0 COMMON 1 bssCOMMON dist/default/production\Mensajero.X.production.o
+_humo 71 0 COMMON 1 bssCOMMON dist/default/production\Mensajero.X.production.o
+_main C16 0 CODE 0 maintext dist/default/production\Mensajero.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+start 0 0 CODE 0 init C:\Users\joser\AppData\Local\Temp\s16c.o
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__Hpowerup 0 0 CODE 0 powerup -
+iniciarOSC@frec 78 0 COMMON 1 cstackCOMMON dist/default/production\Mensajero.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s16c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s16c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s16c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s16c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s16c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s16c.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+_OSCCONbits 8F 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+wtemp0 7E 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+_UARTenvINT BCC 0 CODE 0 text7 dist/default/production\Mensajero.X.production.o
+_UARTenviar BE2 0 CODE 0 text6 dist/default/production\Mensajero.X.production.o
+__size_of_iniciarOSC 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+__size_of_iniciarUART 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\s16c.o
+___stacklo 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\s16c.o
+__end_of_UARTrecibir C16 0 CODE 0 text4 dist/default/production\Mensajero.X.production.o
+__end_of_ReadWrite FEC 0 CODE 0 text3 dist/default/production\Mensajero.X.production.o
+_BAUDCTLbits 187 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__size_of_ReadWrite 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+start_initialization FEC 0 CODE 0 cinit dist/default/production\Mensajero.X.production.o
+_ReadWrite D76 0 CODE 0 text3 dist/default/production\Mensajero.X.production.o
+__end_of_UARTenvINT BE2 0 CODE 0 text7 dist/default/production\Mensajero.X.production.o
+__end_of_UARTenviar BFA 0 CODE 0 text6 dist/default/production\Mensajero.X.production.o
+_SPBRGH 9A 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+UARTenvINT@x 76 0 COMMON 1 cstackCOMMON dist/default/production\Mensajero.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\s16c.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 1000 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__stringbase 10 0 STRING 0 strings dist/default/production\Mensajero.X.production.o
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4012 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit FEC 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__S0 2009 0 ABS 0 - -
+__S1 7C 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_luz 73 0 COMMON 1 bssCOMMON dist/default/production\Mensajero.X.production.o
+__CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+UARTenviar@data 76 0 COMMON 1 cstackCOMMON dist/default/production\Mensajero.X.production.o
+__CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__size_of_UARTrecibir 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__Lintentry 0 0 CODE 0 intentry -
+__stringtab 6 0 STRING 0 strings dist/default/production\Mensajero.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\joser\AppData\Local\Temp\s16c.o
+_iniciarUART C3E 0 CODE 0 text1 dist/default/production\Mensajero.X.production.o
+_RCSTAbits 18 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__pmaintext C16 0 CODE 0 maintext dist/default/production\Mensajero.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__size_of_UARTenvINT 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__size_of_UARTenviar 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__end_of__stringtab 12 0 STRING 0 strings dist/default/production\Mensajero.X.production.o
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\Mensajero.X.production.o
+_PIR1bits C 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__Lend_init 0 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Mensajero.X.production.o
+__Hintentry 0 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__end_of_UARTprint CB4 0 CODE 0 text5 dist/default/production\Mensajero.X.production.o
+_iniciarOSC CB4 0 CODE 0 text2 dist/default/production\Mensajero.X.production.o
+__ptext1 C3E 0 CODE 0 text1 dist/default/production\Mensajero.X.production.o
+__ptext2 CB4 0 CODE 0 text2 dist/default/production\Mensajero.X.production.o
+__ptext3 D76 0 CODE 0 text3 dist/default/production\Mensajero.X.production.o
+__ptext4 BFA 0 CODE 0 text4 dist/default/production\Mensajero.X.production.o
+__ptext5 C70 0 CODE 0 text5 dist/default/production\Mensajero.X.production.o
+__ptext6 BE2 0 CODE 0 text6 dist/default/production\Mensajero.X.production.o
+__ptext7 BCC 0 CODE 0 text7 dist/default/production\Mensajero.X.production.o
+__size_of_UARTprint 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+UARTprint@i 79 0 COMMON 1 cstackCOMMON dist/default/production\Mensajero.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+_UARTprint C70 0 CODE 0 text5 dist/default/production\Mensajero.X.production.o
+__end_of__initialization FF8 0 CODE 0 cinit dist/default/production\Mensajero.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__Lclrtext 0 0 ABS 0 clrtext -
+_UARTrecibir BFA 0 CODE 0 text4 dist/default/production\Mensajero.X.production.o
+__pcstackCOMMON 76 0 COMMON 1 cstackCOMMON dist/default/production\Mensajero.X.production.o
+_TXSTAbits 98 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__Hend_init 6 0 CODE 0 end_init -
+__end_of_main C3E 0 CODE 0 maintext dist/default/production\Mensajero.X.production.o
+__end_of_iniciarOSC D76 0 CODE 0 text2 dist/default/production\Mensajero.X.production.o
+_RCREG 1A 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+_SPBRG 99 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+_TXREG 19 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+_celda 74 0 COMMON 1 bssCOMMON dist/default/production\Mensajero.X.production.o
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+_tempe 70 0 COMMON 1 bssCOMMON dist/default/production\Mensajero.X.production.o
+__initialization FEC 0 CODE 0 cinit dist/default/production\Mensajero.X.production.o
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\Mensajero.X.production.o
+__pstrings 6 0 STRING 0 strings dist/default/production\Mensajero.X.production.o
+__end_of_iniciarUART C70 0 CODE 0 text1 dist/default/production\Mensajero.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7F6 FEC A 2
+text1 0 61F C3E 19 2
+text2 0 65A CB4 61 2
+text3 0 6BB D76 13B 2
+text4 0 5FD BFA E 2
+text5 0 638 C70 22 2
+text6 0 5F1 BE2 C 2
+text7 0 5E6 BCC B 2
+maintext 0 60B C16 14 2
+reset_vec 0 0 0 3 2
+strings 0 3 6 B 2
+bssCOMMON 1 70 70 C 1
+config 0 2007 400E 2 2
+# OTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by OTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
