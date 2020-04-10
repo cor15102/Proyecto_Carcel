@@ -238,13 +238,13 @@ void main(void)
 {
     iniciarOSC(6);  // Fosc = 4MHz
     
-    setup();
+    setup();        // Configuraciones
     
-    iniciarLCD();
+    iniciarLCD();   // Iniciamos LCD
     
-    borrarv();
+    borrarv();      // Borramos visualizador
     
-    I2C_Master_Init(100000);
+    I2C_Master_Init(100000);    // Iniciamos maestro
     
     colocar(1,1);
     imprimir("Luz:");
@@ -275,9 +275,9 @@ void main(void)
     colocar(38,1);
     imprimir("CC");
     
-    iniciarUART();
+    iniciarUART();      // Iniciamos UART
     
-    i = 0;
+    i = 0;      // Inicializamos contador en 0
     
     while(1)
     {
@@ -316,19 +316,29 @@ void main(void)
         I2C_Master_Stop();          // Detenemos I2C. No mas lectura del PIC2
         __delay_ms(100);
         
+        // Ejecucion de cada metodo. Conversion de valores y activadores.
         luces();
         celda();
         ultrasonico();
         humo();
         temperatura();
+        
+        // Movimiento de la pantalla
         shift();
         
+        // Envia el valor del contador i
         UARTmostrar(i);
         __delay_ms(10);
+        
+        // Envia los valores del arreglo b[], que son los valores de los sensores
         UARTmostrar(b[i]);
         __delay_ms(10);
+        
+        // Incremento del contador
         i++;
-            
+        
+        // Si el contador es igual a 5 es porque ya envio todos los valores
+        // Lo reiniciamos para volver a recorrer el arreglo b[]
         if (i == 5)
         {
             i = 0;
