@@ -11,86 +11,103 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\joser\AppData\Local\Temp\s480.o
-end_init CODE 0 0 0 3 2
+$C:\Users\joser\AppData\Local\Temp\se6s.o
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
 $dist/default/production\Guardia.X.production.o
-cinit CODE 0 7EB 7EB 15 2
-text1 CODE 0 A A 97 2
-text2 CODE 0 F05 F05 FB 2
-text3 CODE 0 C7F C7F BA 2
-text4 CODE 0 C03 C03 7C 2
-text5 CODE 0 48A 48A 361 2
-text6 CODE 0 90A 90A 27 2
-text7 CODE 0 A1 A1 1DD 2
-text8 CODE 0 86E 86E 11 2
-text9 CODE 0 892 892 13 2
-text10 CODE 0 E0D E0D F8 2
-text11 CODE 0 8CD 8CD 19 2
-text12 CODE 0 AD5 AD5 61 2
-text13 CODE 0 9C8 9C8 54 2
-text14 CODE 0 D39 D39 D4 2
-text15 CODE 0 8B9 8B9 14 2
-text16 CODE 0 A1C A1C 59 2
-text17 CODE 0 B9C B9C 67 2
-text18 CODE 0 A75 A75 60 2
-text19 CODE 0 95F 95F 31 2
-text20 CODE 0 8E6 8E6 24 2
-text21 CODE 0 87F 87F 13 2
-text22 CODE 0 8A5 8A5 14 2
-text23 CODE 0 856 856 B 2
-text24 CODE 0 84C 84C A 2
-text25 CODE 0 17F7 17F7 9 2
-text26 CODE 0 17EE 17EE 9 2
-text27 CODE 0 931 931 2E 2
-text28 CODE 0 861 861 D 2
-text29 CODE 0 990 990 38 2
-text30 CODE 0 B36 B36 66 2
-maintext CODE 0 27E 27E 20C 2
-cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 20 20 46 1
-bssBANK0 BANK0 1 66 66 A 1
-bssBANK1 BANK1 1 A0 A0 24 1
-strings STRING 0 800 800 4B 2
-clrtext CODE 0 17E6 17E6 8 2
+cinit CODE 0 F F 20 2
+text1 CODE 0 8F1 8F1 5B 2
+text2 CODE 0 AF5 AF5 9D 2
+text3 CODE 0 D28 D28 FB 2
+text4 CODE 0 B92 B92 BC 2
+text5 CODE 0 A79 A79 7C 2
+text6 CODE 0 2F 2F 361 2
+text7 CODE 0 1706 1706 29 2
+text8 CODE 0 E23 E23 1DD 2
+text9 CODE 0 162E 162E 11 2
+text10 CODE 0 1652 1652 13 2
+text11 CODE 0 802 802 42 2
+text12 CODE 0 1600 1600 A 2
+text13 CODE 0 15F7 15F7 9 2
+text14 CODE 0 15EE 15EE 9 2
+text15 CODE 0 15E5 15E5 9 2
+text16 CODE 0 172F 172F 2E 2
+text17 CODE 0 1621 1621 D 2
+text18 CODE 0 695 695 102 2
+text19 CODE 0 16B4 16B4 15 2
+text20 CODE 0 16C9 16C9 19 2
+text21 CODE 0 94C 94C 61 2
+text22 CODE 0 844 844 54 2
+text23 CODE 0 C4E C4E DA 2
+text24 CODE 0 168C 168C 14 2
+text25 CODE 0 898 898 59 2
+text26 CODE 0 797 797 69 2
+text27 CODE 0 9AD 9AD 64 2
+text28 CODE 0 175D 175D 31 2
+text29 CODE 0 16E2 16E2 24 2
+text30 CODE 0 163F 163F 13 2
+text31 CODE 0 1678 1678 14 2
+text32 CODE 0 160A 160A B 2
+text33 CODE 0 1615 1615 C 2
+text34 CODE 0 15D8 15D8 5 2
+text35 CODE 0 17C6 17C6 3A 2
+text36 CODE 0 A11 A11 68 2
+text37 CODE 0 178E 178E 38 2
+maintext CODE 0 390 390 305 2
+cstackCOMMON COMMON 1 70 70 9 1
+cstackBANK0 BANK0 1 20 20 4C 1
+cstackBANK3 BANK3 1 190 190 3 1
+inittext CODE 0 1665 1665 13 2
+intentry CODE 0 4 4 8 2
+bssBANK0 BANK0 1 6C 6C 3 1
+bssBANK1 BANK1 1 A0 A0 3A 1
+idataBANK1 CODE 0 16A0 16A0 14 2
+strings STRING 0 1000 1000 4B 2
+dataBANK1 BANK1 1 DA DA 14 1
+clrtext CODE 0 15DD 15DD 8 2
+bssCOMMON COMMON 1 79 79 3 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM C4-EF 1
+RAM 6F-6F 1
+RAM EE-EF 1
 RAM 110-16F 1
-RAM 190-1EF 1
-BANK1 C4-EF 1
+RAM 193-1EF 1
+BANK0 6F-6F 1
+BANK1 EE-EF 1
 BANK2 110-16F 1
-BANK3 190-1EF 1
-CONST 3-9 2
-CONST 84B-84B 2
-CONST 1000-17E5 2
+BANK3 193-1EF 1
+CONST 3-3 2
+CONST 800-801 2
+CONST 104B-15D7 2
 CONST 1800-1FFF 2
-ENTRY 3-9 2
-ENTRY 84B-84B 2
-ENTRY 1000-17E5 2
+ENTRY 3-3 2
+ENTRY 800-801 2
+ENTRY 104B-15D7 2
 ENTRY 1800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 3-9 2
-CODE 84B-84B 2
-CODE 1000-17E5 2
+CODE 3-3 2
+CODE 800-801 2
+CODE 104B-15D7 2
 CODE 1800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
+COMMON 7C-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-9 2
-STRCODE 84B-84B 2
-STRCODE 1000-17E5 2
+STRCODE 3-3 2
+STRCODE 800-801 2
+STRCODE 104B-15D7 2
 STRCODE 1800-1FFF 2
-STRING 3-9 2
-STRING 84B-84B 2
-STRING 1000-17E5 2
+STRING 3-3 2
+STRING 800-801 2
+STRING 104B-15D7 2
 STRING 1800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -106,634 +123,751 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Guardia.X.production.o
-7EB cinit CODE >703:C:\Users\joser\AppData\Local\Temp\s480.s
-7EB cinit CODE >706:C:\Users\joser\AppData\Local\Temp\s480.s
-7EB cinit CODE >798:C:\Users\joser\AppData\Local\Temp\s480.s
-7EC cinit CODE >799:C:\Users\joser\AppData\Local\Temp\s480.s
-7ED cinit CODE >800:C:\Users\joser\AppData\Local\Temp\s480.s
-7EE cinit CODE >801:C:\Users\joser\AppData\Local\Temp\s480.s
-7EF cinit CODE >802:C:\Users\joser\AppData\Local\Temp\s480.s
-7F4 cinit CODE >805:C:\Users\joser\AppData\Local\Temp\s480.s
-7F5 cinit CODE >806:C:\Users\joser\AppData\Local\Temp\s480.s
-7F6 cinit CODE >807:C:\Users\joser\AppData\Local\Temp\s480.s
-7F7 cinit CODE >808:C:\Users\joser\AppData\Local\Temp\s480.s
-7FC cinit CODE >814:C:\Users\joser\AppData\Local\Temp\s480.s
-7FC cinit CODE >816:C:\Users\joser\AppData\Local\Temp\s480.s
-7FD cinit CODE >817:C:\Users\joser\AppData\Local\Temp\s480.s
-B36 text30 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B36 text30 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B3E text30 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B46 text30 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B48 text30 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B49 text30 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B52 text30 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B56 text30 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B5A text30 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B63 text30 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B75 text30 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B83 text30 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B84 text30 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B8D text30 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B93 text30 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-B9B text30 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
-990 text29 CODE >16:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-990 text29 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-994 text29 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-997 text29 CODE >20:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-9C4 text29 CODE >21:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-9C5 text29 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-9C6 text29 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-9C7 text29 CODE >24:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-861 text28 CODE >32:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-861 text28 CODE >34:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-86D text28 CODE >35:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-931 text27 CODE >74:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-931 text27 CODE >77:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-936 text27 CODE >78:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-939 text27 CODE >79:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-93E text27 CODE >80:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-947 text27 CODE >81:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-94C text27 CODE >82:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-952 text27 CODE >83:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-955 text27 CODE >84:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-956 text27 CODE >85:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-959 text27 CODE >86:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-959 text27 CODE >87:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-95A text27 CODE >88:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-95E text27 CODE >89:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-17EE text26 CODE >39:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-17EE text26 CODE >41:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-17F3 text26 CODE >42:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-17F6 text26 CODE >43:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-17F7 text25 CODE >55:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-17F7 text25 CODE >57:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-17FC text25 CODE >58:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-17FF text25 CODE >59:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-84C text24 CODE >65:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-84C text24 CODE >67:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-851 text24 CODE >68:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-855 text24 CODE >69:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-856 text23 CODE >63:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-856 text23 CODE >65:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-856 text23 CODE >68:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-85C text23 CODE >70:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-860 text23 CODE >71:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8A5 text22 CODE >16:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8A6 text22 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8A9 text22 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8AB text22 CODE >20:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8AC text22 CODE >21:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8B5 text22 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8B8 text22 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-87F text21 CODE >54:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-87F text21 CODE >56:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-885 text21 CODE >57:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-88B text21 CODE >59:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-891 text21 CODE >60:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8E6 text20 CODE >62:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8E7 text20 CODE >66:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8EC text20 CODE >68:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8F1 text20 CODE >69:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8F7 text20 CODE >70:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8F8 text20 CODE >71:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8FE text20 CODE >73:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-903 text20 CODE >74:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-909 text20 CODE >76:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-95F text19 CODE >78:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-960 text19 CODE >80:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-963 text19 CODE >82:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-966 text19 CODE >83:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-96F text19 CODE >84:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-970 text19 CODE >85:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-979 text19 CODE >86:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-97C text19 CODE >87:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-98F text19 CODE >88:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-A75 text18 CODE >190:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A75 text18 CODE >192:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A7C text18 CODE >194:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A86 text18 CODE >195:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A8C text18 CODE >197:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A8F text18 CODE >199:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A99 text18 CODE >200:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A9F text18 CODE >201:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-AA0 text18 CODE >203:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-AA6 text18 CODE >205:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-AB0 text18 CODE >206:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-AB6 text18 CODE >208:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-AB9 text18 CODE >210:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-AC3 text18 CODE >211:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-AC9 text18 CODE >214:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-AD4 text18 CODE >215:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-B9C text17 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-B9C text17 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-B9D text17 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BA1 text17 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BA6 text17 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BA8 text17 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BAC text17 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BB1 text17 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BB5 text17 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BB7 text17 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BBD text17 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BBF text17 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BC0 text17 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BC7 text17 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BCB text17 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BCF text17 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BD6 text17 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BE0 text17 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BE6 text17 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BE7 text17 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BEE text17 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BF4 text17 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BF9 text17 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-BFE text17 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-C02 text17 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
-A1C text16 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A1C text16 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A1D text16 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A21 text16 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A26 text16 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A28 text16 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A2C text16 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A31 text16 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A37 text16 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A39 text16 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A3A text16 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A41 text16 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A45 text16 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A49 text16 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A53 text16 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A59 text16 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A60 text16 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A66 text16 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A6B text16 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A70 text16 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-A74 text16 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
-8B9 text15 CODE >90:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8BA text15 CODE >92:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8BD text15 CODE >93:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8BF text15 CODE >94:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8C0 text15 CODE >95:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8C9 text15 CODE >96:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-8CC text15 CODE >97:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-D39 text14 CODE >96:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-D39 text14 CODE >98:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-D51 text14 CODE >99:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-D69 text14 CODE >100:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-D7C text14 CODE >101:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-D8F text14 CODE >103:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-D97 text14 CODE >104:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DA6 text14 CODE >105:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DAE text14 CODE >106:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DBD text14 CODE >107:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DC5 text14 CODE >108:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DD4 text14 CODE >110:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DDC text14 CODE >112:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DE6 text14 CODE >113:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DEC text14 CODE >114:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DEF text14 CODE >115:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DF0 text14 CODE >119:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-DFA text14 CODE >120:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E00 text14 CODE >121:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E03 text14 CODE >124:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E0C text14 CODE >125:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-9C8 text13 CODE >25:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9C8 text13 CODE >27:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9CB text13 CODE >29:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9D1 text13 CODE >31:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9DA text13 CODE >33:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9E0 text13 CODE >34:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9E9 text13 CODE >36:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9EF text13 CODE >37:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9F3 text13 CODE >39:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9F9 text13 CODE >40:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-9FD text13 CODE >42:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-A03 text13 CODE >44:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-A09 text13 CODE >46:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-A0F text13 CODE >48:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-A15 text13 CODE >50:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-A1B text13 CODE >52:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-AD5 text12 CODE >5:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AD6 text12 CODE >7:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AD7 text12 CODE >10:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-ADB text12 CODE >11:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-ADC text12 CODE >14:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AE2 text12 CODE >15:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AE3 text12 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AE9 text12 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AEA text12 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AF0 text12 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AF1 text12 CODE >26:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AF7 text12 CODE >27:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AF8 text12 CODE >30:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AFE text12 CODE >31:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-AFF text12 CODE >34:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-B05 text12 CODE >35:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-B06 text12 CODE >38:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-B0A text12 CODE >39:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-B0B text12 CODE >42:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-B11 text12 CODE >43:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-B12 text12 CODE >45:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-B34 text12 CODE >47:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-B35 text12 CODE >48:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
-8CD text11 CODE >13:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8CD text11 CODE >15:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8D0 text11 CODE >16:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8D1 text11 CODE >17:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8D4 text11 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8D7 text11 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8DA text11 CODE >21:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8DE text11 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8DF text11 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8E2 text11 CODE >24:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-8E5 text11 CODE >25:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-E0D text10 CODE >154:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E0D text10 CODE >157:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E25 text10 CODE >158:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E3D text10 CODE >159:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E50 text10 CODE >160:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E65 text10 CODE >162:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E6F text10 CODE >163:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E7E text10 CODE >164:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E88 text10 CODE >165:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-E97 text10 CODE >166:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EA1 text10 CODE >167:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EB0 text10 CODE >169:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EB8 text10 CODE >171:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EC2 text10 CODE >172:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EC8 text10 CODE >173:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-ED0 text10 CODE >174:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-ED6 text10 CODE >175:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-ED9 text10 CODE >176:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EDA text10 CODE >180:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EE2 text10 CODE >181:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EE8 text10 CODE >182:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EF2 text10 CODE >183:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EF8 text10 CODE >184:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-EFB text10 CODE >187:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-F04 text10 CODE >188:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-892 text9 CODE >217:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-892 text9 CODE >219:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-895 text9 CODE >220:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-896 text9 CODE >222:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-899 text9 CODE >223:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-89A text9 CODE >224:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-89B text9 CODE >226:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-89C text9 CODE >228:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-89D text9 CODE >229:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-89E text9 CODE >231:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-8A1 text9 CODE >232:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-8A2 text9 CODE >233:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-8A3 text9 CODE >234:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-8A4 text9 CODE >235:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-86E text8 CODE >99:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-86E text8 CODE >104:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-871 text8 CODE >105:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-873 text8 CODE >106:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-874 text8 CODE >107:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-87B text8 CODE >108:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-87E text8 CODE >109:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
-A1 text7 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-A1 text7 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-A8 text7 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-AE text7 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-B2 text7 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-B3 text7 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-B8 text7 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-BD text7 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-C5 text7 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-C6 text7 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-C7 text7 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-C8 text7 CODE >46:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-D0 text7 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-D5 text7 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-DB text7 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-DF text7 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-E0 text7 CODE >56:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-E5 text7 CODE >58:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-EA text7 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-F2 text7 CODE >63:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-F3 text7 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-F4 text7 CODE >66:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-F5 text7 CODE >69:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-FD text7 CODE >70:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-FD text7 CODE >75:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-105 text7 CODE >76:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-10D text7 CODE >77:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-111 text7 CODE >78:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-115 text7 CODE >79:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-11E text7 CODE >83:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-123 text7 CODE >84:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-123 text7 CODE >85:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-12C text7 CODE >89:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-13E text7 CODE >92:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-146 text7 CODE >93:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-14E text7 CODE >94:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-156 text7 CODE >96:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-157 text7 CODE >97:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-158 text7 CODE >100:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-15D text7 CODE >101:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-166 text7 CODE >102:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-16F text7 CODE >103:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-173 text7 CODE >104:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-174 text7 CODE >106:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-17D text7 CODE >112:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-18F text7 CODE >115:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-190 text7 CODE >116:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-19E text7 CODE >118:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1A2 text7 CODE >97:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1A8 text7 CODE >122:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1B0 text7 CODE >123:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1B2 text7 CODE >128:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1BB text7 CODE >129:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1BF text7 CODE >130:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1C0 text7 CODE >132:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1C9 text7 CODE >133:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1CF text7 CODE >127:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1D3 text7 CODE >139:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1D4 text7 CODE >140:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1D8 text7 CODE >141:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1EC text7 CODE >142:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1EE text7 CODE >143:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1EF text7 CODE >144:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1EF text7 CODE >145:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1F4 text7 CODE >150:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-1F9 text7 CODE >151:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-207 text7 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-20B text7 CODE >153:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-224 text7 CODE >154:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-22A text7 CODE >159:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-237 text7 CODE >160:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-23D text7 CODE >161:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-245 text7 CODE >165:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-254 text7 CODE >166:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-258 text7 CODE >167:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-260 text7 CODE >169:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-261 text7 CODE >170:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-261 text7 CODE >173:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-267 text7 CODE >175:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-26B text7 CODE >176:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-26C text7 CODE >177:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-26D text7 CODE >180:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-271 text7 CODE >181:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-271 text7 CODE >182:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-278 text7 CODE >183:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-27D text7 CODE >185:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
-90A text6 CODE >4:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-90B text6 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-90D text6 CODE >6:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-914 text6 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-918 text6 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-91E text6 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-91E text6 CODE >54:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-925 text6 CODE >55:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-927 text6 CODE >56:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-92C text6 CODE >59:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-930 text6 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
-48A text5 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-48A text5 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-491 text5 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-497 text5 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-49B text5 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-49C text5 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4A1 text5 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4A6 text5 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4AE text5 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4AF text5 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4B0 text5 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4B8 text5 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4BD text5 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4C3 text5 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4C7 text5 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4C8 text5 CODE >45:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4CD text5 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4D2 text5 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4DA text5 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4DB text5 CODE >54:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4DC text5 CODE >57:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4E4 text5 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4EE text5 CODE >66:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-4F7 text5 CODE >119:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-507 text5 CODE >120:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-514 text5 CODE >121:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-521 text5 CODE >122:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-531 text5 CODE >123:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-54D text5 CODE >124:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-569 text5 CODE >125:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-579 text5 CODE >126:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-595 text5 CODE >127:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-5B1 text5 CODE >128:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-5BA text5 CODE >129:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-5CA text5 CODE >130:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-5E7 text5 CODE >131:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-5F7 text5 CODE >132:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-614 text5 CODE >133:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-61D text5 CODE >134:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-62D text5 CODE >135:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-64A text5 CODE >136:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-65A text5 CODE >137:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-677 text5 CODE >138:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-687 text5 CODE >139:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-6A4 text5 CODE >140:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-6B4 text5 CODE >141:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-6DA text5 CODE >145:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-702 text5 CODE >146:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-70B text5 CODE >149:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-718 text5 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-719 text5 CODE >153:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-722 text5 CODE >154:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-726 text5 CODE >155:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-727 text5 CODE >157:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-730 text5 CODE >158:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-736 text5 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-73A text5 CODE >163:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-73B text5 CODE >164:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-73F text5 CODE >165:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-753 text5 CODE >166:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-755 text5 CODE >167:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-756 text5 CODE >168:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-756 text5 CODE >169:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-75B text5 CODE >174:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-760 text5 CODE >175:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-76E text5 CODE >176:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-772 text5 CODE >177:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-78B text5 CODE >178:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-791 text5 CODE >183:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-79E text5 CODE >184:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7A8 text5 CODE >185:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7A9 text5 CODE >187:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7B8 text5 CODE >188:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7C2 text5 CODE >190:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7C3 text5 CODE >191:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7C4 text5 CODE >194:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7CA text5 CODE >195:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7D2 text5 CODE >196:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7D6 text5 CODE >197:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7D7 text5 CODE >199:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7DE text5 CODE >200:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7DE text5 CODE >201:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7E2 text5 CODE >203:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-7EA text5 CODE >205:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
-C03 text4 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C03 text4 CODE >47:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C10 text4 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C19 text4 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C2E text4 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C2F text4 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C37 text4 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C39 text4 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C3D text4 CODE >54:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C45 text4 CODE >57:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C4E text4 CODE >58:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C57 text4 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C5E text4 CODE >63:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C67 text4 CODE >64:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C69 text4 CODE >62:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C69 text4 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C6E text4 CODE >67:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C73 text4 CODE >68:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C7E text4 CODE >70:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
-C7F text3 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-C80 text3 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-C89 text3 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-C98 text3 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-C99 text3 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CA1 text3 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CA1 text3 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CA9 text3 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CB2 text3 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CB6 text3 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CB7 text3 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CBB text3 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CC4 text3 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CCB text3 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CCF text3 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CDD text3 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CE6 text3 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CE6 text3 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CED text3 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CEF text3 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-CF8 text3 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-D02 text3 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-D06 text3 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-D0E text3 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-D10 text3 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-D26 text3 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-D2F text3 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-D30 text3 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-D38 text3 CODE >44:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
-F05 text2 CODE >69:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-F05 text2 CODE >71:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-F5D text2 CODE >73:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-F73 text2 CODE >74:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-F8B text2 CODE >75:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-F9E text2 CODE >76:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FB1 text2 CODE >78:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FBD text2 CODE >79:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FCC text2 CODE >80:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FD8 text2 CODE >81:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FE7 text2 CODE >83:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FEF text2 CODE >85:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FF0 text2 CODE >86:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FF1 text2 CODE >88:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FF1 text2 CODE >90:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FF2 text2 CODE >93:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-FFF text2 CODE >94:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A text1 CODE >127:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A text1 CODE >129:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-22 text1 CODE >130:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3A text1 CODE >132:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-42 text1 CODE >133:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-51 text1 CODE >134:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-59 text1 CODE >135:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-68 text1 CODE >137:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-70 text1 CODE >139:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-7A text1 CODE >140:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-80 text1 CODE >141:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-83 text1 CODE >142:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-84 text1 CODE >146:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-8E text1 CODE >147:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-94 text1 CODE >148:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-97 text1 CODE >151:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-A0 text1 CODE >152:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-27E maintext CODE >237:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-27E maintext CODE >239:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-284 maintext CODE >241:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-289 maintext CODE >243:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-28E maintext CODE >245:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-293 maintext CODE >247:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2A2 maintext CODE >249:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2AA maintext CODE >250:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2B0 maintext CODE >252:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2B8 maintext CODE >253:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2BE maintext CODE >254:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2C6 maintext CODE >255:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2CC maintext CODE >257:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2D4 maintext CODE >258:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2DA maintext CODE >260:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2E2 maintext CODE >261:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2E8 maintext CODE >262:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2F4 maintext CODE >263:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-2FA maintext CODE >264:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-306 maintext CODE >265:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-30C maintext CODE >267:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-314 maintext CODE >268:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-31A maintext CODE >269:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-326 maintext CODE >270:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-32C maintext CODE >272:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-334 maintext CODE >273:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-33A maintext CODE >275:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-342 maintext CODE >276:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-348 maintext CODE >278:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-34D maintext CODE >280:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-351 maintext CODE >285:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-356 maintext CODE >286:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-35F maintext CODE >287:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-36D maintext CODE >288:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-372 maintext CODE >289:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-37C maintext CODE >292:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-381 maintext CODE >293:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-38A maintext CODE >294:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-398 maintext CODE >295:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-39D maintext CODE >296:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3A7 maintext CODE >299:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3AC maintext CODE >300:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3B5 maintext CODE >301:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3C3 maintext CODE >302:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3C8 maintext CODE >303:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3D2 maintext CODE >306:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3D7 maintext CODE >307:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3E0 maintext CODE >308:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3EE maintext CODE >309:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3F3 maintext CODE >310:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-3FD maintext CODE >313:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-402 maintext CODE >314:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-40B maintext CODE >315:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-419 maintext CODE >316:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-41E maintext CODE >317:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-428 maintext CODE >319:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-42D maintext CODE >320:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-432 maintext CODE >321:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-437 maintext CODE >322:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-43C maintext CODE >323:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-441 maintext CODE >324:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-446 maintext CODE >326:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-451 maintext CODE >327:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-45B maintext CODE >328:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+F cinit CODE >771:C:\Users\joser\AppData\Local\Temp\se6s.s
+F cinit CODE >774:C:\Users\joser\AppData\Local\Temp\se6s.s
+F cinit CODE >932:C:\Users\joser\AppData\Local\Temp\se6s.s
+10 cinit CODE >933:C:\Users\joser\AppData\Local\Temp\se6s.s
+11 cinit CODE >934:C:\Users\joser\AppData\Local\Temp\se6s.s
+12 cinit CODE >935:C:\Users\joser\AppData\Local\Temp\se6s.s
+13 cinit CODE >936:C:\Users\joser\AppData\Local\Temp\se6s.s
+14 cinit CODE >937:C:\Users\joser\AppData\Local\Temp\se6s.s
+15 cinit CODE >938:C:\Users\joser\AppData\Local\Temp\se6s.s
+16 cinit CODE >939:C:\Users\joser\AppData\Local\Temp\se6s.s
+17 cinit CODE >940:C:\Users\joser\AppData\Local\Temp\se6s.s
+18 cinit CODE >941:C:\Users\joser\AppData\Local\Temp\se6s.s
+1D cinit CODE >960:C:\Users\joser\AppData\Local\Temp\se6s.s
+1E cinit CODE >961:C:\Users\joser\AppData\Local\Temp\se6s.s
+1F cinit CODE >962:C:\Users\joser\AppData\Local\Temp\se6s.s
+20 cinit CODE >963:C:\Users\joser\AppData\Local\Temp\se6s.s
+25 cinit CODE >966:C:\Users\joser\AppData\Local\Temp\se6s.s
+26 cinit CODE >967:C:\Users\joser\AppData\Local\Temp\se6s.s
+27 cinit CODE >968:C:\Users\joser\AppData\Local\Temp\se6s.s
+28 cinit CODE >971:C:\Users\joser\AppData\Local\Temp\se6s.s
+29 cinit CODE >972:C:\Users\joser\AppData\Local\Temp\se6s.s
+2A cinit CODE >973:C:\Users\joser\AppData\Local\Temp\se6s.s
+2B cinit CODE >979:C:\Users\joser\AppData\Local\Temp\se6s.s
+2B cinit CODE >981:C:\Users\joser\AppData\Local\Temp\se6s.s
+2C cinit CODE >982:C:\Users\joser\AppData\Local\Temp\se6s.s
+4 intentry CODE >90:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+178E text37 CODE >90:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+178E text37 CODE >92:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1794 text37 CODE >94:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+179C text37 CODE >95:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+17A3 text37 CODE >97:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+17A5 text37 CODE >99:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+17AB text37 CODE >101:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+17AE text37 CODE >103:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+17B6 text37 CODE >105:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+17B9 text37 CODE >109:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+17BC text37 CODE >110:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+17BE text37 CODE >111:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+17BF text37 CODE >113:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+A11 text36 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A11 text36 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A19 text36 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A23 text36 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A25 text36 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A26 text36 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A2F text36 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A33 text36 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A37 text36 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A40 text36 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A52 text36 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A60 text36 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A61 text36 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A6A text36 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A70 text36 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+A78 text36 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
+17C6 text35 CODE >16:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+17C6 text35 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+17CA text35 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+17CD text35 CODE >20:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+17FC text35 CODE >21:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+17FD text35 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+17FE text35 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+17FF text35 CODE >24:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15D8 text34 CODE >466:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+15D9 text34 CODE >468:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+15DC text34 CODE >469:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1615 text33 CODE >461:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1616 text33 CODE >463:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1620 text33 CODE >464:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+160A text32 CODE >63:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+160A text32 CODE >65:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+160A text32 CODE >68:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+1610 text32 CODE >70:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+1614 text32 CODE >71:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+1678 text31 CODE >16:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1679 text31 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+167C text31 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+167E text31 CODE >20:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+167F text31 CODE >21:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1688 text31 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+168B text31 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+163F text30 CODE >54:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+163F text30 CODE >56:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1645 text30 CODE >57:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+164B text30 CODE >59:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1651 text30 CODE >60:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+16E2 text29 CODE >62:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+16E3 text29 CODE >66:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+16E8 text29 CODE >68:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+16ED text29 CODE >69:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+16F3 text29 CODE >70:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+16F4 text29 CODE >71:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+16FA text29 CODE >73:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+16FF text29 CODE >74:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1705 text29 CODE >76:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+175D text28 CODE >78:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+175E text28 CODE >80:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1761 text28 CODE >82:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1764 text28 CODE >83:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+176D text28 CODE >84:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+176E text28 CODE >85:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1777 text28 CODE >86:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+177A text28 CODE >87:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+178D text28 CODE >88:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+9AD text27 CODE >236:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9AD text27 CODE >238:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9B4 text27 CODE >240:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9BE text27 CODE >241:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9C4 text27 CODE >243:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9C7 text27 CODE >245:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9D1 text27 CODE >246:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9D7 text27 CODE >247:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9D8 text27 CODE >249:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9DE text27 CODE >251:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9E8 text27 CODE >252:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9EE text27 CODE >254:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9F1 text27 CODE >256:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+9FB text27 CODE >257:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+A01 text27 CODE >260:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+A10 text27 CODE >261:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+797 text26 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+797 text26 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+79A text26 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+79E text26 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7A3 text26 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7A5 text26 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7A9 text26 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7AE text26 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7B2 text26 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7B4 text26 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7BA text26 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7BC text26 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7BD text26 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7C4 text26 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7C8 text26 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7CC text26 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7D3 text26 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7DD text26 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7E3 text26 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7E4 text26 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7EB text26 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7F1 text26 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7F6 text26 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7FB text26 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+7FF text26 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+898 text25 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+898 text25 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+899 text25 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+89D text25 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8A2 text25 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8A4 text25 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8A8 text25 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8AD text25 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8B3 text25 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8B5 text25 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8B6 text25 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8BD text25 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8C1 text25 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8C5 text25 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8CF text25 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8D5 text25 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8DC text25 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8E2 text25 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8E7 text25 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8EC text25 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+8F0 text25 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+168C text24 CODE >90:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+168D text24 CODE >92:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1690 text24 CODE >93:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1692 text24 CODE >94:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1693 text24 CODE >95:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+169C text24 CODE >96:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+169F text24 CODE >97:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+C4E text23 CODE >142:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+C4E text23 CODE >144:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+C66 text23 CODE >145:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+C7E text23 CODE >146:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+C91 text23 CODE >147:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+CA4 text23 CODE >149:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+CAC text23 CODE >150:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+CBB text23 CODE >151:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+CC3 text23 CODE >152:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+CD2 text23 CODE >153:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+CDA text23 CODE >154:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+CE9 text23 CODE >156:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+CEF text23 CODE >158:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+CFB text23 CODE >159:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D01 text23 CODE >160:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D04 text23 CODE >161:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D05 text23 CODE >165:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D11 text23 CODE >166:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D17 text23 CODE >167:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D1A text23 CODE >170:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D27 text23 CODE >171:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+844 text22 CODE >25:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+844 text22 CODE >27:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+847 text22 CODE >29:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+84D text22 CODE >31:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+856 text22 CODE >33:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+85C text22 CODE >34:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+865 text22 CODE >36:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+86B text22 CODE >37:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+86F text22 CODE >39:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+875 text22 CODE >40:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+879 text22 CODE >42:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+87F text22 CODE >44:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+885 text22 CODE >46:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+88B text22 CODE >48:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+891 text22 CODE >50:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+897 text22 CODE >52:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+94C text21 CODE >5:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+94D text21 CODE >7:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+94E text21 CODE >10:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+952 text21 CODE >11:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+953 text21 CODE >14:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+959 text21 CODE >15:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+95A text21 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+960 text21 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+961 text21 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+967 text21 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+968 text21 CODE >26:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+96E text21 CODE >27:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+96F text21 CODE >30:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+975 text21 CODE >31:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+976 text21 CODE >34:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+97C text21 CODE >35:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+97D text21 CODE >38:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+981 text21 CODE >39:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+982 text21 CODE >42:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+988 text21 CODE >43:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+989 text21 CODE >45:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+9AB text21 CODE >47:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+9AC text21 CODE >48:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/Oscilador.h
+16C9 text20 CODE >13:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16C9 text20 CODE >15:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16CC text20 CODE >16:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16CD text20 CODE >17:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16D0 text20 CODE >18:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16D3 text20 CODE >19:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16D6 text20 CODE >21:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16DA text20 CODE >22:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16DB text20 CODE >23:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16DE text20 CODE >24:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16E1 text20 CODE >25:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
+16B4 text19 CODE >470:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16B4 text19 CODE >472:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16B7 text19 CODE >473:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16B8 text19 CODE >474:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16B9 text19 CODE >475:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16BA text19 CODE >476:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16BB text19 CODE >477:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16BC text19 CODE >478:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16BD text19 CODE >484:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16BE text19 CODE >485:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16BF text19 CODE >486:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16C2 text19 CODE >489:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16C6 text19 CODE >490:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+16C8 text19 CODE >491:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+695 text18 CODE >200:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+695 text18 CODE >203:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+6AD text18 CODE >204:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+6C5 text18 CODE >205:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+6D8 text18 CODE >206:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+6EB text18 CODE >208:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+6F7 text18 CODE >209:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+706 text18 CODE >210:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+712 text18 CODE >211:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+721 text18 CODE >212:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+72D text18 CODE >213:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+73C text18 CODE >215:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+742 text18 CODE >217:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+74E text18 CODE >218:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+754 text18 CODE >219:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+75C text18 CODE >220:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+762 text18 CODE >221:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+765 text18 CODE >222:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+766 text18 CODE >226:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+76E text18 CODE >227:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+774 text18 CODE >228:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+780 text18 CODE >229:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+786 text18 CODE >230:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+789 text18 CODE >233:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+796 text18 CODE >234:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1621 text17 CODE >32:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1621 text17 CODE >34:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+162D text17 CODE >35:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+172F text16 CODE >74:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+172F text16 CODE >77:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1734 text16 CODE >78:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1737 text16 CODE >79:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+173C text16 CODE >80:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1745 text16 CODE >81:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+174A text16 CODE >82:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1750 text16 CODE >83:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1753 text16 CODE >84:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1754 text16 CODE >85:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1757 text16 CODE >86:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1757 text16 CODE >87:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1758 text16 CODE >88:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+175C text16 CODE >89:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15E5 text15 CODE >47:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15E5 text15 CODE >49:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15EA text15 CODE >50:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15ED text15 CODE >51:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15EE text14 CODE >39:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15EE text14 CODE >41:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15F3 text14 CODE >42:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15F6 text14 CODE >43:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15F7 text13 CODE >55:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15F7 text13 CODE >57:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15FC text13 CODE >58:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+15FF text13 CODE >59:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1600 text12 CODE >65:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1600 text12 CODE >67:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1605 text12 CODE >68:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+1609 text12 CODE >69:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+802 text11 CODE >432:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+803 text11 CODE >434:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+808 text11 CODE >435:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+811 text11 CODE >436:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+81F text11 CODE >437:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+824 text11 CODE >438:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+82D text11 CODE >439:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+83B text11 CODE >440:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+840 text11 CODE >441:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+843 text11 CODE >442:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1652 text10 CODE >263:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1652 text10 CODE >265:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1655 text10 CODE >266:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1656 text10 CODE >268:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1659 text10 CODE >269:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+165A text10 CODE >270:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+165B text10 CODE >272:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+165C text10 CODE >274:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+165D text10 CODE >275:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+165E text10 CODE >277:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1661 text10 CODE >278:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1662 text10 CODE >279:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1663 text10 CODE >280:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+1664 text10 CODE >281:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+162E text9 CODE >99:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+162E text9 CODE >104:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1631 text9 CODE >105:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1633 text9 CODE >106:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+1634 text9 CODE >107:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+163B text9 CODE >108:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+163E text9 CODE >109:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
+E23 text8 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E23 text8 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E2A text8 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E30 text8 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E34 text8 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E35 text8 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E3A text8 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E3F text8 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E47 text8 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E48 text8 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E49 text8 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E4A text8 CODE >46:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E52 text8 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E57 text8 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E5D text8 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E61 text8 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E62 text8 CODE >56:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E67 text8 CODE >58:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E6C text8 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E74 text8 CODE >63:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E75 text8 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E76 text8 CODE >66:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E77 text8 CODE >69:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E7F text8 CODE >70:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E7F text8 CODE >75:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E87 text8 CODE >76:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E8F text8 CODE >77:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E93 text8 CODE >78:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+E97 text8 CODE >79:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EA0 text8 CODE >83:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EA5 text8 CODE >84:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EA5 text8 CODE >85:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EAE text8 CODE >89:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EC0 text8 CODE >92:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EC8 text8 CODE >93:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+ED0 text8 CODE >94:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+ED8 text8 CODE >96:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+ED9 text8 CODE >97:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EDA text8 CODE >100:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EDF text8 CODE >101:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EE8 text8 CODE >102:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EF1 text8 CODE >103:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EF5 text8 CODE >104:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EF6 text8 CODE >106:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+EFF text8 CODE >112:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F11 text8 CODE >115:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F12 text8 CODE >116:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F20 text8 CODE >118:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F24 text8 CODE >97:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F2A text8 CODE >122:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F32 text8 CODE >123:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F34 text8 CODE >128:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F3D text8 CODE >129:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F41 text8 CODE >130:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F42 text8 CODE >132:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F4B text8 CODE >133:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F51 text8 CODE >127:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F55 text8 CODE >139:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F56 text8 CODE >140:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F5A text8 CODE >141:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F6E text8 CODE >142:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F70 text8 CODE >143:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F71 text8 CODE >144:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F71 text8 CODE >145:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F76 text8 CODE >150:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F7B text8 CODE >151:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F89 text8 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+F8D text8 CODE >153:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FA6 text8 CODE >154:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FAC text8 CODE >159:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FB9 text8 CODE >160:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FBF text8 CODE >161:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FC7 text8 CODE >165:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FD6 text8 CODE >166:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FDA text8 CODE >167:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FE2 text8 CODE >169:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FE3 text8 CODE >170:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FE3 text8 CODE >173:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FE9 text8 CODE >175:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FED text8 CODE >176:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FEE text8 CODE >177:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FEF text8 CODE >180:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FF3 text8 CODE >181:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FF3 text8 CODE >182:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FFA text8 CODE >183:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+FFF text8 CODE >185:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
+1706 text7 CODE >4:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+1709 text7 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+170B text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+1712 text7 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+1716 text7 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+171C text7 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+171C text7 CODE >54:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+1723 text7 CODE >55:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+1725 text7 CODE >56:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+172A text7 CODE >59:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+172E text7 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
+2F text6 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2F text6 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+36 text6 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+3C text6 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+40 text6 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+41 text6 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+46 text6 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+4B text6 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+53 text6 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+54 text6 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+55 text6 CODE >36:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+5D text6 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+62 text6 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+68 text6 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+6C text6 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+6D text6 CODE >45:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+72 text6 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+77 text6 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+7F text6 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+80 text6 CODE >54:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+81 text6 CODE >57:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+89 text6 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+93 text6 CODE >66:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+9C text6 CODE >119:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+AC text6 CODE >120:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+B9 text6 CODE >121:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+C6 text6 CODE >122:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+D6 text6 CODE >123:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+F2 text6 CODE >124:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+10E text6 CODE >125:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+11E text6 CODE >126:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+13A text6 CODE >127:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+156 text6 CODE >128:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+15F text6 CODE >129:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+16F text6 CODE >130:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+18C text6 CODE >131:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+19C text6 CODE >132:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+1B9 text6 CODE >133:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+1C2 text6 CODE >134:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+1D2 text6 CODE >135:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+1EF text6 CODE >136:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+1FF text6 CODE >137:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+21C text6 CODE >138:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+22C text6 CODE >139:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+249 text6 CODE >140:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+259 text6 CODE >141:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+27F text6 CODE >145:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2A7 text6 CODE >146:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2B0 text6 CODE >149:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2BD text6 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2BE text6 CODE >153:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2C7 text6 CODE >154:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2CB text6 CODE >155:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2CC text6 CODE >157:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2D5 text6 CODE >158:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2DB text6 CODE >152:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2DF text6 CODE >163:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2E0 text6 CODE >164:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2E4 text6 CODE >165:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2F8 text6 CODE >166:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2FA text6 CODE >167:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2FB text6 CODE >168:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+2FB text6 CODE >169:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+300 text6 CODE >174:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+305 text6 CODE >175:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+313 text6 CODE >176:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+317 text6 CODE >177:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+330 text6 CODE >178:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+336 text6 CODE >183:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+343 text6 CODE >184:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+34D text6 CODE >185:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+34E text6 CODE >187:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+35D text6 CODE >188:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+367 text6 CODE >190:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+368 text6 CODE >191:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+369 text6 CODE >194:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+36F text6 CODE >195:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+377 text6 CODE >196:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+37B text6 CODE >197:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+37C text6 CODE >199:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+383 text6 CODE >200:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+383 text6 CODE >201:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+387 text6 CODE >203:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+38F text6 CODE >205:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
+A79 text5 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+A79 text5 CODE >47:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+A86 text5 CODE >48:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+A8F text5 CODE >49:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AA4 text5 CODE >50:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AA5 text5 CODE >51:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AAD text5 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AAF text5 CODE >53:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AB3 text5 CODE >54:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+ABB text5 CODE >57:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AC4 text5 CODE >58:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+ACD text5 CODE >60:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AD4 text5 CODE >63:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+ADD text5 CODE >64:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+ADF text5 CODE >62:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+ADF text5 CODE >65:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AE4 text5 CODE >67:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AE9 text5 CODE >68:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+AF4 text5 CODE >70:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
+B92 text4 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+B95 text4 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+B9E text4 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BAD text4 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BAE text4 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BB6 text4 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BB6 text4 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BBE text4 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BC7 text4 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BCB text4 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BCC text4 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BD0 text4 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BD9 text4 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BE0 text4 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BE4 text4 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BF2 text4 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BFB text4 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+BFB text4 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C02 text4 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C04 text4 CODE >35:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C0D text4 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C17 text4 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C1B text4 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C23 text4 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C25 text4 CODE >40:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C3B text4 CODE >41:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C44 text4 CODE >42:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C45 text4 CODE >43:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+C4D text4 CODE >44:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
+D28 text3 CODE >115:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D28 text3 CODE >117:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D80 text3 CODE >119:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+D96 text3 CODE >120:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+DAE text3 CODE >121:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+DC1 text3 CODE >122:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+DD4 text3 CODE >124:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+DE0 text3 CODE >125:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+DEF text3 CODE >126:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+DFB text3 CODE >127:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+E0A text3 CODE >129:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+E12 text3 CODE >131:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+E13 text3 CODE >132:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+E14 text3 CODE >134:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+E14 text3 CODE >136:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+E15 text3 CODE >139:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+E22 text3 CODE >140:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+AF5 text2 CODE >173:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+AF5 text2 CODE >175:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B0D text2 CODE >176:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B25 text2 CODE >178:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B2D text2 CODE >179:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B3C text2 CODE >180:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B44 text2 CODE >181:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B53 text2 CODE >183:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B59 text2 CODE >185:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B65 text2 CODE >186:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B6B text2 CODE >187:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B6E text2 CODE >188:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B6F text2 CODE >192:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B7B text2 CODE >193:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B81 text2 CODE >194:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B84 text2 CODE >197:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+B91 text2 CODE >198:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+8F1 text1 CODE >444:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+8F1 text1 CODE >446:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+8F6 text1 CODE >447:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+8FF text1 CODE >448:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+907 text1 CODE >450:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+910 text1 CODE >451:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+919 text1 CODE >452:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+922 text1 CODE >454:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+92B text1 CODE >455:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+934 text1 CODE >456:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+93D text1 CODE >457:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+946 text1 CODE >458:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+94B text1 CODE >459:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+390 maintext CODE >283:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+390 maintext CODE >285:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+396 maintext CODE >286:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+39B maintext CODE >287:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3A0 maintext CODE >288:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3A5 maintext CODE >289:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3B4 maintext CODE >290:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3B9 maintext CODE >291:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3BE maintext CODE >293:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3C6 maintext CODE >294:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3CC maintext CODE >296:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3D4 maintext CODE >297:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3DA maintext CODE >298:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3E2 maintext CODE >299:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3E8 maintext CODE >301:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3F0 maintext CODE >302:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3F6 maintext CODE >304:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+3FE maintext CODE >305:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+404 maintext CODE >306:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+410 maintext CODE >307:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+416 maintext CODE >308:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+422 maintext CODE >309:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+428 maintext CODE >311:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+430 maintext CODE >312:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+436 maintext CODE >313:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+442 maintext CODE >314:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+448 maintext CODE >316:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+450 maintext CODE >317:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+456 maintext CODE >319:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+45E maintext CODE >320:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+464 maintext CODE >322:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+469 maintext CODE >324:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 46D maintext CODE >329:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-477 maintext CODE >330:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-47F maintext CODE >332:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-17E6 clrtext CODE >785:C:\Users\joser\AppData\Local\Temp\s480.s
-17E6 clrtext CODE >786:C:\Users\joser\AppData\Local\Temp\s480.s
-17E7 clrtext CODE >787:C:\Users\joser\AppData\Local\Temp\s480.s
-17E7 clrtext CODE >788:C:\Users\joser\AppData\Local\Temp\s480.s
-17E8 clrtext CODE >789:C:\Users\joser\AppData\Local\Temp\s480.s
-17E9 clrtext CODE >790:C:\Users\joser\AppData\Local\Temp\s480.s
-17EA clrtext CODE >791:C:\Users\joser\AppData\Local\Temp\s480.s
-17EB clrtext CODE >792:C:\Users\joser\AppData\Local\Temp\s480.s
-17EC clrtext CODE >793:C:\Users\joser\AppData\Local\Temp\s480.s
-17ED clrtext CODE >794:C:\Users\joser\AppData\Local\Temp\s480.s
+472 maintext CODE >330:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+47B maintext CODE >331:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+489 maintext CODE >332:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+48E maintext CODE >333:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+498 maintext CODE >336:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+49D maintext CODE >337:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4A6 maintext CODE >338:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4B6 maintext CODE >339:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4BB maintext CODE >340:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4C5 maintext CODE >343:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4CA maintext CODE >344:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4D3 maintext CODE >345:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4E1 maintext CODE >346:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4E6 maintext CODE >347:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4F0 maintext CODE >350:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4F5 maintext CODE >351:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+4FE maintext CODE >352:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+50C maintext CODE >353:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+511 maintext CODE >354:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+51B maintext CODE >357:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+520 maintext CODE >358:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+529 maintext CODE >359:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+539 maintext CODE >360:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+53E maintext CODE >361:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+548 maintext CODE >364:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+54D maintext CODE >365:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+552 maintext CODE >366:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+557 maintext CODE >367:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+55C maintext CODE >368:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+561 maintext CODE >371:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+56A maintext CODE >373:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+56D maintext CODE >374:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+56E maintext CODE >375:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+57D maintext CODE >377:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+57E maintext CODE >378:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+585 maintext CODE >380:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+588 maintext CODE >381:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+58A maintext CODE >384:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+58A maintext CODE >386:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+58D maintext CODE >389:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+5A1 maintext CODE >390:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+5B5 maintext CODE >391:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+5BB maintext CODE >393:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+5C8 maintext CODE >394:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+5D5 maintext CODE >395:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+5E2 maintext CODE >396:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+5EF maintext CODE >398:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+5FB maintext CODE >399:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+603 maintext CODE >400:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+60F maintext CODE >401:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+617 maintext CODE >402:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+623 maintext CODE >403:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+62B maintext CODE >404:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+637 maintext CODE >405:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+63F maintext CODE >407:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+64A maintext CODE >410:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+64F maintext CODE >413:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+65A maintext CODE >414:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+664 maintext CODE >417:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+678 maintext CODE >418:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+682 maintext CODE >421:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+68A maintext CODE >425:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+15DD clrtext CODE >947:C:\Users\joser\AppData\Local\Temp\se6s.s
+15DD clrtext CODE >948:C:\Users\joser\AppData\Local\Temp\se6s.s
+15DE clrtext CODE >949:C:\Users\joser\AppData\Local\Temp\se6s.s
+15DE clrtext CODE >950:C:\Users\joser\AppData\Local\Temp\se6s.s
+15DF clrtext CODE >951:C:\Users\joser\AppData\Local\Temp\se6s.s
+15E0 clrtext CODE >952:C:\Users\joser\AppData\Local\Temp\se6s.s
+15E1 clrtext CODE >953:C:\Users\joser\AppData\Local\Temp\se6s.s
+15E2 clrtext CODE >954:C:\Users\joser\AppData\Local\Temp\se6s.s
+15E3 clrtext CODE >955:C:\Users\joser\AppData\Local\Temp\se6s.s
+15E4 clrtext CODE >956:C:\Users\joser\AppData\Local\Temp\se6s.s
+1665 inittext CODE >906:C:\Users\joser\AppData\Local\Temp\se6s.s
+1665 inittext CODE >907:C:\Users\joser\AppData\Local\Temp\se6s.s
+1666 inittext CODE >908:C:\Users\joser\AppData\Local\Temp\se6s.s
+1667 inittext CODE >909:C:\Users\joser\AppData\Local\Temp\se6s.s
+1668 inittext CODE >910:C:\Users\joser\AppData\Local\Temp\se6s.s
+1669 inittext CODE >917:C:\Users\joser\AppData\Local\Temp\se6s.s
+1669 inittext CODE >918:C:\Users\joser\AppData\Local\Temp\se6s.s
+166E inittext CODE >919:C:\Users\joser\AppData\Local\Temp\se6s.s
+166F inittext CODE >920:C:\Users\joser\AppData\Local\Temp\se6s.s
+1670 inittext CODE >921:C:\Users\joser\AppData\Local\Temp\se6s.s
+1671 inittext CODE >922:C:\Users\joser\AppData\Local\Temp\se6s.s
+1672 inittext CODE >923:C:\Users\joser\AppData\Local\Temp\se6s.s
+1673 inittext CODE >924:C:\Users\joser\AppData\Local\Temp\se6s.s
+1674 inittext CODE >925:C:\Users\joser\AppData\Local\Temp\se6s.s
+1675 inittext CODE >926:C:\Users\joser\AppData\Local\Temp\se6s.s
+1676 inittext CODE >927:C:\Users\joser\AppData\Local\Temp\se6s.s
+1677 inittext CODE >928:C:\Users\joser\AppData\Local\Temp\se6s.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -746,46 +880,54 @@ A0 text1 CODE >152:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyect
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_a 100C 0 STRING 0 strings dist/default/production\Guardia.X.production.o
+_a 200C 0 STRING 0 strings dist/default/production\Guardia.X.production.o
 _b A0 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_i 66 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
-_t B0 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_w B8 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_y C2 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_z BC 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-imprimir@texto 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+_i BA 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_t C2 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_w CA 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_y D6 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_z CE 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+imprimir@texto 76 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 ___latbits 2 0 ABS 0 - dist/default/production\Guardia.X.production.o
-___awdiv@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+___awdiv@counter 20 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
 __Hspace_0 2009 0 ABS 0 - -
-__Hspace_1 C4 0 ABS 0 - -
+__Hspace_1 193 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-I2C_Master_Init@c 20 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+I2C_Master_Init@c 28 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_t1 AE 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_t2 AC 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_t3 AA 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_w1 B6 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_w2 B4 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_w3 B2 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_y1 68 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
-_y2 C0 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_y3 BE 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
-_z1 BA 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_T1CONbits 10 0 ABS 0 - dist/default/production\Guardia.X.production.o
+_hr AE 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_t1 C0 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_t2 BE 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_t3 BC 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_w1 C8 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_w2 C6 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_w3 C4 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_y1 D4 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_y2 D2 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_y3 D0 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_z1 CC 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+LSB@x 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-_Humo 6B 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
-_Temp 6F 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\s480.o
-_humo 1A72 0 CODE 0 text14 dist/default/production\Guardia.X.production.o
-_main 4FC 0 CODE 0 maintext dist/default/production\Guardia.X.production.o
+MSB@x 73 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+_Humo 79 0 COMMON 1 bssCOMMON dist/default/production\Guardia.X.production.o
+_Temp 6E 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\se6s.o
+_hour B0 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_humo 189C 0 CODE 0 text23 dist/default/production\Guardia.X.production.o
+_main 720 0 CODE 0 maintext dist/default/production\Guardia.X.production.o
+_time E3 0 BANK1 1 dataBANK1 dist/default/production\Guardia.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Guardia.X.production.o
-start 0 0 CODE 0 init C:\Users\joser\AppData\Local\Temp\s480.o
-___flmul@aexp 32 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-___flmul@bexp 33 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-___flmul@prod 34 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-___flmul@sign 2D 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-___flmul@temp 38 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+start 18 0 CODE 0 init C:\Users\joser\AppData\Local\Temp\se6s.o
+___flmul@aexp 38 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___flmul@bexp 3D 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___flmul@prod 3E 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___flmul@sign 37 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___flmul@temp 42 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of___fldiv 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
@@ -795,93 +937,101 @@ __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_humo 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __size_of_ultrasonico 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-imprimir@i 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+imprimir@i 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
 __Hpowerup 0 0 CODE 0 powerup -
-iniciarOSC@frec 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-___awmod@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-I2C_Master_Read@a 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+iniciarOSC@frec 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+___awmod@sign 78 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+I2C_Master_Read@a 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __size_of_borrarv 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-comando@x 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s480.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s480.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s480.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s480.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s480.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s480.o
-__size_of_UARTmostrar 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+comando@x 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+__size_of_initTimer1 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Guardia.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-I2C_Master_Read@temp 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-__end_of_a 1020 0 STRING 0 strings dist/default/production\Guardia.X.production.o
-___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+I2C_Master_Read@temp 76 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+__end_of_a 2020 0 STRING 0 strings dist/default/production\Guardia.X.production.o
+___awdiv@sign 21 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Guardia.X.production.o
-__end_of__Umul8_16 1262 0 CODE 0 text6 dist/default/production\Guardia.X.production.o
-___awdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+__end_of__Umul8_16 2E5E 0 CODE 0 text7 dist/default/production\Guardia.X.production.o
+___awdiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __size_of__Umul8_16 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-_Distancia 6C 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
+_UARTenvINT 2C14 0 CODE 0 text32 dist/default/production\Guardia.X.production.o
+_Distancia 7A 0 COMMON 1 bssCOMMON dist/default/production\Guardia.X.production.o
 __size_of_iniciarLCD 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_iniciarOSC 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___fldiv@aexp 53 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-___fldiv@bexp 52 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-___fldiv@sign 4B 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___fldiv@aexp 5D 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___fldiv@bexp 5C 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___fldiv@sign 55 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
 __size_of_iniciarUART 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-__end_of___awdiv 1806 0 CODE 0 text17 dist/default/production\Guardia.X.production.o
-__end_of___awmod 14EA 0 CODE 0 text16 dist/default/production\Guardia.X.production.o
-__Umul8_16 1214 0 CODE 0 text6 dist/default/production\Guardia.X.production.o
-__end_of___fldiv 4FC 0 CODE 0 text7 dist/default/production\Guardia.X.production.o
-__end_of___flmul FD6 0 CODE 0 text5 dist/default/production\Guardia.X.production.o
-__end_of___fltol 18FE 0 CODE 0 text4 dist/default/production\Guardia.X.production.o
-__end_of___lldiv 1738 0 CODE 0 text30 dist/default/production\Guardia.X.production.o
-__Umul8_16@multiplicand 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\s480.o
-___stacklo 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\s480.o
+___awdiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+__end_of___awdiv 1000 0 CODE 0 text26 dist/default/production\Guardia.X.production.o
+__end_of___awmod 11E2 0 CODE 0 text25 dist/default/production\Guardia.X.production.o
+__Umul8_16 2E0C 0 CODE 0 text7 dist/default/production\Guardia.X.production.o
+__end_of___fldiv 2000 0 CODE 0 text8 dist/default/production\Guardia.X.production.o
+__end_of___flmul 720 0 CODE 0 text6 dist/default/production\Guardia.X.production.o
+__end_of___fltol 15EA 0 CODE 0 text5 dist/default/production\Guardia.X.production.o
+__end_of___lldiv 14F2 0 CODE 0 text36 dist/default/production\Guardia.X.production.o
+__Umul8_16@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\se6s.o
+___stacklo 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\se6s.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_celda 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-___fldiv@a 3A 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-___fldiv@b 3E 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___fldiv@a 44 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___fldiv@b 48 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
 __size_of_luces 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_shift 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-___flmul@a 24 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-___flmul@b 20 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-__end_of_borrarv 1124 0 CODE 0 text21 dist/default/production\Guardia.X.production.o
-___lldiv@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+___flmul@a 2E 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___flmul@b 2A 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__end_of_borrarv 2CA4 0 CODE 0 text30 dist/default/production\Guardia.X.production.o
+___lldiv@counter 77 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-start_initialization FD6 0 CODE 0 cinit dist/default/production\Guardia.X.production.o
-__end_of_temperatura 2000 0 CODE 0 text2 dist/default/production\Guardia.X.production.o
+start_initialization 1E 0 CODE 0 cinit dist/default/production\Guardia.X.production.o
+__end_of_temperatura 1C46 0 CODE 0 text3 dist/default/production\Guardia.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _TRISDbits 88 0 ABS 0 - dist/default/production\Guardia.X.production.o
-___lldiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-clear_ram0 2FCC 0 CODE 0 clrtext dist/default/production\Guardia.X.production.o
+___lldiv@dividend 24 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__end_of_UARTenvINT 2C2A 0 CODE 0 text32 dist/default/production\Guardia.X.production.o
+clear_ram0 2BBA 0 CODE 0 clrtext dist/default/production\Guardia.X.production.o
 _SPBRGH 9A 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__pcstackBANK3 190 0 BANK3 1 cstackBANK3 dist/default/production\Guardia.X.production.o
 _SSPADD 93 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Guardia.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\s480.o
-_ultrasonico 14 0 CODE 0 text1 dist/default/production\Guardia.X.production.o
+UARTenvINT@x 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\se6s.o
+_ultrasonico 15EA 0 CODE 0 text2 dist/default/production\Guardia.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
-__Hcinit 1000 0 CODE 0 cinit -
+__Hcinit 5E 0 CODE 0 cinit -
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
-__stringbase 100A 0 STRING 0 strings dist/default/production\Guardia.X.production.o
-I2C_Master_Write@d 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+__stringbase 200A 0 STRING 0 strings dist/default/production\Guardia.X.production.o
+I2C_Master_Write@d 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __size_of___xxtofl 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_colocar 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_comando 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
-___xxtofl@arg 7A 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-___xxtofl@exp 79 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-___xxtofl@val 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+___xxtofl@arg 26 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___xxtofl@exp 25 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___xxtofl@val 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+_I2C_Master_RepeatedStart 2BCA 0 CODE 0 text15 dist/default/production\Guardia.X.production.o
 __size_of_mostrar 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 0 config -
@@ -889,15 +1039,17 @@ __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit FD6 0 CODE 0 cinit -
+__Lcinit 1E 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lstack 0 0 STACK 2 stack -
-___flmul@grs 2E 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___flmul@grs 39 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__Linittext 0 0 ABS 0 inittext -
 _PORTAbits 5 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _PORTDbits 8 0 ABS 0 - dist/default/production\Guardia.X.production.o
+_INTCONbits B 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 0 0 CODE 0 init -
+__Hinit 18 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -905,193 +1057,237 @@ __Hsfr3 0 0 ABS 0 sfr3 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit 0 0 CODE 0 init -
+__Linit 18 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-_UARTmostrar 10AC 0 CODE 0 text23 dist/default/production\Guardia.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK3 0 0 ABS 0 cstackBANK3 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_Luz 6E 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
+_LSB 2BB0 0 CODE 0 text34 dist/default/production\Guardia.X.production.o
+_MSB 2C2A 0 CODE 0 text33 dist/default/production\Guardia.X.production.o
+_Luz 7B 0 COMMON 1 bssCOMMON dist/default/production\Guardia.X.production.o
 __S0 2009 0 ABS 0 - -
-__S1 C4 0 ABS 0 - -
+__S1 193 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
+_dat B6 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+_isr 2F1C 0 CODE 0 text37 dist/default/production\Guardia.X.production.o
 __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+saved_w 7E 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-_I2C_Master_Start 2FDC 0 CODE 0 text26 dist/default/production\Guardia.X.production.o
-_I2C_Master_Write 1098 0 CODE 0 text24 dist/default/production\Guardia.X.production.o
-___xxtofl 18FE 0 CODE 0 text3 dist/default/production\Guardia.X.production.o
+_I2C_Master_Start 2BDC 0 CODE 0 text14 dist/default/production\Guardia.X.production.o
+_I2C_Master_Write 2C00 0 CODE 0 text12 dist/default/production\Guardia.X.production.o
+___xxtofl 1724 0 CODE 0 text4 dist/default/production\Guardia.X.production.o
+_flanco AA 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+__size_of_read_RTC 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+__end_of_LSB 2BBA 0 CODE 0 text34 dist/default/production\Guardia.X.production.o
+__end_of_MSB 2C42 0 CODE 0 text33 dist/default/production\Guardia.X.production.o
+__end_of_isr 2F8C 0 CODE 0 text37 dist/default/production\Guardia.X.production.o
 _grados 6D 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
-__Lintentry 0 0 CODE 0 intentry -
-___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-__stringtab 1000 0 STRING 0 strings dist/default/production\Guardia.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\joser\AppData\Local\Temp\s480.o
-__end_of___xxtofl 1A72 0 CODE 0 text3 dist/default/production\Guardia.X.production.o
-_iniciarUART 119A 0 CODE 0 text11 dist/default/production\Guardia.X.production.o
+__Lintentry 8 0 CODE 0 intentry -
+___lldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__stringtab 2000 0 STRING 0 strings dist/default/production\Guardia.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\joser\AppData\Local\Temp\se6s.o
+__end_of___xxtofl 189C 0 CODE 0 text4 dist/default/production\Guardia.X.production.o
+__pdataBANK1 DA 0 BANK1 1 dataBANK1 dist/default/production\Guardia.X.production.o
+_iniciarUART 2D92 0 CODE 0 text20 dist/default/production\Guardia.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
-___awmod@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+___awmod@counter 77 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 _RCSTAbits 18 0 ABS 0 - dist/default/production\Guardia.X.production.o
+_PIE1bits 8C 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_temperatura 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-__end_of_colocar 1214 0 CODE 0 text20 dist/default/production\Guardia.X.production.o
-__end_of_comando 1172 0 CODE 0 text22 dist/default/production\Guardia.X.production.o
-__ptext10 1C1A 0 CODE 0 text10 dist/default/production\Guardia.X.production.o
-__ptext11 119A 0 CODE 0 text11 dist/default/production\Guardia.X.production.o
-__ptext12 15AA 0 CODE 0 text12 dist/default/production\Guardia.X.production.o
-__ptext13 1390 0 CODE 0 text13 dist/default/production\Guardia.X.production.o
-__ptext14 1A72 0 CODE 0 text14 dist/default/production\Guardia.X.production.o
-__ptext15 1172 0 CODE 0 text15 dist/default/production\Guardia.X.production.o
-__ptext16 1438 0 CODE 0 text16 dist/default/production\Guardia.X.production.o
-__ptext17 1738 0 CODE 0 text17 dist/default/production\Guardia.X.production.o
-__ptext18 14EA 0 CODE 0 text18 dist/default/production\Guardia.X.production.o
-__ptext19 12BE 0 CODE 0 text19 dist/default/production\Guardia.X.production.o
-__ptext20 11CC 0 CODE 0 text20 dist/default/production\Guardia.X.production.o
-__ptext21 10FE 0 CODE 0 text21 dist/default/production\Guardia.X.production.o
-__ptext22 114A 0 CODE 0 text22 dist/default/production\Guardia.X.production.o
-__ptext23 10AC 0 CODE 0 text23 dist/default/production\Guardia.X.production.o
-__ptext24 1098 0 CODE 0 text24 dist/default/production\Guardia.X.production.o
-__ptext25 2FEE 0 CODE 0 text25 dist/default/production\Guardia.X.production.o
-__ptext26 2FDC 0 CODE 0 text26 dist/default/production\Guardia.X.production.o
-__ptext27 1262 0 CODE 0 text27 dist/default/production\Guardia.X.production.o
-__ptext28 10C2 0 CODE 0 text28 dist/default/production\Guardia.X.production.o
-__ptext29 1320 0 CODE 0 text29 dist/default/production\Guardia.X.production.o
-__ptext30 166C 0 CODE 0 text30 dist/default/production\Guardia.X.production.o
-__end_of_mostrar 119A 0 CODE 0 text15 dist/default/production\Guardia.X.production.o
-___awdiv 1738 0 CODE 0 text17 dist/default/production\Guardia.X.production.o
-___awmod 1438 0 CODE 0 text16 dist/default/production\Guardia.X.production.o
-___fldiv 142 0 CODE 0 text7 dist/default/production\Guardia.X.production.o
-___flmul 914 0 CODE 0 text5 dist/default/production\Guardia.X.production.o
-___fltol 1806 0 CODE 0 text4 dist/default/production\Guardia.X.production.o
-___lldiv 166C 0 CODE 0 text30 dist/default/production\Guardia.X.production.o
-__pmaintext 4FC 0 CODE 0 maintext dist/default/production\Guardia.X.production.o
-__Umul8_16@multiplier 78 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+_minute B2 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
+__end_of_colocar 2E0C 0 CODE 0 text29 dist/default/production\Guardia.X.production.o
+__end_of_comando 2D18 0 CODE 0 text31 dist/default/production\Guardia.X.production.o
+__ptext10 2CA4 0 CODE 0 text10 dist/default/production\Guardia.X.production.o
+__ptext11 1004 0 CODE 0 text11 dist/default/production\Guardia.X.production.o
+__ptext12 2C00 0 CODE 0 text12 dist/default/production\Guardia.X.production.o
+__ptext13 2BEE 0 CODE 0 text13 dist/default/production\Guardia.X.production.o
+__ptext14 2BDC 0 CODE 0 text14 dist/default/production\Guardia.X.production.o
+__ptext15 2BCA 0 CODE 0 text15 dist/default/production\Guardia.X.production.o
+__ptext16 2E5E 0 CODE 0 text16 dist/default/production\Guardia.X.production.o
+__ptext17 2C42 0 CODE 0 text17 dist/default/production\Guardia.X.production.o
+__ptext18 D2A 0 CODE 0 text18 dist/default/production\Guardia.X.production.o
+__ptext19 2D68 0 CODE 0 text19 dist/default/production\Guardia.X.production.o
+__ptext20 2D92 0 CODE 0 text20 dist/default/production\Guardia.X.production.o
+__ptext21 1298 0 CODE 0 text21 dist/default/production\Guardia.X.production.o
+__ptext22 1088 0 CODE 0 text22 dist/default/production\Guardia.X.production.o
+__ptext23 189C 0 CODE 0 text23 dist/default/production\Guardia.X.production.o
+__ptext24 2D18 0 CODE 0 text24 dist/default/production\Guardia.X.production.o
+__ptext25 1130 0 CODE 0 text25 dist/default/production\Guardia.X.production.o
+__ptext26 F2E 0 CODE 0 text26 dist/default/production\Guardia.X.production.o
+__ptext27 135A 0 CODE 0 text27 dist/default/production\Guardia.X.production.o
+__ptext28 2EBA 0 CODE 0 text28 dist/default/production\Guardia.X.production.o
+__ptext29 2DC4 0 CODE 0 text29 dist/default/production\Guardia.X.production.o
+__ptext30 2C7E 0 CODE 0 text30 dist/default/production\Guardia.X.production.o
+__ptext31 2CF0 0 CODE 0 text31 dist/default/production\Guardia.X.production.o
+__ptext32 2C14 0 CODE 0 text32 dist/default/production\Guardia.X.production.o
+__ptext33 2C2A 0 CODE 0 text33 dist/default/production\Guardia.X.production.o
+__ptext34 2BB0 0 CODE 0 text34 dist/default/production\Guardia.X.production.o
+__ptext35 2F8C 0 CODE 0 text35 dist/default/production\Guardia.X.production.o
+__ptext36 1422 0 CODE 0 text36 dist/default/production\Guardia.X.production.o
+__ptext37 2F1C 0 CODE 0 text37 dist/default/production\Guardia.X.production.o
+__end_of_mostrar 2D40 0 CODE 0 text24 dist/default/production\Guardia.X.production.o
+___awdiv F2E 0 CODE 0 text26 dist/default/production\Guardia.X.production.o
+___awmod 1130 0 CODE 0 text25 dist/default/production\Guardia.X.production.o
+___fldiv 1C46 0 CODE 0 text8 dist/default/production\Guardia.X.production.o
+___flmul 5E 0 CODE 0 text6 dist/default/production\Guardia.X.production.o
+___fltol 14F2 0 CODE 0 text5 dist/default/production\Guardia.X.production.o
+___lldiv 1422 0 CODE 0 text36 dist/default/production\Guardia.X.production.o
+__pmaintext 720 0 CODE 0 maintext dist/default/production\Guardia.X.production.o
+__Umul8_16@multiplier 24 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-___fldiv@grs 4E 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-___fldiv@rem 47 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-mostrar@t 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-___fldiv@new_exp 4C 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-?_I2C_Master_Read 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-_borrarv 10FE 0 CODE 0 text21 dist/default/production\Guardia.X.production.o
-__end_of_I2C_Master_Init 1390 0 CODE 0 text29 dist/default/production\Guardia.X.production.o
-__end_of_I2C_Master_Read 12BE 0 CODE 0 text27 dist/default/production\Guardia.X.production.o
-__end_of_I2C_Master_Stop 3000 0 CODE 0 text25 dist/default/production\Guardia.X.production.o
-__end_of_I2C_Master_Wait 10DC 0 CODE 0 text28 dist/default/production\Guardia.X.production.o
-__end_of__stringtab 100C 0 STRING 0 strings dist/default/production\Guardia.X.production.o
+__Hinittext 0 0 ABS 0 inittext -
+___fldiv@grs 58 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___fldiv@rem 51 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+mostrar@t 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+__size_of_UARTenvINT 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+__size_of_I2C_Master_RepeatedStart 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+_read_RTC 1004 0 CODE 0 text11 dist/default/production\Guardia.X.production.o
+___fldiv@new_exp 56 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+?_I2C_Master_Read 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+__end_of_write_RTC 1298 0 CODE 0 text1 dist/default/production\Guardia.X.production.o
+_borrarv 2C7E 0 CODE 0 text30 dist/default/production\Guardia.X.production.o
+__size_of_write_RTC 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+__end_of_I2C_Master_Init 3000 0 CODE 0 text35 dist/default/production\Guardia.X.production.o
+__end_of_I2C_Master_Read 2EBA 0 CODE 0 text16 dist/default/production\Guardia.X.production.o
+__end_of_I2C_Master_Stop 2C00 0 CODE 0 text13 dist/default/production\Guardia.X.production.o
+__end_of_I2C_Master_Wait 2C5C 0 CODE 0 text17 dist/default/production\Guardia.X.production.o
+__end_of__stringtab 200C 0 STRING 0 strings dist/default/production\Guardia.X.production.o
+__end_of_read_RTC 1088 0 CODE 0 text11 dist/default/production\Guardia.X.production.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-__end_of_I2C_Master_Start 2FEE 0 CODE 0 text26 dist/default/production\Guardia.X.production.o
+_initTimer1 2D68 0 CODE 0 text19 dist/default/production\Guardia.X.production.o
+__end_of_I2C_Master_Start 2BEE 0 CODE 0 text14 dist/default/production\Guardia.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__end_of_I2C_Master_Write 10AC 0 CODE 0 text24 dist/default/production\Guardia.X.production.o
+__end_of_I2C_Master_Write 2C14 0 CODE 0 text12 dist/default/production\Guardia.X.production.o
+__pbssCOMMON 79 0 COMMON 1 bssCOMMON dist/default/production\Guardia.X.production.o
+init_fetch0 2CCA 0 CODE 0 inittext dist/default/production\Guardia.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__Umul8_16@product 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-__Lend_init 0 0 CODE 0 end_init -
+__HcstackBANK3 0 0 ABS 0 cstackBANK3 -
+__Umul8_16@product 20 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+_PIR1bits C 0 ABS 0 - dist/default/production\Guardia.X.production.o
+__Lend_init 18 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-___fltol@exp1 5E 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___fltol@exp1 77 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+_write_RTC 11E2 0 CODE 0 text1 dist/default/production\Guardia.X.production.o
 __size_of_I2C_Master_Start 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_I2C_Master_Write 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Guardia.X.production.o
-__Hintentry 0 0 CODE 0 intentry -
+end_of_initialization 56 0 CODE 0 cinit dist/default/production\Guardia.X.production.o
+__Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
-___awdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-?___awdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-?___awmod 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-?___fldiv 3A 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-?___flmul 20 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-?___fltol 54 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-?___lldiv 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-__Hreset_vec 0 0 CODE 0 reset_vec -
+___awdiv@quotient 22 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+?___awdiv 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+?___awmod 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+?___fldiv 44 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+?___flmul 2A 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+?___fltol 5E 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+?___lldiv 20 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
-___awmod@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-_iniciarLCD 1390 0 CODE 0 text13 dist/default/production\Guardia.X.production.o
-_iniciarOSC 15AA 0 CODE 0 text12 dist/default/production\Guardia.X.production.o
+___awmod@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+_iniciarLCD 1088 0 CODE 0 text22 dist/default/production\Guardia.X.production.o
+_iniciarOSC 1298 0 CODE 0 text21 dist/default/production\Guardia.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\Guardia.X.production.o
-__ptext1 14 0 CODE 0 text1 dist/default/production\Guardia.X.production.o
-__ptext2 1E0A 0 CODE 0 text2 dist/default/production\Guardia.X.production.o
-__ptext3 18FE 0 CODE 0 text3 dist/default/production\Guardia.X.production.o
-__ptext4 1806 0 CODE 0 text4 dist/default/production\Guardia.X.production.o
-__ptext5 914 0 CODE 0 text5 dist/default/production\Guardia.X.production.o
-__ptext6 1214 0 CODE 0 text6 dist/default/production\Guardia.X.production.o
-__ptext7 142 0 CODE 0 text7 dist/default/production\Guardia.X.production.o
-__ptext8 10DC 0 CODE 0 text8 dist/default/production\Guardia.X.production.o
-__ptext9 1124 0 CODE 0 text9 dist/default/production\Guardia.X.production.o
+__ptext1 11E2 0 CODE 0 text1 dist/default/production\Guardia.X.production.o
+__ptext2 15EA 0 CODE 0 text2 dist/default/production\Guardia.X.production.o
+__ptext3 1A50 0 CODE 0 text3 dist/default/production\Guardia.X.production.o
+__ptext4 1724 0 CODE 0 text4 dist/default/production\Guardia.X.production.o
+__ptext5 14F2 0 CODE 0 text5 dist/default/production\Guardia.X.production.o
+__ptext6 5E 0 CODE 0 text6 dist/default/production\Guardia.X.production.o
+__ptext7 2E0C 0 CODE 0 text7 dist/default/production\Guardia.X.production.o
+__ptext8 1C46 0 CODE 0 text8 dist/default/production\Guardia.X.production.o
+__ptext9 2C5C 0 CODE 0 text9 dist/default/production\Guardia.X.production.o
 __size_of_imprimir 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-?__Umul8_16 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+?__Umul8_16 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
-?___xxtofl 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+?___xxtofl 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_ultrasonico 142 0 CODE 0 text1 dist/default/production\Guardia.X.production.o
-_I2C_Master_Init 1320 0 CODE 0 text29 dist/default/production\Guardia.X.production.o
-_I2C_Master_Read 1262 0 CODE 0 text27 dist/default/production\Guardia.X.production.o
-_I2C_Master_Stop 2FEE 0 CODE 0 text25 dist/default/production\Guardia.X.production.o
-_I2C_Master_Wait 10C2 0 CODE 0 text28 dist/default/production\Guardia.X.production.o
-__Umul8_16@word_mpld 76 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-___fltol@sign1 5D 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__end_of_ultrasonico 1724 0 CODE 0 text2 dist/default/production\Guardia.X.production.o
+_I2C_Master_Init 2F8C 0 CODE 0 text35 dist/default/production\Guardia.X.production.o
+_I2C_Master_Read 2E5E 0 CODE 0 text16 dist/default/production\Guardia.X.production.o
+_I2C_Master_Stop 2BEE 0 CODE 0 text13 dist/default/production\Guardia.X.production.o
+_I2C_Master_Wait 2C42 0 CODE 0 text17 dist/default/production\Guardia.X.production.o
+__Umul8_16@word_mpld 22 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+___fltol@sign1 76 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-___fltol@f1 54 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
-__end_of__initialization FF8 0 CODE 0 cinit dist/default/production\Guardia.X.production.o
-___awmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+__end_of_initTimer1 2D92 0 CODE 0 text19 dist/default/production\Guardia.X.production.o
+___fltol@f1 5E 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__end_of_I2C_Master_RepeatedStart 2BDC 0 CODE 0 text15 dist/default/production\Guardia.X.production.o
+__end_of__initialization 56 0 CODE 0 cinit dist/default/production\Guardia.X.production.o
+___awmod@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
+__pidataBANK1 2D40 0 CODE 0 idataBANK1 dist/default/production\Guardia.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
-__end_of_UARTmostrar 10C2 0 CODE 0 text23 dist/default/production\Guardia.X.production.o
-___lldiv@quotient 79 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+___lldiv@quotient 73 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 _TXSTAbits 98 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _SSPCON2 91 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\Guardia.X.production.o
-__Hend_init 6 0 CODE 0 end_init -
-colocar@temp 76 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-_imprimir 12BE 0 CODE 0 text19 dist/default/production\Guardia.X.production.o
-__end_of_humo 1C1A 0 CODE 0 text14 dist/default/production\Guardia.X.production.o
-__end_of_main 914 0 CODE 0 maintext dist/default/production\Guardia.X.production.o
-__end_of_iniciarLCD 1438 0 CODE 0 text13 dist/default/production\Guardia.X.production.o
-__end_of_iniciarOSC 166C 0 CODE 0 text12 dist/default/production\Guardia.X.production.o
+__Hend_init 1E 0 CODE 0 end_init -
+init_ram0 2CD2 0 CODE 0 inittext dist/default/production\Guardia.X.production.o
+colocar@temp 78 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+_imprimir 2EBA 0 CODE 0 text28 dist/default/production\Guardia.X.production.o
+__end_of_humo 1A50 0 CODE 0 text23 dist/default/production\Guardia.X.production.o
+__end_of_main D2A 0 CODE 0 maintext dist/default/production\Guardia.X.production.o
+__end_of_iniciarLCD 1130 0 CODE 0 text22 dist/default/production\Guardia.X.production.o
+__end_of_iniciarOSC 135A 0 CODE 0 text21 dist/default/production\Guardia.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Guardia.X.production.o
-__end_of_celda 15AA 0 CODE 0 text18 dist/default/production\Guardia.X.production.o
+__end_of_celda 1422 0 CODE 0 text27 dist/default/production\Guardia.X.production.o
+read_RTC@address 78 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\Guardia.X.production.o
-__end_of_luces 1E0A 0 CODE 0 text10 dist/default/production\Guardia.X.production.o
+__end_of_luces F2E 0 CODE 0 text18 dist/default/production\Guardia.X.production.o
 _SPBRG 99 0 ABS 0 - dist/default/production\Guardia.X.production.o
+_TMR1H F 0 ABS 0 - dist/default/production\Guardia.X.production.o
+_TMR1L E 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _TXREG 19 0 ABS 0 - dist/default/production\Guardia.X.production.o
-__end_of_setup 114A 0 CODE 0 text9 dist/default/production\Guardia.X.production.o
-__end_of_shift 10FE 0 CODE 0 text8 dist/default/production\Guardia.X.production.o
+__end_of_setup 2CCA 0 CODE 0 text10 dist/default/production\Guardia.X.production.o
+__end_of_shift 2C7E 0 CODE 0 text9 dist/default/production\Guardia.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_calor 6A 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
-_celda 14EA 0 CODE 0 text18 dist/default/production\Guardia.X.production.o
-_luces 1C1A 0 CODE 0 text10 dist/default/production\Guardia.X.production.o
+_calor 6C 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
+_celda 135A 0 CODE 0 text27 dist/default/production\Guardia.X.production.o
+interrupt_function 8 0 CODE 0 intentry dist/default/production\Guardia.X.production.o
+_luces D2A 0 CODE 0 text18 dist/default/production\Guardia.X.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-_setup 1124 0 CODE 0 text9 dist/default/production\Guardia.X.production.o
-_shift 10DC 0 CODE 0 text8 dist/default/production\Guardia.X.production.o
-_temperatura 1E0A 0 CODE 0 text2 dist/default/production\Guardia.X.production.o
-__end_of_imprimir 1320 0 CODE 0 text19 dist/default/production\Guardia.X.production.o
-colocar@x 75 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-colocar@y 73 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-__initialization FD6 0 CODE 0 cinit dist/default/production\Guardia.X.production.o
+_setup 2CA4 0 CODE 0 text10 dist/default/production\Guardia.X.production.o
+_shift 2C5C 0 CODE 0 text9 dist/default/production\Guardia.X.production.o
+_temperatura 1A50 0 CODE 0 text3 dist/default/production\Guardia.X.production.o
+__end_of_imprimir 2F1C 0 CODE 0 text28 dist/default/production\Guardia.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production\Guardia.X.production.o
+__size_of_LSB 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+__size_of_MSB 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+__size_of_isr 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+colocar@x 77 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+colocar@y 75 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
+__initialization 1E 0 CODE 0 cinit dist/default/production\Guardia.X.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-UARTmostrar@x 70 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-___xxtofl@sign 78 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-__pbssBANK0 66 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
+___xxtofl@sign 24 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
+__pbssBANK0 6C 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
-_colocar 11CC 0 CODE 0 text20 dist/default/production\Guardia.X.production.o
-_comando 114A 0 CODE 0 text22 dist/default/production\Guardia.X.production.o
-__pstrings 1000 0 STRING 0 strings dist/default/production\Guardia.X.production.o
-_mostrar 1172 0 CODE 0 text15 dist/default/production\Guardia.X.production.o
-__end_of_iniciarUART 11CC 0 CODE 0 text11 dist/default/production\Guardia.X.production.o
+_colocar 2DC4 0 CODE 0 text29 dist/default/production\Guardia.X.production.o
+_comando 2CF0 0 CODE 0 text31 dist/default/production\Guardia.X.production.o
+__pstrings 2000 0 STRING 0 strings dist/default/production\Guardia.X.production.o
+_mostrar 2D18 0 CODE 0 text24 dist/default/production\Guardia.X.production.o
+__end_of_iniciarUART 2DC4 0 CODE 0 text20 dist/default/production\Guardia.X.production.o
 __size_of_I2C_Master_Init 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_I2C_Master_Read 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_I2C_Master_Stop 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
@@ -1121,44 +1317,50 @@ __size_of_I2C_Master_Wait 0 0 ABS 0 - dist/default/production\Guardia.X.producti
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7EB FD6 15 2
-text1 0 A 14 97 2
-text2 0 F05 1E0A FB 2
-text3 0 C7F 18FE BA 2
-text4 0 C03 1806 7C 2
-text5 0 48A 914 361 2
-text6 0 90A 1214 27 2
-text7 0 A1 142 1DD 2
-text8 0 86E 10DC 11 2
-text9 0 892 1124 13 2
-text10 0 E0D 1C1A F8 2
-text11 0 8CD 119A 19 2
-text12 0 AD5 15AA 61 2
-text13 0 9C8 1390 54 2
-text14 0 D39 1A72 D4 2
-text15 0 8B9 1172 14 2
-text16 0 A1C 1438 59 2
-text17 0 B9C 1738 67 2
-text18 0 A75 14EA 60 2
-text19 0 95F 12BE 31 2
-text20 0 8E6 11CC 24 2
-text21 0 87F 10FE 13 2
-text22 0 8A5 114A 14 2
-text23 0 856 10AC B 2
-text24 0 84C 1098 A 2
-text25 0 17F7 2FEE 9 2
-text26 0 17EE 2FDC 9 2
-text27 0 931 1262 2E 2
-text28 0 861 10C2 D 2
-text29 0 990 1320 38 2
-text30 0 B36 166C 66 2
-maintext 0 27E 4FC 20C 2
-cstackCOMMON 1 70 70 E 1
-cstackBANK0 1 20 20 50 1
+text1 0 8F1 11E2 5B 2
+text2 0 AF5 15EA 9D 2
+text3 0 D28 1A50 FB 2
+text4 0 B92 1724 BC 2
+text5 0 A79 14F2 7C 2
+text7 0 1706 2E0C 29 2
+text8 0 E23 1C46 1DD 2
+text9 0 162E 2C5C 11 2
+text10 0 1652 2CA4 13 2
+text11 0 802 1004 42 2
+text12 0 1600 2C00 A 2
+text13 0 15F7 2BEE 9 2
+text14 0 15EE 2BDC 9 2
+text15 0 15E5 2BCA 9 2
+text16 0 172F 2E5E 2E 2
+text17 0 1621 2C42 D 2
+text19 0 16B4 2D68 15 2
+text20 0 16C9 2D92 19 2
+text21 0 94C 1298 61 2
+text22 0 844 1088 54 2
+text23 0 C4E 189C DA 2
+text24 0 168C 2D18 14 2
+text25 0 898 1130 59 2
+text27 0 9AD 135A 64 2
+text28 0 175D 2EBA 31 2
+text29 0 16E2 2DC4 24 2
+text30 0 163F 2C7E 13 2
+text31 0 1678 2CF0 14 2
+text32 0 160A 2C14 B 2
+text33 0 1615 2C2A C 2
+text34 0 15D8 2BB0 5 2
+text35 0 17C6 2F8C 3A 2
+text36 0 A11 1422 68 2
+text37 0 178E 2F1C 38 2
+cstackCOMMON 1 70 70 C 1
+cstackBANK0 1 20 20 4F 1
+cstackBANK3 1 190 190 3 1
+inittext 0 1665 2CCA 13 2
+intentry 0 4 8 7FC 2
 reset_vec 0 0 0 3 2
-bssBANK1 1 A0 A0 24 1
-strings 0 800 1000 4B 2
-clrtext 0 17E6 2FCC 8 2
+bssBANK1 1 A0 A0 4E 1
+idataBANK1 0 16A0 2D40 14 2
+strings 0 1000 2000 4B 2
+clrtext 0 15DD 2BBA 8 2
 config 0 2007 400E 2 2
 # OTES Section
 # This section contains data of all the note-psects.  The beginning of the section

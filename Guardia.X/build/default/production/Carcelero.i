@@ -2786,7 +2786,17 @@ void I2C_Master_Start()
     I2C_Master_Wait();
     SSPCON2bits.SEN = 1;
 }
-# 55 "./I2Cmaestro.h"
+
+
+
+void I2C_Master_RepeatedStart()
+{
+    I2C_Master_Wait();
+    SSPCON2bits.RSEN = 1;
+}
+
+
+
 void I2C_Master_Stop()
 {
     I2C_Master_Wait();
@@ -2991,7 +3001,7 @@ void iniciarUART(void)
     TXSTAbits.BRGH = 1;
 }
 # 63 "./UART.h"
-void UARTmostrar(int x)
+void UARTenvINT(int x)
 {
     while (TXSTAbits.TRMT == 0)
     {
@@ -3001,20 +3011,19 @@ void UARTmostrar(int x)
     TXREG = x;
 }
 # 39 "Carcelero.c" 2
-
-
-
-
-
-
-
-
+# 50 "Carcelero.c"
 void setup();
 void luces();
 void celda();
 void ultrasonico();
 void humo();
 void temperatura();
+
+char read_RTC(char address);
+void write_RTC(void);
+unsigned char MSB(unsigned char x);
+unsigned char LSB(unsigned char x);
+void initTimer1(void);
 
 uint8_t Luz;
 int y,y1,y2,y3;
@@ -3027,9 +3036,46 @@ uint8_t Temp, calor;
 int t,t1,t2,t3;
 int i;
 
+int data, dat, sensor;
+char v1[];
+char i_stepper;
+int minute, hour, hr, ap, flanco;
+char time[]="00:00:00";
+char date[]="00-00-00";
+char enter[]="\n";
+
 
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+
 int b[5] = {0,0,0,0,0};
+
+
+
+
+void __attribute__((picinterrupt(("")))) isr(void)
+{
+     if(PIR1bits.TMR1IF == 1)
+     {
+        flanco ++;
+        if (flanco == 2)
+        {
+            flanco = 0;
+        }
+        if (flanco == 1)
+        {
+            PORTDbits.RD1 = 1;
+        }
+        if (flanco == 0)
+        {
+            PORTDbits.RD1 = 0;
+        }
+
+
+        TMR1H = 0xE9;
+        TMR1L = 0x28;
+        PIR1bits.TMR1IF = 0;
+    }
+}
 
 void temperatura()
 {
@@ -3202,14 +3248,12 @@ void setup()
 void main(void)
 {
     iniciarOSC(6);
-
     setup();
-
     iniciarLCD();
-
     borrarv();
-
     I2C_Master_Init(100000);
+    write_RTC();
+    initTimer1();
 
     colocar(1,1);
     imprimir("Luz:");
@@ -3281,22 +3325,132 @@ void main(void)
         I2C_Master_Stop();
         _delay((unsigned long)((100)*(4000000/4000.0)));
 
+
         luces();
         celda();
         ultrasonico();
         humo();
         temperatura();
+
+
+        if (minute == 8)
+        {
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD2 = 0;
+            _delay((unsigned long)((200)*(4000000/4000.0)));
+
+        }
+        else if (minute == 10)
+        {
+            PORTDbits.RD0 = 1;
+            PORTDbits.RD2 = 0;
+            _delay((unsigned long)((200)*(4000000/4000.0)));
+        }
+        else
+        {
+          PORTDbits.RD2 = 1;
+        }
+
+        minute = read_RTC(1);
+        hour = read_RTC(2);
+        hr = hour & 0b00111111;
+
+        time[0] = MSB(hr);
+        time[1] = LSB(hr);
+        time[3] = MSB(minute);
+        time[4] = LSB(minute);
+
+        colocar(29,2);
+        mostrar(time[0]);
+        colocar(30,2);
+        mostrar(time[1]);
+        colocar(32,2);
+        mostrar(time[3]);
+        colocar(33,2);
+        mostrar(time[4]);
+
+        _delay((unsigned long)((50)*(4000000/4000.0)));
+
+
         shift();
 
-        UARTmostrar(i);
+
+        UARTenvINT(i);
         _delay((unsigned long)((10)*(4000000/4000.0)));
-        UARTmostrar(b[i]);
+
+
+        UARTenvINT(b[i]);
         _delay((unsigned long)((10)*(4000000/4000.0)));
+
+
         i++;
+
+
 
         if (i == 5)
         {
             i = 0;
         }
     }
+}
+
+char read_RTC(char address)
+{
+        I2C_Master_Start();
+        I2C_Master_Write(0xD0);
+        I2C_Master_Write(address);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        dat = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        return dat;
+}
+
+void write_RTC(void)
+{
+        I2C_Master_Start();
+        I2C_Master_Write(0xD0);
+        I2C_Master_Write(0x00);
+
+        I2C_Master_Write(0b00010001);
+        I2C_Master_Write(0b00010001);
+        I2C_Master_Write(0b00000001);
+
+        I2C_Master_Write(0b00000001);
+        I2C_Master_Write(0b00000001);
+        I2C_Master_Write(0b00000011);
+        I2C_Master_Write(0b00100000);
+        I2C_Master_Stop();
+}
+
+unsigned char MSB(unsigned char x)
+{
+  return ((x >> 4) + '0');
+}
+
+unsigned char LSB(unsigned char x)
+{
+  return ((x & 0x0F) + '0');
+}
+void initTimer1(void)
+{
+    T1CONbits.T1GINV = 0;
+    T1CONbits.TMR1GE = 0;
+    T1CONbits.T1CKPS0 = 1;
+    T1CONbits.T1CKPS1 = 0;
+    T1CONbits.T1OSCEN = 0;
+    T1CONbits.TMR1CS = 0;
+    T1CONbits.TMR1ON = 1;
+
+
+
+
+
+    INTCONbits.PEIE = 1;
+    PIR1bits.TMR1IF = 0;
+    PIE1bits.TMR1IE = 1;
+
+
+    TMR1H = 0xF4;
+    TMR1L = 0x02;
 }

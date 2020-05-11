@@ -9,6 +9,8 @@
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 "39
 [v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"47
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
 "55
 [v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
 "65
@@ -34,7 +36,7 @@
 "13 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
 [v _iniciarUART iniciarUART `(v  1 e 1 0 ]
 "63
-[v _UARTmostrar UARTmostrar `(v  1 e 1 0 ]
+[v _UARTenvINT UARTenvINT `(v  1 e 1 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
@@ -57,23 +59,35 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"69 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+"90 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+[v _isr isr `II(v  1 e 1 0 ]
+"115
 [v _temperatura temperatura `(v  1 e 1 0 ]
-"96
+"142
 [v _humo humo `(v  1 e 1 0 ]
-"127
+"173
 [v _ultrasonico ultrasonico `(v  1 e 1 0 ]
-"154
+"200
 [v _luces luces `(v  1 e 1 0 ]
-"190
+"236
 [v _celda celda `(v  1 e 1 0 ]
-"217
+"263
 [v _setup setup `(v  1 e 1 0 ]
-"237
+"283
 [v _main main `(v  1 e 1 0 ]
+"432
+[v _read_RTC read_RTC `(uc  1 e 1 0 ]
+"444
+[v _write_RTC write_RTC `(v  1 e 1 0 ]
+"461
+[v _MSB MSB `(uc  1 e 1 0 ]
+"466
+[v _LSB LSB `(uc  1 e 1 0 ]
+"470
+[v _initTimer1 initTimer1 `(v  1 e 1 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S228 . 1 `uc 1 RA0 1 0 :1:0 
+[s S249 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -83,8 +97,8 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "183
-[u S237 . 1 `S228 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES237  1 e 1 @5 ]
+[u S258 . 1 `S249 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES258  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "290
@@ -103,6 +117,60 @@
 "369
 [u S78 . 1 `S69 1 . 1 0 ]
 [v _PORTDbits PORTDbits `VES78  1 e 1 @8 ]
+[s S365 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S374 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S379 . 1 `S365 1 . 1 0 `S374 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES379  1 e 1 @11 ]
+[s S228 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+]
+"553
+[u S236 . 1 `S228 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES236  1 e 1 @12 ]
+"657
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"664
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+[s S322 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1GE 1 0 :1:6 
+`uc 1 T1GINV 1 0 :1:7 
+]
+"700
+[s S330 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1INSYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 T1GIV 1 0 :1:7 
+]
+[s S338 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+]
+[u S341 . 1 `S322 1 . 1 0 `S330 1 . 1 0 `S338 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES341  1 e 1 @16 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
@@ -149,7 +217,7 @@
 "1557
 [u S35 . 1 `S26 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES35  1 e 1 @135 ]
-[s S254 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S275 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -159,8 +227,19 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "1619
-[u S263 . 1 `S254 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES263  1 e 1 @136 ]
+[u S284 . 1 `S275 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES284  1 e 1 @136 ]
+[s S397 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S405 . 1 `S397 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES405  1 e 1 @140 ]
 [s S97 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
@@ -232,104 +311,118 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"54 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+"63 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 [v _Luz Luz `uc  1 e 1 0 ]
-"55
+"64
 [v _y y `i  1 e 2 0 ]
 [v _y1 y1 `i  1 e 2 0 ]
 [v _y2 y2 `i  1 e 2 0 ]
 [v _y3 y3 `i  1 e 2 0 ]
-"56
+"65
 [v _grados grados `uc  1 e 1 0 ]
-"57
+"66
 [v _Distancia Distancia `uc  1 e 1 0 ]
-"58
+"67
 [v _z z `i  1 e 2 0 ]
 [v _z1 z1 `i  1 e 2 0 ]
-"59
+"68
 [v _Humo Humo `uc  1 e 1 0 ]
-"60
+"69
 [v _w w `i  1 e 2 0 ]
 [v _w1 w1 `i  1 e 2 0 ]
 [v _w2 w2 `i  1 e 2 0 ]
 [v _w3 w3 `i  1 e 2 0 ]
-"61
+"70
 [v _Temp Temp `uc  1 e 1 0 ]
 [v _calor calor `uc  1 e 1 0 ]
-"62
+"71
 [v _t t `i  1 e 2 0 ]
 [v _t1 t1 `i  1 e 2 0 ]
 [v _t2 t2 `i  1 e 2 0 ]
 [v _t3 t3 `i  1 e 2 0 ]
-"63
+"72
 [v _i i `i  1 e 2 0 ]
-"66
+"74
+[v _dat dat `i  1 e 2 0 ]
+"77
+[v _minute minute `i  1 e 2 0 ]
+[v _hour hour `i  1 e 2 0 ]
+[v _hr hr `i  1 e 2 0 ]
+[v _flanco flanco `i  1 e 2 0 ]
+"78
+[v _time time `[9]uc  1 e 9 0 ]
+"83
 [v _a a `DC[10]uc  1 e 10 0 ]
-"67
+"85
 [v _b b `[5]i  1 e 10 0 ]
-"237
+"283
 [v _main main `(v  1 e 1 0 ]
 {
-"337
+"430
 } 0
-"127
+"444
+[v _write_RTC write_RTC `(v  1 e 1 0 ]
+{
+"459
+} 0
+"173
 [v _ultrasonico ultrasonico `(v  1 e 1 0 ]
 {
-"152
+"198
 } 0
-"69
+"115
 [v _temperatura temperatura `(v  1 e 1 0 ]
 {
-"94
+"140
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+[v ___xxtofl@arg arg `ul  1 a 4 6 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+[v ___xxtofl@exp exp `uc  1 a 1 5 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
+[v ___xxtofl@val val `l  1 p 4 2 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+[v ___xxtofl@sign sign `uc  1 a 1 4 ]
 "44
 } 0
 "43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 62 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 61 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 7 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 6 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 52 ]
+[v ___fltol@f1 f1 `d  1 p 4 62 ]
 "70
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S748 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S928 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S753 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S756 . 4 `l 1 i 4 0 `d 1 f 4 0 `S748 1 fAsBytes 4 0 `S753 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S756  1 a 4 20 ]
+[s S933 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S936 . 4 `l 1 i 4 0 `d 1 f 4 0 `S928 1 fAsBytes 4 0 `S933 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S936  1 a 4 30 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S825 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 25 ]
+[s S1005 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S828 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S825 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S828  1 a 2 24 ]
+[u S1008 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1005 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1008  1 a 2 34 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 19 ]
+[v ___flmul@bexp bexp `uc  1 a 1 29 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 18 ]
+[v ___flmul@aexp aexp `uc  1 a 1 24 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 13 ]
+[v ___flmul@sign sign `uc  1 a 1 23 ]
 "8
-[v ___flmul@b b `d  1 p 4 0 ]
-[v ___flmul@a a `d  1 p 4 4 ]
+[v ___flmul@b b `d  1 p 4 10 ]
+[v ___flmul@a a `d  1 p 4 14 ]
 "205
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
@@ -337,33 +430,33 @@
 {
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
 "6
-[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 2 ]
 "5
-[v __Umul8_16@product product `ui  1 a 2 4 ]
+[v __Umul8_16@product product `ui  1 a 2 0 ]
 "4
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
-[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
-[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 2 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 4 ]
 "60
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
-[v ___fldiv@grs grs `ul  1 a 4 46 ]
+[v ___fldiv@grs grs `ul  1 a 4 56 ]
 "22
-[v ___fldiv@rem rem `ul  1 a 4 39 ]
+[v ___fldiv@rem rem `ul  1 a 4 49 ]
 "20
-[v ___fldiv@new_exp new_exp `i  1 a 2 44 ]
+[v ___fldiv@new_exp new_exp `i  1 a 2 54 ]
 "19
-[v ___fldiv@aexp aexp `uc  1 a 1 51 ]
+[v ___fldiv@aexp aexp `uc  1 a 1 61 ]
 "18
-[v ___fldiv@bexp bexp `uc  1 a 1 50 ]
+[v ___fldiv@bexp bexp `uc  1 a 1 60 ]
 "16
-[v ___fldiv@sign sign `uc  1 a 1 43 ]
+[v ___fldiv@sign sign `uc  1 a 1 53 ]
 "8
-[v ___fldiv@a a `d  1 p 4 26 ]
-[v ___fldiv@b b `d  1 p 4 30 ]
+[v ___fldiv@a a `d  1 p 4 36 ]
+[v ___fldiv@b b `d  1 p 4 40 ]
 "185
 } 0
 "99 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
@@ -371,15 +464,64 @@
 {
 "109
 } 0
-"217 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+"263 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"235
+"281
 } 0
-"154
+"432
+[v _read_RTC read_RTC `(uc  1 e 1 0 ]
+{
+[v read_RTC@address address `uc  1 a 1 wreg ]
+[v read_RTC@address address `uc  1 a 1 wreg ]
+"434
+[v read_RTC@address address `uc  1 a 1 8 ]
+"442
+} 0
+"65 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
+[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
+{
+[v I2C_Master_Write@d d `ui  1 p 2 2 ]
+"69
+} 0
+"55
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+{
+"59
+} 0
+"39
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+{
+"43
+} 0
+"47
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
+{
+"51
+} 0
+"74
+[v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
+{
+"76
+[v I2C_Master_Read@temp temp `us  1 a 2 6 ]
+"74
+[v I2C_Master_Read@a a `us  1 p 2 2 ]
+"89
+} 0
+"32
+[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
+{
+"35
+} 0
+"200 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 [v _luces luces `(v  1 e 1 0 ]
 {
-"188
+"234
+} 0
+"470
+[v _initTimer1 initTimer1 `(v  1 e 1 0 ]
+{
+"491
 } 0
 "13 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
 [v _iniciarUART iniciarUART `(v  1 e 1 0 ]
@@ -391,7 +533,7 @@
 {
 [v iniciarOSC@frec frec `uc  1 a 1 wreg ]
 [v iniciarOSC@frec frec `uc  1 a 1 wreg ]
-[v iniciarOSC@frec frec `uc  1 a 1 2 ]
+[v iniciarOSC@frec frec `uc  1 a 1 4 ]
 "48
 } 0
 "25 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
@@ -399,10 +541,10 @@
 {
 "52
 } 0
-"96 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+"142 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 [v _humo humo `(v  1 e 1 0 ]
 {
-"125
+"171
 } 0
 "90 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
 [v _mostrar mostrar `(v  1 e 1 0 ]
@@ -410,48 +552,48 @@
 [v mostrar@t t `DCuc  1 a 1 wreg ]
 [v mostrar@t t `DCuc  1 a 1 wreg ]
 "92
-[v mostrar@t t `DCuc  1 a 1 2 ]
+[v mostrar@t t `DCuc  1 a 1 4 ]
 "97
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
-[v ___awmod@sign sign `uc  1 a 1 6 ]
-[v ___awmod@counter counter `uc  1 a 1 5 ]
+[v ___awmod@sign sign `uc  1 a 1 8 ]
+[v ___awmod@counter counter `uc  1 a 1 7 ]
 "5
-[v ___awmod@divisor divisor `i  1 p 2 0 ]
-[v ___awmod@dividend dividend `i  1 p 2 2 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+[v ___awmod@dividend dividend `i  1 p 2 4 ]
 "34
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 6 ]
-[v ___awdiv@counter counter `uc  1 a 1 5 ]
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
 "5
-[v ___awdiv@divisor divisor `i  1 p 2 0 ]
-[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+[v ___awdiv@dividend dividend `i  1 p 2 4 ]
 "41
 } 0
-"190 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+"236 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 [v _celda celda `(v  1 e 1 0 ]
 {
-"215
+"261
 } 0
 "78 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/LCD.h
 [v _imprimir imprimir `(v  1 e 1 0 ]
 {
 [v imprimir@texto texto `*.24DCuc  1 a 1 wreg ]
 "80
-[v imprimir@i i `i  1 a 2 2 ]
+[v imprimir@i i `i  1 a 2 4 ]
 "78
 [v imprimir@texto texto `*.24DCuc  1 a 1 wreg ]
 "80
-[v imprimir@texto texto `*.24DCuc  1 a 1 4 ]
+[v imprimir@texto texto `*.24DCuc  1 a 1 6 ]
 "88
 } 0
 "62
@@ -459,12 +601,12 @@
 {
 [v colocar@x x `DCuc  1 a 1 wreg ]
 "64
-[v colocar@temp temp `uc  1 a 1 6 ]
+[v colocar@temp temp `uc  1 a 1 8 ]
 "62
 [v colocar@x x `DCuc  1 a 1 wreg ]
-[v colocar@y y `DCuc  1 p 1 3 ]
+[v colocar@y y `DCuc  1 p 1 5 ]
 "66
-[v colocar@x x `DCuc  1 a 1 5 ]
+[v colocar@x x `DCuc  1 a 1 7 ]
 "76
 } 0
 "54
@@ -478,60 +620,53 @@
 [v comando@x x `DCuc  1 a 1 wreg ]
 [v comando@x x `DCuc  1 a 1 wreg ]
 "18
-[v comando@x x `DCuc  1 a 1 2 ]
+[v comando@x x `DCuc  1 a 1 4 ]
 "23
 } 0
 "63 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/UART.h
-[v _UARTmostrar UARTmostrar `(v  1 e 1 0 ]
+[v _UARTenvINT UARTenvINT `(v  1 e 1 0 ]
 {
-[v UARTmostrar@x x `i  1 p 2 0 ]
+[v UARTenvINT@x x `i  1 p 2 2 ]
 "71
 } 0
-"65 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
-[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
+"461 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+[v _MSB MSB `(uc  1 e 1 0 ]
 {
-[v I2C_Master_Write@d d `ui  1 p 2 0 ]
-"69
+[v MSB@x x `uc  1 a 1 wreg ]
+[v MSB@x x `uc  1 a 1 wreg ]
+"463
+[v MSB@x x `uc  1 a 1 3 ]
+"464
 } 0
-"55
-[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+"466
+[v _LSB LSB `(uc  1 e 1 0 ]
 {
-"59
+[v LSB@x x `uc  1 a 1 wreg ]
+[v LSB@x x `uc  1 a 1 wreg ]
+"468
+[v LSB@x x `uc  1 a 1 2 ]
+"469
 } 0
-"39
-[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
-{
-"43
-} 0
-"74
-[v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
-{
-"76
-[v I2C_Master_Read@temp temp `us  1 a 2 4 ]
-"74
-[v I2C_Master_Read@a a `us  1 p 2 0 ]
-"89
-} 0
-"32
-[v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
-{
-"35
-} 0
-"16
+"16 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X/I2Cmaestro.h
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
 {
-[v I2C_Master_Init@c c `DCul  1 p 4 0 ]
+[v I2C_Master_Init@c c `DCul  1 p 4 8 ]
 "24
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "10
-[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
+[v ___lldiv@quotient quotient `ul  1 a 4 3 ]
 "11
-[v ___lldiv@counter counter `uc  1 a 1 13 ]
+[v ___lldiv@counter counter `uc  1 a 1 7 ]
 "5
 [v ___lldiv@divisor divisor `ul  1 p 4 0 ]
 [v ___lldiv@dividend dividend `ul  1 p 4 4 ]
 "30
+} 0
+"90 C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"113
 } 0

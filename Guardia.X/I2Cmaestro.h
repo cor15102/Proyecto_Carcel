@@ -44,11 +44,11 @@ void I2C_Master_Start()
 //*****************************************************************************
 // Función de reinicio de la comunicación I2C PIC
 //*****************************************************************************
-/*void I2C_Master_RepeatedStart()
+void I2C_Master_RepeatedStart()
 {
     I2C_Master_Wait();      //espera que se cumplan las condiciones adecuadas
     SSPCON2bits.RSEN = 1;   //reinicia la comunicación i2c
-}*/
+}
 //*****************************************************************************
 // Función de parada de la comunicación I2C PIC
 //*****************************************************************************

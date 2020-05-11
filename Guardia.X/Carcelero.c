@@ -43,6 +43,9 @@
 #define RS PORTDbits.RD6
 #define LCDP PORTB
 #define EN PORTDbits.RD7
+#define dir PORTDbits.RD0
+#define step PORTDbits.RD1
+#define enable PORTDbits.RD2
 
 void setup();
 void luces();
@@ -50,6 +53,12 @@ void celda();
 void ultrasonico();
 void humo();
 void temperatura();
+
+char read_RTC(char address);
+void write_RTC(void);
+unsigned char MSB(unsigned char x);
+unsigned char  LSB(unsigned char x);
+void initTimer1(void);
 
 uint8_t Luz;        // Variable donde se guarda lo que el PIC1 nos envia.
 int y,y1,y2,y3;     // Variables para almacenar la centena, la decena y la unidad de la luz.
@@ -59,12 +68,49 @@ int z,z1;           // Variables para almacenar la centena, la decena y la unida
 uint8_t Humo;       // Variable donde almacenamos la distancia enviada por el PIC3
 int w,w1,w2,w3;     // Variables para almacenar la centena, la decena y la unidad del humo
 uint8_t Temp, calor;// Variables donde almaceno la temperatura (8bits) y lo mapeo de 0 a 99°C
-int t,t1,t2,t3;
-int i;
+int t,t1,t2,t3;     // Variables para almacenar la centena, la decena y la unidad de la temperatura
+int i;              // Contador para envio de datos seriales
+
+int data, dat, sensor;
+char v1[];
+char i_stepper;
+int  minute, hour, hr, ap, flanco;
+char time[]="00:00:00";
+char date[]="00-00-00";
+char enter[]="\n";
 
 // Arreglo con caracteres para imprimir en la LCD
 const char a[10] = {'0','1','2','3','4','5','6','7','8','9'};
+// Arreglo para almacenar la informacion que enviaremos por comunicacion serial
 int b[5] = {0,0,0,0,0};    // 0.Celda  1.luz  2.distancia  3.humo  4. temperatura
+
+//*****************************************************************************
+// Código de Interrupción 
+//*****************************************************************************
+void __interrupt() isr(void)
+{
+     if(PIR1bits.TMR1IF == 1)
+     {  
+        flanco ++;         // Toggle 
+        if (flanco == 2)
+        {
+            flanco = 0;   
+        }
+        if (flanco == 1)
+        {
+            step = 1;
+        }
+        if (flanco == 0)
+        {
+            step = 0;
+        }
+        
+        // valor a cargar al TMR1 5536 -> 0x15A0
+        TMR1H = 0xE9;
+        TMR1L = 0x28;
+        PIR1bits.TMR1IF = 0;
+    }
+}
 
 void temperatura()
 {
@@ -237,14 +283,12 @@ void setup()
 void main(void)
 {
     iniciarOSC(6);  // Fosc = 4MHz
-    
     setup();        // Configuraciones
-    
     iniciarLCD();   // Iniciamos LCD
-    
     borrarv();      // Borramos visualizador
-    
     I2C_Master_Init(100000);    // Iniciamos maestro
+    write_RTC();
+    initTimer1();
     
     colocar(1,1);
     imprimir("Luz:");
@@ -260,7 +304,7 @@ void main(void)
     colocar(24,1);
     imprimir("Tem:");
     colocar(26,2);
-    mostrar(0xDF);
+    mostrar(0xDF); // Simbolo de ° grado
     colocar(27,2);
     imprimir("C");
     
@@ -323,6 +367,45 @@ void main(void)
         humo();
         temperatura();
         
+        // Prueba RTC
+        if (minute == 8)
+        {
+            dir = 0;
+            enable = 0;
+            __delay_ms(200);
+            
+        } 
+        else if (minute == 10)
+        {
+            dir = 1;
+            enable = 0;  
+            __delay_ms(200);
+        }
+        else
+        {
+          enable = 1;
+        }
+              
+        minute = read_RTC(1);
+        hour = read_RTC(2);
+        hr = hour & 0b00111111;
+        
+        time[0] = MSB(hr);
+        time[1] = LSB(hr);
+        time[3] = MSB(minute);
+        time[4] = LSB(minute);
+        
+        colocar(29,2);
+        mostrar(time[0]);
+        colocar(30,2);
+        mostrar(time[1]);
+        colocar(32,2);
+        mostrar(time[3]);
+        colocar(33,2);
+        mostrar(time[4]);
+        
+        __delay_ms(50);
+        
         // Movimiento de la pantalla
         shift();
         
@@ -344,4 +427,65 @@ void main(void)
             i = 0;
         }
     }
+}
+
+char read_RTC(char address)
+{
+        I2C_Master_Start();
+        I2C_Master_Write(0xD0);
+        I2C_Master_Write(address);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        dat = I2C_Master_Read(0);  // lee lo que el esclavo este enviando
+        I2C_Master_Stop();
+        return dat;
+}
+
+void write_RTC(void)
+{
+        I2C_Master_Start();
+        I2C_Master_Write(0xD0);
+        I2C_Master_Write(0x00);
+        
+        I2C_Master_Write(0b00010001);
+        I2C_Master_Write(0b00010001);
+        I2C_Master_Write(0b00000001);
+        
+        I2C_Master_Write(0b00000001);
+        I2C_Master_Write(0b00000001);
+        I2C_Master_Write(0b00000011);
+        I2C_Master_Write(0b00100000);
+        I2C_Master_Stop();
+}
+
+unsigned char MSB(unsigned char x)           //Display Most Significant Bit of BCD number
+{
+  return ((x >> 4) + '0');
+}
+
+unsigned char  LSB(unsigned char x)          //Display Least Significant Bit of BCD number
+{
+  return ((x & 0x0F) + '0');
+}
+void initTimer1(void)
+{
+    T1CONbits.T1GINV = 0;
+    T1CONbits.TMR1GE = 0;       // Always counting
+    T1CONbits.T1CKPS0 = 1;      // Prescaler 1:8
+    T1CONbits.T1CKPS1 = 0;
+    T1CONbits.T1OSCEN = 0;      // LP oscillator is off
+    T1CONbits.TMR1CS = 0;       // Reloj Fosc/4 modo temporizador
+    T1CONbits.TMR1ON = 1;       // Timer 1 ON
+    
+    // T1CON = 0x21;            // Otras formas de haberlo configurado directamente
+    // T1CON = 33;
+    // T1CON = 0b00010001;
+    
+    INTCONbits.PEIE = 1;        // Habilitamos interrupciones PEIE
+    PIR1bits.TMR1IF = 0;        // Limpiamos la bandera de interrupción TMR1
+    PIE1bits.TMR1IE = 1;        // Habilitamos interrupción TMR1
+    
+    // valor a cargar al TMR1 5536 -> 0x15A0
+    TMR1H = 0xF4;
+    TMR1L = 0x02;
 }
