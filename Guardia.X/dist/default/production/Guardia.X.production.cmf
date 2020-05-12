@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\joser\AppData\Local\Temp\se6s.o
+$C:\Users\joser\AppData\Local\Temp\s5m0.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -123,31 +123,31 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Guardia.X.production.o
-F cinit CODE >771:C:\Users\joser\AppData\Local\Temp\se6s.s
-F cinit CODE >774:C:\Users\joser\AppData\Local\Temp\se6s.s
-F cinit CODE >932:C:\Users\joser\AppData\Local\Temp\se6s.s
-10 cinit CODE >933:C:\Users\joser\AppData\Local\Temp\se6s.s
-11 cinit CODE >934:C:\Users\joser\AppData\Local\Temp\se6s.s
-12 cinit CODE >935:C:\Users\joser\AppData\Local\Temp\se6s.s
-13 cinit CODE >936:C:\Users\joser\AppData\Local\Temp\se6s.s
-14 cinit CODE >937:C:\Users\joser\AppData\Local\Temp\se6s.s
-15 cinit CODE >938:C:\Users\joser\AppData\Local\Temp\se6s.s
-16 cinit CODE >939:C:\Users\joser\AppData\Local\Temp\se6s.s
-17 cinit CODE >940:C:\Users\joser\AppData\Local\Temp\se6s.s
-18 cinit CODE >941:C:\Users\joser\AppData\Local\Temp\se6s.s
-1D cinit CODE >960:C:\Users\joser\AppData\Local\Temp\se6s.s
-1E cinit CODE >961:C:\Users\joser\AppData\Local\Temp\se6s.s
-1F cinit CODE >962:C:\Users\joser\AppData\Local\Temp\se6s.s
-20 cinit CODE >963:C:\Users\joser\AppData\Local\Temp\se6s.s
-25 cinit CODE >966:C:\Users\joser\AppData\Local\Temp\se6s.s
-26 cinit CODE >967:C:\Users\joser\AppData\Local\Temp\se6s.s
-27 cinit CODE >968:C:\Users\joser\AppData\Local\Temp\se6s.s
-28 cinit CODE >971:C:\Users\joser\AppData\Local\Temp\se6s.s
-29 cinit CODE >972:C:\Users\joser\AppData\Local\Temp\se6s.s
-2A cinit CODE >973:C:\Users\joser\AppData\Local\Temp\se6s.s
-2B cinit CODE >979:C:\Users\joser\AppData\Local\Temp\se6s.s
-2B cinit CODE >981:C:\Users\joser\AppData\Local\Temp\se6s.s
-2C cinit CODE >982:C:\Users\joser\AppData\Local\Temp\se6s.s
+F cinit CODE >771:C:\Users\joser\AppData\Local\Temp\s5m0.s
+F cinit CODE >774:C:\Users\joser\AppData\Local\Temp\s5m0.s
+F cinit CODE >932:C:\Users\joser\AppData\Local\Temp\s5m0.s
+10 cinit CODE >933:C:\Users\joser\AppData\Local\Temp\s5m0.s
+11 cinit CODE >934:C:\Users\joser\AppData\Local\Temp\s5m0.s
+12 cinit CODE >935:C:\Users\joser\AppData\Local\Temp\s5m0.s
+13 cinit CODE >936:C:\Users\joser\AppData\Local\Temp\s5m0.s
+14 cinit CODE >937:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15 cinit CODE >938:C:\Users\joser\AppData\Local\Temp\s5m0.s
+16 cinit CODE >939:C:\Users\joser\AppData\Local\Temp\s5m0.s
+17 cinit CODE >940:C:\Users\joser\AppData\Local\Temp\s5m0.s
+18 cinit CODE >941:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1D cinit CODE >960:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1E cinit CODE >961:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1F cinit CODE >962:C:\Users\joser\AppData\Local\Temp\s5m0.s
+20 cinit CODE >963:C:\Users\joser\AppData\Local\Temp\s5m0.s
+25 cinit CODE >966:C:\Users\joser\AppData\Local\Temp\s5m0.s
+26 cinit CODE >967:C:\Users\joser\AppData\Local\Temp\s5m0.s
+27 cinit CODE >968:C:\Users\joser\AppData\Local\Temp\s5m0.s
+28 cinit CODE >971:C:\Users\joser\AppData\Local\Temp\s5m0.s
+29 cinit CODE >972:C:\Users\joser\AppData\Local\Temp\s5m0.s
+2A cinit CODE >973:C:\Users\joser\AppData\Local\Temp\s5m0.s
+2B cinit CODE >979:C:\Users\joser\AppData\Local\Temp\s5m0.s
+2B cinit CODE >981:C:\Users\joser\AppData\Local\Temp\s5m0.s
+2C cinit CODE >982:C:\Users\joser\AppData\Local\Temp\s5m0.s
 4 intentry CODE >90:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 178E text37 CODE >90:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 178E text37 CODE >92:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
@@ -841,33 +841,33 @@ B91 text2 CODE >198:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyec
 678 maintext CODE >418:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 682 maintext CODE >421:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
 68A maintext CODE >425:C:\Users\joser\OneDrive\Documentos\UVG\2020\Digital 2\Proyecto 1\Carcel\Guardia.X\Carcelero.c
-15DD clrtext CODE >947:C:\Users\joser\AppData\Local\Temp\se6s.s
-15DD clrtext CODE >948:C:\Users\joser\AppData\Local\Temp\se6s.s
-15DE clrtext CODE >949:C:\Users\joser\AppData\Local\Temp\se6s.s
-15DE clrtext CODE >950:C:\Users\joser\AppData\Local\Temp\se6s.s
-15DF clrtext CODE >951:C:\Users\joser\AppData\Local\Temp\se6s.s
-15E0 clrtext CODE >952:C:\Users\joser\AppData\Local\Temp\se6s.s
-15E1 clrtext CODE >953:C:\Users\joser\AppData\Local\Temp\se6s.s
-15E2 clrtext CODE >954:C:\Users\joser\AppData\Local\Temp\se6s.s
-15E3 clrtext CODE >955:C:\Users\joser\AppData\Local\Temp\se6s.s
-15E4 clrtext CODE >956:C:\Users\joser\AppData\Local\Temp\se6s.s
-1665 inittext CODE >906:C:\Users\joser\AppData\Local\Temp\se6s.s
-1665 inittext CODE >907:C:\Users\joser\AppData\Local\Temp\se6s.s
-1666 inittext CODE >908:C:\Users\joser\AppData\Local\Temp\se6s.s
-1667 inittext CODE >909:C:\Users\joser\AppData\Local\Temp\se6s.s
-1668 inittext CODE >910:C:\Users\joser\AppData\Local\Temp\se6s.s
-1669 inittext CODE >917:C:\Users\joser\AppData\Local\Temp\se6s.s
-1669 inittext CODE >918:C:\Users\joser\AppData\Local\Temp\se6s.s
-166E inittext CODE >919:C:\Users\joser\AppData\Local\Temp\se6s.s
-166F inittext CODE >920:C:\Users\joser\AppData\Local\Temp\se6s.s
-1670 inittext CODE >921:C:\Users\joser\AppData\Local\Temp\se6s.s
-1671 inittext CODE >922:C:\Users\joser\AppData\Local\Temp\se6s.s
-1672 inittext CODE >923:C:\Users\joser\AppData\Local\Temp\se6s.s
-1673 inittext CODE >924:C:\Users\joser\AppData\Local\Temp\se6s.s
-1674 inittext CODE >925:C:\Users\joser\AppData\Local\Temp\se6s.s
-1675 inittext CODE >926:C:\Users\joser\AppData\Local\Temp\se6s.s
-1676 inittext CODE >927:C:\Users\joser\AppData\Local\Temp\se6s.s
-1677 inittext CODE >928:C:\Users\joser\AppData\Local\Temp\se6s.s
+15DD clrtext CODE >947:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15DD clrtext CODE >948:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15DE clrtext CODE >949:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15DE clrtext CODE >950:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15DF clrtext CODE >951:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15E0 clrtext CODE >952:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15E1 clrtext CODE >953:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15E2 clrtext CODE >954:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15E3 clrtext CODE >955:C:\Users\joser\AppData\Local\Temp\s5m0.s
+15E4 clrtext CODE >956:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1665 inittext CODE >906:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1665 inittext CODE >907:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1666 inittext CODE >908:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1667 inittext CODE >909:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1668 inittext CODE >910:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1669 inittext CODE >917:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1669 inittext CODE >918:C:\Users\joser\AppData\Local\Temp\s5m0.s
+166E inittext CODE >919:C:\Users\joser\AppData\Local\Temp\s5m0.s
+166F inittext CODE >920:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1670 inittext CODE >921:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1671 inittext CODE >922:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1672 inittext CODE >923:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1673 inittext CODE >924:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1674 inittext CODE >925:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1675 inittext CODE >926:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1676 inittext CODE >927:C:\Users\joser\AppData\Local\Temp\s5m0.s
+1677 inittext CODE >928:C:\Users\joser\AppData\Local\Temp\s5m0.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -916,13 +916,13 @@ __Hstrings 0 0 ABS 0 strings -
 MSB@x 73 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 _Humo 79 0 COMMON 1 bssCOMMON dist/default/production\Guardia.X.production.o
 _Temp 6E 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\se6s.o
+___sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\s5m0.o
 _hour B0 0 BANK1 1 bssBANK1 dist/default/production\Guardia.X.production.o
 _humo 189C 0 CODE 0 text23 dist/default/production\Guardia.X.production.o
 _main 720 0 CODE 0 maintext dist/default/production\Guardia.X.production.o
 _time E3 0 BANK1 1 dataBANK1 dist/default/production\Guardia.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Guardia.X.production.o
-start 18 0 CODE 0 init C:\Users\joser\AppData\Local\Temp\se6s.o
+start 18 0 CODE 0 init C:\Users\joser\AppData\Local\Temp\s5m0.o
 ___flmul@aexp 38 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
 ___flmul@bexp 3D 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
 ___flmul@prod 3E 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
@@ -947,12 +947,12 @@ ___awmod@sign 78 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.produ
 I2C_Master_Read@a 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
 __size_of_borrarv 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 comando@x 74 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\se6s.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s5m0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s5m0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s5m0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s5m0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s5m0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\joser\AppData\Local\Temp\s5m0.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 __size_of_initTimer1 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Guardia.X.production.o
@@ -984,8 +984,8 @@ __end_of___flmul 720 0 CODE 0 text6 dist/default/production\Guardia.X.production
 __end_of___fltol 15EA 0 CODE 0 text5 dist/default/production\Guardia.X.production.o
 __end_of___lldiv 14F2 0 CODE 0 text36 dist/default/production\Guardia.X.production.o
 __Umul8_16@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\se6s.o
-___stacklo 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\se6s.o
+___stackhi 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\s5m0.o
+___stacklo 0 0 ABS 0 - C:\Users\joser\AppData\Local\Temp\s5m0.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Guardia.X.production.o
 __size_of_celda 0 0 ABS 0 - dist/default/production\Guardia.X.production.o
 ___fldiv@a 44 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
@@ -1013,7 +1013,7 @@ _SSPADD 93 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\Guardia.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Guardia.X.production.o
 UARTenvINT@x 72 0 COMMON 1 cstackCOMMON dist/default/production\Guardia.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\se6s.o
+___int_sp 0 0 STACK 2 stack C:\Users\joser\AppData\Local\Temp\s5m0.o
 _ultrasonico 15EA 0 CODE 0 text2 dist/default/production\Guardia.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -1090,7 +1090,7 @@ _grados 6D 0 BANK0 1 bssBANK0 dist/default/production\Guardia.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\Guardia.X.production.o
 __stringtab 2000 0 STRING 0 strings dist/default/production\Guardia.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\joser\AppData\Local\Temp\se6s.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\joser\AppData\Local\Temp\s5m0.o
 __end_of___xxtofl 189C 0 CODE 0 text4 dist/default/production\Guardia.X.production.o
 __pdataBANK1 DA 0 BANK1 1 dataBANK1 dist/default/production\Guardia.X.production.o
 _iniciarUART 2D92 0 CODE 0 text20 dist/default/production\Guardia.X.production.o

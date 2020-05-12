@@ -3145,7 +3145,7 @@ void ultrasonico()
     colocar(11,1);
     mostrar(a[z1]);
 
-    if (Distancia < 15)
+    if (Distancia < 8)
     {
         colocar(8,2);
         imprimir("ALERTA");

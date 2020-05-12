@@ -1556,8 +1556,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Carcelero.c: 181:     mostrar(a[z1]);
 [e ( _mostrar (1 *U + &U _a * -> -> _z1 `ui `ux -> -> # *U &U _a `ui `ux ]
 "183
-[; ;Carcelero.c: 183:     if (Distancia < 15)
-[e $ ! < -> _Distancia `i -> 15 `i 194  ]
+[; ;Carcelero.c: 183:     if (Distancia < 8)
+[e $ ! < -> _Distancia `i -> 8 `i 194  ]
 "184
 [; ;Carcelero.c: 184:     {
 {
